@@ -4345,3 +4345,25 @@ ul.contact li:before {
 	height: auto !important;
 	object-fit: contain !important;
 }
+
+/* Metodo difensivo: ovale grande, immagine interna intera */
+#three.wrapper.spotlight .image {
+	width: 22em !important;
+	height: 22em !important;
+	border-radius: 100% !important;
+	background: #111 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	overflow: hidden !important;
+}
+
+#three.wrapper.spotlight .image img {
+	width: 72% !important;
+	height: 72% !important;
+	max-width: 72% !important;
+	max-height: 72% !important;
+	object-fit: contain !important;
+	border-radius: 0 !important;
+	display: block !important;
+}
