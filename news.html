@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="it">
+<head>
+	<title>News Legali | Avv. Vincenzo Stante</title>
+	<meta charset="utf-8" />
+	<meta name="description" content="News legali aggiornate automaticamente: diritto penale, famiglia, patrocinio a spese dello Stato e giurisprudenza." />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+	<style>
+		.news-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+		.news-card { background: #181818; border: 1px solid rgba(200,169,107,.25); border-radius: 14px; padding: 1.5rem; }
+		.news-card h3 { margin-bottom: 1rem; }
+		.news-list { list-style: none; padding: 0; margin: 0; }
+		.news-list li { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,.12); }
+		.news-list a { color: #fff; border-bottom: 0; font-weight: 500; }
+		.news-list a:hover { color: #c8a96b !important; }
+		.news-meta { display: block; font-size: .82rem; color: rgba(255,255,255,.55); margin-top: .25rem; }
+		@media screen and (max-width: 736px) { .news-grid { grid-template-columns: 1fr; } }
+	</style>
+</head>
+
+<body class="is-preload">
+<div id="page-wrapper">
+
+	<header id="header">
+		<h1><a href="index.html">Avv. Vincenzo Stante</a></h1>
+		<nav><a href="index.html">Home</a></nav>
+	</header>
+
+	<section id="wrapper">
+		<header>
+			<div class="inner">
+				<h2>News e approfondimenti legali</h2>
+				<p>Rassegna automatica di aggiornamenti giuridici per settore.</p>
+			</div>
+		</header>
+
+		<section class="wrapper style1">
+			<div class="inner">
+				<div class="news-grid">
+
+					<article id="penale" class="news-card">
+						<h3 class="major">Diritto Penale</h3>
+						<ul class="news-list" data-feed="https://news.avvocatoandreani.it/news-giuridiche/feed-rss.php?canale=diritto-penale"></ul>
+					</article>
+
+					<article id="famiglia" class="news-card">
+						<h3 class="major">Diritto di Famiglia</h3>
+						<ul class="news-list" data-feed="https://news.avvocatoandreani.it/news-giuridiche/feed-rss.php?canale=diritto-famiglia"></ul>
+					</article>
+
+					<article id="patrocinio" class="news-card">
+						<h3 class="major">Patrocinio a spese dello Stato</h3>
+						<ul class="news-list" data-feed="https://www.studiocataldi.it/feed_rss.asp"></ul>
+					</article>
+
+					<article id="giurisprudenza" class="news-card">
+						<h3 class="major">Giurisprudenza</h3>
+						<ul class="news-list" data-feed="https://news.avvocatoandreani.it/news-giuridiche/feed-rss.php"></ul>
+					</article>
+
+				</div>
+			</div>
+		</section>
+	</section>
+
+</div>
+
+<script>
+async function loadFeed(list) {
+	const feedUrl = list.dataset.feed;
+	const apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(feedUrl);
+
+	try {
+		const res = await fetch(apiUrl);
+		const data = await res.json();
+
+		list.innerHTML = "";
+
+		(data.items || []).slice(0, 5).forEach(item => {
+			const li = document.createElement("li");
+			const date = item.pubDate ? new Date(item.pubDate).toLocaleDateString("it-IT") : "";
+			li.innerHTML = `
+				<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
+				<span class="news-meta">${date} · Fonte esterna</span>
+			`;
+			list.appendChild(li);
+		});
+
+		if (!list.innerHTML) list.innerHTML = "<li>News momentaneamente non disponibili.</li>";
+	} catch (e) {
+		list.innerHTML = "<li>Feed temporaneamente non disponibile.</li>";
+	}
+}
+
+document.querySelectorAll(".news-list").forEach(loadFeed);
+</script>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
