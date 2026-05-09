@@ -4415,3 +4415,21 @@ p {
 	font-weight: 300 !important;
 	color: rgba(255,255,255,0.88) !important;
 }
+
+/* Titolo responsive mobile */
+@media screen and (max-width: 736px) {
+
+	#banner h2 {
+		font-size: 2.2rem !important;
+		line-height: 1.15 !important;
+		letter-spacing: 0.04em !important;
+	}
+
+	.major {
+		font-size: 1.8rem !important;
+	}
+
+	.logo-giustizia {
+		width: 240px !important;
+	}
+}
