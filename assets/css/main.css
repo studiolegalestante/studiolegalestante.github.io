@@ -4389,3 +4389,29 @@ ul.contact li:before {
 	border-radius: 0 !important;
 	display: block !important;
 }
+
+/* Font professionale studio legale */
+body, input, select, textarea {
+	font-family: 'Inter', sans-serif !important;
+	line-height: 1.85 !important;
+	letter-spacing: 0.02em !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.major,
+#banner h2 {
+	font-family: 'Cormorant Garamond', serif !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.06em !important;
+	text-transform: uppercase !important;
+}
+
+#banner h2 {
+	font-size: 4.2rem !important;
+	line-height: 1.1 !important;
+}
+
+p {
+	font-weight: 300 !important;
+	color: rgba(255,255,255,0.88) !important;
+}
