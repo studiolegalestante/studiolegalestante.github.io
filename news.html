@@ -132,7 +132,7 @@
 
 async function loadNews() {
 
-	const response = await fetch('data/news.json');
+	const response = await fetch('./data/news.json');
 	const data = await response.json();
 
 	for (const category in data) {
