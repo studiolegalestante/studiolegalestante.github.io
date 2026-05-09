@@ -3,102 +3,172 @@
 <head>
 	<title>News Legali | Avv. Vincenzo Stante</title>
 	<meta charset="utf-8" />
-	<meta name="description" content="News legali aggiornate automaticamente: diritto penale, famiglia, patrocinio a spese dello Stato e giurisprudenza." />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<style>
-		.news-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
-		.news-card { background: #181818; border: 1px solid rgba(200,169,107,.25); border-radius: 14px; padding: 1.5rem; }
-		.news-card h3 { margin-bottom: 1rem; }
-		.news-list { list-style: none; padding: 0; margin: 0; }
-		.news-list li { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,.12); }
-		.news-list a { color: #fff; border-bottom: 0; font-weight: 500; }
-		.news-list a:hover { color: #c8a96b !important; }
-		.news-meta { display: block; font-size: .82rem; color: rgba(255,255,255,.55); margin-top: .25rem; }
-		@media screen and (max-width: 736px) { .news-grid { grid-template-columns: 1fr; } }
+
+		body {
+			font-family: 'Inter', sans-serif;
+		}
+
+		h1,h2,h3,h4 {
+			font-family: 'Cormorant Garamond', serif;
+		}
+
+		.news-grid {
+			display:grid;
+			grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+			gap:2rem;
+		}
+
+		.news-card {
+			background:#181818;
+			border:1px solid rgba(212,175,55,.18);
+			border-radius:16px;
+			padding:2rem;
+			box-shadow:0 0 30px rgba(0,0,0,.25);
+		}
+
+		.news-item {
+			padding:1rem 0;
+			border-bottom:1px solid rgba(255,255,255,.08);
+		}
+
+		.news-item:last-child {
+			border-bottom:none;
+		}
+
+		.news-item a {
+			color:#fff;
+			font-weight:600;
+			font-size:1rem;
+			text-decoration:none;
+			border:none;
+		}
+
+		.news-item a:hover {
+			color:#d4af37;
+		}
+
+		.news-date {
+			display:block;
+			font-size:.82rem;
+			color:rgba(255,255,255,.5);
+			margin-top:.4rem;
+		}
+
+		.news-desc {
+			margin-top:.6rem;
+			font-size:.92rem;
+			color:rgba(255,255,255,.75);
+			line-height:1.7;
+		}
+
+		@media screen and (max-width:736px){
+
+			.news-grid{
+				grid-template-columns:1fr;
+			}
+
+		}
+
 	</style>
+
 </head>
 
-<body class="is-preload">
+<body>
+
 <div id="page-wrapper">
 
-	<header id="header">
-		<h1><a href="index.html">Avv. Vincenzo Stante</a></h1>
-		<nav><a href="index.html">Home</a></nav>
-	</header>
+<header id="header">
+	<h1><a href="index.html">Avv. Vincenzo Stante</a></h1>
+</header>
 
-	<section id="wrapper">
-		<header>
-			<div class="inner">
-				<h2>News e approfondimenti legali</h2>
-				<p>Rassegna automatica di aggiornamenti giuridici per settore.</p>
-			</div>
-		</header>
+<section id="wrapper">
 
-		<section class="wrapper style1">
-			<div class="inner">
-				<div class="news-grid">
+<section class="wrapper">
+<div class="inner">
 
-					<article id="penale" class="news-card">
-						<h3 class="major">Diritto Penale</h3>
-						<ul class="news-list" data-feed="https://news.avvocatoandreani.it/news-giuridiche/feed-rss.php?canale=diritto-penale"></ul>
-					</article>
+	<h2 class="major">News e approfondimenti legali</h2>
 
-					<article id="famiglia" class="news-card">
-						<h3 class="major">Diritto di Famiglia</h3>
-						<ul class="news-list" data-feed="https://news.avvocatoandreani.it/news-giuridiche/feed-rss.php?canale=diritto-famiglia"></ul>
-					</article>
+	<div class="news-grid">
 
-					<article id="patrocinio" class="news-card">
-						<h3 class="major">Patrocinio a spese dello Stato</h3>
-						<ul class="news-list" data-feed="https://www.studiocataldi.it/feed_rss.asp"></ul>
-					</article>
+		<div class="news-card">
+			<h3>Diritto Penale</h3>
+			<div id="penale"></div>
+		</div>
 
-					<article id="giurisprudenza" class="news-card">
-						<h3 class="major">Giurisprudenza</h3>
-						<ul class="news-list" data-feed="https://news.avvocatoandreani.it/news-giuridiche/feed-rss.php"></ul>
-					</article>
+		<div class="news-card">
+			<h3>Diritto di Famiglia</h3>
+			<div id="famiglia"></div>
+		</div>
 
-				</div>
-			</div>
-		</section>
-	</section>
+		<div class="news-card">
+			<h3>Patrocinio a Spese dello Stato</h3>
+			<div id="patrocinio"></div>
+		</div>
+
+		<div class="news-card">
+			<h3>Giurisprudenza</h3>
+			<div id="giurisprudenza"></div>
+		</div>
+
+	</div>
+
+</div>
+</section>
+
+</section>
 
 </div>
 
 <script>
-async function loadFeed(list) {
-	const feedUrl = list.dataset.feed;
-	const apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(feedUrl);
 
-	try {
-		const res = await fetch(apiUrl);
-		const data = await res.json();
+async function loadNews() {
 
-		list.innerHTML = "";
+	const response = await fetch('data/news.json');
+	const data = await response.json();
 
-		(data.items || []).slice(0, 5).forEach(item => {
-			const li = document.createElement("li");
-			const date = item.pubDate ? new Date(item.pubDate).toLocaleDateString("it-IT") : "";
-			li.innerHTML = `
-				<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
-				<span class="news-meta">${date} · Fonte esterna</span>
+	for (const category in data) {
+
+		const container = document.getElementById(category);
+
+		data[category].forEach(item => {
+
+			const div = document.createElement('div');
+
+			div.className = 'news-item';
+
+			div.innerHTML = `
+				<a href="${item.link}" target="_blank">
+					${item.title}
+				</a>
+
+				<span class="news-date">
+					${item.date}
+				</span>
+
+				<div class="news-desc">
+					${item.description.replace(/<[^>]*>/g,'').substring(0,180)}...
+				</div>
 			`;
-			list.appendChild(li);
+
+			container.appendChild(div);
+
 		});
 
-		if (!list.innerHTML) list.innerHTML = "<li>News momentaneamente non disponibili.</li>";
-	} catch (e) {
-		list.innerHTML = "<li>Feed temporaneamente non disponibile.</li>";
 	}
+
 }
 
-document.querySelectorAll(".news-list").forEach(loadFeed);
+loadNews();
+
 </script>
 
 <script src="assets/js/jquery.min.js"></script>
