@@ -4313,3 +4313,17 @@ ul.contact li:before {
 	object-fit: contain !important;
 	padding: 0.5em !important;
 }
+
+/* Metodo difensivo - immagine più piccola nel cerchio */
+#three .image img {
+	width: 70% !important;
+	height: 70% !important;
+	object-fit: contain !important;
+	margin: 15% auto !important;
+	display: block !important;
+	padding: 0 !important;
+}
+
+#three .image {
+	background: #111111 !important;
+}
