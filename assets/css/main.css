@@ -4256,3 +4256,18 @@ ul.contact li:before {
 	background-color: #111111 !important;
 	background-image: linear-gradient(to top, rgba(17, 17, 17, 0.94), rgba(17, 17, 17, 0.94)), url("../../images/bg.jpg") !important;
 }
+.logo-giustizia {
+	width: 220px;
+	max-width: 80%;
+	display: block;
+	margin: 0 auto 2em auto;
+	filter: drop-shadow(0 0 18px rgba(212,175,55,0.25));
+}
+
+#banner .logo {
+	border: none !important;
+}
+
+#banner .logo img {
+	border-radius: 0;
+}
