@@ -4327,3 +4327,21 @@ ul.contact li:before {
 #three .image {
 	background: #111111 !important;
 }
+
+/* Ripristina dimensione originale ovale */
+#three .image {
+	width: 22em !important;
+	height: 22em !important;
+	background: #111 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	overflow: hidden !important;
+}
+
+/* Riduce SOLO l'immagine interna */
+#three .image img {
+	width: 60% !important;
+	height: auto !important;
+	object-fit: contain !important;
+}
