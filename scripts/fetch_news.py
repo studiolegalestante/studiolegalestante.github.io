@@ -5,9 +5,9 @@ from email.utils import parsedate_to_datetime
 
 FEEDS = {
     "penale": "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
-    "famiglia": "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
-    "patrocinio": "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
-    "giurisprudenza": "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche"
+    "famiglia": "https://www.ilsole24ore.com/rss/norme-e-tributi--diritto.xml",
+    "patrocinio": "https://www.ilsole24ore.com/rss/norme-e-tributi--diritto.xml",
+    "giurisprudenza": "https://www.ilsole24ore.com/rss/norme-e-tributi--diritto.xml"
 }
 
 def fetch(url):
