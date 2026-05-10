@@ -87,6 +87,12 @@
       .button { border-radius: 0px !important; text-transform: uppercase; letter-spacing: 1px; } 
       header#header { border-bottom: 1px solid #ddd; } 
     </style>
+    <style> 
+      header#header { height: auto !important; padding: 15px 0 !important; display: flex; align-items: center; } 
+      .logo img { max-width: 100%; height: 50px !important; transition: opacity 0.3s ease; } 
+      .logo:hover img { opacity: 0.8; } 
+      @media screen and (max-width: 736px) { .logo img { height: 40px !important; } } 
+    </style>
 </head>
 
 <body>
@@ -94,7 +100,7 @@
 <div id="page-wrapper">
 
 <header id="header">
-	<h1><a href="index.html">Avv. Vincenzo Stante</a></h1>
+	<h1><a href="index.html" class="logo"><img src="logo-giustizia.png" alt="Studio Legale Stante" style="height: 60px; width: auto; vertical-align: middle; padding: 10px 0;"></a></h1>
 </header>
 
 <section id="wrapper">
