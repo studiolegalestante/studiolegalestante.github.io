@@ -4,7 +4,7 @@
       "title": "Errore feed penale",
       "link": "#",
       "description": "not well-formed (invalid token): line 46, column 56",
-      "date": ""
+      "date": "Aggiornato il 10/05/2026"
     }
   ],
   "famiglia": [
@@ -12,7 +12,7 @@
       "title": "Errore feed famiglia",
       "link": "#",
       "description": "not well-formed (invalid token): line 46, column 56",
-      "date": ""
+      "date": "Aggiornato il 10/05/2026"
     }
   ],
   "giurisprudenza": [
@@ -20,7 +20,7 @@
       "title": "Errore feed giurisprudenza",
       "link": "#",
       "description": "not well-formed (invalid token): line 11, column 14",
-      "date": ""
+      "date": "Aggiornato il 10/05/2026"
     }
   ],
   "notizie_flash": [
@@ -28,7 +28,7 @@
       "title": "Errore feed notizie_flash",
       "link": "#",
       "description": "not well-formed (invalid token): line 46, column 56",
-      "date": ""
+      "date": "Aggiornato il 10/05/2026"
     }
   ]
 }
