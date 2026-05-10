@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="it">
 <head>
-    <link href="https://googleapis.com" rel="stylesheet">
 	<title>News Legali | Avv. Vincenzo Stante</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,92 +12,87 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<style>
+		html, body, #page-wrapper, #wrapper, .wrapper {
+			background: #111111 !important;
+			background-color: #111111 !important;
+		}
 
 		body {
 			font-family: 'Inter', sans-serif;
+			color: #ffffff;
 		}
 
-		h1,h2,h3,h4 {
-			font-family: 'Cormorant Garamond', serif;
+		#header {
+			background: #111111 !important;
+			background-color: #111111 !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		#header h1 a {
+			color: #ffffff !important;
+		}
+
+		h1, h2, h3, h4 {
+			font-family: 'Cormorant Garamond', serif !important;
+			color: #ffffff !important;
 		}
 
 		.news-grid {
-			display:grid;
-			grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
-			gap:2rem;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+			gap: 2rem;
 		}
 
 		.news-card {
-			background:#181818;
-			border:1px solid rgba(212,175,55,.18);
-			border-radius:16px;
-			padding:2rem;
-			box-shadow:0 0 30px rgba(0,0,0,.25);
+			background: #181818 !important;
+			border: 1px solid rgba(212,175,55,.25);
+			border-radius: 16px;
+			padding: 2rem;
+			box-shadow: 0 0 30px rgba(0,0,0,.25);
 		}
 
 		.news-item {
-			padding:1rem 0;
-			border-bottom:1px solid rgba(255,255,255,.08);
+			padding: 1rem 0;
+			border-bottom: 1px solid rgba(255,255,255,.08);
 		}
 
 		.news-item:last-child {
-			border-bottom:none;
+			border-bottom: none;
 		}
 
 		.news-item a {
-			color:#fff;
-			font-weight:600;
-			font-size:1rem;
-			text-decoration:none;
-			border:none;
+			color: #fff;
+			font-weight: 600;
+			font-size: 1rem;
+			text-decoration: none;
+			border: none;
 		}
 
 		.news-item a:hover {
-			color:#d4af37;
+			color: #d4af37 !important;
 		}
 
 		.news-date {
-			display:block;
-			font-size:.82rem;
-			color:rgba(255,255,255,.5);
-			margin-top:.4rem;
+			display: block;
+			font-size: .82rem;
+			color: rgba(255,255,255,.5);
+			margin-top: .4rem;
 		}
 
 		.news-desc {
-			margin-top:.6rem;
-			font-size:.92rem;
-			color:rgba(255,255,255,.75);
-			line-height:1.7;
+			margin-top: .6rem;
+			font-size: .92rem;
+			color: rgba(255,255,255,.75);
+			line-height: 1.7;
 		}
 
-		@media screen and (max-width:736px){
-
-			.news-grid{
-				grid-template-columns:1fr;
+		@media screen and (max-width:736px) {
+			.news-grid {
+				grid-template-columns: 1fr;
 			}
-
 		}
-
 	</style>
-
-    <style> 
-      body { font-family: "Inter", sans-serif; } 
-      h1, h2, h3 { font-family: "Playfair Display", serif !important; font-weight: 700; color: #1a1a1a !important; } 
-      .button { border-radius: 0px !important; text-transform: uppercase; letter-spacing: 1px; } 
-      header#header { border-bottom: 1px solid #ddd; } 
-    </style>
-    <style> 
-      header#header { height: auto !important; padding: 15px 0 !important; display: flex; align-items: center; } 
-      .logo img { max-width: 100%; height: 50px !important; transition: opacity 0.3s ease; } 
-      .logo:hover img { opacity: 0.8; } 
-      @media screen and (max-width: 736px) { .logo img { height: 40px !important; } } 
-    </style>
-    <style> 
-      #header { background: #ffffff !important; box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important; height: 5em !important; line-height: 5em !important; } 
-      .logo img { transition: transform 0.3s ease; display: inline-block; vertical-align: middle; } 
-      .logo:hover img { transform: scale(1.05); } 
-      nav#nav ul li a { color: #333 !important; font-weight: 600; text-transform: uppercase; font-size: 0.8em; letter-spacing: 1px; } 
-    </style>
 </head>
 
 <body>
@@ -106,88 +100,74 @@
 <div id="page-wrapper">
 
 <header id="header">
-	<h1><a href="index.html" class="logo"><img src="logo-giustizia.png" alt="Studio Legale Stante" style="height: 60px; width: auto; vertical-align: middle; padding: 10px 0;"></a></h1>
+	<h1><a href="index.html">Avv. Vincenzo Stante</a></h1>
 </header>
 
 <section id="wrapper">
+	<section class="wrapper">
+		<div class="inner">
 
-<section class="wrapper">
-<div class="inner">
+			<h2 class="major">News e approfondimenti legali</h2>
 
-	<h2 class="major">News e approfondimenti legali</h2>
+			<div class="news-grid">
 
-	<div class="news-grid">
+				<div class="news-card">
+					<h3>Diritto Penale</h3>
+					<div id="penale"></div>
+				</div>
 
-		<div class="news-card">
-			<h3>Diritto Penale</h3>
-			<div id="penale"></div>
+				<div class="news-card">
+					<h3>Diritto di Famiglia</h3>
+					<div id="famiglia"></div>
+				</div>
+
+				<div class="news-card">
+					<h3>Patrocinio a Spese dello Stato</h3>
+					<div id="patrocinio"></div>
+				</div>
+
+				<div class="news-card">
+					<h3>Giurisprudenza</h3>
+					<div id="giurisprudenza"></div>
+				</div>
+
+			</div>
+
 		</div>
-
-		<div class="news-card">
-			<h3>Diritto di Famiglia</h3>
-			<div id="famiglia"></div>
-		</div>
-
-		<div class="news-card">
-			<h3>Patrocinio a Spese dello Stato</h3>
-			<div id="patrocinio"></div>
-		</div>
-
-		<div class="news-card">
-			<h3>Giurisprudenza</h3>
-			<div id="giurisprudenza"></div>
-		</div>
-
-	</div>
-
-</div>
-</section>
-
+	</section>
 </section>
 
 </div>
 
 <script>
-
 async function loadNews() {
-
 	const response = await fetch('./data/news.json');
 	const data = await response.json();
 
 	for (const category in data) {
-
 		const container = document.getElementById(category);
+		if (!container) continue;
+
+		container.innerHTML = '';
 
 		data[category].forEach(item => {
-
 			const div = document.createElement('div');
-
 			div.className = 'news-item';
 
+			const desc = (item.description || '').replace(/<[^>]*>/g,'').substring(0,180);
+
 			div.innerHTML = `
-				<a href="${item.link}" target="_blank">
-					${item.title}
-				</a>
-
-				<span class="news-date">
-					${item.date}
-				</span>
-
-				<div class="news-desc">
-					${item.description.replace(/<[^>]*>/g,'').substring(0,180)}...
-				</div>
+				<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
+				<span class="news-date">${item.date || ''}</span>
+				<div class="news-desc">${desc}...</div>
 			`;
 
 			container.appendChild(div);
-
 		});
-
 	}
-
 }
 
 loadNews();
-
 </script>
 
 <script src="assets/js/jquery.min.js"></script>
