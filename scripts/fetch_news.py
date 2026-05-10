@@ -7,7 +7,7 @@ FEEDS = {
     "penale": "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
     "famiglia": "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
     "patrocinio": "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
-    "giurisprudenza": "https://feedproxy.google.com/StudioCataldi-SentenzeCassazione"
+    "giurisprudenza": "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche"
 }
 
 def fetch(url):
