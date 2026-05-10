@@ -4720,3 +4720,7 @@ body,
 	display: block !important;
 	margin: 0 0 2em 0 !important;
 }
+/* FIX visibilità sezioni */
+section {
+	opacity: 1 !important;
+}

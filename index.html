@@ -229,16 +229,5 @@ Il tuo browser non supporta il video.
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
-
-    <script> 
-      window.addEventListener("scroll", function() { 
-        const sections = document.querySelectorAll("section"); 
-        sections.forEach(s => { 
-          const rect = s.getBoundingClientRect(); 
-          if(rect.top < window.innerHeight * 0.8) s.style.opacity = "1"; 
-        }); 
-      }); 
-      document.querySelectorAll("section").forEach(s => { s.style.opacity = "0"; s.style.transition = "opacity 1.5s ease"; }); 
-    </script>
 </body>
 </html>
