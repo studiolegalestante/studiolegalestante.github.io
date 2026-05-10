@@ -4512,3 +4512,50 @@ body,
 #footer {
 	background-color: #111111 !important;
 }
+
+/* HEADER SEMPRE SCURO */
+#header.alt,
+#header.reveal,
+#header {
+	background-color: #111111 !important;
+	background: #111111 !important;
+	border-bottom: none !important;
+	box-shadow: none !important;
+}
+
+/* elimina overlay bianco durante scroll */
+body:before,
+body:after,
+#wrapper:before,
+#wrapper:after,
+#page-wrapper:before,
+#page-wrapper:after {
+	display: none !important;
+	background: transparent !important;
+}
+
+/* LOGO ENORME */
+#banner .logo {
+	width: 100% !important;
+	max-width: none !important;
+	margin-bottom: 2em !important;
+}
+
+#banner .logo img.logo-giustizia {
+	width: 1100px !important;
+	max-width: 98% !important;
+	height: auto !important;
+	object-fit: contain !important;
+	display: block !important;
+	margin: 0 auto 2em auto !important;
+}
+
+/* mobile */
+@media screen and (max-width: 736px) {
+
+	#banner .logo img.logo-giustizia {
+		width: 520px !important;
+		max-width: 95% !important;
+	}
+
+}
