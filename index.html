@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="it">
 <head>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
 	<title>Avv. Vincenzo Stante | Studio Legale Bari e Triggiano</title>
 	<meta charset="utf-8" />
 	<meta name="description" content="Studio Legale Avv. Vincenzo Stante - Diritto penale, diritto di famiglia e patrocinio a spese dello Stato a Bari e Triggiano." />
@@ -10,6 +12,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style> 
+      body, input, select, textarea { font-family: "Inter", sans-serif; background-color: #fdfdfd; } 
+      h1, h2, h3, h4, h5, h6 { font-family: "Playfair Display", serif !important; color: #1a1a1a !important; letter-spacing: -0.02em; } 
+      #header { background-color: #ffffff !important; border-bottom: 1px solid #eee; } 
+      .button { border-radius: 0 !important; background-color: #1a1a1a !important; color: #fff !important; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7em !important; padding: 1.5em 3em !important; } 
+      .button:hover { background-color: #c5a059 !important; } 
+      section { padding: 8em 0 !important; border-bottom: 1px solid #f0f0f0; } 
+      #footer { background: #1a1a1a !important; color: #ccc !important; } 
+    </style>
+    <style> 
+      body { font-family: "Inter", sans-serif; } 
+      h1, h2, h3 { font-family: "Playfair Display", serif !important; font-weight: 700; color: #1a1a1a !important; } 
+      .button { border-radius: 0px !important; text-transform: uppercase; letter-spacing: 1px; } 
+      header#header { border-bottom: 1px solid #ddd; } 
+    </style>
 </head>
 
 <body class="is-preload">
@@ -33,7 +50,7 @@
 				<li><a href="#three">Metodo difensivo</a></li>
 				<li><a href="#four">Servizi legali</a></li>
 				<li><a href="#video-player">Video</a></li>
-				<li><a href="#footer">Contatti</a></li>
+				<li><a href="#footer">Contatti e Ricevimento</a></li>
 			</ul>
 			<a href="#" class="close">Chiudi</a>
 		</div>
@@ -175,7 +192,7 @@ Il tuo browser non supporta il video.
 </section>
 	<section id="footer">
 		<div class="inner">
-			<h2 class="major">Contatti</h2>
+			<h2 class="major">Contatti e Ricevimento</h2>
 			<p>
 				Per richiedere una consulenza o fissare un appuntamento è possibile contattare lo Studio
 				telefonicamente, via email o tramite WhatsApp.
@@ -212,7 +229,7 @@ Il tuo browser non supporta il video.
 
 			<ul class="copyright">
 				<li>&copy; Studio Legale Avv. Vincenzo Stante. Tutti i diritti riservati.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				<li>© Studio Legale Avv. Vincenzo Stante</li>
 			</ul>
 		</div>
 	</section>
@@ -226,5 +243,15 @@ Il tuo browser non supporta il video.
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
+    <script> 
+      window.addEventListener("scroll", function() { 
+        const sections = document.querySelectorAll("section"); 
+        sections.forEach(s => { 
+          const rect = s.getBoundingClientRect(); 
+          if(rect.top < window.innerHeight * 0.8) s.style.opacity = "1"; 
+        }); 
+      }); 
+      document.querySelectorAll("section").forEach(s => { s.style.opacity = "0"; s.style.transition = "opacity 1.5s ease"; }); 
+    </script>
 </body>
 </html>
