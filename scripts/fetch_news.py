@@ -1,75 +1,48 @@
 import json
-import urllib.request
-import xml.etree.ElementTree as ET
-import re
-import os
-from email.utils import parsedate_to_datetime
+import feedparser
 from datetime import datetime
 
-# Sorgenti aggiornate al 2026
-FEEDS = {
-    "penale": "https://avvocatoandreani.it",
-    "famiglia": "https://avvocatoandreani.it",
-    "giurisprudenza": "https://studiocataldi.it",
-    "notizie_flash": "https://avvocatoandreani.it"
+FEED = "https://news.avvocatoandreani.it/news-giuridiche/feed-rss.php"
+UPDATED = datetime.now().strftime("Aggiornato il %d/%m/%Y")
+
+CATEGORIES = {
+    "penale": ["penale", "reato", "reati", "imputato", "condanna", "carcere", "misura cautelare"],
+    "famiglia": ["famiglia", "separazione", "divorzio", "affidamento", "mantenimento", "minori", "figli"],
+    "patrocinio": ["patrocinio", "spese dello stato", "gratuito patrocinio", "non abbienti"],
+    "giurisprudenza": ["cassazione", "sentenza", "tribunale", "corte", "giurisprudenza"]
 }
 
-def clean_html(text):
-    """Rimuove tag HTML e spazi eccessivi dalle descrizioni."""
-    if not text: return ""
-    clean = re.sub('<[^<]+?>', '', text)
-    return clean.replace('&nbsp;', ' ').strip()
+def clean(text):
+    return " ".join((text or "").replace("\n", " ").split())
 
-def fetch(url):
-    req = urllib.request.Request(
-        url,
-        headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) NewsBot/1.0"}
-    )
-    with urllib.request.urlopen(req, timeout=15) as r:
-        return r.read()
+feed = feedparser.parse(FEED)
 
-def parse_feed(url, category):
-    try:
-        data = fetch(url)
-        root = ET.fromstring(data)
-    except Exception as e:
-        return [{"title": f"Errore feed {category}", "link": "#", "description": str(e), "date": ""}]
+all_items = []
+for entry in feed.entries:
+    title = clean(getattr(entry, "title", ""))
+    link = clean(getattr(entry, "link", ""))
+    desc = clean(getattr(entry, "summary", ""))
 
-    news = []
-    # Molti feed usano il namespace 'item' dentro 'channel'
-    items = root.findall(".//item")
-    
-    for item in items[:6]:
-        title = item.findtext("title", "").strip()
-        link = item.findtext("link", "").strip()
-        desc = clean_html(item.findtext("description", ""))
-        pub = item.findtext("pubDate", "").strip()
-
-        try:
-            # Formattazione data in italiano
-            dt = parsedate_to_datetime(pub)
-            date_str = dt.strftime("%d/%m/%Y")
-        except:
-            date_str = pub
-
-        news.append({
+    if title and link:
+        all_items.append({
             "title": title,
             "link": link,
-            "description": desc[:200] + "..." if len(desc) > 200 else desc,
-            "date": date_str
+            "description": desc[:220],
+            "date": UPDATED
         })
-    return news
-
-# Assicura che la cartella di output esista
-os.makedirs("data", exist_ok=True)
 
 result = {}
-for category, url in FEEDS.items():
-    print(f"Aggiornamento {category}...")
-    result[category] = parse_feed(url, category)
 
-# Salvataggio finale
+for category, keywords in CATEGORIES.items():
+    selected = []
+    for item in all_items:
+        text = (item["title"] + " " + item["description"]).lower()
+        if any(k in text for k in keywords):
+            selected.append(item)
+
+    result[category] = selected[:6] if selected else all_items[:6]
+
 with open("data/news.json", "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
 
-print(f"\n✅ news.json aggiornato correttamente il {datetime.now().strftime('%d/%m/%Y %H:%M')}")
+print("news.json aggiornato correttamente")
