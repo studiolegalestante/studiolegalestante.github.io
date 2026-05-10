@@ -4712,3 +4712,11 @@ body,
 #footer {
 	background-color: #111111 !important;
 }
+/* Logo principale */
+#banner .logo img.logo-giustizia {
+	width: 500px !important;
+	max-width: 95% !important;
+	height: auto !important;
+	display: block !important;
+	margin: 0 0 2em 0 !important;
+}
