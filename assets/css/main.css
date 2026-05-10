@@ -4669,3 +4669,46 @@ body,
 #footer {
 	background-color: #111111 !important;
 }
+
+/* FIX DEFINITIVO TEMA STUDIO LEGALE */
+
+#header,
+#header.alt {
+	background: #111111 !important;
+	background-color: #111111 !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+#header h1 a,
+#header nav a {
+	color: #ffffff !important;
+}
+
+#banner .logo img.logo-giustizia {
+	width: 900px !important;
+	max-width: 96% !important;
+	height: auto !important;
+	object-fit: contain !important;
+	display: block !important;
+	margin: 0 auto 2em auto !important;
+}
+
+.button,
+input[type="submit"],
+input[type="button"],
+button {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	text-align: center !important;
+	line-height: 1.2 !important;
+}
+
+body,
+#page-wrapper,
+#wrapper,
+.wrapper,
+#footer {
+	background-color: #111111 !important;
+}
