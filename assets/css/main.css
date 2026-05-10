@@ -4433,3 +4433,41 @@ p {
 		width: 240px !important;
 	}
 }
+
+/* FIX URGENTE HEADER E LOGO */
+
+/* elimina barra bianca superiore */
+#header {
+	background-color: rgba(17,17,17,0.96) !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+
+#header.alt {
+	background-color: transparent !important;
+}
+
+/* logo principale non distorto */
+.logo-giustizia {
+	width: 360px !important;
+	max-width: 90% !important;
+	height: auto !important;
+	object-fit: contain !important;
+	display: block !important;
+	margin: 0 0 2em 0 !important;
+}
+
+/* logo aree attività nel cerchio senza deformazioni */
+#two .image img {
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
+	border-radius: 100% !important;
+}
+
+/* immagini sezioni servizi non deformate */
+.features article .image img {
+	width: 100% !important;
+	height: auto !important;
+	object-fit: contain !important;
+}
