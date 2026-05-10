@@ -4471,3 +4471,44 @@ p {
 	height: auto !important;
 	object-fit: contain !important;
 }
+
+/* FIX FINALE LOGO, BOTTONI, HEADER */
+
+/* logo principale molto più grande */
+.logo-giustizia {
+	width: 720px !important;
+	max-width: 95% !important;
+	height: auto !important;
+	object-fit: contain !important;
+	display: block !important;
+	margin: 0 0 2.5em 0 !important;
+}
+
+/* bottoni con testo centrato */
+.button,
+input[type="submit"],
+input[type="button"],
+button {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	text-align: center !important;
+	line-height: 1.2 !important;
+	min-height: 3.75em !important;
+	padding: 0 2.25em !important;
+}
+
+/* elimina barra/scheda bianca durante scroll */
+#header,
+#header.alt {
+	background: rgba(17,17,17,0.96) !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+body,
+#page-wrapper,
+#wrapper,
+#footer {
+	background-color: #111111 !important;
+}
