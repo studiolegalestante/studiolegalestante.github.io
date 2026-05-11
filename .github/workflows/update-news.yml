@@ -13,19 +13,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout del codice
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+          cache: 'pip' # Ottimizza le run successive
+
+      - name: Installa dipendenze
+        run: |
+          python -m pip install --upgrade pip
+          # Aggiungi qui altre librerie se lo script ne usa di diverse
+          pip install requests beautifulsoup4 feedparser 
 
       - name: Genera news.json
-        run: python scripts/fetch_news.py
+        run: |
+          # Crea la cartella data se non esiste per evitare errori di percorso
+          mkdir -p data
+          python scripts/fetch_news.py
 
-      - name: Commit news aggiornate
+      - name: Commit e Push news aggiornate
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add data/news.json
-          git commit -m "Aggiornamento automatico news legali" || echo "Nessuna modifica"
+          # Il comando commit non blocca il workflow se non ci sono cambiamenti
+          git commit -m "Aggiornamento automatico news legali" || exit 0
           git push
