@@ -2,8 +2,9 @@ name: Aggiorna news legali
 
 on:
   schedule:
+    # Esegue il workflow ogni giorno alle 06:00 UTC
     - cron: "0 6 * * *"
-  workflow_dispatch:
+  workflow_dispatch: # Permette l'avvio manuale per test
 
 permissions:
   contents: write
@@ -23,6 +24,8 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: "3.x"
+          # Rimosso il parametro cache per evitare errori se non hai un requirements.txt
+          # Se decidi di usare la cache, assicurati di avere il file requirements.txt nella root
 
       - name: Installa dipendenze
         run: |
@@ -31,17 +34,20 @@ jobs:
 
       - name: Genera news.json
         run: |
+          # Crea la cartella data se non esiste
           mkdir -p data
+          # Esegue lo script (assicurati che il percorso sia corretto)
           python scripts/fetch_news.py
 
-      - name: Commit e push
+      - name: Commit e push dei cambiamenti
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
+          git config user.email "41898282+github-actions[bot]@://github.com"
+          
           git add data/news.json
-
+          
+          # Esegue il commit solo se ci sono effettive modifiche nel JSON
           git diff --cached --quiet || (
-            git commit -m "Aggiornamento automatico news"
+            git commit -m "Aggiornamento automatico news legali"
             git push
           )
