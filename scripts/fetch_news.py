@@ -7,35 +7,47 @@ FEEDS = {
     "penale": [
         "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
         "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=penale",
+        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
+        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
     ],
     "famiglia": [
         "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=famiglia",
         "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
+        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
     ],
     "patrocinio": [
         "https://news.avvocatoandreani.it/feed/news_giuridiche.php",
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=penale",
         "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
         "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
+        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
     ],
     "giurisprudenza": [
         "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=cassazione",
         "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=giurisprudenza-di-merito",
         "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
+        "https://feeds.feedburner.com/StudioCataldi-NewsPiuLette",
     ],
 }
 
-FAMIGLIA_KEYWORDS = [
-    "famiglia", "divorzio", "separazione", "affido", "mantenimento",
-    "matrimonio", "coniuge", "minore", "genitore", "adozione",
-    "assegno", "ex moglie", "ex marito", "figlio", "custodia",
-    "filiazione", "tutela", "convivenza", "unione civile",
-]
-
+# Solo patrocinio ha un filtro — le altre categorie usano feed già dedicati
 PATROCINIO_KEYWORDS = [
-    "patrocinio", "gratuito patrocinio", "spese dello stato",
-    "non abbiente", "ammissione al beneficio", "difesa d'ufficio",
-    "reddito ammissione", "assistenza legale gratuita", "indigente",
-    "ammissione al patrocinio", "DPR 115",
+    "patrocinio",
+    "gratuito patrocinio",
+    "spese dello stato",
+    "spese di giustizia",
+    "non abbiente",
+    "ammissione al beneficio",
+    "difensore d'ufficio",
+    "difesa d'ufficio",
+    "assistenza legale gratuita",
+    "indigente",
+    "ammissione al patrocinio",
+    "DPR 115",
+    "contributo unificato",
+    "accesso alla giustizia",
+    "reddito ammissione",
+    "soglia reddito",
 ]
 
 OUTPUT_FILE = "data/news.json"
@@ -74,6 +86,15 @@ def matches_keywords(title, desc, keywords):
     return any(kw.lower() in text for kw in keywords)
 
 
+def load_existing(category):
+    try:
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return data.get(category, [])
+    except Exception:
+        return []
+
+
 result = {}
 
 for category, urls in FEEDS.items():
@@ -96,8 +117,7 @@ for category, urls in FEEDS.items():
             if not title or not link or link in seen_links:
                 continue
 
-            if category == "famiglia" and not matches_keywords(title, desc, FAMIGLIA_KEYWORDS):
-                continue
+            # Filtro solo per patrocinio
             if category == "patrocinio" and not matches_keywords(title, desc, PATROCINIO_KEYWORDS):
                 continue
 
@@ -109,7 +129,17 @@ for category, urls in FEEDS.items():
                 "date": date,
             })
 
-    # Placeholder se patrocinio resta vuoto
+    # Se trova meno di MAX_ITEMS, integra con articoli salvati in precedenza
+    if len(items) < MAX_ITEMS:
+        print(f"  ℹ️  Solo {len(items)} articoli nuovi, integro con archivio precedente...")
+        for old in load_existing(category):
+            if len(items) >= MAX_ITEMS:
+                break
+            if old["link"] not in seen_links:
+                seen_links.add(old["link"])
+                items.append(old)
+
+    # Placeholder solo se patrocinio è ancora vuoto
     if category == "patrocinio" and not items:
         print("  ⚠️  Nessun articolo trovato, uso placeholder")
         items.append({
