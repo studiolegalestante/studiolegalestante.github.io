@@ -4,46 +4,37 @@
 	<title>News Legali | Avv. Vincenzo Stante</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 	<link rel="stylesheet" href="assets/css/main.css" />
-
 	<style>
 		html, body, #page-wrapper, #wrapper, .wrapper {
 			background: #111111 !important;
 			background-color: #111111 !important;
 		}
-
 		body {
 			font-family: 'Inter', sans-serif;
 			color: #ffffff;
 		}
-
 		#header {
 			background: #111111 !important;
 			background-color: #111111 !important;
 			border: none !important;
 			box-shadow: none !important;
 		}
-
 		#header h1 a {
 			color: #ffffff !important;
 		}
-
 		h1, h2, h3, h4 {
 			font-family: 'Cormorant Garamond', serif !important;
 			color: #ffffff !important;
 		}
-
 		.news-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
 			gap: 2rem;
 		}
-
 		.news-card {
 			background: #181818 !important;
 			border: 1px solid rgba(212,175,55,.25);
@@ -51,42 +42,64 @@
 			padding: 2rem;
 			box-shadow: 0 0 30px rgba(0,0,0,.25);
 		}
-
 		.news-item {
-			padding: 1rem 0;
+			padding: 1.2rem 0;
 			border-bottom: 1px solid rgba(255,255,255,.08);
 		}
-
 		.news-item:last-child {
 			border-bottom: none;
 		}
-
-		.news-item a {
+		.news-item a.news-title {
 			color: #fff;
 			font-weight: 600;
 			font-size: 1rem;
 			text-decoration: none;
 			border: none;
+			line-height: 1.5;
+			display: block;
 		}
-
-		.news-item a:hover {
+		.news-item a.news-title:hover {
 			color: #d4af37 !important;
 		}
-
 		.news-date {
 			display: block;
-			font-size: .82rem;
-			color: rgba(255,255,255,.5);
-			margin-top: .4rem;
+			font-size: .78rem;
+			color: rgba(212,175,55,.7);
+			margin-top: .35rem;
+			letter-spacing: .04em;
 		}
-
 		.news-desc {
 			margin-top: .6rem;
-			font-size: .92rem;
-			color: rgba(255,255,255,.75);
-			line-height: 1.7;
+			font-size: .88rem;
+			color: rgba(255,255,255,.6);
+			line-height: 1.75;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
 		}
-
+		.news-read-more {
+			display: inline-block;
+			margin-top: .5rem;
+			font-size: .8rem;
+			color: #d4af37;
+			text-decoration: none;
+			border: none;
+			letter-spacing: .03em;
+		}
+		.news-read-more:hover {
+			color: #fff !important;
+		}
+		.news-loading {
+			color: rgba(255,255,255,.4);
+			font-size: .9rem;
+			padding: 1rem 0;
+		}
+		.news-error {
+			color: rgba(255,100,100,.7);
+			font-size: .9rem;
+			padding: 1rem 0;
+		}
 		@media screen and (max-width:736px) {
 			.news-grid {
 				grid-template-columns: 1fr;
@@ -94,84 +107,84 @@
 		}
 	</style>
 </head>
-
 <body>
-
 <div id="page-wrapper">
-
 <header id="header">
 	<h1><a href="index.html">Avv. Vincenzo Stante</a></h1>
 </header>
-
 <section id="wrapper">
 	<section class="wrapper">
 		<div class="inner">
-
 			<h2 class="major">News e approfondimenti legali</h2>
-
 			<div class="news-grid">
-
 				<div class="news-card">
 					<h3>Diritto Penale</h3>
-					<div id="penale"></div>
+					<div id="penale"><p class="news-loading">Caricamento...</p></div>
 				</div>
-
 				<div class="news-card">
 					<h3>Diritto di Famiglia</h3>
-					<div id="famiglia"></div>
+					<div id="famiglia"><p class="news-loading">Caricamento...</p></div>
 				</div>
-
 				<div class="news-card">
 					<h3>Patrocinio a Spese dello Stato</h3>
-					<div id="patrocinio"></div>
+					<div id="patrocinio"><p class="news-loading">Caricamento...</p></div>
 				</div>
-
 				<div class="news-card">
 					<h3>Giurisprudenza</h3>
-					<div id="giurisprudenza"></div>
+					<div id="giurisprudenza"><p class="news-loading">Caricamento...</p></div>
 				</div>
-
 			</div>
-
 		</div>
 	</section>
 </section>
-
 </div>
-
 <script>
+function stripHtml(html) {
+	return html.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+}
+
 async function loadNews() {
-	const response = await fetch('./data/news.json');
-	const data = await response.json();
+	try {
+		const response = await fetch('./data/news.json?t=' + Date.now());
+		if (!response.ok) throw new Error('Errore nel caricamento');
+		const data = await response.json();
 
-	for (const category in data) {
-		const container = document.getElementById(category);
-		if (!container) continue;
+		for (const category in data) {
+			const container = document.getElementById(category);
+			if (!container) continue;
+			container.innerHTML = '';
 
-		container.innerHTML = '';
+			if (!data[category] || data[category].length === 0) {
+				container.innerHTML = '<p class="news-loading">Nessuna notizia disponibile.</p>';
+				continue;
+			}
 
-		data[category].forEach(item => {
-			const div = document.createElement('div');
-			div.className = 'news-item';
+			data[category].forEach(item => {
+				const div = document.createElement('div');
+				div.className = 'news-item';
 
-			const desc = (item.description || '').replace(/<[^>]*>/g,'').substring(0,180);
+				const desc = stripHtml(item.description || '');
 
-			div.innerHTML = `
-				<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
-				<span class="news-date">${item.date || ''}</span>
-				<div class="news-desc">${desc}...</div>
-			`;
-
-			container.appendChild(div);
+				div.innerHTML = `
+					<a class="news-title" href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
+					<span class="news-date">${item.date || ''}</span>
+					<div class="news-desc">${desc}</div>
+					<a class="news-read-more" href="${item.link}" target="_blank" rel="noopener noreferrer">Leggi l'articolo →</a>
+				`;
+				container.appendChild(div);
+			});
+		}
+	} catch (e) {
+		document.querySelectorAll('.news-loading').forEach(el => {
+			el.className = 'news-error';
+			el.textContent = 'Impossibile caricare le notizie.';
 		});
 	}
 }
 
 loadNews();
 </script>
-
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/main.js"></script>
-
 </body>
 </html>
