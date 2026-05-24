@@ -2,6 +2,8 @@ name: Aggiorna news legali
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *'   # opzionale: esegui ogni giorno alle 06:00 UTC
 
 permissions:
   contents: write
@@ -9,17 +11,27 @@ permissions:
 jobs:
   update-news:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout del repository
+        uses: actions/checkout@v4
+
+      - name: Configura Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-      - run: pip install requests beautifulsoup4 feedparser
-      - run: |
+
+      - name: Installa dipendenze
+        run: pip install requests beautifulsoup4 feedparser
+
+      - name: Scarica le news
+        run: |
           mkdir -p data
           python scripts/fetch_news.py
-      - run: |
+
+      - name: Commit e push se ci sono modifiche
+        run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@://github.com"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/news.json
-          git diff --cached --quiet || (git commit -m "Update news" && git push)
+          git diff --cached --quiet && echo "Nessuna modifica" || git commit -m "Update news [skip ci]" && git push
