@@ -39,6 +39,12 @@
   ],
   "famiglia": [
     {
+      "title": "Scordati la pensione di tuo padre: che pensione prenderai davvero?",
+      "link": "https://www.studiocataldi.it/articoli/48216-scordati-la-pensione-di-tuo-padre-che-pensione-prenderai-davvero.asp",
+      "description": "<img align=\"left\" src=\"https://www.studiocataldi.it/images/imgnews/anziana_pensione_futuro-id27093.jpg\" width=\"300\" /> Per anni abbiamo pensato alla pensione come a un traguardo naturale: lavori, versi contributi, arrivi",
+      "date": "24/05/2026"
+    },
+    {
       "title": "Malattie professionali: quando parte la prescrizione del risarcimento",
       "link": "https://www.studiocataldi.it/articoli/48219-malattie-professionali-quando-parte-la-prescrizione-del-risarcimento.asp",
       "description": "<img align=\"left\" src=\"https://www.studiocataldi.it/images/imgnews/frattura-id0.jpg\" width=\"300\" /> In tema di malattie professionali, il termine di prescrizione non inizia automaticamente con la diagnosi, ma dal momento",
@@ -63,7 +69,14 @@
       "date": "04/05/2026"
     }
   ],
-  "patrocinio": [],
+  "patrocinio": [
+    {
+      "title": "Patrocinio a spese dello Stato: guida completa",
+      "link": "https://www.studiocataldi.it/articoli/15377-gratuito-patrocinio-guida-e-fac-simile-dell-istanza.asp",
+      "description": "Il gratuito patrocinio consente alle persone non abbienti di essere assistite da un avvocato con spese a carico dello Stato. Guida ai requisiti e alla procedura di ammissione.",
+      "date": "24/05/2026"
+    }
+  ],
   "giurisprudenza": [
     {
       "title": "Soccorso stradale e rimozione veicoli: preventiva autorizzazione",
