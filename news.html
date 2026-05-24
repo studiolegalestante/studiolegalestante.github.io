@@ -1,207 +1,200 @@
-<!DOCTYPE HTML>
-<html lang="it">
-<head>
-	<title>News Legali | Avv. Vincenzo Stante</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<style>
-		html, body, #page-wrapper, #wrapper, .wrapper {
-			background: #111111 !important;
-			background-color: #111111 !important;
-		}
-		body {
-			font-family: 'Inter', sans-serif;
-			color: #ffffff;
-		}
-		#header {
-			background: #111111 !important;
-			background-color: #111111 !important;
-			border: none !important;
-			box-shadow: none !important;
-		}
-		#header h1 a {
-			color: #ffffff !important;
-		}
-		h1, h2, h3, h4 {
-			font-family: 'Cormorant Garamond', serif !important;
-			color: #ffffff !important;
-		}
-		.news-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-			gap: 2rem;
-		}
-		.news-card {
-			background: #181818 !important;
-			border: 1px solid rgba(212,175,55,.25);
-			border-radius: 16px;
-			padding: 2rem;
-			box-shadow: 0 0 30px rgba(0,0,0,.25);
-		}
-		.news-item {
-			display: flex;
-			flex-direction: column;
-			padding: 1.2rem 0;
-			border-bottom: 1px solid rgba(255,255,255,.08);
-		}
-		.news-item:last-child {
-			border-bottom: none;
-		}
-		.news-item a.news-title {
-			color: #fff;
-			font-weight: 600;
-			font-size: 1rem;
-			text-decoration: none;
-			border: none;
-			line-height: 1.5;
-			display: block;
-		}
-		.news-item a.news-title:hover {
-			color: #d4af37 !important;
-		}
-		.news-date {
-			display: block;
-			font-size: .78rem;
-			color: rgba(212,175,55,.7);
-			margin-top: .35rem;
-			letter-spacing: .04em;
-		}
-		.news-desc {
-			margin-top: .6rem;
-			font-size: .88rem;
-			color: rgba(255,255,255,.6);
-			line-height: 1.75;
-			overflow: hidden;
-		}
-		.news-desc img {
-			width: 100%;
-			border-radius: 8px;
-			margin: 0.6rem 0;
-			display: block;
-			object-fit: cover;
-			max-height: 200px;
-		}
-		.news-read-more {
-			display: inline-block;
-			margin-top: .6rem;
-			font-size: .8rem;
-			color: #d4af37;
-			text-decoration: none;
-			border: none;
-			letter-spacing: .03em;
-			position: relative;
-			z-index: 1;
-		}
-		.news-read-more:hover {
-			color: #fff !important;
-		}
-		.news-loading {
-			color: rgba(255,255,255,.4);
-			font-size: .9rem;
-			padding: 1rem 0;
-		}
-		.news-error {
-			color: rgba(255,100,100,.7);
-			font-size: .9rem;
-			padding: 1rem 0;
-		}
-		@media screen and (max-width:736px) {
-			.news-grid {
-				grid-template-columns: 1fr;
-			}
-		}
-	</style>
-</head>
-<body>
-<div id="page-wrapper">
-<header id="header">
-	<h1><a href="index.html">Avv. Vincenzo Stante</a></h1>
-</header>
-<section id="wrapper">
-	<section class="wrapper">
-		<div class="inner">
-			<h2 class="major">News e approfondimenti legali</h2>
-			<div class="news-grid">
-				<div class="news-card">
-					<h3>Diritto Penale</h3>
-					<div id="penale"><p class="news-loading">Caricamento...</p></div>
-				</div>
-				<div class="news-card">
-					<h3>Diritto di Famiglia</h3>
-					<div id="famiglia"><p class="news-loading">Caricamento...</p></div>
-				</div>
-				<div class="news-card">
-					<h3>Patrocinio a Spese dello Stato</h3>
-					<div id="patrocinio"><p class="news-loading">Caricamento...</p></div>
-				</div>
-				<div class="news-card">
-					<h3>Giurisprudenza</h3>
-					<div id="giurisprudenza"><p class="news-loading">Caricamento...</p></div>
-				</div>
-			</div>
-		</div>
-	</section>
-</section>
-</div>
-<script>
-function cleanHtml(html) {
-	// Mantieni i tag img con src e alt, rimuovi tutto il resto
-	return html
-		.replace(/<img([^>]*)>/gi, (match, attrs) => {
-			const src = (attrs.match(/src=["']([^"']*)["']/i) || [])[1] || '';
-			const alt = (attrs.match(/alt=["']([^"']*)["']/i) || [])[1] || '';
-			if (!src) return '';
-			return `<img src="${src}" alt="${alt}">`;
-		})
-		.replace(/<[^>]*>/g, '')
-		.replace(/\s+/g, ' ')
-		.trim();
+import json
+import feedparser
+import re
+from datetime import datetime
+import sys
+
+FEEDS = {
+    "penale": [
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=penale",
+        "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
+        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
+        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
+    ],
+    "famiglia": [
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=famiglia",
+        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
+        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
+    ],
+    "patrocinio": [
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php",
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=penale",
+        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
+        "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
+        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
+    ],
+    "giurisprudenza": [
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=cassazione",
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=giurisprudenza-di-merito",
+        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
+        "https://feeds.feedburner.com/StudioCataldi-NewsPiuLette",
+    ],
 }
 
-async function loadNews() {
-	try {
-		const response = await fetch('./data/news.json?t=' + Date.now());
-		if (!response.ok) throw new Error('Errore nel caricamento');
-		const data = await response.json();
+PATROCINIO_KEYWORDS = [
+    "patrocinio",
+    "gratuito patrocinio",
+    "spese dello stato",
+    "spese di giustizia",
+    "non abbiente",
+    "ammissione al beneficio",
+    "difensore d'ufficio",
+    "difesa d'ufficio",
+    "assistenza legale gratuita",
+    "indigente",
+    "ammissione al patrocinio",
+    "DPR 115",
+    "contributo unificato",
+    "accesso alla giustizia",
+    "reddito ammissione",
+    "soglia reddito",
+]
 
-		for (const category in data) {
-			const container = document.getElementById(category);
-			if (!container) continue;
-			container.innerHTML = '';
+PATROCINIO_FALLBACK = [
+    {
+        "title": "Patrocinio a spese dello Stato: requisiti e come richiederlo",
+        "link": "https://www.studiocataldi.it/articoli/15377-gratuito-patrocinio-guida-e-fac-simile-dell-istanza.asp",
+        "image": "",
+        "description": "Il gratuito patrocinio consente alle persone non abbienti di essere assistite da un avvocato con spese a carico dello Stato. Guida ai requisiti reddituali e alla procedura.",
+        "date": "01/01/2025",
+    },
+    {
+        "title": "Gratuito patrocinio: la soglia di reddito aggiornata",
+        "link": "https://www.studiocataldi.it/articoli/36107-limite-reddito-gratuito-patrocinio.asp",
+        "image": "",
+        "description": "La soglia di reddito per l'ammissione al patrocinio a spese dello Stato è aggiornata periodicamente. Chi non supera il limite ha diritto all'assistenza legale gratuita.",
+        "date": "01/01/2025",
+    },
+    {
+        "title": "Patrocinio a spese dello Stato anche per lo straniero",
+        "link": "https://www.studiocataldi.it/articoli/28738-patrocinio-a-spese-dello-stato-anche-per-lo-straniero.asp",
+        "image": "",
+        "description": "Il gratuito patrocinio spetta anche ai cittadini stranieri regolarmente soggiornanti in Italia, purché in possesso dei requisiti reddituali previsti dal DPR 115/2002.",
+        "date": "01/01/2025",
+    },
+    {
+        "title": "Gratuito patrocinio: l'istanza si presenta al Consiglio dell'Ordine",
+        "link": "https://www.studiocataldi.it/articoli/14619-gratuito-patrocinio.asp",
+        "image": "",
+        "description": "Per essere ammessi al patrocinio a spese dello Stato occorre presentare apposita istanza al Consiglio dell'Ordine degli Avvocati competente, allegando la documentazione reddituale.",
+        "date": "01/01/2025",
+    },
+]
 
-			if (!data[category] || data[category].length === 0) {
-				container.innerHTML = '<p class="news-loading">Nessuna notizia disponibile.</p>';
-				continue;
-			}
+OUTPUT_FILE = "data/news.json"
+MAX_ITEMS = 6
 
-			data[category].forEach(item => {
-				const div = document.createElement('div');
-				div.className = 'news-item';
-				const desc = cleanHtml(item.description || '');
-				div.innerHTML = `
-					<a class="news-title" href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
-					<span class="news-date">${item.date || ''}</span>
-					<div class="news-desc">${desc}</div>
-					<a class="news-read-more" href="${item.link}" target="_blank" rel="noopener noreferrer">Leggi l'articolo →</a>
-				`;
-				container.appendChild(div);
-			});
-		}
-	} catch (e) {
-		document.querySelectorAll('.news-loading').forEach(el => {
-			el.className = 'news-error';
-			el.textContent = 'Impossibile caricare le notizie.';
-		});
-	}
-}
 
-loadNews();
-</script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+def clean(text):
+    return " ".join((text or "").replace("\n", " ").split())
+
+
+def extract_image(text):
+    match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', text)
+    return match.group(1) if match else ""
+
+
+def extract_text(text):
+    clean_text = re.sub(r'<[^>]+>', '', text)
+    return " ".join(clean_text.split())
+
+
+def parse_date(entry):
+    if hasattr(entry, "published_parsed") and entry.published_parsed:
+        try:
+            dt = datetime(*entry.published_parsed[:6])
+            return dt.strftime("%d/%m/%Y")
+        except Exception:
+            pass
+    return datetime.now().strftime("%d/%m/%Y")
+
+
+def fetch_feed(url):
+    try:
+        feed = feedparser.parse(url)
+        if feed.bozo and not feed.entries:
+            print(f"  ⚠️  Feed vuoto o non valido: {url}", file=sys.stderr)
+            return []
+        print(f"  ✅ {len(feed.entries)} articoli da {url}")
+        return feed.entries
+    except Exception as e:
+        print(f"  ❌ Errore su {url}: {e}", file=sys.stderr)
+        return []
+
+
+def matches_keywords(title, desc, keywords):
+    text = (title + " " + desc).lower()
+    return any(kw.lower() in text for kw in keywords)
+
+
+def load_existing(category):
+    try:
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return data.get(category, [])
+    except Exception:
+        return []
+
+
+result = {}
+
+for category, urls in FEEDS.items():
+    print(f"\n📂 Categoria: {category}")
+    items = []
+    seen_links = set()
+
+    for url in urls:
+        if len(items) >= MAX_ITEMS:
+            break
+        for entry in fetch_feed(url):
+            if len(items) >= MAX_ITEMS:
+                break
+
+            title = clean(getattr(entry, "title", ""))
+            link  = clean(getattr(entry, "link", ""))
+            raw   = clean(getattr(entry, "summary", ""))
+            date  = parse_date(entry)
+
+            if not title or not link or link in seen_links:
+                continue
+
+            if category == "patrocinio" and not matches_keywords(title, raw, PATROCINIO_KEYWORDS):
+                continue
+
+            seen_links.add(link)
+            items.append({
+                "title": title,
+                "link": link,
+                "image": extract_image(raw),
+                "description": extract_text(raw)[:400],
+                "date": date,
+            })
+
+    # Integra con articoli salvati in precedenza se mancano pezzi
+    if len(items) < MAX_ITEMS:
+        print(f"  ℹ️  Solo {len(items)} articoli nuovi, integro con archivio precedente...")
+        for old in load_existing(category):
+            if len(items) >= MAX_ITEMS:
+                break
+            if old["link"] not in seen_links:
+                seen_links.add(old["link"])
+                items.append(old)
+
+    # Per patrocinio usa i fallback fissi se ancora non basta
+    if category == "patrocinio" and len(items) < MAX_ITEMS:
+        print(f"  ℹ️  Integro con articoli di fallback fissi...")
+        for fb in PATROCINIO_FALLBACK:
+            if len(items) >= MAX_ITEMS:
+                break
+            if fb["link"] not in seen_links:
+                seen_links.add(fb["link"])
+                items.append(fb)
+
+    result[category] = items
+    print(f"  → {len(items)} articoli salvati")
+
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(result, f, ensure_ascii=False, indent=2)
+
+totale = sum(len(v) for v in result.values())
+print(f"\n✅ Salvato {OUTPUT_FILE} con {totale} articoli totali")
