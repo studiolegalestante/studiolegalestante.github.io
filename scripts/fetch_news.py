@@ -3,29 +3,38 @@ import feedparser
 from datetime import datetime
 import sys
 
-# ---------------------------------------------------------------
-# Feed RSS verificati da studiocataldi.it
-# Per "patrocinio" non esiste un feed dedicato:
-# usiamo il feed personalizzato per parola chiave offerto dal sito
-# ---------------------------------------------------------------
 FEEDS = {
     "penale": [
         "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
     ],
     "famiglia": [
-        "https://feedproxy.google.com/studiocataldi/xgJp",        # Diritto di famiglia (ufficiale)
-        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",  # fallback generale
+        # Il feed dedicato famiglia è morto, usiamo il generale + filtro
+        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
+        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
     ],
     "patrocinio": [
-        # Feed personalizzato per parola chiave "patrocinio" offerto da studiocataldi.it
-        "https://www.studiocataldi.it/rss/rssnotizie.asp?q=patrocinio+spese+stato&t=0",
-        "https://www.studiocataldi.it/rss/rssnotizie.asp?q=gratuito+patrocinio&t=0",
+        # Non esiste feed dedicato: prendiamo dal generale e filtriamo
+        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
+        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
+        "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
     ],
     "giurisprudenza": [
-        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",          # Prima pagina
-        "https://feedproxy.google.com/StudioCataldi-SentenzeCassazione",   # Sentenze Cassazione
+        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
+        "https://feeds.feedburner.com/StudioCataldi-NewsPiuLette",
     ],
 }
+
+# Parole chiave per filtrare la categoria patrocinio
+PATROCINIO_KEYWORDS = [
+    "patrocinio", "gratuito patrocinio", "spese dello stato",
+    "non abbiente", "reddito ammissione"
+]
+
+# Parole chiave per filtrare la categoria famiglia
+FAMIGLIA_KEYWORDS = [
+    "famiglia", "divorzio", "separazione", "affido", "mantenimento",
+    "matrimonio", "coniuge", "minore", "genitore", "adozione"
+]
 
 OUTPUT_FILE = "data/news.json"
 MAX_ITEMS = 6
@@ -58,6 +67,11 @@ def fetch_feed(url):
         return []
 
 
+def matches_keywords(title, desc, keywords):
+    text = (title + " " + desc).lower()
+    return any(kw.lower() in text for kw in keywords)
+
+
 result = {}
 
 for category, urls in FEEDS.items():
@@ -71,12 +85,21 @@ for category, urls in FEEDS.items():
         for entry in fetch_feed(url):
             if len(items) >= MAX_ITEMS:
                 break
+
             title = clean(getattr(entry, "title", ""))
             link  = clean(getattr(entry, "link", ""))
             desc  = clean(getattr(entry, "summary", ""))
             date  = parse_date(entry)
 
             if not title or not link or link in seen_links:
+                continue
+
+            # Filtro per categoria patrocinio
+            if category == "patrocinio" and not matches_keywords(title, desc, PATROCINIO_KEYWORDS):
+                continue
+
+            # Filtro per categoria famiglia (solo sui feed generali)
+            if category == "famiglia" and not matches_keywords(title, desc, FAMIGLIA_KEYWORDS):
                 continue
 
             seen_links.add(link)
@@ -96,8 +119,3 @@ with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
 
 totale = sum(len(v) for v in result.values())
 print(f"\n✅ Salvato {OUTPUT_FILE} con {totale} articoli totali")
-
-with open("data/news.json", "w", encoding="utf-8") as f:
-    json.dump(result, f, ensure_ascii=False, indent=2)
-
-print("news.json aggiornato")
