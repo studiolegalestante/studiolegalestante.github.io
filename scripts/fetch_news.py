@@ -1,11 +1,12 @@
 import json
 import feedparser
+import re
 from datetime import datetime
 import sys
 
 FEEDS = {
     "penale": [
-        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=penale",  # aggiornato spesso
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=penale",
         "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
         "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
         "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
@@ -53,24 +54,28 @@ PATROCINIO_FALLBACK = [
     {
         "title": "Patrocinio a spese dello Stato: requisiti e come richiederlo",
         "link": "https://www.studiocataldi.it/articoli/15377-gratuito-patrocinio-guida-e-fac-simile-dell-istanza.asp",
+        "image": "",
         "description": "Il gratuito patrocinio consente alle persone non abbienti di essere assistite da un avvocato con spese a carico dello Stato. Guida ai requisiti reddituali e alla procedura.",
         "date": "01/01/2025",
     },
     {
         "title": "Gratuito patrocinio: la soglia di reddito aggiornata",
         "link": "https://www.studiocataldi.it/articoli/36107-limite-reddito-gratuito-patrocinio.asp",
+        "image": "",
         "description": "La soglia di reddito per l'ammissione al patrocinio a spese dello Stato è aggiornata periodicamente. Chi non supera il limite ha diritto all'assistenza legale gratuita.",
         "date": "01/01/2025",
     },
     {
         "title": "Patrocinio a spese dello Stato anche per lo straniero",
         "link": "https://www.studiocataldi.it/articoli/28738-patrocinio-a-spese-dello-stato-anche-per-lo-straniero.asp",
+        "image": "",
         "description": "Il gratuito patrocinio spetta anche ai cittadini stranieri regolarmente soggiornanti in Italia, purché in possesso dei requisiti reddituali previsti dal DPR 115/2002.",
         "date": "01/01/2025",
     },
     {
         "title": "Gratuito patrocinio: l'istanza si presenta al Consiglio dell'Ordine",
         "link": "https://www.studiocataldi.it/articoli/14619-gratuito-patrocinio.asp",
+        "image": "",
         "description": "Per essere ammessi al patrocinio a spese dello Stato occorre presentare apposita istanza al Consiglio dell'Ordine degli Avvocati competente, allegando la documentazione reddituale.",
         "date": "01/01/2025",
     },
@@ -82,6 +87,16 @@ MAX_ITEMS = 6
 
 def clean(text):
     return " ".join((text or "").replace("\n", " ").split())
+
+
+def extract_image(text):
+    match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', text)
+    return match.group(1) if match else ""
+
+
+def extract_text(text):
+    clean_text = re.sub(r'<[^>]+>', '', text)
+    return " ".join(clean_text.split())
 
 
 def parse_date(entry):
@@ -137,21 +152,21 @@ for category, urls in FEEDS.items():
 
             title = clean(getattr(entry, "title", ""))
             link  = clean(getattr(entry, "link", ""))
-            desc  = clean(getattr(entry, "summary", ""))
+            raw   = clean(getattr(entry, "summary", ""))
             date  = parse_date(entry)
 
             if not title or not link or link in seen_links:
                 continue
 
-            # Filtro solo per patrocinio
-            if category == "patrocinio" and not matches_keywords(title, desc, PATROCINIO_KEYWORDS):
+            if category == "patrocinio" and not matches_keywords(title, raw, PATROCINIO_KEYWORDS):
                 continue
 
             seen_links.add(link)
             items.append({
                 "title": title,
                 "link": link,
-                "description": desc[:220],
+                "image": extract_image(raw),
+                "description": extract_text(raw)[:400],
                 "date": date,
             })
 
