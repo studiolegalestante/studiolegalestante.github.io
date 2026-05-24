@@ -43,6 +43,8 @@
 			box-shadow: 0 0 30px rgba(0,0,0,.25);
 		}
 		.news-item {
+			display: flex;
+			flex-direction: column;
 			padding: 1.2rem 0;
 			border-bottom: 1px solid rgba(255,255,255,.08);
 		}
@@ -73,19 +75,22 @@
 			font-size: .88rem;
 			color: rgba(255,255,255,.6);
 			line-height: 1.75;
+			height: calc(1.75em * 3);
+			overflow: hidden;
 			display: -webkit-box;
 			-webkit-line-clamp: 3;
 			-webkit-box-orient: vertical;
-			overflow: hidden;
 		}
 		.news-read-more {
 			display: inline-block;
-			margin-top: .5rem;
+			margin-top: .6rem;
 			font-size: .8rem;
 			color: #d4af37;
 			text-decoration: none;
 			border: none;
 			letter-spacing: .03em;
+			position: relative;
+			z-index: 1;
 		}
 		.news-read-more:hover {
 			color: #fff !important;
@@ -162,9 +167,7 @@ async function loadNews() {
 			data[category].forEach(item => {
 				const div = document.createElement('div');
 				div.className = 'news-item';
-
 				const desc = stripHtml(item.description || '');
-
 				div.innerHTML = `
 					<a class="news-title" href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
 					<span class="news-date">${item.date || ''}</span>
