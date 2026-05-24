@@ -6,34 +6,36 @@ import sys
 FEEDS = {
     "penale": [
         "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=penale",
     ],
     "famiglia": [
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=famiglia",
         "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
-        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
     ],
     "patrocinio": [
-        # Altalex - fonte alternativa affidabile con copertura su gratuito patrocinio
-        "https://www.altalex.com/rss",
-        # Fallback: feed penale (il patrocinio è spesso trattato in ambito penale)
-        "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php",
         "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
+        "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
     ],
     "giurisprudenza": [
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=cassazione",
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=giurisprudenza-di-merito",
         "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
-        "https://feeds.feedburner.com/StudioCataldi-NewsPiuLette",
     ],
 }
 
 FAMIGLIA_KEYWORDS = [
     "famiglia", "divorzio", "separazione", "affido", "mantenimento",
     "matrimonio", "coniuge", "minore", "genitore", "adozione",
-    "assegno", "ex moglie", "ex marito", "figlio", "custodia"
+    "assegno", "ex moglie", "ex marito", "figlio", "custodia",
+    "filiazione", "tutela", "convivenza", "unione civile",
 ]
 
 PATROCINIO_KEYWORDS = [
     "patrocinio", "gratuito patrocinio", "spese dello stato",
     "non abbiente", "ammissione al beneficio", "difesa d'ufficio",
-    "reddito ammissione", "assistenza legale gratuita"
+    "reddito ammissione", "assistenza legale gratuita", "indigente",
+    "ammissione al patrocinio", "DPR 115",
 ]
 
 OUTPUT_FILE = "data/news.json"
@@ -94,7 +96,6 @@ for category, urls in FEEDS.items():
             if not title or not link or link in seen_links:
                 continue
 
-            # Filtro parole chiave solo per famiglia e patrocinio
             if category == "famiglia" and not matches_keywords(title, desc, FAMIGLIA_KEYWORDS):
                 continue
             if category == "patrocinio" and not matches_keywords(title, desc, PATROCINIO_KEYWORDS):
@@ -108,7 +109,7 @@ for category, urls in FEEDS.items():
                 "date": date,
             })
 
-    # Se patrocinio è ancora vuoto, metti un articolo placeholder
+    # Placeholder se patrocinio resta vuoto
     if category == "patrocinio" and not items:
         print("  ⚠️  Nessun articolo trovato, uso placeholder")
         items.append({
