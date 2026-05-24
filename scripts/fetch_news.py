@@ -5,8 +5,8 @@ import sys
 
 FEEDS = {
     "penale": [
+        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=penale",  # aggiornato spesso
         "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
-        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=penale",
         "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
         "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
     ],
@@ -30,7 +30,6 @@ FEEDS = {
     ],
 }
 
-# Solo patrocinio ha un filtro — le altre categorie usano feed già dedicati
 PATROCINIO_KEYWORDS = [
     "patrocinio",
     "gratuito patrocinio",
@@ -48,6 +47,33 @@ PATROCINIO_KEYWORDS = [
     "accesso alla giustizia",
     "reddito ammissione",
     "soglia reddito",
+]
+
+PATROCINIO_FALLBACK = [
+    {
+        "title": "Patrocinio a spese dello Stato: requisiti e come richiederlo",
+        "link": "https://www.studiocataldi.it/articoli/15377-gratuito-patrocinio-guida-e-fac-simile-dell-istanza.asp",
+        "description": "Il gratuito patrocinio consente alle persone non abbienti di essere assistite da un avvocato con spese a carico dello Stato. Guida ai requisiti reddituali e alla procedura.",
+        "date": "01/01/2025",
+    },
+    {
+        "title": "Gratuito patrocinio: la soglia di reddito aggiornata",
+        "link": "https://www.studiocataldi.it/articoli/36107-limite-reddito-gratuito-patrocinio.asp",
+        "description": "La soglia di reddito per l'ammissione al patrocinio a spese dello Stato è aggiornata periodicamente. Chi non supera il limite ha diritto all'assistenza legale gratuita.",
+        "date": "01/01/2025",
+    },
+    {
+        "title": "Patrocinio a spese dello Stato anche per lo straniero",
+        "link": "https://www.studiocataldi.it/articoli/28738-patrocinio-a-spese-dello-stato-anche-per-lo-straniero.asp",
+        "description": "Il gratuito patrocinio spetta anche ai cittadini stranieri regolarmente soggiornanti in Italia, purché in possesso dei requisiti reddituali previsti dal DPR 115/2002.",
+        "date": "01/01/2025",
+    },
+    {
+        "title": "Gratuito patrocinio: l'istanza si presenta al Consiglio dell'Ordine",
+        "link": "https://www.studiocataldi.it/articoli/14619-gratuito-patrocinio.asp",
+        "description": "Per essere ammessi al patrocinio a spese dello Stato occorre presentare apposita istanza al Consiglio dell'Ordine degli Avvocati competente, allegando la documentazione reddituale.",
+        "date": "01/01/2025",
+    },
 ]
 
 OUTPUT_FILE = "data/news.json"
@@ -129,7 +155,7 @@ for category, urls in FEEDS.items():
                 "date": date,
             })
 
-    # Se trova meno di MAX_ITEMS, integra con articoli salvati in precedenza
+    # Integra con articoli salvati in precedenza se mancano pezzi
     if len(items) < MAX_ITEMS:
         print(f"  ℹ️  Solo {len(items)} articoli nuovi, integro con archivio precedente...")
         for old in load_existing(category):
@@ -139,15 +165,15 @@ for category, urls in FEEDS.items():
                 seen_links.add(old["link"])
                 items.append(old)
 
-    # Placeholder solo se patrocinio è ancora vuoto
-    if category == "patrocinio" and not items:
-        print("  ⚠️  Nessun articolo trovato, uso placeholder")
-        items.append({
-            "title": "Patrocinio a spese dello Stato: guida completa",
-            "link": "https://www.studiocataldi.it/articoli/15377-gratuito-patrocinio-guida-e-fac-simile-dell-istanza.asp",
-            "description": "Il gratuito patrocinio consente alle persone non abbienti di essere assistite da un avvocato con spese a carico dello Stato. Guida ai requisiti e alla procedura di ammissione.",
-            "date": datetime.now().strftime("%d/%m/%Y"),
-        })
+    # Per patrocinio usa i fallback fissi se ancora non basta
+    if category == "patrocinio" and len(items) < MAX_ITEMS:
+        print(f"  ℹ️  Integro con articoli di fallback fissi...")
+        for fb in PATROCINIO_FALLBACK:
+            if len(items) >= MAX_ITEMS:
+                break
+            if fb["link"] not in seen_links:
+                seen_links.add(fb["link"])
+                items.append(fb)
 
     result[category] = items
     print(f"  → {len(items)} articoli salvati")
