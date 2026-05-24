@@ -8,15 +8,15 @@ FEEDS = {
         "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
     ],
     "famiglia": [
-        # Il feed dedicato famiglia è morto, usiamo il generale + filtro
         "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
         "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
     ],
     "patrocinio": [
-        # Non esiste feed dedicato: prendiamo dal generale e filtriamo
-        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
-        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
+        # Altalex - fonte alternativa affidabile con copertura su gratuito patrocinio
+        "https://www.altalex.com/rss",
+        # Fallback: feed penale (il patrocinio è spesso trattato in ambito penale)
         "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
+        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
     ],
     "giurisprudenza": [
         "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
@@ -24,16 +24,16 @@ FEEDS = {
     ],
 }
 
-# Parole chiave per filtrare la categoria patrocinio
-PATROCINIO_KEYWORDS = [
-    "patrocinio", "gratuito patrocinio", "spese dello stato",
-    "non abbiente", "reddito ammissione"
-]
-
-# Parole chiave per filtrare la categoria famiglia
 FAMIGLIA_KEYWORDS = [
     "famiglia", "divorzio", "separazione", "affido", "mantenimento",
-    "matrimonio", "coniuge", "minore", "genitore", "adozione"
+    "matrimonio", "coniuge", "minore", "genitore", "adozione",
+    "assegno", "ex moglie", "ex marito", "figlio", "custodia"
+]
+
+PATROCINIO_KEYWORDS = [
+    "patrocinio", "gratuito patrocinio", "spese dello stato",
+    "non abbiente", "ammissione al beneficio", "difesa d'ufficio",
+    "reddito ammissione", "assistenza legale gratuita"
 ]
 
 OUTPUT_FILE = "data/news.json"
@@ -94,12 +94,10 @@ for category, urls in FEEDS.items():
             if not title or not link or link in seen_links:
                 continue
 
-            # Filtro per categoria patrocinio
-            if category == "patrocinio" and not matches_keywords(title, desc, PATROCINIO_KEYWORDS):
-                continue
-
-            # Filtro per categoria famiglia (solo sui feed generali)
+            # Filtro parole chiave solo per famiglia e patrocinio
             if category == "famiglia" and not matches_keywords(title, desc, FAMIGLIA_KEYWORDS):
+                continue
+            if category == "patrocinio" and not matches_keywords(title, desc, PATROCINIO_KEYWORDS):
                 continue
 
             seen_links.add(link)
@@ -110,10 +108,19 @@ for category, urls in FEEDS.items():
                 "date": date,
             })
 
+    # Se patrocinio è ancora vuoto, metti un articolo placeholder
+    if category == "patrocinio" and not items:
+        print("  ⚠️  Nessun articolo trovato, uso placeholder")
+        items.append({
+            "title": "Patrocinio a spese dello Stato: guida completa",
+            "link": "https://www.studiocataldi.it/articoli/15377-gratuito-patrocinio-guida-e-fac-simile-dell-istanza.asp",
+            "description": "Il gratuito patrocinio consente alle persone non abbienti di essere assistite da un avvocato con spese a carico dello Stato. Guida ai requisiti e alla procedura di ammissione.",
+            "date": datetime.now().strftime("%d/%m/%Y"),
+        })
+
     result[category] = items
     print(f"  → {len(items)} articoli salvati")
 
-# Salva il file JSON
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
 
