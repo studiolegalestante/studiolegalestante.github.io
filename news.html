@@ -75,11 +75,15 @@
 			font-size: .88rem;
 			color: rgba(255,255,255,.6);
 			line-height: 1.75;
-			height: calc(1.75em * 3);
 			overflow: hidden;
-			display: -webkit-box;
-			-webkit-line-clamp: 3;
-			-webkit-box-orient: vertical;
+		}
+		.news-desc img {
+			width: 100%;
+			border-radius: 8px;
+			margin: 0.6rem 0;
+			display: block;
+			object-fit: cover;
+			max-height: 200px;
 		}
 		.news-read-more {
 			display: inline-block;
@@ -144,8 +148,18 @@
 </section>
 </div>
 <script>
-function stripHtml(html) {
-	return html.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+function cleanHtml(html) {
+	// Mantieni i tag img con src e alt, rimuovi tutto il resto
+	return html
+		.replace(/<img([^>]*)>/gi, (match, attrs) => {
+			const src = (attrs.match(/src=["']([^"']*)["']/i) || [])[1] || '';
+			const alt = (attrs.match(/alt=["']([^"']*)["']/i) || [])[1] || '';
+			if (!src) return '';
+			return `<img src="${src}" alt="${alt}">`;
+		})
+		.replace(/<[^>]*>/g, '')
+		.replace(/\s+/g, ' ')
+		.trim();
 }
 
 async function loadNews() {
@@ -167,7 +181,7 @@ async function loadNews() {
 			data[category].forEach(item => {
 				const div = document.createElement('div');
 				div.className = 'news-item';
-				const desc = stripHtml(item.description || '');
+				const desc = cleanHtml(item.description || '');
 				div.innerHTML = `
 					<a class="news-title" href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
 					<span class="news-date">${item.date || ''}</span>
