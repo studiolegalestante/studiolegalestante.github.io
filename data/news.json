@@ -89,13 +89,6 @@
   ],
   "patrocinio": [
     {
-      "title": "Inerzia del giudice nella liquidazione dei compensi al difensore d'ufficio: i rimedi",
-      "link": "https://news.avvocatoandreani.it/articoli/inerzia-giudice-liquidazione-compensi-difensore-ufficio-rimedi-108703.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/soldi/decreto-liquidazione-compenso-difensore_large.webp",
-      "description": "Avv. Giovanni Iaria. La problematica dei ritardi e delle omissioni da parte degli uffici giudiziari nella liquidazione dei compensi spettanti ai difensori d'ufficio rappresenta una criticità ricorrente nel sistema giustizia, che costringe i professionisti a intraprendere onerose azioni legali per veder riconosciuto un proprio diritto. La questione emerge con particolare evidenza nei casi in cui l'",
-      "date": "28/05/2026"
-    },
-    {
       "title": "Difensore d'ufficio: l'opposizione al decreto di liquidazione è esente da imposta di registro",
       "link": "https://news.avvocatoandreani.it/articoli/difensore-ufficio-opposizione-decreto-liquidazione-esente-imposta-registro-108695.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/patrocinio-toga.soldi-aula-martelletto_large.webp",
@@ -117,6 +110,13 @@
       "date": "01/04/2026"
     },
     {
+      "title": "Inerzia del giudice nella liquidazione dei compensi al difensore d'ufficio: i rimedi",
+      "link": "https://news.avvocatoandreani.it/articoli/inerzia-giudice-liquidazione-compensi-difensore-ufficio-rimedi-108703.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/soldi/decreto-liquidazione-compenso-difensore_large.webp",
+      "description": "Avv. Giovanni Iaria. La problematica dei ritardi e delle omissioni da parte degli uffici giudiziari nella liquidazione dei compensi spettanti ai difensori d'ufficio rappresenta una criticità ricorrente nel sistema giustizia, che costringe i professionisti a intraprendere onerose azioni legali per veder riconosciuto un proprio diritto. La questione emerge con particolare evidenza nei casi in cui l'",
+      "date": "28/05/2026"
+    },
+    {
       "title": "Patrocinio a spese dello Stato: guida completa",
       "link": "https://www.studiocataldi.it/articoli/15377-gratuito-patrocinio-guida-e-fac-simile-dell-istanza.asp",
       "description": "Il gratuito patrocinio consente alle persone non abbienti di essere assistite da un avvocato con spese a carico dello Stato. Guida ai requisiti e alla procedura di ammissione.",
@@ -130,6 +130,13 @@
     }
   ],
   "giurisprudenza": [
+    {
+      "title": "Responsabilità professionale dell'avvocato: la prova del nesso causale tra inadempimento e danno",
+      "link": "https://news.avvocatoandreani.it/articoli/responsabilita-professionale-avvocato-prova-nesso-causale-inadempimento-danno-108721.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/avvocato-lista-testimoni-interrogativo_large.webp",
+      "description": "Redazione. Cassazione: ordinanza n. 17320 del 01/06/2026. La Cassazione ha confermato che, nell'azione di responsabilità professionale contro l'avvocato, il risarcimento del danno — sia nella forma della perdita del risultato sperato sia della perdita di chance — presuppone la prova del nesso eziologico tra l'inadempimento e il pregiudizio allegato; inoltre la domanda di restituzione dei compensi ",
+      "date": "08/06/2026"
+    },
     {
       "title": "Il problema del rispetto delle distanze nelle ricostruzioni di edifici",
       "link": "https://news.avvocatoandreani.it/articoli/problema-rispetto-distanze-ricostruzioni-edifici-108718.html",
@@ -163,13 +170,6 @@
       "link": "https://news.avvocatoandreani.it/articoli/valido-licenziamento-tramite-email-108712.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/lavoro/uomo-computer-email-licenziato_large.webp",
       "description": "Avv. Andrea Iaretti. Cass. civ. , Sez. Lav. , ord. 11 maggio 2026, n. 13731. La clausola del contratto collettivo che prescrive determinate modalità di comunicazione delle sanzioni disciplinari non integra una ”forma convenzionale“ rilevante ai sensi dell'art. 1352 c. c. , bensì disciplina unicamente la fase di trasmissione dell'atto al destinatario. In assenza di un'espressa previsione collettiva",
-      "date": "03/06/2026"
-    },
-    {
-      "title": "Liquidazione equitativa del danno: no all'arbitrarietà",
-      "link": "https://news.avvocatoandreani.it/articoli/liquidazione-equitativa-danno-arbitrarieta-108711.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/giustizia/bilancia-soldi-martelletto-sentenza-equita_large.webp",
-      "description": "Avv. Filippo Portoghese. Una richiesta spesso utilizzata per togliersi dalle sabbie mobili della determinazione del danno e per garantire quello che è il fine della responsabilità civile La liquidazione equitativa del danno rappresenta uno strumento prezioso per il giudice chiamato a quantificare un pregiudizio la cui esistenza sia certa, ma il cui ammontare non possa essere determinato con precis",
       "date": "03/06/2026"
     }
   ]
