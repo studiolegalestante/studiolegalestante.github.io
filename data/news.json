@@ -45,6 +45,13 @@
   ],
   "famiglia": [
     {
+      "title": "Una iniziativa di legge per una effettiva bigenitorialità",
+      "link": "https://news.avvocatoandreani.it/articoli/iniziativa-legge-effettiva-bigenitorialita-108788.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/bambino-salotto-gioca-logo_large.webp",
+      "description": "Prof. Marino Maglietta. Il 1 agosto 2023 veniva depositato e comunicato alla Presidenza della Commissione giustizia del Senato un disegno di legge, il numero 832, che si proponeva di rendere ineludibili prescrizioni - già contenute nella legge in vigore, la 54/2006 - ma che una giurisprudenza largamente prevalente evitava di applicare. In estrema sintesi si trattava di dare sostanza e concretezza ",
+      "date": "10/07/2026"
+    },
+    {
       "title": "Smartphone e ricariche: le spese di mantenimento dei figli",
       "link": "https://news.avvocatoandreani.it/articoli/smartphone-ricariche-spese-mantenimento-figli-108748.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/internet-ai/ragazzino-cellulare-ricarica_large.webp",
@@ -78,13 +85,6 @@
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/persone/due-genitori-consegna-chiavi-negozio-figlio_large.webp",
       "description": "Avv. Anna Andreani. Cassazione: ordinanza n. 7082 del 24/03/2026. Nella divisione ereditaria, la Cassazione ha ribadito che il coerede che abbia occupato in via esclusiva immobili comuni non può invocare l'usucapione se l'utilizzo ha avuto origine dalla tolleranza dei genitori proprietari e non è mai stato accompagnato da un possesso inequivocabilmente opponibile agli altri comproprietari. Il semp",
       "date": "20/05/2026"
-    },
-    {
-      "title": "Il diritto dell'ex coniuge divorziato alla quota TFR: i presupposti",
-      "link": "https://news.avvocatoandreani.it/articoli/diritto-coniuge-divorziato-quota-tfr-presupposti-108684.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/uomo-consegna-assegno-donna-giudice_large.webp",
-      "description": "Avv. Anna Andreani. Tribunale di Palermo: sentenza n. 2411 del 13/04/2026. Il Tribunale di Palermo accoglie la domanda dell'ex coniuge divorziato per la quota del 40% del TFS maturato dall'ex marito, ribadendo che i presupposti dell'art. 12 bis L. 898/1970 — titolarità dell'assegno divorzile e mancato passaggio a nuove nozze — vanno verificati al momento della cessazione del rapporto di lavoro, no",
-      "date": "19/05/2026"
     }
   ],
   "patrocinio": [
@@ -133,6 +133,13 @@
   ],
   "giurisprudenza": [
     {
+      "title": "Aste immobiliari: per il saldo prezzo no alla sospensione feriale",
+      "link": "https://news.avvocatoandreani.it/articoli/aste-immobiliari-saldo-prezzo-sospensione-feriale-108789.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/tempo/casa-pignorata-martello-calendario_large.webp",
+      "description": "Avv. Giovanni Iaria. Con l'ordinanza n. 19019, pubblicata il 10 giugno 2026, la Corte di Cassazione è tornata a pronunciarsi sulla natura del termine assegnato all'aggiudicatario di un immobile venduto all'asta per il versamento del saldo prezzo e sulla conseguente applicabilità, o meno, della sospensione feriale prevista dall'art. 1 della legge n. 742 del 1969. IL CASO: Nell'ambito di una procedu",
+      "date": "10/07/2026"
+    },
+    {
       "title": "Notifica della sentenza alla parte non costituita: quando decorre il termine breve per l'appello",
       "link": "https://news.avvocatoandreani.it/articoli/notifica-sentenza-parte-non-costituita-quando-decorre-termine-breve-appello-108786.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/avvocati/avvocato-preoccupato-pec-non-ricevuta_large.webp",
@@ -166,13 +173,6 @@
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/economia/banca-contratto-tub_large.webp",
       "description": "Avv. Sergio Amicarelli. Nota a Cass. civ. , Sez. II, Ordinanza 11 giugno 2026, n. 19348: La determinabilità del tasso variabile e i requisiti essenziali della clausola Euribor, tra TAN implicito e \"days count convention\". 1. Introduzione: La vicenda processuale e i motivi di ricorso. L'ordinanza in commento, emessa dalla Seconda Sezione Civile della Corte di Cassazione, interviene nuovamente sul t",
       "date": "06/07/2026"
-    },
-    {
-      "title": "Responsabilità sanitaria: la cartella clinica lacunosa non può danneggiare il paziente",
-      "link": "https://news.avvocatoandreani.it/articoli/responsabilita-sanitaria-cartella-clinica-lacunosa-non-puo-danneggiare-paziente-108773.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/salute/donna-dentista_large.webp",
-      "description": "Avv. Anna Andreani. Cassazione: ordinanza n. 15608 del 21/05/2026. In tema di responsabilità sanitaria, per la Cassazione la difettosa tenuta della cartella clinica da parte del sanitario non può pregiudicare sul piano probatorio il paziente, che può ricorrere a presunzioni quando la prova diretta risulti impossibile a causa del comportamento della controparte, in ossequio al principio di vicinanz",
-      "date": "03/07/2026"
     }
   ]
 }
