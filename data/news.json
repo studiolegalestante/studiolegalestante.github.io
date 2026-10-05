@@ -1,6 +1,13 @@
 {
   "penale": [
     {
+      "title": "Devianza minorile e baby gang",
+      "link": "https://news.avvocatoandreani.it/articoli/devianza-minorile-baby-gang-108918.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/persone/baby-gang-grattacieli-citta_large.webp",
+      "description": "Avv. Mario Pavone. L'opinione pubblica, in questi giorni è sempre più scossa dalle notizie di cronaca che riguardano il fenomeno allarmante della criminalità organiz- zata minorile, comunemente definita come quella delle c. d. ”baby gang“ ovvero quella dei c. d. ”Maranza“, composta, in prevalenza, da minori di origine straniera. Sebbene i nomi attribuiti abbiano un'origine giornalistica, essi sott",
+      "date": "05/10/2026"
+    },
+    {
       "title": "Ebbrezza al volante e lavoro di pubblica utilità: la sospensione della patente resta obbligatoria",
       "link": "https://news.avvocatoandreani.it/articoli/ebbrezza-volante-lavoro-pubblica-utilita-sospensione-patente-resta-obbligatoria-108914.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/circolazione/ubriachi-interno-auto_large.webp",
@@ -33,13 +40,6 @@
       "link": "https://news.avvocatoandreani.it/articoli/maltrattamenti-ambito-familiare-atti-persecutori-108904.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/codice-penale-monografia-stalking_large.webp",
       "description": "Avv. Mariantonietta Tripodi. Il reato di maltrattamenti in famiglia ex art. 572 c. p. , si riferisce a condotte consumate in un contesto familiare da parte del soggetto maltrattante, riferibile di solito alla figura paterna, nonché ad una figura che esprima un carattere autorevole nei confronti di soggetti sottoposti a questa autorità, per ”ragioni di educazione, istruzione, cura, (…) o per l'eser",
-      "date": "28/09/2026"
-    },
-    {
-      "title": "Adolescenti armati in classe: le True Crime Community",
-      "link": "https://news.avvocatoandreani.it/articoli/adolescenti-armati-classe-true-crime-community-108903.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/scuola/alunno-classe-insegnante-computer-gioco_large.webp",
-      "description": "Avv. Mario Pavone. L'ennesimo episodio inquietante avvenuto a scuola ha suscitato molte preoccupazioni nell'Opinione Pubblica non per quanto avvenuto ma sulla natura ed origine di un nuovo fenomeno delittuoso legato all'utilizzo dei Social da parte dei minori. Il fatto è accaduto a Roma, in una scuola media di Centocelle. Uno studente di soli 13 anni è entrato a scuola con due coltelli e uno spray",
       "date": "28/09/2026"
     }
   ],
@@ -133,6 +133,13 @@
   ],
   "giurisprudenza": [
     {
+      "title": "Canone concordato, l'associazione che attesta la conformità risponde dell'errore sul canone",
+      "link": "https://news.avvocatoandreani.it/articoli/canone-concordato-associazione-che-attesta-conformita-risponde-errore-canone-108919.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/condominio-casa/locazione-associazione-locatori-contratto-visura_large.webp",
+      "description": "Redazione. Cassazione: ordinanza n. 26029 del 01/10/2026. Locazioni a canone concordato: la Cassazione ha ritenuto insindacabile in sede di legittimità l'accertamento di merito secondo cui l'associazione firmataria dell'accordo territoriale, nell'attestare la conformità del canone, non recepisce passivamente i dati delle parti ma ne verifica la corrispondenza ai criteri dell'accordo, rispondendo d",
+      "date": "05/10/2026"
+    },
+    {
       "title": "Notifica al debitore della cessione del credito e decorrenza della prescrizione",
       "link": "https://news.avvocatoandreani.it/articoli/notifica-debitore-cessione-credito-decorrenza-prescrizione-108916.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/civile/scambio-di-credito-e-consegna-postale_large.webp",
@@ -166,13 +173,6 @@
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/tre-avvocati-terzo-chiamato-spese-legali_large.jpg",
       "description": "Avv. Anna Andreani. Cassazione: ordinanza n. 25868 del 28/09/2026. Compenso dell'avvocato: la Cassazione ha stabilito che accertare se il mandato sia stato conferito dal cliente o dal collega che ha contattato di sua iniziativa il legale è questione di fatto, insindacabile se motivata. La procura alle liti, che non va confusa con il contratto di patrocinio, non vincola il giudice nell'individuare ",
       "date": "30/09/2026"
-    },
-    {
-      "title": "Social network e arresti domiciliari: quando i post violano il divieto di comunicare con la vittima",
-      "link": "https://news.avvocatoandreani.it/articoli/social-network-arresti-domiciliari-quando-post-violano-divieto-comunicare-vittima-108907.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/internet-ai/uomo-braccialetto-elettronico-profilofb_large.webp",
-      "description": "Avv. Anna Andreani. Cassazione: sentenza n. 34446 del 24/09/2026. In tema di arresti domiciliari con divieto di comunicare con persone diverse dai conviventi, la Cassazione ha stabilito che il divieto è violabile anche indirettamente, tramite post sui social rivolti a una platea indeterminata, se la persona offesa vi accede e risulta individuabile come destinataria. La sentenza aggiunge un tassell",
-      "date": "29/09/2026"
     }
   ]
 }
