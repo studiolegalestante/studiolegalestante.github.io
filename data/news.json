@@ -89,13 +89,6 @@
   ],
   "patrocinio": [
     {
-      "title": "Incarico conferito da avvocato a collega: la procura alle liti non decide chi paga il compenso",
-      "link": "https://news.avvocatoandreani.it/articoli/incarico-conferito-avvocato-collega-procura-liti-non-decide-chi-paga-compenso-108912.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/tre-avvocati-terzo-chiamato-spese-legali_large.jpg",
-      "description": "Avv. Anna Andreani. Cassazione: ordinanza n. 25868 del 28/09/2026. Compenso dell'avvocato: la Cassazione ha stabilito che accertare se il mandato sia stato conferito dal cliente o dal collega che ha contattato di sua iniziativa il legale è questione di fatto, insindacabile se motivata. La procura alle liti, che non va confusa con il contratto di patrocinio, non vincola il giudice nell'individuare ",
-      "date": "30/09/2026"
-    },
-    {
       "title": "Ammissione al gratuito patrocinio: non prova l'incapacità di pagare il mantenimento",
       "link": "https://news.avvocatoandreani.it/articoli/ammissione-gratuito-patrocinio-non-prova-incapacita-pagare-mantenimento-108888.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/patrocinio-toga.soldi-aula-martelletto_large.webp",
@@ -124,6 +117,13 @@
       "date": "16/06/2026"
     },
     {
+      "title": "Incarico conferito da avvocato a collega: la procura alle liti non decide chi paga il compenso",
+      "link": "https://news.avvocatoandreani.it/articoli/incarico-conferito-avvocato-collega-procura-liti-non-decide-chi-paga-compenso-108912.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/tre-avvocati-terzo-chiamato-spese-legali_large.jpg",
+      "description": "Avv. Anna Andreani. Cassazione: ordinanza n. 25868 del 28/09/2026. Compenso dell'avvocato: la Cassazione ha stabilito che accertare se il mandato sia stato conferito dal cliente o dal collega che ha contattato di sua iniziativa il legale è questione di fatto, insindacabile se motivata. La procura alle liti, che non va confusa con il contratto di patrocinio, non vincola il giudice nell'individuare ",
+      "date": "30/09/2026"
+    },
+    {
       "title": "Gratuito patrocinio: i nuovi termini per opporsi al decreto di liquidazione",
       "link": "https://news.avvocatoandreani.it/articoli/gratuito-patrocinio-nuovi-termini-opporsi-decreto-liquidazione-108894.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/avvocato-stupito-patrocinio-calendario_large.webp",
@@ -132,6 +132,13 @@
     }
   ],
   "giurisprudenza": [
+    {
+      "title": "Danno morale e lieve danno biologico: nessuna proporzionalità rigida in caso di aggressione fisica",
+      "link": "https://news.avvocatoandreani.it/articoli/danno-morale-lieve-danno-biologico-nessuna-proporzionalita-rigida-caso-aggressione-fisica-108933.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/persone/confronto-sul-pianerottolo-donna-uomo-aggressione-sentenza_large.webp",
+      "description": "Avv. Anna Andreani. Cassazione: ordinanza n. 26419 del 07/10/2026. La Cassazione ha stabilito che, in caso di aggressione fisica volontaria, la valutazione del danno morale non può essere legata in modo rigidamente proporzionale all'entità del danno biologico, ma deve considerare mortificazione psicologica, frustrazione e vergogna per i segni visibili della violenza, specie se di genere. Premessa.",
+      "date": "12/10/2026"
+    },
     {
       "title": "Clausole di predeterminazione de danno, vessatorietà e onere probatorio",
       "link": "https://news.avvocatoandreani.it/articoli/clausole-predeterminazione-danno-vessatorieta-onere-probatorio-108930.html",
@@ -166,13 +173,6 @@
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/persone/condominio-ientro-a-casa-con-la-spesa_large.webp",
       "description": "Avv. Anna Andreani. Cassazione: ordinanza n. 26049 del 01/10/2026. Servitù di uso pubblico: la Cassazione ha stabilito che non può configurarsi su uno slargo privato che non conduce ad alcun luogo pubblico e serve alla sosta dei veicoli dei residenti, mancando l'uso uti cives di una collettività indeterminata e l'idoneità a soddisfare un interesse generale; la presunzione di demanialità cede alla ",
       "date": "07/10/2026"
-    },
-    {
-      "title": "Assegno divorzile: il sacrificio professionale del coniuge si può provare con presunzioni",
-      "link": "https://news.avvocatoandreani.it/articoli/assegno-divorzile-sacrificio-professionale-coniuge-puo-provare-presunzioni-108921.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/assegno-divorzile-tre-bambini_large.webp",
-      "description": "Avv. Anna Andreani. Cassazione: ordinanza n. 24718 del 20/08/2026. Assegno divorzile: la Cassazione ha stabilito che il giudice di merito può desumere in via presuntiva il sacrificio professionale del coniuge che ha lasciato il lavoro per la cura dei figli, ritenendo condivisa la scelta in assenza di elementi contrari; tale ragionamento, se fondato su fatti acquisiti, non integra motivazione appar",
-      "date": "06/10/2026"
     }
   ]
 }
