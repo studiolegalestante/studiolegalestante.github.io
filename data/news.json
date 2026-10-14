@@ -1,6 +1,13 @@
 {
   "penale": [
     {
+      "title": "Vittime di Stalking: le condotte riparative non estinguono il reato",
+      "link": "https://news.avvocatoandreani.it/articoli/vittime-stalking-condotte-riparative-non-estinguono-reato-108940.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/donna-pedinata-citta-notturna_large.webp",
+      "description": "Avv. Mario Pavone. Il termine ”stalking“ deriva dall'inglese ”stalk“, termine utilizzato nella caccia, traducibile con ”fare la posta, braccare, pedinare“. Ma per comprendere a fondo il significato di stalking, è utile andare oltre la semplice definizione. Non si tratta di un singolo gesto inopportuno, ma di un insieme di comportamenti persecutori, ripetuti e intrusivi, che erodono lentamente la l",
+      "date": "14/10/2026"
+    },
+    {
       "title": "Rilevanza dei “disturbi della personalità” ai fini della imputabilità",
       "link": "https://news.avvocatoandreani.it/articoli/rilevanza-disturbi-personalita-fini-imputabilita-108929.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/giustizia/corte-costituzionale_large.webp",
@@ -34,13 +41,6 @@
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/interprete-cinese-tribunale_large.webp",
       "description": "Avv. Mario Pavone. L'Unione Europea ha da tempo invitato i Paesi Europei ad estendere le garanzie previste dalle norme emanate ai procedimenti penali che vedano parte gli stranieri sulla base della piena conoscenza degli atti processuali. Tale necessità deriva proprio dai nuovi flussi Migratori in Europa di cittadini, provenienti da varie parti del Mondo, e al consistente aumento dei reati ad oper",
       "date": "30/09/2026"
-    },
-    {
-      "title": "Social network e arresti domiciliari: quando i post violano il divieto di comunicare con la vittima",
-      "link": "https://news.avvocatoandreani.it/articoli/social-network-arresti-domiciliari-quando-post-violano-divieto-comunicare-vittima-108907.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/internet-ai/uomo-braccialetto-elettronico-profilofb_large.webp",
-      "description": "Avv. Anna Andreani. Cassazione: sentenza n. 34446 del 24/09/2026. In tema di arresti domiciliari con divieto di comunicare con persone diverse dai conviventi, la Cassazione ha stabilito che il divieto è violabile anche indirettamente, tramite post sui social rivolti a una platea indeterminata, se la persona offesa vi accede e risulta individuabile come destinataria. La sentenza aggiunge un tassell",
-      "date": "29/09/2026"
     }
   ],
   "famiglia": [
@@ -103,18 +103,18 @@
       "date": "23/07/2026"
     },
     {
-      "title": "Difensore d'ufficio: l'opposizione al decreto di liquidazione è esente da imposta di registro",
-      "link": "https://news.avvocatoandreani.it/articoli/difensore-ufficio-opposizione-decreto-liquidazione-esente-imposta-registro-108695.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/patrocinio-toga.soldi-aula-martelletto_large.webp",
-      "description": "Avv. Anna Andreani. La Cassazione tributaria nell'ordinanza n. 14883/2026 ha stabilito che il provvedimento emesso all'esito dell'opposizione al decreto di liquidazione dei compensi al difensore d'ufficio — anche quando i compensi sono posti a carico dell'erario — è esente da imposta di registro ai sensi dell'art. 32 disp. att. c. p. p. , poiché la ratio della norma è di sollevare il difensore d'u",
-      "date": "25/05/2026"
-    },
-    {
       "title": "Patrocinio a spese dello Stato e riduzione compenso difensore irreperibile",
       "link": "https://www.studiocataldi.it/articoli/48265-patrocinio-a-spese-dello-stato-e-riduzione-compenso-difensore-irreperibile.asp",
       "image": "https://www.studiocataldi.it/images/imgnews/avvocato_giudice_bilancia_giustizia-id29150.jpg",
       "description": "Il Tribunale di Spoleto, con sentenza del 19 maggio 2026 n. 257, ha affrontato il tema del compenso spettante al difensore d'ufficio dell'imputato irreperibile nell'ambito del patrocinio a spese dello Stato, chiarendo i criteri di liquidazione e le possibili riduzioni previste dalla normativa vigente. Liquidazione del compenso e competenza del giudice In base all'art. 83 del D.P.R. n. 115/2002 (Te",
       "date": "16/06/2026"
+    },
+    {
+      "title": "Difensore d'ufficio: l'opposizione al decreto di liquidazione è esente da imposta di registro",
+      "link": "https://news.avvocatoandreani.it/articoli/difensore-ufficio-opposizione-decreto-liquidazione-esente-imposta-registro-108695.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/patrocinio-toga.soldi-aula-martelletto_large.webp",
+      "description": "Avv. Anna Andreani. La Cassazione tributaria nell'ordinanza n. 14883/2026 ha stabilito che il provvedimento emesso all'esito dell'opposizione al decreto di liquidazione dei compensi al difensore d'ufficio — anche quando i compensi sono posti a carico dell'erario — è esente da imposta di registro ai sensi dell'art. 32 disp. att. c. p. p. , poiché la ratio della norma è di sollevare il difensore d'u",
+      "date": "25/05/2026"
     },
     {
       "title": "Incarico conferito da avvocato a collega: la procura alle liti non decide chi paga il compenso",
