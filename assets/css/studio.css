@@ -135,3 +135,34 @@ p:last-child{margin-bottom:0}
 .notizia .sintesi{margin:.6rem 0 0;font-size:1rem;line-height:1.6}
 .stato{color:var(--grigio);font-style:italic;padding:1.25rem 0}
 .avvertenza{margin-top:3rem;font-size:.9375rem;color:var(--grigio);max-width:720px}
+
+/* Pagine materia e guide */
+.percorso{font-size:.875rem;color:var(--grigio);margin-bottom:1.25rem}
+.percorso ol{display:flex;flex-wrap:wrap;gap:.25rem .5rem;list-style:none;margin:0;padding:0}
+.percorso li+li::before{content:"/";margin-right:.5rem;color:var(--filetto)}
+.pagina-titolo .data{font-size:.9375rem;font-style:italic;margin-top:1rem}
+.prosa h3{font-size:1.3125rem;margin:2rem 0 .5rem}
+.prosa ol{padding-left:1.4rem;margin:0 0 1.2em}
+.prosa .riquadro{border-left:3px solid var(--ceralacca);background:var(--carta-2);padding:1.25rem 1.5rem;margin:2rem 0}
+.prosa .riquadro p{margin:0}
+.faq{margin-top:1rem;border-top:1px solid var(--filetto)}
+.faq details{border-bottom:1px solid var(--filetto)}
+.faq summary{cursor:pointer;padding:1.1rem 2rem 1.1rem 0;font-size:1.125rem;color:var(--inchiostro);list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:.25rem;top:1rem;font-size:1.4rem;line-height:1;color:var(--ceralacca)}
+.faq details[open] summary::after{content:"–"}
+.faq details>div{padding:0 0 1.25rem}
+.chiusura{margin-top:3.5rem;padding:2rem;border:1px solid var(--filetto);background:var(--carta)}
+.chiusura h2{margin-top:0!important}
+.correlati{list-style:none;padding:0!important;margin:0}
+.correlati li{padding:.6rem 0;border-bottom:1px solid var(--filetto);margin:0!important}
+.elenco-guide{list-style:none;margin:0;padding:0;border-top:1px solid var(--filetto)}
+.elenco-guide li{padding:1.75rem 0;border-bottom:1px solid var(--filetto)}
+.elenco-guide h2{font-size:1.5rem;margin:0 0 .5rem}
+.elenco-guide h2 a{text-decoration:none}
+.elenco-guide h2 a:hover{text-decoration:underline;text-underline-offset:.2em}
+.elenco-guide p{margin:0;color:var(--grigio);max-width:680px}
+.indice h3 a{text-decoration:none}
+.indice h3 a:hover{text-decoration:underline;text-underline-offset:.2em}
+.indice .leggi{display:block;margin-top:.5rem;font-size:1rem}
+.pagina-titolo+.sezione{padding-top:3.5rem}
