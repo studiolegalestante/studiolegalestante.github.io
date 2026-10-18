@@ -1,0 +1,137 @@
+/* Studio Legale Avv. Vincenzo Stante — foglio di stile unico
+   Direzione "Carta intestata": carta bianca, inchiostro blu, ceralacca. */
+
+@font-face{font-family:"Caslon Display";src:url("../fonts/libre-caslon-display-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Caslon Text";src:url("../fonts/libre-caslon-text-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Caslon Text";src:url("../fonts/libre-caslon-text-latin-400-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Caslon Text";src:url("../fonts/libre-caslon-text-latin-700-normal.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+  --carta:#FCFCFA;
+  --carta-2:#F2F3F5;
+  --inchiostro:#1D2B45;
+  --testo:#2A2D33;
+  --grigio:#5B6270;
+  --filetto:#C9CDD4;
+  --ceralacca:#8E2B22;
+  --notte-testo:#E9ECF1;
+  --notte-grigio:#C3CAD6;
+  --notte-filetto:#6A7891;
+  --rosa:#D9A79F;
+  --display:"Caslon Display",Georgia,"Times New Roman",serif;
+  --serif:"Caslon Text",Georgia,"Times New Roman",serif;
+  --largo:1120px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--carta);color:var(--testo);font-family:var(--serif);font-size:1.125rem;line-height:1.7}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--inchiostro)}
+a:hover{color:var(--ceralacca)}
+a:focus-visible,button:focus-visible,video:focus-visible{outline:2px solid var(--ceralacca);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;color:var(--inchiostro);line-height:1.15;margin:0}
+p{margin:0 0 1.2em}
+p:last-child{margin-bottom:0}
+
+.salta{position:absolute;left:-9999px;top:0;background:var(--inchiostro);color:var(--carta);padding:.6em 1em;z-index:10}
+.salta:focus{left:1rem;top:1rem}
+
+.contenitore{max-width:var(--largo);margin:0 auto;padding-left:2rem;padding-right:2rem}
+@media (max-width:600px){.contenitore{padding-left:1.25rem;padding-right:1.25rem}}
+
+/* Intestazione */
+.testata{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem 2rem;padding-top:1.5rem;padding-bottom:1.5rem;font-size:.95rem}
+.testata .marchio{font-family:var(--display);font-size:1.25rem;text-decoration:none;color:var(--inchiostro)}
+.testata nav ul{display:flex;flex-wrap:wrap;gap:.5rem 1.75rem;list-style:none;margin:0;padding:0}
+.testata nav a{text-decoration:none}
+.testata nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:.3em}
+
+/* Apertura a carta intestata */
+.intestazione{text-align:center;padding-top:4.5rem;padding-bottom:5.5rem}
+.sigillo{width:84px;height:84px;margin:0 auto 2.25rem;border-radius:50%;background:var(--ceralacca);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 5px #7A231C,inset 0 0 0 7px #A3443A}
+.sigillo span{font-family:var(--display);font-size:2.1rem;color:#F4E9E6;letter-spacing:1px}
+.doppio-filetto{max-width:560px;margin:0 auto;border-top:1px solid var(--inchiostro);border-bottom:1px solid var(--inchiostro);height:4px}
+.intestazione h1{margin:2.25rem 0 .5rem;font-size:clamp(2.6rem,7vw,4.5rem);line-height:1.05}
+.intestazione .qualifica{margin:0;font-style:italic;font-size:1.375rem;color:var(--inchiostro)}
+.intestazione .recapito{margin:1.25rem auto 2.5rem;max-width:560px;font-size:1rem;color:var(--grigio)}
+.intestazione .doppio-filetto:last-of-type{margin-top:2.5rem}
+
+.azioni{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2.75rem}
+.azioni.a-sinistra{justify-content:flex-start;margin-top:2rem}
+.bottone{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 2rem;font-size:1rem;text-decoration:none;border:1px solid var(--inchiostro)}
+.bottone.pieno{background:var(--inchiostro);color:var(--carta)}
+.bottone.pieno:hover{background:#14203A;color:var(--carta)}
+.bottone.vuoto{color:var(--inchiostro)}
+.bottone.vuoto:hover{background:var(--inchiostro);color:var(--carta)}
+
+/* Sezioni */
+.sezione{padding-top:6rem;padding-bottom:6rem}
+.sezione h2{font-size:clamp(2rem,4vw,2.5rem);margin-bottom:.75rem}
+.sezione .sommario{color:var(--grigio);max-width:640px;margin-bottom:3rem}
+.fondo-grigio{background:var(--carta-2)}
+
+.studio{display:flex;flex-wrap:wrap;gap:4rem;align-items:center}
+.studio .testo{flex:1 1 420px;min-width:0;max-width:620px}
+.studio .testo h2{margin-bottom:1.5rem}
+.studio figure{flex:0 1 340px;margin:0}
+.studio figure img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 30%;border:1px solid var(--filetto);padding:8px;background:var(--carta)}
+.studio figcaption{margin-top:.75rem;font-size:.875rem;font-style:italic;color:var(--grigio)}
+
+/* Materie come indice */
+.indice{border-top:1px solid var(--filetto);margin:0;padding:0;list-style:none}
+.indice li{display:flex;flex-wrap:wrap;gap:.5rem 3rem;padding:1.75rem 0;border-bottom:1px solid var(--filetto)}
+.indice h3{flex:0 0 300px;font-size:1.625rem}
+.indice p{flex:1 1 420px;max-width:640px;margin:0}
+@media (max-width:760px){.indice h3{flex-basis:100%}}
+
+/* Procedimento penale */
+.notte{background:var(--inchiostro);color:var(--notte-testo)}
+.notte h2,.notte h3{color:var(--carta)}
+.notte .sommario{color:var(--notte-grigio)}
+.fasi{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;counter-reset:fase}
+.fasi li{border-top:1px solid var(--notte-filetto);padding-top:1.25rem;counter-increment:fase}
+.fasi li::before{content:counter(fase);font-family:var(--display);font-size:2rem;color:var(--rosa);display:block}
+.fasi h3{font-size:1.375rem;margin:.5rem 0 .6rem}
+.fasi p{font-size:1rem;line-height:1.65;margin:0}
+
+/* Interventi */
+.interventi{display:flex;flex-wrap:wrap;gap:3.5rem;align-items:center}
+.interventi .testo{flex:1 1 320px;min-width:0;max-width:460px}
+.interventi h2{font-size:2.125rem;margin-bottom:1rem}
+.interventi .video{flex:1 1 480px;min-width:0}
+.interventi video{width:100%;display:block;border:1px solid var(--filetto);background:#000;aspect-ratio:1536/1487;object-fit:contain;max-height:520px}
+
+/* Contatti */
+.contatti{display:flex;flex-wrap:wrap;gap:4rem;border-top:1px solid var(--filetto)}
+.contatti .testo{flex:1 1 420px;min-width:0;max-width:560px}
+.contatti h2{margin-bottom:1.25rem}
+.contatti address{flex:1 1 320px;font-style:normal;font-size:1.0625rem;line-height:1.9}
+.contatti address .nome{font-family:var(--display);font-size:1.375rem;color:var(--inchiostro)}
+
+/* Piè di pagina */
+.pie{background:var(--carta-2);border-top:1px solid var(--filetto)}
+.pie .contenitore{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem 2rem;padding-top:1.75rem;padding-bottom:1.75rem;font-size:.875rem;color:var(--grigio)}
+.pie p{margin:0}
+.pie ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+
+/* Pagine interne (news, privacy) */
+.pagina-titolo{padding-top:3.5rem;padding-bottom:3rem;border-bottom:1px solid var(--filetto)}
+.pagina-titolo h1{font-size:clamp(2.25rem,5vw,3.25rem);margin-bottom:.75rem}
+.pagina-titolo p{color:var(--grigio);max-width:680px}
+.prosa{max-width:720px}
+.prosa h2{font-size:1.75rem;margin:2.75rem 0 .75rem}
+.prosa ul{padding-left:1.25rem;margin:0 0 1.2em}
+.prosa li{margin-bottom:.4em}
+
+.rubriche{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:3rem 5rem}
+.rubrica h2{font-size:1.625rem;padding-bottom:.75rem;border-bottom:1px solid var(--inchiostro);margin-bottom:.5rem}
+.notizie{list-style:none;margin:0;padding:0}
+.notizia{padding:1.25rem 0;border-bottom:1px solid var(--filetto)}
+.notizia a.titolo{font-size:1.125rem;line-height:1.45;text-decoration:none;display:block}
+.notizia a.titolo:hover{text-decoration:underline;text-underline-offset:.2em}
+.notizia .meta{display:block;margin-top:.35rem;font-size:.875rem;color:var(--grigio)}
+.notizia .sintesi{margin:.6rem 0 0;font-size:1rem;line-height:1.6}
+.stato{color:var(--grigio);font-style:italic;padding:1.25rem 0}
+.avvertenza{margin-top:3rem;font-size:.9375rem;color:var(--grigio);max-width:720px}
