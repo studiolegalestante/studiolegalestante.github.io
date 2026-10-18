@@ -166,3 +166,35 @@ p:last-child{margin-bottom:0}
 .indice h3 a:hover{text-decoration:underline;text-underline-offset:.2em}
 .indice .leggi{display:block;margin-top:.5rem;font-size:1rem}
 .pagina-titolo+.sezione{padding-top:3.5rem}
+
+/* Consulenza online */
+.listino{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1.5rem;margin:0 0 1rem}
+.voce-listino{border:1px solid var(--inchiostro);padding:1.75rem;background:var(--carta)}
+.voce-listino h2{font-size:1.375rem!important;margin:0 0 .5rem!important}
+.voce-listino .prezzo{font-family:var(--display);font-size:2.75rem;line-height:1;color:var(--inchiostro);margin:0 0 .25rem}
+.voce-listino .nota-prezzo{font-size:.875rem;color:var(--grigio);margin-bottom:1rem}
+.passi{padding-left:1.4rem}
+.passi li{margin-bottom:.9rem}
+.modulo fieldset{border:1px solid var(--filetto);padding:1.5rem;margin:0 0 1.5rem}
+.modulo legend{font-family:var(--display);font-size:1.25rem;color:var(--inchiostro);padding:0 .5rem}
+.modulo label{display:block;font-size:1rem;margin-bottom:1rem}
+.modulo input[type=text],.modulo input[type=email],.modulo input[type=tel],.modulo select,.modulo textarea{display:block;width:100%;margin-top:.35rem;padding:.65rem .75rem;font:inherit;font-size:1rem;color:var(--testo);background:#fff;border:1px solid #9AA1AD;border-radius:0;min-height:44px}
+.modulo textarea{resize:vertical}
+.modulo [aria-invalid=true]{border-color:var(--ceralacca);box-shadow:0 0 0 1px var(--ceralacca)}
+.modulo .scelte{display:flex;flex-wrap:wrap;gap:.5rem 2rem;margin-bottom:1rem}
+.modulo .scelte label,.modulo .spunta{display:flex;gap:.6rem;align-items:flex-start;margin-bottom:.75rem}
+.modulo input[type=radio],.modulo input[type=checkbox]{width:1.15rem;height:1.15rem;margin-top:.3rem;flex:none;accent-color:var(--inchiostro)}
+.griglia-campi{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:0 1.25rem}
+.griglia-campi .largo{grid-column:1/-1}
+.griglia-campi [hidden]{display:none}
+.modulo .errore{color:var(--ceralacca);font-weight:700}
+.modulo button{cursor:pointer;font-family:inherit}
+#copia-richiesta{margin-top:1.5rem}
+#copia-richiesta textarea{font-size:.875rem}
+.richiamo{background:var(--inchiostro);color:var(--notte-testo)}
+.richiamo .contenitore{display:flex;flex-wrap:wrap;gap:2rem 4rem;align-items:center;justify-content:space-between;padding-top:4rem;padding-bottom:4rem}
+.richiamo h2{color:var(--carta);font-size:clamp(1.75rem,3.5vw,2.25rem);margin-bottom:.75rem}
+.richiamo p{max-width:620px;color:var(--notte-grigio)}
+.richiamo .bottone.pieno{background:var(--carta);color:var(--inchiostro);border-color:var(--carta)}
+.richiamo .bottone.pieno:hover{background:#fff;color:var(--ceralacca)}
+.richiamo .prezzi{font-family:var(--display);font-size:1.25rem;color:var(--carta);margin:0 0 .5rem}
