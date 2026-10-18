@@ -198,3 +198,4 @@ p:last-child{margin-bottom:0}
 .richiamo .bottone.pieno{background:var(--carta);color:var(--inchiostro);border-color:var(--carta)}
 .richiamo .bottone.pieno:hover{background:#fff;color:var(--ceralacca)}
 .richiamo .prezzi{font-family:var(--display);font-size:1.25rem;color:var(--carta);margin:0 0 .5rem}
+.antispam{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
