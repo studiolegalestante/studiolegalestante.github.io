@@ -218,8 +218,8 @@
 
         <p class="errore" id="errore-modulo" role="alert" hidden></p>
         <div class="azioni a-sinistra">
-          <button type="submit" class="bottone pieno" data-modo="servizio" hidden>Invia la richiesta</button>
-          <button type="submit" class="bottone pieno" data-modo="email">Prepara un'email</button>
+          <button type="submit" class="bottone pieno" data-modo="servizio" >Invia la richiesta</button>
+          <button type="submit" class="bottone vuoto" data-modo="email">Prepara un'email</button>
         </div>
         <p class="esito" id="esito-modulo" role="status" hidden></p>
         <div id="copia-richiesta" hidden>
@@ -259,7 +259,7 @@
   form.querySelectorAll('input[name=tipo]').forEach(function (r) { r.addEventListener('change', aggiornaTipo); });
   aggiornaTipo();
   function v(n) { var el = form.elements[n]; return el ? String(el.value || '').trim() : ''; }
-  var ENDPOINT = '';
+  var ENDPOINT = 'https://formspree.io/f/xljgvwvq';
   var esito = document.getElementById('esito-modulo');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
