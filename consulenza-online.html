@@ -216,6 +216,7 @@
           <label class="spunta"><input type="checkbox" name="recesso" required> Chiedo che la consulenza sia resa prima della scadenza del termine di recesso e prendo atto che, una volta resa per intero, perderò il diritto di recesso.</label>
         </fieldset>
 
+        <p class="antispam" aria-hidden="true"><label>Lasciare vuoto<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
         <p class="errore" id="errore-modulo" role="alert" hidden></p>
         <div class="azioni a-sinistra">
           <button type="submit" class="bottone pieno" data-modo="servizio" >Invia la richiesta</button>
@@ -318,10 +319,11 @@
       dati.append('_subject', oggetto);
       dati.append('email', v('email'));
       dati.append('richiesta', testo);
+      dati.append('_gotcha', v('_gotcha'));
       esito.hidden = false; esito.textContent = 'Invio in corso…';
       fetch(ENDPOINT, { method: 'POST', body: dati, headers: { 'Accept': 'application/json' } })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); esito.textContent = 'Richiesta inviata. Riceverete la conferma entro un giorno lavorativo all\'indirizzo ' + v('email') + '.'; form.querySelectorAll('button').forEach(function (b) { b.disabled = true; }); })
-        .catch(function () { esito.textContent = 'Invio non riuscito. Usate il pulsante "Prepara un\'email" o scrivete ad avv.vincenzostante@gmail.com.'; });
+        .then(function (r) { if (!r.ok) return r.json().catch(function () { return {}; }).then(function (j) { var m = j && j.errors && j.errors.length ? j.errors.map(function (x) { return x.message; }).join(' ') : ''; throw new Error(m); }); esito.textContent = 'Richiesta inviata. Riceverete la conferma entro un giorno lavorativo all\'indirizzo ' + v('email') + '.'; form.querySelectorAll('button').forEach(function (b) { b.disabled = true; }); })
+        .catch(function (er) { esito.textContent = 'Invio non riuscito' + (er && er.message ? ' (' + er.message + ')' : '') + '. Usate il pulsante "Prepara un\'email" o scrivete ad avv.vincenzostante@gmail.com.'; });
       return;
     }
     box.querySelector('textarea').value = 'Oggetto: ' + oggetto + '\n\n' + testo;
