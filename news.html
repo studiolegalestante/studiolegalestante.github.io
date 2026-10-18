@@ -1,197 +1,131 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-	<title>News Legali | Avv. Vincenzo Stante</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<style>
-		html, body, #page-wrapper, #wrapper, .wrapper {
-			background: #111111 !important;
-			background-color: #111111 !important;
-		}
-		body {
-			font-family: 'Inter', sans-serif;
-			color: #ffffff;
-		}
-		#header {
-			background: #111111 !important;
-			background-color: #111111 !important;
-			border: none !important;
-			box-shadow: none !important;
-		}
-		#header h1 a {
-			color: #ffffff !important;
-		}
-		h1, h2, h3, h4 {
-			font-family: 'Cormorant Garamond', serif !important;
-			color: #ffffff !important;
-		}
-		.news-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-			gap: 2rem;
-		}
-		.news-card {
-			background: #181818 !important;
-			border: 1px solid rgba(212,175,55,.25);
-			border-radius: 16px;
-			padding: 2rem;
-			box-shadow: 0 0 30px rgba(0,0,0,.25);
-		}
-		.news-item {
-			display: flex;
-			flex-direction: column;
-			padding: 1.2rem 0;
-			border-bottom: 1px solid rgba(255,255,255,.08);
-		}
-		.news-item:last-child {
-			border-bottom: none;
-		}
-		.news-item a.news-title {
-			color: #fff;
-			font-weight: 600;
-			font-size: 1rem;
-			text-decoration: none;
-			border: none;
-			line-height: 1.5;
-			display: block;
-		}
-		.news-item a.news-title:hover {
-			color: #d4af37 !important;
-		}
-		.news-date {
-			display: block;
-			font-size: .78rem;
-			color: rgba(212,175,55,.7);
-			margin-top: .35rem;
-			letter-spacing: .04em;
-		}
-		.news-img {
-			width: 100%;
-			border-radius: 8px;
-			margin: 0.6rem 0;
-			display: block;
-			max-height: 200px;
-			object-fit: cover;
-		}
-		.news-desc {
-			margin-top: .4rem;
-			font-size: .88rem;
-			color: rgba(255,255,255,.6);
-			line-height: 1.75;
-		}
-		.news-read-more {
-			display: inline-block;
-			margin-top: .6rem;
-			font-size: .8rem;
-			color: #d4af37;
-			text-decoration: none;
-			border: none;
-			letter-spacing: .03em;
-		}
-		.news-read-more:hover {
-			color: #fff !important;
-		}
-		.news-loading {
-			color: rgba(255,255,255,.4);
-			font-size: .9rem;
-			padding: 1rem 0;
-		}
-		.news-error {
-			color: rgba(255,100,100,.7);
-			font-size: .9rem;
-			padding: 1rem 0;
-		}
-		@media screen and (max-width:736px) {
-			.news-grid {
-				grid-template-columns: 1fr;
-			}
-		}
-	</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Approfondimenti legali | Avv. Vincenzo Stante</title>
+<meta name="description" content="Selezione quotidiana di notizie e sentenze in materia penale, di famiglia, di gratuito patrocinio e di giurisprudenza, a cura dello Studio Legale Avv. Vincenzo Stante.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://studiolegalestante.github.io/news.html">
+<meta name="theme-color" content="#1D2B45">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/studio.css">
 </head>
 <body>
-<div id="page-wrapper">
-<header id="header">
-	<h1><a href="index.html">Avv. Vincenzo Stante</a></h1>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="contenitore testata">
+  <a class="marchio" href="./">Studio Legale Stante</a>
+  <nav aria-label="Principale">
+    <ul>
+      <li><a href="./#materie">Materie</a></li>
+      <li><a href="./#penale">Procedimento penale</a></li>
+      <li><a href="news.html" aria-current="page">Approfondimenti</a></li>
+      <li><a href="./#contatti">Contatti</a></li>
+    </ul>
+  </nav>
 </header>
-<section id="wrapper">
-	<section class="wrapper">
-		<div class="inner">
-			<h2 class="major">News e approfondimenti legali</h2>
-			<div class="news-grid">
-				<div class="news-card">
-					<h3>Diritto Penale</h3>
-					<div id="penale"><p class="news-loading">Caricamento...</p></div>
-				</div>
-				<div class="news-card">
-					<h3>Diritto di Famiglia</h3>
-					<div id="famiglia"><p class="news-loading">Caricamento...</p></div>
-				</div>
-				<div class="news-card">
-					<h3>Patrocinio a Spese dello Stato</h3>
-					<div id="patrocinio"><p class="news-loading">Caricamento...</p></div>
-				</div>
-				<div class="news-card">
-					<h3>Giurisprudenza</h3>
-					<div id="giurisprudenza"><p class="news-loading">Caricamento...</p></div>
-				</div>
-			</div>
-		</div>
-	</section>
-</section>
-</div>
+
+<main id="contenuto">
+  <div class="contenitore pagina-titolo">
+    <h1>Approfondimenti</h1>
+    <p>Notizie e sentenze selezionate ogni giorno da riviste giuridiche online. Ogni titolo rimanda all'articolo originale sul sito della fonte.</p>
+  </div>
+
+  <div class="contenitore sezione">
+    <div class="rubriche">
+      <section class="rubrica" aria-labelledby="t-penale">
+        <h2 id="t-penale">Diritto penale</h2>
+        <ul class="notizie" id="penale"><li class="stato">Caricamento delle notizie…</li></ul>
+      </section>
+      <section class="rubrica" aria-labelledby="t-famiglia">
+        <h2 id="t-famiglia">Diritto di famiglia</h2>
+        <ul class="notizie" id="famiglia"><li class="stato">Caricamento delle notizie…</li></ul>
+      </section>
+      <section class="rubrica" aria-labelledby="t-patrocinio">
+        <h2 id="t-patrocinio">Patrocinio a spese dello Stato</h2>
+        <ul class="notizie" id="patrocinio"><li class="stato">Caricamento delle notizie…</li></ul>
+      </section>
+      <section class="rubrica" aria-labelledby="t-giurisprudenza">
+        <h2 id="t-giurisprudenza">Giurisprudenza</h2>
+        <ul class="notizie" id="giurisprudenza"><li class="stato">Caricamento delle notizie…</li></ul>
+      </section>
+    </div>
+    <p class="avvertenza">I contenuti appartengono alle rispettive fonti e hanno finalità esclusivamente informativa: non costituiscono parere legale sul vostro caso.</p>
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="contenitore">
+    <p>Avv. Vincenzo Stante, iscritto all'Ordine degli Avvocati di Bari. P.IVA 07973660728</p>
+    <ul>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="./">Home</a></li>
+    </ul>
+  </div>
+</footer>
+
 <script>
-async function loadNews() {
-	try {
-		const response = await fetch('./data/news.json?t=' + Date.now());
-		if (!response.ok) throw new Error('Errore nel caricamento');
-		const data = await response.json();
-
-		for (const category in data) {
-			const container = document.getElementById(category);
-			if (!container) continue;
-			container.innerHTML = '';
-
-			if (!data[category] || data[category].length === 0) {
-				container.innerHTML = '<p class="news-loading">Nessuna notizia disponibile.</p>';
-				continue;
-			}
-
-			data[category].forEach(item => {
-				const div = document.createElement('div');
-				div.className = 'news-item';
-
-				const img = item.image
-					? `<img class="news-img" src="${item.image}" alt="" loading="lazy">`
-					: '';
-
-				const desc = (item.description || '').trim();
-
-				div.innerHTML = `
-					<a class="news-title" href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
-					<span class="news-date">${item.date || ''}</span>
-					${img}
-					<div class="news-desc">${desc}</div>
-					<a class="news-read-more" href="${item.link}" target="_blank" rel="noopener noreferrer">Leggi l'articolo →</a>
-				`;
-				container.appendChild(div);
-			});
-		}
-	} catch (e) {
-		document.querySelectorAll('.news-loading').forEach(el => {
-			el.className = 'news-error';
-			el.textContent = 'Impossibile caricare le notizie.';
-		});
-	}
-}
-
-loadNews();
+(function () {
+  // Il testo arriva da feed esterni: viene sempre inserito come testo, mai come HTML.
+  function linkSicuro(url) {
+    try {
+      var u = new URL(url, location.href);
+      return (u.protocol === 'https:' || u.protocol === 'http:') ? u.href : null;
+    } catch (e) { return null; }
+  }
+  function stato(ul, testo) {
+    ul.textContent = '';
+    var li = document.createElement('li');
+    li.className = 'stato';
+    li.textContent = testo;
+    ul.appendChild(li);
+  }
+  function fonte(url) {
+    try { return new URL(url).hostname.replace(/^www\.|^news\./, ''); } catch (e) { return ''; }
+  }
+  fetch('data/news.json?t=' + Date.now())
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (dati) {
+      ['penale', 'famiglia', 'patrocinio', 'giurisprudenza'].forEach(function (cat) {
+        var ul = document.getElementById(cat);
+        var voci = Array.isArray(dati[cat]) ? dati[cat] : [];
+        if (!voci.length) { stato(ul, 'Nessuna notizia disponibile al momento.'); return; }
+        ul.textContent = '';
+        voci.forEach(function (v) {
+          var href = linkSicuro(v.link);
+          if (!href || !v.title) return;
+          var li = document.createElement('li');
+          li.className = 'notizia';
+          var a = document.createElement('a');
+          a.className = 'titolo';
+          a.href = href;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.textContent = String(v.title);
+          li.appendChild(a);
+          var meta = document.createElement('span');
+          meta.className = 'meta';
+          meta.textContent = [v.date, fonte(href)].filter(Boolean).join(', ');
+          li.appendChild(meta);
+          var sintesi = String(v.description || '').trim();
+          if (sintesi) {
+            var p = document.createElement('p');
+            p.className = 'sintesi';
+            p.textContent = sintesi.length > 220 ? sintesi.slice(0, 220).replace(/\s+\S*$/, '') + '…' : sintesi;
+            li.appendChild(p);
+          }
+          ul.appendChild(li);
+        });
+        if (!ul.children.length) stato(ul, 'Nessuna notizia disponibile al momento.');
+      });
+    })
+    .catch(function () {
+      document.querySelectorAll('.notizie').forEach(function (ul) {
+        stato(ul, 'Le notizie non sono disponibili in questo momento. Riprovate più tardi.');
+      });
+    });
+})();
 </script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/main.js"></script>
 </body>
 </html>
