@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PecBird – ricevute PEC ed esiti dei depositi per Thunderbird | Avv. Vincenzo Stante</title>
+<meta name="description" content="Estensione gratuita per Thunderbird: legge le ricevute PEC e gli esiti dei depositi telematici, mostra lo stato di consegna, segnala gli errori e salva il fascicolo. Non effettua depositi. Tutto in locale.">
+<link rel="canonical" href="https://www.studiolegalestante.it/pecbird.html">
+<meta name="theme-color" content="#1D2B45">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/libre-caslon-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/studio.css">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Studio Legale Avv. Vincenzo Stante">
+<meta property="og:title" content="PecBird – ricevute PEC ed esiti dei depositi per Thunderbird">
+<meta property="og:description" content="Estensione gratuita per Thunderbird: ricevute PEC, esiti dei depositi telematici, errori in evidenza e fascicolo pronto. Tutto in locale.">
+<meta property="og:url" content="https://www.studiolegalestante.it/pecbird.html">
+<meta property="og:image" content="https://www.studiolegalestante.it/images/og-studio-stante.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://www.studiolegalestante.it/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "PecBird",
+   "item": "https://www.studiolegalestante.it/pecbird.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "PecBird",
+ "alternateName": "PecBird – ricevute PEC ed esiti dei depositi per Thunderbird",
+ "description": "Estensione per Thunderbird che legge ricevute PEC ed esiti dei depositi telematici, mostra lo stato di consegna, segnala gli errori e salva il fascicolo, interamente in locale.",
+ "applicationCategory": "BusinessApplication",
+ "operatingSystem": "Thunderbird 140 o successivo (Windows, macOS, Linux)",
+ "softwareVersion": "0.6.0",
+ "inLanguage": "it",
+ "isAccessibleForFree": true,
+ "license": "https://interoperable-europe.ec.europa.eu/collection/eupl/eupl-text-eupl-12",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "EUR"
+ },
+ "downloadUrl": "https://www.studiolegalestante.it/download/pecbird-0.6.0.xpi",
+ "author": {
+  "@type": "Person",
+  "name": "Avv. Vincenzo Stante",
+  "url": "https://www.studiolegalestante.it/"
+ },
+ "publisher": {
+  "@id": "https://www.studiolegalestante.it/#studio"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "PecBird è gratuito?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Sì. È software libero, distribuito con Licenza Pubblica dell'Unione europea (EUPL) v. 1.2, senza costi e senza registrazione."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "I miei messaggi vengono inviati da qualche parte?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. PecBird lavora solo sul computer in cui è installato: non trasmette messaggi, indirizzi o altri dati, né allo studio né a terzi, e non raccoglie statistiche d'uso."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Con quali gestori PEC funziona?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Legge i dati di certificazione previsti dalle regole tecniche della PEC, comuni a tutti i gestori. È stato provato con caselle Aruba, con ricevute di gestori diversi e con esiti di Tribunale e UNEP."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Sostituisce il controllo sul Portale dei servizi telematici?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Gli stati mostrati sono ricostruiti dalle PEC presenti in Thunderbird: fanno fede le ricevute originali e, per i depositi, le risultanze del Portale e dei registri di cancelleria."
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<header class="contenitore testata">
+  <a class="marchio" href="./">Studio Legale Stante</a>
+  <nav aria-label="Principale">
+    <ul>
+      <li><a href="./#materie">Materie</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="./#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="contenuto">
+  <div class="contenitore pagina-titolo">
+    <nav class="percorso" aria-label="Percorso"><ol><li><a href="./">Home</a></li><li aria-current="page">PecBird</li></ol></nav>
+    <h1>PecBird: ricevute PEC ed esiti dei depositi sotto controllo in Thunderbird</h1>
+    <p>Un'estensione gratuita per Thunderbird che legge le ricevute di posta elettronica certificata e gli esiti dei depositi telematici, mostra a colpo d'occhio cosa è stato consegnato e cosa no, e prepara il fascicolo con i messaggi originali.</p>
+    <p><strong>PecBird non effettua depositi né invia messaggi</strong>: i depositi si fanno come sempre con il redattore; PecBird legge e controlla le PEC che li accompagnano (ricevute ed esiti).</p>
+    <p class="data">Realizzata dallo Studio Legale Stante. Versione 0.6.0, ottobre 2026.</p>
+    <div class="azioni a-sinistra">
+      <a class="bottone pieno" href="download/pecbird-0.6.0.xpi" download>Scarica PecBird 0.6.0</a>
+      <a class="bottone vuoto" href="#installazione">Come si installa</a>
+    </div>
+  </div>
+  <div class="contenitore sezione">
+    <div class="prosa">
+      <h2>Cosa fa</h2>
+      <ul>
+        <li><strong>Riquadro in cima a ogni PEC</strong> con i dati di certificazione del gestore: tipo di ricevuta, data e ora, destinatari, identificativo, eventuale errore.</li>
+        <li><strong>Stato dei messaggi inviati</strong>, ricostruito dalle ricevute: accettata, consegnata a tutti, consegna parziale, mancata consegna.</li>
+        <li><strong>Depositi telematici</strong> (fatti con il redattore e inviati agli indirizzi del processo civile telematico): segue le quattro PEC del deposito (accettazione, consegna, esito dei controlli automatici, intervento della cancelleria) e indica quando il deposito si è perfezionato, con il dettaglio di eventuali anomalie e del file che le ha causate.</li>
+        <li><strong>Colori ed etichette nell'elenco</strong>: le PEC in arrivo si distinguono dalle ricevute, gli errori e le anomalie sono evidenziati e contrassegnati con la stella.</li>
+        <li><strong>Avvisi</strong> se una ricevuta di consegna o un esito del deposito tarda ad arrivare.</li>
+        <li><strong>Segnalazione dei problemi</strong> direttamente dal messaggio, con i dati tecnici anonimizzati prima dell'invio.</li>
+        <li><strong>Fascicolo</strong>: con un clic salva il messaggio inviato e le sue ricevute in formato <code>.eml</code>, un riepilogo in PDF e l'archivio <code>.zip</code> pronto da allegare per la prova della notifica.</li>
+      </ul>
+
+      <h2 id="installazione">Come si installa</h2>
+      <ol>
+        <li>Scaricate il file <a href="download/pecbird-0.6.0.xpi" download><code>pecbird-0.6.0.xpi</code></a>.</li>
+        <li>In Thunderbird aprite il menu ☰ → <em>Componenti aggiuntivi e temi</em>.</li>
+        <li>Cliccate l'ingranaggio ⚙ → <em>Installa componente aggiuntivo da file…</em> e scegliete il file scaricato.</li>
+        <li>Confermate con <em>Aggiungi</em>. Si apre la pagina <em>Informazioni e avvertenze</em>: leggetela prima di usare l'estensione.</li>
+        <li>Per le PEC già presenti, fate clic destro sulla cartella (per esempio la Posta in arrivo della casella PEC) e scegliete <em>PecBird: analizza le ricevute in questa cartella</em>. Le PEC che arrivano dopo vengono elaborate da sole.</li>
+      </ol>
+      <p>Requisiti: Thunderbird 140 o successivo, su Windows, macOS o Linux. Per gli aggiornamenti basta installare il nuovo file allo stesso modo: preferenze e dati vengono conservati.</p>
+
+      <h2>Riservatezza</h2>
+      <p>PecBird funziona interamente sul computer in cui è installato. Non trasmette messaggi, indirizzi o altri dati a server esterni, né allo studio né a terzi, e non raccoglie statistiche d'uso. Le informazioni che ricava restano nel profilo di Thunderbird e si cancellano disinstallando l'estensione.</p>
+
+      <h2>Limiti da conoscere</h2>
+      <ul>
+        <li>Gli stati mostrati sono ricostruiti dalle PEC presenti in Thunderbird: <strong>fanno fede le ricevute originali</strong> dei gestori e, per i depositi, le risultanze del Portale dei servizi telematici e dei registri di cancelleria.</li>
+        <li>Gli avvisi funzionano solo con Thunderbird aperto e <strong>non sono uno scadenzario</strong>: il controllo dei termini resta del professionista.</li>
+        <li>L'estensione non verifica le firme dei gestori né le firme digitali degli allegati; il riepilogo PDF del fascicolo non ha valore probatorio.</li>
+      </ul>
+      <p>Il testo completo delle avvertenze, con l'esclusione di garanzia e la limitazione di responsabilità, si apre all'installazione ed è sempre consultabile dalle opzioni dell'estensione.</p>
+
+      <h2>Licenza e codice</h2>
+      <p>PecBird è software libero, distribuito con <a href="https://interoperable-europe.ec.europa.eu/collection/eupl/eupl-text-eupl-12" rel="noopener">Licenza Pubblica dell'Unione europea (EUPL) v. 1.2</a>. Licenziante: Avv. Vincenzo Stante. Il codice sorgente, non offuscato, è contenuto nel pacchetto stesso dell'estensione, insieme al testo della licenza.</p>
+
+<h2 id="domande">Domande frequenti</h2>
+<div class="faq">
+<details><summary>PecBird è gratuito?</summary><div>Sì. È software libero, distribuito con Licenza Pubblica dell'Unione europea (EUPL) v. 1.2, senza costi e senza registrazione.</div></details>
+<details><summary>I miei messaggi vengono inviati da qualche parte?</summary><div>No. PecBird lavora solo sul computer in cui è installato: non trasmette messaggi, indirizzi o altri dati, né allo studio né a terzi, e non raccoglie statistiche d'uso.</div></details>
+<details><summary>Con quali gestori PEC funziona?</summary><div>Legge i dati di certificazione previsti dalle regole tecniche della PEC, comuni a tutti i gestori. È stato provato con caselle Aruba, con ricevute di gestori diversi e con esiti di Tribunale e UNEP.</div></details>
+<details><summary>Sostituisce il controllo sul Portale dei servizi telematici?</summary><div>No. Gli stati mostrati sono ricostruiti dalle PEC presenti in Thunderbird: fanno fede le ricevute originali e, per i depositi, le risultanze del Portale e dei registri di cancelleria.</div></details>
+</div>
+
+      <div class="chiusura">
+        <h2>Segnalazioni e suggerimenti</h2>
+        <p>Se una ricevuta o un esito non viene riconosciuto correttamente, aprite il messaggio e cliccate <em>Segnala un problema</em> in fondo al riquadro di PecBird. Si apre una pagina che mostra i dati tecnici del messaggio <strong>già anonimizzati</strong> (indirizzi, oggetti, numeri di ruolo e nomi dei file sostituiti da segnaposto) e prepara un'email allo studio, che potete rivedere prima di inviarla. Non inoltrate le PEC: il testo dei messaggi e gli allegati non servono e non vanno condivisi.</p>
+        <p>Per suggerimenti o domande potete scrivere a <a href="mailto:avv.vincenzostante@gmail.com?subject=%5BPecBird%5D%20Suggerimento">avv.vincenzostante@gmail.com</a>, con oggetto «[PecBird]».</p>
+      </div>
+      <p class="avvertenza">PecBird è uno strumento di supporto alla consultazione della posta certificata, fornito gratuitamente «così com'è». Le indicazioni che mostra hanno carattere tecnico e non costituiscono parere legale.</p>
+    </div>
+  </div>
+</main>
+<footer class="pie">
+  <div class="contenitore">
+    <p>Avv. Vincenzo Stante, iscritto all'Ordine degli Avvocati di Bari. P.IVA 07973660728</p>
+    <ul>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
