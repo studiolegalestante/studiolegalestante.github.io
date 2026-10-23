@@ -114,13 +114,13 @@ p:last-child{margin-bottom:0}
 .pie{background:var(--carta-2);border-top:1px solid var(--filetto)}
 .pie .contenitore{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem 2rem;padding-top:1.75rem;padding-bottom:1.75rem;font-size:.875rem;color:var(--grigio)}
 .pie p{margin:0}
-.pie ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+.pie ul{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;list-style:none;margin:0;padding:0}
 
 /* Pagine interne (news, privacy) */
 .pagina-titolo{padding-top:3.5rem;padding-bottom:3rem;border-bottom:1px solid var(--filetto)}
 .pagina-titolo h1{font-size:clamp(2.25rem,5vw,3.25rem);margin-bottom:.75rem}
 .pagina-titolo p{color:var(--grigio);max-width:680px}
-.prosa{max-width:720px}
+.prosa{max-width:720px;overflow-wrap:break-word}
 .prosa h2{font-size:1.75rem;margin:2.75rem 0 .75rem}
 .prosa ul{padding-left:1.25rem;margin:0 0 1.2em}
 .prosa li{margin-bottom:.4em}
