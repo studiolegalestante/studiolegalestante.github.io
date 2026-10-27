@@ -1,6 +1,13 @@
 {
   "penale": [
     {
+      "title": "Sovraffollamento nelle carceri: misure alternative e percorsi riparatori",
+      "link": "https://news.avvocatoandreani.it/articoli/sovraffollamento-carceri-misure-alternative-percorsi-riparatori-108956.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/cortile-del-carcere-affollato_large.webp",
+      "description": "Avv. Mario Pavone. ”Il grado di civiltà di un Paese si misura dalle sue carceri, come recita un celebre aforisma attribuito a Fëdor Dostoevskij, che la dice lunga sulla grave situazione del nostro Sistema Carcerario e della violazione di Diritti Umani, su cui dovrebbero riflettere e farne un buon uso quanti parlano del ”sovraffollamento carcerario“ senza avere alcuna cognizione di causa e che sono",
+      "date": "27/10/2026"
+    },
+    {
       "title": "Due cani uccisi a fucilate: crudeltà o assenza di necessità?",
       "link": "https://news.avvocatoandreani.it/articoli/due-cani-uccisi-fucilate-crudelta-assenza-necessita-108953.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/animali/cani-pittbull-rottwailer_large.webp",
@@ -34,13 +41,6 @@
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/si-o-no-in-tribunale-italiano_large.webp",
       "description": "Avv. Mario Pavone. Una delle problematiche che sta suscitando un acceso dibattito sulla applicazione del nuovo istituto processuale della Giustizia Riparativa è costituito dal necessario consenso della Vittima, sia o meno costituita Parte Civile in giudizio o, semplicemente, Parte Offesa. In primo luogo, un punto cruciale è quello rappresentato dalla rilevanza nel procedimento del diniego manifest",
       "date": "07/10/2026"
-    },
-    {
-      "title": "Devianza minorile e baby gang",
-      "link": "https://news.avvocatoandreani.it/articoli/devianza-minorile-baby-gang-108918.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/persone/baby-gang-grattacieli-citta_large.webp",
-      "description": "Avv. Mario Pavone. L'opinione pubblica, in questi giorni è sempre più scossa dalle notizie di cronaca che riguardano il fenomeno allarmante della criminalità organiz- zata minorile, comunemente definita come quella delle c. d. ”baby gang“ ovvero quella dei c. d. ”Maranza“, composta, in prevalenza, da minori di origine straniera. Sebbene i nomi attribuiti abbiano un'origine giornalistica, essi sott",
-      "date": "05/10/2026"
     }
   ],
   "famiglia": [
@@ -103,18 +103,18 @@
       "date": "18/09/2026"
     },
     {
-      "title": "Falso reddito nell'istanza di patrocinio gratuito: il dolo non si presume",
-      "link": "https://news.avvocatoandreani.it/articoli/falso-reddito-istanza-patrocinio-gratuito-dolo-non-presume-108814.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/istanza-gratuito-patrocinio-redditi-detenuto_large.webp",
-      "description": "Avv. Anna Andreani. La Cassazione con la sentenza n. 27206 del 18 luglio 2026 ha stabilito che la falsa attestazione di reddito nell'istanza di patrocinio a spese dello Stato non integra automaticamente il reato se il reddito reale era comunque sotto la soglia di legge: il giudice deve verificare rigorosamente il dolo, escludendo che il falso fosse inutile ai fini dell'ammissione al beneficio. Pre",
-      "date": "23/07/2026"
-    },
-    {
       "title": "Patrocinio a spese dello Stato e riduzione compenso difensore irreperibile",
       "link": "https://www.studiocataldi.it/articoli/48265-patrocinio-a-spese-dello-stato-e-riduzione-compenso-difensore-irreperibile.asp",
       "image": "https://www.studiocataldi.it/images/imgnews/avvocato_giudice_bilancia_giustizia-id29150.jpg",
       "description": "Il Tribunale di Spoleto, con sentenza del 19 maggio 2026 n. 257, ha affrontato il tema del compenso spettante al difensore d'ufficio dell'imputato irreperibile nell'ambito del patrocinio a spese dello Stato, chiarendo i criteri di liquidazione e le possibili riduzioni previste dalla normativa vigente. Liquidazione del compenso e competenza del giudice In base all'art. 83 del D.P.R. n. 115/2002 (Te",
       "date": "16/06/2026"
+    },
+    {
+      "title": "Falso reddito nell'istanza di patrocinio gratuito: il dolo non si presume",
+      "link": "https://news.avvocatoandreani.it/articoli/falso-reddito-istanza-patrocinio-gratuito-dolo-non-presume-108814.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/istanza-gratuito-patrocinio-redditi-detenuto_large.webp",
+      "description": "Avv. Anna Andreani. La Cassazione con la sentenza n. 27206 del 18 luglio 2026 ha stabilito che la falsa attestazione di reddito nell'istanza di patrocinio a spese dello Stato non integra automaticamente il reato se il reddito reale era comunque sotto la soglia di legge: il giudice deve verificare rigorosamente il dolo, escludendo che il falso fosse inutile ai fini dell'ammissione al beneficio. Pre",
+      "date": "23/07/2026"
     },
     {
       "title": "Difensore d'ufficio: l'opposizione al decreto di liquidazione è esente da imposta di registro",
