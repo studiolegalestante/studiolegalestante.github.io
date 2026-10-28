@@ -47,6 +47,15 @@ p:last-child{margin-bottom:0}
 .testata nav ul{display:flex;flex-wrap:wrap;gap:.5rem 1.75rem;list-style:none;margin:0;padding:0}
 .testata nav a{text-decoration:none}
 .testata nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:.3em}
+@media (max-width:760px){
+  .testata{flex-direction:column;align-items:stretch;gap:1.1rem;padding-top:1.75rem;padding-bottom:1.25rem}
+  .testata .marchio{position:relative;align-self:flex-start;font-size:1.9rem;line-height:1.05;letter-spacing:.005em;padding-bottom:.65rem}
+  .testata .marchio::after{content:"";position:absolute;left:0;bottom:0;width:2.75rem;height:2px;background:var(--ceralacca)}
+  .testata nav{border-top:1px solid var(--filetto);padding-top:.85rem}
+  .testata nav ul{gap:.45rem 1.35rem;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
+  .testata nav a{color:var(--grigio)}
+  .testata nav a:hover,.testata nav a[aria-current="page"]{color:var(--inchiostro)}
+}
 
 /* Apertura a carta intestata */
 .intestazione{text-align:center;padding-top:4.5rem;padding-bottom:5.5rem}
