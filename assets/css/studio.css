@@ -118,6 +118,9 @@ p:last-child{margin-bottom:0}
 .contatti h2{margin-bottom:1.25rem}
 .contatti address{flex:1 1 320px;font-style:normal;font-size:1.0625rem;line-height:1.9}
 .contatti address .nome{font-family:var(--display);font-size:1.375rem;color:var(--inchiostro)}
+.contatti address .icona{width:1.05em;height:1.05em;vertical-align:-.17em;margin-right:.45em;fill:none;stroke:var(--ceralacca);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.contatti address .etichetta{display:inline-block;margin-top:.5rem;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grigio)}
+.contatti address .sep{margin:0 .6em;color:var(--filetto)}
 
 /* Piè di pagina */
 .pie{background:var(--carta-2);border-top:1px solid var(--filetto)}
