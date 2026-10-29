@@ -112,6 +112,9 @@ p:last-child{margin-bottom:0}
 .interventi .testo{flex:1 1 320px;min-width:0;max-width:460px}
 .interventi h2{font-size:2.125rem;margin-bottom:1rem}
 .interventi .video{flex:1 1 480px;min-width:0}
+.interventi .intervento{margin:1.75rem 0 0}
+.interventi .intervento img{width:100%;border:1px solid var(--filetto)}
+.interventi .intervento figcaption{margin-top:.6rem;font-size:.9rem;font-style:italic;color:var(--grigio)}
 .interventi video{width:100%;display:block;border:1px solid var(--filetto);background:#000;aspect-ratio:1536/1487;object-fit:contain;max-height:520px}
 
 /* Contatti */
