@@ -114,6 +114,12 @@ p:last-child{margin-bottom:0}
 .interventi .video{flex:1 1 480px;min-width:0}
 .interventi .intervento{margin:1.75rem 0 0}
 .interventi .intervento img{width:100%;border:1px solid var(--filetto)}
+.yt{position:relative;display:block;width:100%;padding:0;border:0;background:#000;cursor:pointer}
+.yt img{display:block}
+.yt-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:rgba(29,43,69,.85);transition:background .2s}
+.yt-play::after{content:"";position:absolute;left:27px;top:14px;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff}
+.yt:hover .yt-play,.yt:focus-visible .yt-play{background:var(--ceralacca)}
+.yt-frame{display:block;width:100%;aspect-ratio:16/9;border:1px solid var(--filetto)}
 .interventi .intervento figcaption{margin-top:.6rem;font-size:.9rem;font-style:italic;color:var(--grigio)}
 .interventi video{width:100%;display:block;border:1px solid var(--filetto);background:#000;aspect-ratio:1536/1487;object-fit:contain;max-height:520px}
 
