@@ -177,10 +177,7 @@
     <h2 id="titolo-interventi">Interventi</h2>
     <p>Ospite della trasmissione Pomeriggio Sud, 22 febbraio 2024.</p>
     <figure class="intervento">
-      <button type="button" class="yt" data-yt="ADpi73RSjq4" aria-label="Guarda su YouTube la puntata di Legalmente del 20 maggio 2024">
-        <img src="images/mediterranea-tv.webp" width="1079" height="683" loading="lazy" alt="L'Avv. Vincenzo Stante ospite di Legalmente su Mediterranea TV">
-        <span class="yt-play" aria-hidden="true"></span>
-      </button>
+      <iframe class="yt-frame" src="https://www.youtube.com/embed/ADpi73RSjq4?rel=0" title="Legalmente by Mediterranea TV, puntata del 20 maggio 2024" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <figcaption>Ospite di Legalmente, Mediterranea TV, 20 maggio 2024: intelligenza artificiale e deepfake. <a href="https://www.youtube.com/watch?v=ADpi73RSjq4" rel="noopener">Guarda la puntata su YouTube</a></figcaption>
     </figure>
     <figure class="intervento">
@@ -243,10 +240,5 @@
     </ul>
   </div>
 </footer>
-<script>
-document.querySelectorAll('.yt').forEach(function(b){b.addEventListener('click',function(){
-var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0';
-f.title=b.getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.className='yt-frame';b.replaceWith(f);});});
-</script>
 </body>
 </html>
