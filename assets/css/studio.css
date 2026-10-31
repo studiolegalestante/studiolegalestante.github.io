@@ -47,6 +47,12 @@ p:last-child{margin-bottom:0}
 .testata nav ul{display:flex;flex-wrap:wrap;gap:.5rem 1.75rem;list-style:none;margin:0;padding:0}
 .testata nav a{text-decoration:none}
 .testata nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:.3em}
+.lingue{display:flex;flex-wrap:wrap;gap:.25rem .9rem;list-style:none;margin:0;padding:0;font-size:.8rem;letter-spacing:.04em}
+.lingue a{text-decoration:none;color:var(--grigio)}
+.lingue a:hover{color:var(--inchiostro)}
+.lingue a[aria-current]{color:var(--inchiostro);text-decoration:underline;text-decoration-color:var(--ceralacca);text-underline-offset:.35em}
+.lingue-colloquio{font-style:italic;color:var(--grigio)}
+:lang(ka){font-family:var(--serif),"Noto Serif Georgian","Sylfaen",serif}
 @media (max-width:760px){
   .testata{flex-direction:column;align-items:stretch;gap:1.1rem;padding-top:1.75rem;padding-bottom:1.25rem}
   .testata .marchio{position:relative;align-self:flex-start;font-size:1.9rem;line-height:1.05;letter-spacing:.005em;padding-bottom:.65rem}
@@ -55,6 +61,7 @@ p:last-child{margin-bottom:0}
   .testata nav ul{gap:.45rem 1.35rem;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
   .testata nav a{color:var(--grigio)}
   .testata nav a:hover,.testata nav a[aria-current="page"]{color:var(--inchiostro)}
+  .lingue{font-size:.8rem}
 }
 
 /* Apertura a carta intestata */
