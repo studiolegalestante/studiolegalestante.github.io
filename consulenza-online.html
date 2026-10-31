@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=20261029">
 <link rel="preload" href="assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/libre-caslon-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/studio.css?v=20261030">
+<link rel="stylesheet" href="assets/css/studio.css?v=20261031b">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Studio Legale Avv. Vincenzo Stante">
@@ -157,10 +157,13 @@
       <div class="riquadro"><p>Se poi mi affidate l'incarico per la stessa questione, il costo della consulenza viene detratto dal compenso. Se ritenete di avere i requisiti per il <a href="patrocinio-spese-stato.html">patrocinio a spese dello Stato</a>, indicatelo nella richiesta: valuteremo prima quella strada.</p></div>
 
       <h2 id="richiesta">Richiedi una consulenza</h2>
-      <p>Compilate il modulo e inviatelo. In alternativa potete preparare un'email già compilata da spedire dalla vostra casella di posta.</p>
+      <p>Due passaggi, pochi minuti. Prima descrivete la questione, poi inserite i dati per la fattura. In alternativa potete preparare un'email già compilata da spedire dalla vostra casella di posta.</p>
       <form id="modulo-consulenza" class="modulo" novalidate>
+        <p class="indicatore-passi" aria-live="polite"><span data-indicatore="1" aria-current="step">1. La questione</span><span data-indicatore="2">2. Fattura e conferma</span></p>
+
+        <div class="passo" data-passo="1">
         <fieldset>
-          <legend>La consulenza</legend>
+          <legend>La vostra questione</legend>
           <div class="riga">
             <label>Materia
               <select name="materia" required>
@@ -176,17 +179,32 @@
             <label><input type="radio" name="livello" value="Ordinaria" checked> Ordinaria, 150 € + spese, Cassa e bollo, entro 5 giorni lavorativi</label>
             <label><input type="radio" name="livello" value="Urgente"> Urgente, 250 € + spese, Cassa e bollo, entro 2 giorni lavorativi</label>
           </div>
-          <label>Altre parti coinvolte
-            <textarea name="controparti" rows="2" required placeholder="Nomi e cognomi o denominazioni delle controparti, per la verifica del conflitto di interessi"></textarea>
-          </label>
           <label>Descrizione della questione
             <textarea name="descrizione" rows="5" required placeholder="In poche righe: cosa è successo e cosa avete ricevuto"></textarea>
+          </label>
+          <div class="griglia-campi">
+            <label >Nome<input type="text" name="nome" autocomplete="given-name"></label>
+            <label >Cognome<input type="text" name="cognome" autocomplete="family-name"></label>
+            <label>Email<input type="email" name="email" required autocomplete="email"></label>
+            <label>Telefono<input type="tel" name="telefono" required autocomplete="tel"></label>
+          </div>
+        </fieldset>
+        <div class="azioni a-sinistra">
+          <button type="button" class="bottone pieno" data-vai="2">Continua</button>
+        </div>
+        <p class="nota-passo">Al passo successivo: dati per la fattura e conferma. Nessun pagamento ora: il prezzo vi viene confermato per email prima di iniziare.</p>
+        </div>
+
+        <div class="passo" data-passo="2" hidden>
+        <fieldset>
+          <legend>Per il controllo del conflitto di interessi</legend>
+          <label>Altre parti coinvolte
+            <textarea name="controparti" rows="2" required placeholder="Nomi e cognomi o denominazioni delle controparti, per la verifica del conflitto di interessi"></textarea>
           </label>
           <label>Scadenze già note (facoltativo)
             <input type="text" name="scadenze" placeholder="Per esempio: udienza il 12 novembre, atto notificato il 3 ottobre">
           </label>
         </fieldset>
-
         <fieldset>
           <legend>Dati per la fattura</legend>
           <div class="scelte" role="radiogroup" aria-label="Tipo di cliente">
@@ -194,8 +212,8 @@
             <label><input type="radio" name="tipo" value="impresa"> Impresa o professionista</label>
           </div>
           <div class="griglia-campi">
-            <label class="solo-privato">Nome<input type="text" name="nome" autocomplete="given-name"></label>
-            <label class="solo-privato">Cognome<input type="text" name="cognome" autocomplete="family-name"></label>
+            
+            
             <label class="solo-impresa largo" hidden>Ragione sociale<input type="text" name="ragione" autocomplete="organization"></label>
             <label>Codice fiscale<input type="text" name="cf" maxlength="16" autocapitalize="characters"></label>
             <label class="solo-impresa" hidden>Partita IVA<input type="text" name="piva" inputmode="numeric" maxlength="11"></label>
@@ -205,23 +223,26 @@
             <label>Provincia<input type="text" name="provincia" required maxlength="2" autocapitalize="characters"></label>
             <label>Nazione<input type="text" name="nazione" required value="Italia" autocomplete="country-name"></label>
             <label class="solo-impresa largo" hidden>Codice destinatario SDI oppure PEC<input type="text" name="sdi"></label>
-            <label>Email<input type="email" name="email" required autocomplete="email"></label>
-            <label>Telefono<input type="tel" name="telefono" required autocomplete="tel"></label>
+            
+            
           </div>
+        
         </fieldset>
-
         <fieldset>
           <legend>Consensi</legend>
-          <label class="spunta"><input type="checkbox" name="privacy" required> Ho letto l'<a href="privacy.html">informativa privacy</a>.</label>
-          <label class="spunta"><input type="checkbox" name="condizioni" required> Accetto le <a href="#condizioni">condizioni del servizio</a>.</label>
-          <label class="spunta"><input type="checkbox" name="recesso" required> Chiedo che la consulenza sia resa prima della scadenza del termine di recesso e prendo atto che, una volta resa per intero, perderò il diritto di recesso.</label>
+          <label class="spunta"><input type="checkbox" name="privacy" required> <span>Ho letto l'<a href="privacy.html">informativa privacy</a>.</span></label>
+          <label class="spunta"><input type="checkbox" name="condizioni" required> <span>Accetto le <a href="#condizioni">condizioni del servizio</a>.</span></label>
+          <label class="spunta"><input type="checkbox" name="recesso" required> <span>Chiedo che la consulenza sia resa prima della scadenza del termine di recesso e prendo atto che, una volta resa per intero, perderò il diritto di recesso.</span></label>
+        
         </fieldset>
-
         <p class="antispam" aria-hidden="true"><label>Lasciare vuoto<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
         <p class="errore" id="errore-modulo" role="alert" hidden></p>
+        
         <div class="azioni a-sinistra">
-          <button type="submit" class="bottone pieno" data-modo="servizio" >Invia la richiesta</button>
+          <button type="submit" class="bottone pieno" data-modo="servizio">Invia la richiesta</button>
           <button type="submit" class="bottone vuoto" data-modo="email">Prepara un'email</button>
+          <button type="button" class="bottone-testo" data-vai="1">← Torna indietro</button>
+        </div>
         </div>
         <p class="esito" id="esito-modulo" role="status" hidden></p>
         <div id="copia-richiesta" hidden>
@@ -261,6 +282,37 @@
   }
   form.querySelectorAll('input[name=tipo]').forEach(function (r) { r.addEventListener('change', aggiornaTipo); });
   aggiornaTipo();
+  var passi = form.querySelectorAll('.passo');
+  function mostra(n, focus) {
+    passi.forEach(function (p) { p.hidden = p.getAttribute('data-passo') !== String(n); });
+    form.querySelectorAll('[data-indicatore]').forEach(function (i) {
+      if (i.getAttribute('data-indicatore') === String(n)) i.setAttribute('aria-current', 'step'); else i.removeAttribute('aria-current');
+    });
+    if (focus) { var t = form.querySelector('.passo[data-passo="' + n + '"] input, .passo[data-passo="' + n + '"] select, .passo[data-passo="' + n + '"] textarea'); form.scrollIntoView({ behavior: 'smooth', block: 'start' }); if (t) setTimeout(function () { t.focus({ preventScroll: true }); }, 300); }
+  }
+  function verificaPasso1() {
+    var p1 = form.querySelector('.passo[data-passo="1"]'), mancanti = [];
+    p1.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
+    p1.querySelectorAll('[required]').forEach(function (el) { if (String(el.value).trim() === '') mancanti.push(el); });
+    if (!v('nome')) mancanti.push(form.elements.nome);
+    if (!v('cognome')) mancanti.push(form.elements.cognome);
+    if (form.elements.email.value && !form.elements.email.checkValidity()) mancanti.push(form.elements.email);
+    if (mancanti.length) {
+      mancanti.forEach(function (el) { el.setAttribute('aria-invalid', 'true'); });
+      err.textContent = 'Completate i campi evidenziati per continuare.';
+      err.hidden = false; p1.appendChild(err); mancanti[0].focus(); return false;
+    }
+    err.hidden = true; return true;
+  }
+  form.querySelectorAll('[data-vai]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var n = b.getAttribute('data-vai');
+      if (n === '2' && !verificaPasso1()) return;
+      form.querySelector('.passo[data-passo="2"] .azioni').before(err);
+      err.hidden = true;
+      mostra(n, true);
+    });
+  });
   function v(n) { var el = form.elements[n]; return el ? String(el.value || '').trim() : ''; }
   var ENDPOINT = 'https://formspree.io/f/xljgvwvq';
   var esito = document.getElementById('esito-modulo');
@@ -273,7 +325,7 @@
       var ok = el.type === 'checkbox' ? el.checked : String(el.value).trim() !== '';
       if (!ok) problemi.push(el);
     });
-    if (!imp && (!v('nome') || !v('cognome'))) problemi.push(form.elements.nome);
+    if (!v('nome') || !v('cognome')) problemi.push(form.elements.nome);
     if (imp && !v('ragione')) problemi.push(form.elements.ragione);
     var cf = v('cf').toUpperCase();
     if (!imp && !/^[A-Z]{6}[0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]$/.test(cf)) problemi.push(form.elements.cf);
@@ -285,6 +337,7 @@
       problemi.forEach(function (el) { el.setAttribute('aria-invalid', 'true'); });
       err.textContent = 'Controllate i campi evidenziati: sono obbligatori o non sono nel formato corretto.';
       err.hidden = false;
+      var pp = problemi[0].closest('.passo'); if (pp && pp.hidden) mostra(pp.getAttribute('data-passo'), false);
       problemi[0].focus();
       return;
     }
@@ -304,6 +357,7 @@
       '',
       'DATI PER LA FATTURA',
       'Tipo: ' + (imp ? 'impresa o professionista' : 'privato'),
+      'Richiedente: ' + v('nome') + ' ' + v('cognome'),
       'Intestatario: ' + intest,
       'Codice fiscale: ' + (cf || '-'),
       imp ? 'Partita IVA: ' + v('piva') : null,

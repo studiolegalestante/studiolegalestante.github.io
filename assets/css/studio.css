@@ -217,6 +217,11 @@ p:last-child{margin-bottom:0}
 .griglia-campi [hidden]{display:none}
 .modulo .errore{color:var(--ceralacca);font-weight:700}
 .modulo button{cursor:pointer;font-family:inherit}
+.indicatore-passi{display:flex;gap:1.5rem;margin:0 0 1.25rem;font-size:.9rem;letter-spacing:.03em;color:var(--grigio)}
+.indicatore-passi span{padding-bottom:.35rem;border-bottom:2px solid var(--filetto)}
+.indicatore-passi span[aria-current]{color:var(--inchiostro);border-bottom-color:var(--ceralacca)}
+.nota-passo{font-size:.9rem;color:var(--grigio);margin-top:.75rem}
+.bottone-testo{background:none;border:0;padding:.75rem .25rem;color:var(--inchiostro);text-decoration:underline;text-underline-offset:.25em;font-size:1rem}
 #copia-richiesta{margin-top:1.5rem}
 #copia-richiesta textarea{font-size:.875rem}
 .richiamo{background:var(--inchiostro);color:var(--notte-testo)}
