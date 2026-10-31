@@ -232,3 +232,12 @@ p:last-child{margin-bottom:0}
 .richiamo .bottone.pieno:hover{background:#fff;color:var(--ceralacca)}
 .richiamo .prezzi{font-family:var(--display);font-size:1.25rem;color:var(--carta);margin:0 0 .5rem}
 .antispam{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* Richiamo consulenza nelle pagine */
+.invito{margin:2.5rem 0;padding:1.5rem 1.75rem;background:var(--inchiostro);color:var(--notte-testo)}
+.invito p{margin:0 0 .75rem;color:var(--notte-grigio)}
+.invito .invito-titolo{font-family:var(--display);font-size:1.4rem;line-height:1.25;color:var(--carta)}
+.invito .invito-prezzo{font-size:.9rem;color:var(--rosa)}
+.invito .bottone.pieno{background:var(--carta);color:var(--inchiostro);border-color:var(--carta);margin-top:.25rem}
+.invito .bottone.pieno:hover{background:#fff;color:var(--ceralacca)}
+.prezzo-chiusura{font-size:.95rem;color:var(--grigio)}
