@@ -180,13 +180,12 @@
       <div class="assistente" id="assistente" hidden>
         <p class="assistente-titolo">Preferite raccontarlo con parole vostre?</p>
         <p>L'assistente vi fa qualche domanda, vi dice quali documenti preparare e compila il modulo per voi. Poi controllate e inviate.</p>
-        <button type="button" class="bottone vuoto" id="assistente-apri">Parla con l'assistente</button>
-        <div class="assistente-chat" id="assistente-chat" hidden>
+        <div class="assistente-chat" id="assistente-chat">
           <p class="assistente-avviso">Assistente automatico basato su intelligenza artificiale: non è l'avvocato e non dà pareri. Raccoglie le informazioni per la richiesta, che leggerà l'avvocato. La conversazione non viene conservata dal sito; non inserite dati sanitari o altri dati delicati se non necessari. <a href="privacy.html">Informativa privacy</a>.</p>
           <div class="assistente-messaggi" id="assistente-messaggi" aria-live="polite"></div>
           <form class="assistente-scrivi" id="assistente-scrivi">
             <label class="visivamente-nascosto" for="assistente-testo">Il vostro messaggio</label>
-            <textarea id="assistente-testo" rows="2" maxlength="2000" placeholder="Scrivete qui…"></textarea>
+            <textarea id="assistente-testo" rows="2" maxlength="2000" placeholder="Raccontate qui la vostra questione…"></textarea>
             <button type="submit" class="bottone pieno">Invia</button>
           </form>
           <div class="assistente-scheda" id="assistente-scheda" hidden>
@@ -441,13 +440,8 @@
     p.className = chi === 'user' ? 'da-utente' : 'da-assistente';
     p.textContent = testo; elenco.appendChild(p); elenco.scrollTop = elenco.scrollHeight; return p;
   }
-  document.getElementById('assistente-apri').addEventListener('click', function () {
-    this.hidden = true; chat.hidden = false;
-    var inglese = /^en\b/i.test(navigator.language || '');
-    aggiungi('assistant', inglese
-      ? 'Hello, I am the automated assistant of the Stante law office. Briefly, what happened and what have you received?'
-      : 'Buongiorno, sono l\'assistente automatico dello Studio Stante. In breve, che cosa è successo e che cosa avete ricevuto?');
-    campo.focus();
+  campo.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); scrivi.requestSubmit(); }
   });
   scrivi.addEventListener('submit', function (e) {
     e.preventDefault();
