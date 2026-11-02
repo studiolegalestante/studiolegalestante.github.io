@@ -474,6 +474,24 @@
   });
 })();
 </script>
+<script>
+(function () {
+  // Dati raccolti da Lex in un'altra pagina del sito: compilano il modulo.
+  var scheda = null;
+  try { scheda = JSON.parse(sessionStorage.getItem('lex-scheda') || 'null'); sessionStorage.removeItem('lex-scheda'); } catch (e) {}
+  if (!scheda) return;
+  var f = document.getElementById('modulo-consulenza'); if (!f) return;
+  var materie = [].map.call(f.elements.materia.options, function (o) { return o.text; });
+  f.elements.materia.value = materie.indexOf(scheda.materia) > -1 ? scheda.materia : 'Altro';
+  var liv = f.querySelector('input[name=livello][value="' + (scheda.livello === 'Urgente' ? 'Urgente' : 'Ordinaria') + '"]'); if (liv) liv.checked = true;
+  if (scheda.descrizione) f.elements.descrizione.value = scheda.descrizione;
+  if (scheda.controparti) f.elements.controparti.value = scheda.controparti;
+  if (scheda.scadenze) f.elements.scadenze.value = scheda.scadenze;
+  var nota = document.createElement('p'); nota.className = 'nota-passo';
+  nota.textContent = 'Abbiamo compilato il modulo con quanto avete scritto a Lex' + (scheda.documenti ? '. Documenti da preparare: ' + scheda.documenti : '') + '. Controllate e completate i dati.';
+  f.insertBefore(nota, f.firstChild);
+})();
+</script>
 <h2 id="domande">Domande frequenti</h2>
 <div class="faq">
 <details><summary>Serve venire in studio?</summary><div>No. Tutto si svolge a distanza: invio dei documenti e parere scritto. Se preferite incontrarci, potete chiedere un appuntamento a Triggiano.</div></details>
