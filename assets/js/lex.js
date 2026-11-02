@@ -6,13 +6,20 @@
   var storia = [], scheda = null;
 
   var css = '' +
-    '.lex-bolla{position:fixed;right:20px;bottom:20px;z-index:50;width:64px;height:64px;border-radius:50%;border:0;cursor:pointer;' +
-    'background:var(--inchiostro,#1D2B45);color:#fff;box-shadow:0 6px 20px rgba(29,43,69,.35);display:flex;align-items:center;justify-content:center;transition:transform .2s}' +
-    '.lex-bolla:hover{transform:scale(1.06)}.lex-bolla svg{width:34px;height:34px}' +
+    '.lex-bolla{position:fixed;right:24px;bottom:24px;z-index:50;width:128px;height:128px;border-radius:50%;border:4px solid #fff;cursor:pointer;' +
+    'background:var(--inchiostro,#1D2B45);color:#fff;box-shadow:0 10px 30px rgba(29,43,69,.45),0 0 0 3px var(--ceralacca,#8E2B22);display:flex;align-items:center;justify-content:center;' +
+    'animation:lex-inchino 7s ease-in-out 2s infinite;transform-origin:50% 100%}' +
+    '.lex-bolla:hover{animation:none;transform:scale(1.05)}.lex-bolla svg{width:88px;height:88px;overflow:visible}' +
+    '.lex-giogo{transform-origin:32px 12px;animation:lex-bilancia 7s ease-in-out 2s infinite}' +
+    '@keyframes lex-inchino{0%,14%,100%{transform:none}4%{transform:translateY(6px) rotate(-8deg) scale(.97)}9%{transform:translateY(0) rotate(3deg)}}' +
+    '@keyframes lex-bilancia{0%,22%,100%{transform:none}5%{transform:rotate(-14deg)}11%{transform:rotate(9deg)}16%{transform:rotate(-4deg)}}' +
+    '@media (prefers-reduced-motion:reduce){.lex-bolla,.lex-giogo{animation:none}}' +
     '.lex-bolla:focus-visible{outline:3px solid var(--ceralacca,#8E2B22);outline-offset:3px}' +
-    '.lex-invito{position:fixed;right:96px;bottom:32px;z-index:50;background:#fff;color:var(--testo,#2A2D33);border:1px solid var(--filetto,#C9CDD4);' +
-    'padding:.6rem .9rem;font:1rem/1.4 var(--serif,Georgia,serif);box-shadow:0 4px 14px rgba(0,0,0,.12);max-width:230px;cursor:pointer}' +
-    '.lex-pannello{position:fixed;right:20px;bottom:96px;z-index:51;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));' +
+    '.lex-invito{position:fixed;right:168px;bottom:52px;z-index:50;background:#fff;color:var(--inchiostro,#1D2B45);border:2px solid var(--inchiostro,#1D2B45);' +
+    'padding:.7rem 1.1rem;font:1.05rem/1.35 var(--serif,Georgia,serif);box-shadow:0 6px 18px rgba(0,0,0,.15);max-width:250px;cursor:pointer;text-align:left}' +
+    '.lex-invito b{display:block;font-family:var(--display,Georgia,serif);font-weight:400;font-size:1.35rem;color:var(--ceralacca,#8E2B22)}' +
+    '.lex-invito::after{content:"";position:absolute;right:-10px;top:50%;margin-top:-8px;border:8px solid transparent;border-left:10px solid var(--inchiostro,#1D2B45);border-right:0}' +
+    '.lex-pannello{position:fixed;right:20px;bottom:168px;z-index:51;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 200px));' +
     'background:var(--carta,#FCFCFA);border:1px solid var(--inchiostro,#1D2B45);box-shadow:0 12px 40px rgba(29,43,69,.3);display:flex;flex-direction:column;font-family:var(--serif,Georgia,serif)}' +
     '.lex-testata{display:flex;align-items:center;gap:.7rem;padding:.8rem 1rem;background:var(--inchiostro,#1D2B45);color:#fff}' +
     '.lex-testata svg{width:30px;height:30px;flex:none}.lex-testata b{font-family:var(--display,Georgia,serif);font-weight:400;font-size:1.3rem;display:block;line-height:1.1}' +
@@ -29,13 +36,16 @@
     '.lex-scrivi button{background:var(--inchiostro,#1D2B45);color:#fff;border:0;padding:0 1rem;font:inherit;cursor:pointer}' +
     '.lex-scrivi button:disabled{opacity:.5}' +
     '[hidden]{display:none!important}' +
-    '@media (max-width:480px){.lex-invito{display:none}.lex-pannello{right:16px;bottom:92px}}';
+    '@media (max-width:600px){.lex-bolla{width:96px;height:96px;right:16px;bottom:16px}.lex-bolla svg{width:64px;height:64px}' +
+    '.lex-invito{right:122px;bottom:30px;max-width:190px;font-size:.95rem;padding:.55rem .8rem}.lex-invito b{font-size:1.15rem}' +
+    '.lex-pannello{right:16px;bottom:124px;height:calc(100vh - 150px)}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   // Bilancia della giustizia
   var BILANCIA = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-    '<path d="M32 8v44M20 52h24M14 18h36"/><circle cx="32" cy="12" r="3" fill="currentColor"/>' +
-    '<path d="M14 18 6 36h16zM50 18l-8 18h16z"/><path d="M6 36a8 5 0 0 0 16 0M42 36a8 5 0 0 0 16 0"/></svg>';
+    '<path d="M32 12v40M20 52h24"/>' +
+    '<g class="lex-giogo"><path d="M14 18h36"/><path d="M14 18 6 36h16zM50 18l-8 18h16z"/><path d="M6 36a8 5 0 0 0 16 0M42 36a8 5 0 0 0 16 0"/></g>' +
+    '<circle cx="32" cy="12" r="3.5" fill="currentColor"/></svg>';
 
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html) e.innerHTML = html; return e; }
 
@@ -43,8 +53,8 @@
   bolla.type = 'button';
   bolla.setAttribute('aria-label', 'Apri la chat con Lex, assistente virtuale');
   var invito = el('div', 'lex-invito');
-  invito.textContent = 'Buongiorno, sono Lex. Posso aiutarvi a capire da dove partire?';
-  invito.hidden = true;
+  invito.innerHTML = '<b>Serve aiuto?</b>Sono Lex: scrivetemi, vi indico da dove partire.';
+  invito.setAttribute('role', 'button');
 
   var pannello = el('section', 'lex-pannello');
   pannello.hidden = true;
@@ -110,11 +120,9 @@
     window.location.href = CONSULENZA;
   });
 
-  // Invito discreto dopo qualche secondo, una sola volta per sessione
-  var giaVisto = false;
-  try { giaVisto = sessionStorage.getItem('lex-invito') === '1'; } catch (e) {}
-  if (!giaVisto) setTimeout(function () {
-    if (pannello.hidden) invito.hidden = false;
-    try { sessionStorage.setItem('lex-invito', '1'); } catch (e) {}
-  }, 6000);
+  // Sul telefono il fumetto copre i contenuti: si nasconde dopo qualche secondo o al primo scorrimento
+  if (window.matchMedia && window.matchMedia('(max-width:600px)').matches) {
+    var via = function () { if (pannello.hidden) invito.hidden = true; window.removeEventListener('scroll', via); };
+    setTimeout(via, 8000); window.addEventListener('scroll', via, { passive: true });
+  }
 })();
