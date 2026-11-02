@@ -10,6 +10,7 @@ env:
 
 permissions:
   contents: write
+  id-token: write
 
 jobs:
   update-news:
@@ -28,6 +29,14 @@ jobs:
         run: pip install requests beautifulsoup4 feedparser
 
       - name: Scarica le news
+        env:
+          AI_BASE: ${{ vars.AI_BASE }}
+          AI_VERSION: ${{ vars.AI_VERSION }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
+          AI_ORG: ${{ vars.AI_ORG }}
+          AI_RULE: ${{ vars.AI_RULE }}
+          AI_ACCOUNT: ${{ vars.AI_ACCOUNT }}
+          AI_WORKSPACE: ${{ vars.AI_WORKSPACE }}
         run: |
           mkdir -p data
           python scripts/fetch_news.py

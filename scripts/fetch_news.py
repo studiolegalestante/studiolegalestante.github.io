@@ -1,6 +1,8 @@
 import json
+import os
 import feedparser
 import re
+import requests
 from datetime import datetime
 import sys
 
@@ -83,6 +85,42 @@ PATROCINIO_FALLBACK = [
 
 OUTPUT_FILE = "data/news.json"
 MAX_ITEMS = 6
+MAX_CANDIDATI = 20  # articoli raccolti per categoria prima della selezione automatica
+
+# Configurazione del servizio di sintesi: tutti i valori arrivano dalle variabili del repository.
+AI = {k: os.environ.get("AI_" + k, "").strip() for k in
+      ("BASE", "VERSION", "MODEL", "ORG", "RULE", "ACCOUNT", "WORKSPACE")}
+AI_ATTIVA = all(AI.values())
+
+
+def token_accesso():
+    """Ottiene un accesso temporaneo tramite l'identità del workflow (nessuna chiave salvata)."""
+    url = os.environ.get("ACTIONS_ID_TOKEN_REQUEST_URL")
+    bearer = os.environ.get("ACTIONS_ID_TOKEN_REQUEST_TOKEN")
+    if not url or not bearer:
+        raise RuntimeError("identità del workflow non disponibile")
+    jwt = requests.get(url, params={"audience": AI["BASE"]},
+                       headers={"Authorization": "Bearer " + bearer}, timeout=30).json()["value"]
+    r = requests.post(AI["BASE"] + "/v1/oauth/token", json={
+        "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+        "assertion": jwt,
+        "federation_rule_id": AI["RULE"],
+        "organization_id": AI["ORG"],
+        "service_account_id": AI["ACCOUNT"],
+        "workspace_id": AI["WORKSPACE"],
+    }, timeout=30)
+    r.raise_for_status()
+    return r.json()["access_token"]
+
+
+_TOKEN = None
+
+DESCRIZIONE_CATEGORIA = {
+    "penale": "diritto e procedura penale",
+    "famiglia": "diritto di famiglia (separazione, divorzio, figli, mantenimento, successioni)",
+    "patrocinio": "patrocinio a spese dello Stato e accesso alla giustizia per i non abbienti",
+    "giurisprudenza": "sentenze rilevanti di Cassazione e dei giudici di merito, in materia civile, penale e di famiglia",
+}
 
 
 def clean(text):
@@ -136,18 +174,87 @@ def load_existing(category):
         return []
 
 
+def seleziona_con_ai(category, candidati):
+    """Sceglie gli articoli più utili e scrive una sintesi originale.
+    In caso di errore restituisce None e lo script usa il comportamento classico."""
+    global _TOKEN
+    if not AI_ATTIVA or not candidati:
+        return None
+    elenco = "\n".join(
+        f"[{i}] {c['title']} — {c['description'][:400]}" for i, c in enumerate(candidati)
+    )
+    istruzioni = (
+        "Sei il redattore della pagina notizie del sito di uno studio legale di Bari "
+        f"che si occupa di {DESCRIZIONE_CATEGORIA[category]}. "
+        f"Tra gli articoli elencati scegli i {MAX_ITEMS} più utili per un cittadino "
+        "che cerca informazioni su questa materia, scartando quelli fuori tema, "
+        "pubblicitari o duplicati. Per ciascuno scrivi una sintesi originale in italiano "
+        "semplice, di massimo 200 caratteri, che dica cosa cambia o cosa ha deciso il giudice. "
+        "Non copiare frasi dell'articolo, non inventare fatti che non risultano dal testo, "
+        "non dare consigli legali. Rispondi solo con JSON nel formato "
+        '[{"n": <numero articolo>, "sintesi": "<testo>"}], in ordine di importanza.'
+    )
+    try:
+        if _TOKEN is None:
+            _TOKEN = token_accesso()
+        r = requests.post(
+            AI["BASE"] + "/v1/messages",
+            headers={
+                "Authorization": "Bearer " + _TOKEN,
+                AI["VERSION"].split("=")[0]: AI["VERSION"].split("=")[1],
+                "content-type": "application/json",
+            },
+            json={
+                "model": AI["MODEL"],
+                "max_tokens": 8000,
+                "system": istruzioni,
+                "messages": [{"role": "user", "content": elenco}],
+            },
+            timeout=90,
+        )
+        r.raise_for_status()
+        dati = r.json()
+        testo = "".join(b.get("text", "") for b in dati.get("content", []))
+        if not testo:
+            tipi = [b.get("type") for b in dati.get("content", [])]
+            raise ValueError(f"risposta vuota (stop: {dati.get('stop_reason')}, blocchi: {tipi})")
+        trovato = re.search(r"\[\s*\{.*\}\s*\]", testo, re.S)
+        if not trovato:
+            raise ValueError("risposta senza elenco: " + testo[:120].replace("\n", " "))
+        scelte = json.loads(trovato.group(0))
+        out = []
+        for s in scelte:
+            i = int(s["n"])
+            sintesi = clean(s.get("sintesi", ""))
+            if len(sintesi) > 220:
+                sintesi = sintesi[:220].rsplit(" ", 1)[0].rstrip(",;:") + "…"
+            if 0 <= i < len(candidati) and sintesi and candidati[i] not in out:
+                art = dict(candidati[i])
+                art["description"] = sintesi
+                art["ai"] = True
+                out.append(art)
+            if len(out) >= MAX_ITEMS:
+                break
+        print(f"  🤖 Selezione automatica: {len(out)} articoli")
+        return out or None
+    except Exception as e:
+        print(f"  ⚠️  Selezione automatica non riuscita ({e}), uso il metodo classico", file=sys.stderr)
+        return None
+
+
 result = {}
 
 for category, urls in FEEDS.items():
     print(f"\n📂 Categoria: {category}")
     items = []
     seen_links = set()
+    limite = MAX_CANDIDATI if AI_ATTIVA else MAX_ITEMS
 
     for url in urls:
-        if len(items) >= MAX_ITEMS:
+        if len(items) >= limite:
             break
         for entry in fetch_feed(url):
-            if len(items) >= MAX_ITEMS:
+            if len(items) >= limite:
                 break
 
             title = clean(getattr(entry, "title", ""))
@@ -169,6 +276,15 @@ for category, urls in FEEDS.items():
                 "description": extract_text(raw)[:400],
                 "date": date,
             })
+
+    # Selezione e sintesi automatica (solo se il servizio è configurato)
+    scelti = seleziona_con_ai(category, items)
+    if scelti:
+        items = scelti
+        seen_links = {it["link"] for it in items}
+    else:
+        items = items[:MAX_ITEMS]
+        seen_links = {it["link"] for it in items}
 
     # Integra con articoli salvati in precedenza se mancano pezzi
     if len(items) < MAX_ITEMS:

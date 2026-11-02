@@ -55,6 +55,7 @@
       </section>
     </div>
     <p class="avvertenza">I contenuti appartengono alle rispettive fonti e hanno finalità esclusivamente informativa: non costituiscono parere legale sul vostro caso.</p>
+    <p class="avvertenza" id="nota-ia" hidden>La selezione delle notizie e le brevi sintesi sono generate automaticamente con strumenti di intelligenza artificiale: per il contenuto esatto fa fede l'articolo originale.</p>
   </div>
 </main>
 
@@ -91,6 +92,10 @@
   fetch('data/news.json?t=' + Date.now())
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (dati) {
+      var conIA = Object.keys(dati).some(function (k) {
+        return Array.isArray(dati[k]) && dati[k].some(function (v) { return v && v.ai; });
+      });
+      if (conIA) document.getElementById('nota-ia').hidden = false;
       ['penale', 'famiglia', 'patrocinio', 'giurisprudenza'].forEach(function (cat) {
         var ul = document.getElementById(cat);
         var voci = Array.isArray(dati[cat]) ? dati[cat] : [];
