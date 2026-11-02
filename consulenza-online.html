@@ -94,7 +94,9 @@
 
 <style>
 .assistente{margin:1.5rem 0 2rem;padding:1.5rem 1.75rem;border:1px solid var(--inchiostro);background:var(--carta)}
-.assistente-titolo{font-family:var(--display);font-size:1.4rem;color:var(--inchiostro);margin-bottom:.5rem}
+.assistente-titolo{font-family:var(--display);font-size:1.6rem;color:var(--inchiostro);margin-bottom:.75rem;display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .6rem}
+.assistente-sigla{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--inchiostro);color:var(--carta);font-size:1.25rem}
+.assistente-ruolo{font-family:var(--serif);font-size:.95rem;font-style:italic;color:var(--grigio)}
 .assistente-avviso{font-size:.875rem;color:var(--grigio);margin:1.25rem 0 1rem}
 .assistente-messaggi{max-height:420px;overflow-y:auto;display:flex;flex-direction:column;gap:.75rem;margin-bottom:1rem}
 .assistente-messaggi p{margin:0;padding:.7rem .9rem;font-size:1rem;line-height:1.55;white-space:pre-wrap;max-width:90%}
@@ -178,10 +180,10 @@
       <h2 id="richiesta">Richiedi una consulenza</h2>
       <p>Due passaggi, pochi minuti. Prima descrivete la questione, poi inserite i dati per la fattura. In alternativa potete preparare un'email già compilata da spedire dalla vostra casella di posta.</p>
       <div class="assistente" id="assistente" hidden>
-        <p class="assistente-titolo">Preferite raccontarlo con parole vostre?</p>
-        <p>L'assistente vi fa qualche domanda, vi dice quali documenti preparare e compila il modulo per voi. Poi controllate e inviate.</p>
+        <p class="assistente-titolo"><span class="assistente-sigla" aria-hidden="true">L</span> Lex <span class="assistente-ruolo">assistente virtuale dello Studio Stante</span></p>
+        <p>Preferite raccontarlo con parole vostre? Scrivete a Lex: vi fa qualche domanda, vi dice quali documenti preparare e compila il modulo per voi. Poi controllate e inviate.</p>
         <div class="assistente-chat" id="assistente-chat">
-          <p class="assistente-avviso">Assistente automatico basato su intelligenza artificiale: non è l'avvocato e non dà pareri. Raccoglie le informazioni per la richiesta, che leggerà l'avvocato. La conversazione non viene conservata dal sito; non inserite dati sanitari o altri dati delicati se non necessari. <a href="privacy.html">Informativa privacy</a>.</p>
+          <p class="assistente-avviso">Lex è un assistente automatico basato su intelligenza artificiale: non è l'avvocato e non dà pareri. Raccoglie le informazioni per la richiesta, che leggerà l'avvocato. La conversazione non viene conservata dal sito; non inserite dati sanitari o altri dati delicati se non necessari. <a href="privacy.html">Informativa privacy</a>.</p>
           <div class="assistente-messaggi" id="assistente-messaggi" aria-live="polite"></div>
           <form class="assistente-scrivi" id="assistente-scrivi">
             <label class="visivamente-nascosto" for="assistente-testo">Il vostro messaggio</label>
@@ -456,7 +458,7 @@
         attesa.textContent = t.replace(/<scheda>[\s\S]*?<\/scheda>/, '').trim();
         if (m) { try { scheda = JSON.parse(m[1]); document.getElementById('assistente-documenti').textContent = scheda.documenti || ''; document.getElementById('assistente-scheda').hidden = false; } catch (er) {} }
       })
-      .catch(function () { attesa.textContent = 'L\'assistente non è disponibile in questo momento. Potete compilare direttamente il modulo qui sotto o chiamare lo studio.'; })
+      .catch(function () { attesa.textContent = 'Lex non è disponibile in questo momento. Potete compilare direttamente il modulo qui sotto o chiamare lo studio.'; })
       .then(function () { scrivi.querySelector('button').disabled = false; campo.focus(); });
   });
   document.getElementById('assistente-usa').addEventListener('click', function () {
