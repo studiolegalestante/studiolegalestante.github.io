@@ -92,6 +92,21 @@
 }
 </script>
 
+<style>
+.assistente{margin:1.5rem 0 2rem;padding:1.5rem 1.75rem;border:1px solid var(--inchiostro);background:var(--carta)}
+.assistente-titolo{font-family:var(--display);font-size:1.4rem;color:var(--inchiostro);margin-bottom:.5rem}
+.assistente-avviso{font-size:.875rem;color:var(--grigio);margin:1.25rem 0 1rem}
+.assistente-messaggi{max-height:420px;overflow-y:auto;display:flex;flex-direction:column;gap:.75rem;margin-bottom:1rem}
+.assistente-messaggi p{margin:0;padding:.7rem .9rem;font-size:1rem;line-height:1.55;white-space:pre-wrap;max-width:90%}
+.assistente-messaggi .da-utente{align-self:flex-end;background:var(--inchiostro);color:var(--carta)}
+.assistente-messaggi .da-assistente{align-self:flex-start;background:var(--carta-2);border:1px solid var(--filetto)}
+.assistente-scrivi{display:flex;gap:.75rem;align-items:flex-end}
+.assistente-scrivi textarea{flex:1;font:inherit;font-size:1rem;padding:.65rem .75rem;border:1px solid #9AA1AD;border-radius:0;min-height:48px;resize:vertical}
+.assistente-scheda{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--filetto)}
+.assistente button{font-family:inherit;cursor:pointer}
+.assistente [hidden]{display:none!important}
+.visivamente-nascosto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -162,6 +177,24 @@
 
       <h2 id="richiesta">Richiedi una consulenza</h2>
       <p>Due passaggi, pochi minuti. Prima descrivete la questione, poi inserite i dati per la fattura. In alternativa potete preparare un'email già compilata da spedire dalla vostra casella di posta.</p>
+      <div class="assistente" id="assistente" hidden>
+        <p class="assistente-titolo">Preferite raccontarlo con parole vostre?</p>
+        <p>L'assistente vi fa qualche domanda, vi dice quali documenti preparare e compila il modulo per voi. Poi controllate e inviate.</p>
+        <button type="button" class="bottone vuoto" id="assistente-apri">Parla con l'assistente</button>
+        <div class="assistente-chat" id="assistente-chat" hidden>
+          <p class="assistente-avviso">Assistente automatico basato su intelligenza artificiale: non è l'avvocato e non dà pareri. Raccoglie le informazioni per la richiesta, che leggerà l'avvocato. La conversazione non viene conservata dal sito; non inserite dati sanitari o altri dati delicati se non necessari. <a href="privacy.html">Informativa privacy</a>.</p>
+          <div class="assistente-messaggi" id="assistente-messaggi" aria-live="polite"></div>
+          <form class="assistente-scrivi" id="assistente-scrivi">
+            <label class="visivamente-nascosto" for="assistente-testo">Il vostro messaggio</label>
+            <textarea id="assistente-testo" rows="2" maxlength="2000" placeholder="Scrivete qui…"></textarea>
+            <button type="submit" class="bottone pieno">Invia</button>
+          </form>
+          <div class="assistente-scheda" id="assistente-scheda" hidden>
+            <p><strong>Documenti da preparare:</strong> <span id="assistente-documenti"></span></p>
+            <button type="button" class="bottone pieno" id="assistente-usa">Usa questi dati nel modulo</button>
+          </div>
+        </div>
+      </div>
       <form id="modulo-consulenza" class="modulo" novalidate>
         <p class="indicatore-passi" aria-live="polite"><span data-indicatore="1" aria-current="step">1. La questione</span><span data-indicatore="2">2. Fattura e conferma</span></p>
 
@@ -389,6 +422,59 @@
     box.querySelector('textarea').value = 'Oggetto: ' + oggetto + '\n\n' + testo;
     box.hidden = false;
     window.location.href = 'mailto:avv.vincenzostante@gmail.com?subject=' + encodeURIComponent(oggetto) + '&body=' + encodeURIComponent(testo);
+  });
+})();
+</script>
+<script>
+(function () {
+  // Indirizzo del servizio di accoglienza: finché è vuoto l'assistente resta nascosto.
+  var SERVIZIO = '';
+  if (!SERVIZIO) return;
+  var box = document.getElementById('assistente'); box.hidden = false;
+  var chat = document.getElementById('assistente-chat');
+  var elenco = document.getElementById('assistente-messaggi');
+  var scrivi = document.getElementById('assistente-scrivi');
+  var campo = document.getElementById('assistente-testo');
+  var scheda = null, storia = [];
+  function aggiungi(chi, testo) {
+    var p = document.createElement('p');
+    p.className = chi === 'user' ? 'da-utente' : 'da-assistente';
+    p.textContent = testo; elenco.appendChild(p); elenco.scrollTop = elenco.scrollHeight; return p;
+  }
+  document.getElementById('assistente-apri').addEventListener('click', function () {
+    this.hidden = true; chat.hidden = false;
+    var inglese = /^en\b/i.test(navigator.language || '');
+    aggiungi('assistant', inglese
+      ? 'Hello, I am the automated assistant of the Stante law office. Briefly, what happened and what have you received?'
+      : 'Buongiorno, sono l\'assistente automatico dello Studio Stante. In breve, che cosa è successo e che cosa avete ricevuto?');
+    campo.focus();
+  });
+  scrivi.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var testo = campo.value.trim(); if (!testo) return;
+    campo.value = ''; aggiungi('user', testo); storia.push({ role: 'user', content: testo });
+    var attesa = aggiungi('assistant', '…'); scrivi.querySelector('button').disabled = true;
+    fetch(SERVIZIO, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ messaggi: storia.slice(-24) }) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.errore || r.status); return j; }); })
+      .then(function (j) {
+        var t = String(j.testo || ''), m = t.match(/<scheda>([\s\S]*?)<\/scheda>/);
+        storia.push({ role: 'assistant', content: t });
+        attesa.textContent = t.replace(/<scheda>[\s\S]*?<\/scheda>/, '').trim();
+        if (m) { try { scheda = JSON.parse(m[1]); document.getElementById('assistente-documenti').textContent = scheda.documenti || ''; document.getElementById('assistente-scheda').hidden = false; } catch (er) {} }
+      })
+      .catch(function () { attesa.textContent = 'L\'assistente non è disponibile in questo momento. Potete compilare direttamente il modulo qui sotto o chiamare lo studio.'; })
+      .then(function () { scrivi.querySelector('button').disabled = false; campo.focus(); });
+  });
+  document.getElementById('assistente-usa').addEventListener('click', function () {
+    if (!scheda) return;
+    var f = document.getElementById('modulo-consulenza');
+    var materie = [].map.call(f.elements.materia.options, function (o) { return o.text; });
+    f.elements.materia.value = materie.indexOf(scheda.materia) > -1 ? scheda.materia : 'Altro';
+    var liv = f.querySelector('input[name=livello][value="' + (scheda.livello === 'Urgente' ? 'Urgente' : 'Ordinaria') + '"]'); if (liv) liv.checked = true;
+    f.elements.descrizione.value = scheda.descrizione || '';
+    if (scheda.controparti) f.elements.controparti.value = scheda.controparti;
+    if (scheda.scadenze) f.elements.scadenze.value = scheda.scadenze;
+    f.scrollIntoView({ behavior: 'smooth' }); f.elements.descrizione.focus();
   });
 })();
 </script>
