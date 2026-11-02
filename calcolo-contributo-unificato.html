@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calcolo del contributo unificato | Avv. Vincenzo Stante</title>
+<meta name="description" content="Calcolo gratuito del contributo unificato nel processo civile (art. 13 DPR 115/2002): cause ordinarie, procedimenti speciali, famiglia, lavoro, esecuzioni, appello e Cassazione.">
+<link rel="canonical" href="https://www.studiolegalestante.it/calcolo-contributo-unificato.html">
+<meta name="theme-color" content="#1D2B45">
+<link rel="icon" href="favicon.svg?v=20261029" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=20261029">
+<link rel="preload" href="assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/libre-caslon-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/studio.css?v=20261031b">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Studio Legale Avv. Vincenzo Stante">
+<meta property="og:title" content="Calcolo del contributo unificato">
+<meta property="og:description" content="Calcolo gratuito del contributo unificato nel processo civile, secondo l'art. 13 DPR 115/2002.">
+<meta property="og:url" content="https://www.studiolegalestante.it/calcolo-contributo-unificato.html">
+<meta property="og:image" content="https://www.studiolegalestante.it/images/og-studio-stante.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+.esito{margin:1.5rem 0 0;padding:1.5rem 1.75rem;border:1px solid var(--inchiostro);background:var(--carta)}
+.esito .importo{font-family:var(--display);font-size:2.75rem;line-height:1;color:var(--inchiostro);margin:0 0 .5rem}
+.esito .dettaglio{font-size:.95rem;color:var(--grigio);margin:0}
+.tabella-cu{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:1rem}
+.tabella-cu th,.tabella-cu td{text-align:left;padding:.5rem .4rem;border-bottom:1px solid var(--filetto);vertical-align:top}
+.tabella-cu td:last-child,.tabella-cu th:last-child{text-align:right;white-space:nowrap}
+</style>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="contenitore testata">
+  <a class="marchio" href="./">Studio Legale Stante</a>
+  <nav aria-label="Principale">
+    <ul>
+      <li><a href="./#materie">Materie</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+      <li><a href="./#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenuto">
+  <div class="contenitore pagina-titolo">
+    <nav class="percorso" aria-label="Percorso"><ol><li><a href="./">Home</a></li><li aria-current="page">Contributo unificato</li></ol></nav>
+    <h1>Calcolo del contributo unificato</h1>
+    <p>Strumento gratuito per i colleghi e per chi deve avviare una causa civile. Gli importi sono quelli dell'art. 13 del DPR 115/2002 in vigore.</p>
+  </div>
+
+  <div class="contenitore sezione">
+    <form id="calcolo" class="modulo" novalidate>
+      <fieldset>
+        <legend>Il procedimento</legend>
+        <label>Tipo di procedimento
+          <select name="tipo" id="tipo">
+            <option value="ordinario">Causa di cognizione ordinaria (in base al valore)</option>
+            <option value="indet">Causa di valore indeterminabile</option>
+            <option value="indet-gdp">Causa di valore indeterminabile di competenza esclusiva del giudice di pace</option>
+            <option value="speciale">Procedimento speciale del libro IV, titolo I c.p.c. (es. decreto ingiuntivo e opposizione, sfratto)</option>
+            <option value="lavoro">Controversia di lavoro o di pubblico impiego</option>
+            <option value="previdenza">Previdenza e assistenza obbligatorie</option>
+            <option value="fam-congiunta">Famiglia: procedimento su domanda congiunta (separazione consensuale, divorzio congiunto)</option>
+            <option value="fam-contenzioso">Famiglia: procedimento contenzioso (separazione giudiziale, divorzio, figli)</option>
+            <option value="volontaria">Volontaria giurisdizione</option>
+            <option value="esec-imm">Esecuzione immobiliare</option>
+            <option value="esec-mob">Esecuzione mobiliare o presso terzi, valore da 2.500 € in su</option>
+            <option value="esec-mob-piccola">Esecuzione mobiliare, valore inferiore a 2.500 €</option>
+            <option value="opp-atti">Opposizione agli atti esecutivi</option>
+            <option value="tributario">Processo tributario (Corti di giustizia tributaria e Cassazione)</option>
+            <option value="esente">Procedimento esente (art. 10 e leggi speciali)</option>
+          </select>
+        </label>
+        <div class="griglia-campi">
+          <label id="campo-valore">Valore della causa (€)
+            <input type="text" name="valore" id="valore" inputmode="decimal" placeholder="es. 12.500">
+            <span class="nota-passo" id="nota-valore" hidden>Nel tributario: imposta contestata, senza sanzioni e interessi; se si impugnano solo sanzioni, il loro importo.</span>
+          </label>
+          <label id="campo-grado">Grado
+            <select name="grado" id="grado">
+              <option value="1">Primo grado</option>
+              <option value="1.5">Appello o altra impugnazione (+50%)</option>
+              <option value="2">Cassazione (doppio)</option>
+            </select>
+          </label>
+        </div>
+        <label id="campo-esente">Quale procedimento
+          <select id="esente">
+            <option>Procedimenti, anche esecutivi o cautelari, sugli assegni di mantenimento dei figli</option>
+            <option>Interdizione, inabilitazione e amministrazione di sostegno</option>
+            <option>Ordini di protezione contro gli abusi familiari</option>
+            <option>Rettificazione di stato civile</option>
+            <option>Trattamento sanitario obbligatorio</option>
+            <option>Ricorso contro l'espulsione dello straniero</option>
+            <option>Insinuazione al passivo fallimentare</option>
+          </select>
+        </label>
+        <label class="spunta" id="campo-reddito"><input type="checkbox" id="reddito-basso"> La parte ha un reddito imponibile non superiore a 40.978,92 € (tre volte il limite del patrocinio a spese dello Stato, art. 9, c. 1-bis)</label>
+        <label class="spunta" id="campo-tributario-indet"><input type="checkbox" id="trib-indet"> Valore indeterminabile</label>
+        <label class="spunta" id="campo-specializzata"><input type="checkbox" id="specializzata"> Sezione specializzata in materia di impresa (importo raddoppiato)</label>
+      </fieldset>
+    </form>
+
+    <div class="esito" aria-live="polite">
+      <p class="importo" id="importo">—</p>
+      <p class="dettaglio" id="dettaglio">Inserite il valore della causa.</p>
+    </div>
+
+    <p class="avvertenza">A parte va versato l'importo forfettario di 27 € per le notificazioni (art. 30 DPR 115/2002), salvo i casi di esenzione. L'elenco dei procedimenti esenti non è completo. Il calcolo non considera il processo amministrativo, le procedure concorsuali, gli aumenti per mancata indicazione dei recapiti o del codice fiscale né il raddoppio in caso di rigetto dell'impugnazione. Ha finalità informativa: per i casi dubbi fate riferimento al testo di legge e alle indicazioni della cancelleria.</p>
+
+    <h2 style="font-size:1.625rem;margin-top:3rem">Tabella degli importi (art. 13, comma 1)</h2>
+    <table class="tabella-cu">
+      <thead><tr><th>Valore della causa</th><th>Importo</th></tr></thead>
+      <tbody>
+        <tr><td>Fino a 1.100 €</td><td>43 €</td></tr>
+        <tr><td>Oltre 1.100 € e fino a 5.200 €</td><td>98 €</td></tr>
+        <tr><td>Oltre 5.200 € e fino a 26.000 €</td><td>237 €</td></tr>
+        <tr><td>Oltre 26.000 € e fino a 52.000 €</td><td>518 €</td></tr>
+        <tr><td>Oltre 52.000 € e fino a 260.000 €</td><td>759 €</td></tr>
+        <tr><td>Oltre 260.000 € e fino a 520.000 €</td><td>1.214 €</td></tr>
+        <tr><td>Oltre 520.000 €</td><td>1.686 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="contenitore">
+    <p>Avv. Vincenzo Stante, iscritto all'Ordine degli Avvocati di Bari. P.IVA 07973660728</p>
+    <ul>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var SCAGLIONI = [[1100, 43], [5200, 98], [26000, 237], [52000, 518], [260000, 759], [520000, 1214], [Infinity, 1686]];
+  var FISSI = {
+    'indet': [518, 'Valore indeterminabile (art. 13, c. 1, lett. d)'],
+    'indet-gdp': [237, 'Valore indeterminabile, giudice di pace (art. 13, c. 1, lett. c)'],
+    'previdenza': [43, 'Previdenza e assistenza (art. 13, c. 1, lett. a)'],
+    'fam-congiunta': [43, 'Domanda congiunta (art. 13, c. 1, lett. a)'],
+    'fam-contenzioso': [98, 'Procedimento contenzioso di famiglia (art. 13, c. 1, lett. b)'],
+    'volontaria': [98, 'Volontaria giurisdizione (art. 13, c. 1, lett. b)'],
+    'esec-imm': [278, 'Esecuzione immobiliare (art. 13, c. 2)'],
+    'esec-mob': [139, 'Esecuzione mobiliare (art. 13, c. 2)'],
+    'esec-mob-piccola': [43, 'Esecuzione mobiliare inferiore a 2.500 € (art. 13, c. 2)'],
+    'opp-atti': [168, 'Opposizione agli atti esecutivi (art. 13, c. 2)']
+  };
+  var A_VALORE = { 'ordinario': 1, 'speciale': 0.5, 'lavoro': 0.5, 'tributario': 1 };
+  var SENZA_GRADO = { 'esec-imm': 1, 'esec-mob': 1, 'esec-mob-piccola': 1, 'esente': 1 };
+  var TRIBUTARIO = [[2582.28, 30], [5000, 60], [25000, 120], [75000, 250], [200000, 500], [Infinity, 1500]];
+  var $ = function (id) { return document.getElementById(id); };
+
+  function euro(n) {
+    var parti = (Math.round(n * 100) / 100).toFixed(n % 1 ? 2 : 0).split('.');
+    return parti[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (parti[1] ? ',' + parti[1] : '') + ' €';
+  }
+  function leggiValore(s) {
+    s = String(s || '').replace(/[€\s]/g, '');
+    if (/,\d{1,2}$/.test(s)) s = s.replace(/\./g, '').replace(',', '.');
+    else s = s.replace(/[.,](?=\d{3}(\D|$))/g, '');
+    var n = parseFloat(s);
+    return isFinite(n) && n >= 0 ? n : null;
+  }
+
+  function mostra(totale, testo) {
+    $('importo').textContent = typeof totale === 'number' ? euro(Math.round(totale * 100) / 100) : totale;
+    $('dettaglio').textContent = testo;
+  }
+  function scaglione(tab, v) {
+    for (var i = 0; i < tab.length; i++) if (v <= tab[i][0]) return tab[i][1];
+  }
+
+  function calcola() {
+    var tipo = $('tipo').value;
+    var g = parseFloat($('grado').value);
+    var trib = tipo === 'tributario';
+    var tribIndet = trib && $('trib-indet').checked;
+    var redditoBasso = (tipo === 'lavoro' || tipo === 'previdenza');
+    $('campo-valore').hidden = !((tipo in A_VALORE) || (tipo === 'previdenza' && g === 2)) || tribIndet;
+    $('nota-valore').hidden = !trib;
+    $('campo-grado').hidden = !!SENZA_GRADO[tipo];
+    $('campo-esente').hidden = tipo !== 'esente';
+    $('campo-reddito').hidden = !redditoBasso;
+    $('campo-tributario-indet').hidden = !trib;
+    $('campo-specializzata').hidden = tipo !== 'ordinario' && tipo !== 'indet';
+
+    if (tipo === 'esente') { mostra('Esente', $('esente').value + ': nessun contributo unificato.'); return; }
+    if (redditoBasso && $('reddito-basso').checked) { mostra('Esente', 'Esenzione per reddito nelle cause di lavoro e previdenza (art. 9, c. 1-bis): va attestata nelle conclusioni dell\'atto con la dichiarazione sul reddito.'); return; }
+
+    var v = null;
+    if (!$('campo-valore').hidden) {
+      v = leggiValore($('valore').value);
+      if (v === null) { mostra('—', 'Inserite il valore della causa.'); return; }
+    }
+
+    if (trib) {
+      if (g === 2) {
+        var b = tribIndet ? 518 : scaglione(SCAGLIONI, v);
+        mostra(b * 2, (tribIndet ? 'Valore indeterminabile' : 'Valore ' + euro(v)) + ': in Cassazione si applica la tabella civile (' + euro(b) + '), raddoppiata (art. 13, c. 1 e 1-bis).');
+        return;
+      }
+      var t = tribIndet ? 120 : scaglione(TRIBUTARIO, v);
+      mostra(t, (tribIndet ? 'Valore indeterminabile' : 'Scaglione tributario per ' + euro(v)) + ' (art. 13, c. 6-quater)' + (g === 1.5 ? '; in appello si applica lo stesso importo del primo grado.' : '.'));
+      return;
+    }
+
+    var base, voce, note = [];
+    if (v !== null && tipo !== 'previdenza') {
+      base = scaglione(SCAGLIONI, v);
+      voce = 'Scaglione per ' + euro(v) + ': ' + euro(base);
+      if (A_VALORE[tipo] === 0.5) { base = base / 2; note.push('ridotto alla metà (art. 13, c. 3)'); }
+    } else {
+      base = FISSI[tipo][0]; voce = FISSI[tipo][1];
+    }
+    var totale = base;
+    if (!$('campo-specializzata').hidden && $('specializzata').checked) { totale *= 2; note.push('raddoppiato per sezione specializzata (art. 13, c. 1-ter)'); }
+    if (!SENZA_GRADO[tipo]) {
+      if (g === 2 && redditoBasso) {
+        totale = scaglione(SCAGLIONI, v) * 2;
+        voce = 'Valore ' + euro(v);
+        note = ['in Cassazione si applica l\'importo pieno (art. 9, c. 1-bis), raddoppiato (art. 13, c. 1-bis)'];
+      } else {
+        if (g === 1.5) note.push('aumentato della metà per l\'impugnazione (art. 13, c. 1-bis)');
+        if (g === 2) note.push('raddoppiato per la Cassazione (art. 13, c. 1-bis)');
+        totale *= g;
+      }
+    }
+    mostra(totale, voce + (note.length ? '; ' + note.join('; ') : '') + '.');
+  }
+
+  ['tipo', 'valore', 'grado', 'specializzata', 'esente', 'reddito-basso', 'trib-indet'].forEach(function (id) {
+    $(id).addEventListener('input', calcola);
+    $(id).addEventListener('change', calcola);
+  });
+  $('calcolo').addEventListener('submit', function (e) { e.preventDefault(); });
+  calcola();
+})();
+</script>
+</body>
+</html>
