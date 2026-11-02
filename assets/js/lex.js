@@ -2,11 +2,31 @@
    Accompagna il visitatore verso la richiesta di consulenza online. */
 (function () {
   var SERVIZIO = 'https://lex.avv-vincenzostante.workers.dev';
-  var CONSULENZA = '/consulenza-online.html#richiesta';
+  var IT = (document.documentElement.lang || 'it').slice(0, 2) === 'it';
+  var T = IT ? {
+    consulenza: '/consulenza-online.html#richiesta',
+    aria: 'Apri la chat con Lex, assistente virtuale',
+    invito: '<b>Serve aiuto?</b>Sono Lex: scrivetemi, vi indico da dove partire.',
+    ruolo: 'assistente virtuale dello Studio Stante', chiudi: 'Chiudi la chat',
+    avviso: 'Assistente automatico basato su intelligenza artificiale: non è l\'avvocato e non dà pareri. La conversazione non viene conservata.',
+    azione: 'Continua con la consulenza online →', campo: 'Scrivete qui…', invia: 'Invia',
+    saluto: 'Buongiorno, sono Lex, l\'assistente virtuale dello Studio Stante. Raccontatemi pure in breve che cosa vi è successo: vi aiuto a capire come lo studio può seguirvi.',
+    errore: 'In questo momento non riesco a rispondere. Potete chiamare lo studio al 340 1834145 o richiedere direttamente la consulenza online.'
+  } : {
+    consulenza: '/en/online-consultation.html',
+    aria: 'Open the chat with Lex, virtual assistant',
+    invito: '<b>Need help?</b>I\'m Lex: write to me and I\'ll show you where to start.',
+    ruolo: 'virtual assistant of the Stante law office', chiudi: 'Close the chat',
+    avviso: 'Automated assistant based on artificial intelligence: it is not the lawyer and gives no legal advice. The conversation is not stored.',
+    azione: 'Continue with the online consultation →', campo: 'Write here…', invia: 'Send',
+    saluto: 'Hello, I\'m Lex, the virtual assistant of the Stante law office. Please tell me briefly what happened: I\'ll help you understand how the office can assist you. You can write in any language.',
+    errore: 'I cannot reply right now. You can call the office on +39 340 1834145 or request the online consultation directly.'
+  };
+  var CONSULENZA = T.consulenza;
   var storia = [], scheda = null;
 
   var css = '' +
-    '.lex-bolla{position:fixed;right:24px;bottom:24px;z-index:50;width:128px;height:128px;border-radius:50%;border:4px solid #fff;cursor:pointer;' +
+    '.lex-bolla{position:fixed;right:max(24px,7vw);bottom:max(24px,10vh);z-index:50;width:128px;height:128px;border-radius:50%;border:4px solid #fff;cursor:pointer;' +
     'background:var(--inchiostro,#1D2B45);color:#fff;box-shadow:0 10px 30px rgba(29,43,69,.45),0 0 0 3px var(--ceralacca,#8E2B22);display:flex;align-items:center;justify-content:center;' +
     'animation:lex-inchino 7s ease-in-out 2s infinite;transform-origin:50% 100%}' +
     '.lex-bolla:hover{animation:none;transform:scale(1.05)}.lex-bolla svg{width:88px;height:88px;overflow:visible}' +
@@ -15,11 +35,11 @@
     '@keyframes lex-bilancia{0%,22%,100%{transform:none}5%{transform:rotate(-14deg)}11%{transform:rotate(9deg)}16%{transform:rotate(-4deg)}}' +
     '@media (prefers-reduced-motion:reduce){.lex-bolla,.lex-giogo{animation:none}}' +
     '.lex-bolla:focus-visible{outline:3px solid var(--ceralacca,#8E2B22);outline-offset:3px}' +
-    '.lex-invito{position:fixed;right:168px;bottom:52px;z-index:50;background:#fff;color:var(--inchiostro,#1D2B45);border:2px solid var(--inchiostro,#1D2B45);' +
+    '.lex-invito{position:fixed;right:calc(max(24px,7vw) + 144px);bottom:calc(max(24px,10vh) + 28px);z-index:50;background:#fff;color:var(--inchiostro,#1D2B45);border:2px solid var(--inchiostro,#1D2B45);' +
     'padding:.7rem 1.1rem;font:1.05rem/1.35 var(--serif,Georgia,serif);box-shadow:0 6px 18px rgba(0,0,0,.15);max-width:250px;cursor:pointer;text-align:left}' +
     '.lex-invito b{display:block;font-family:var(--display,Georgia,serif);font-weight:400;font-size:1.35rem;color:var(--ceralacca,#8E2B22)}' +
     '.lex-invito::after{content:"";position:absolute;right:-10px;top:50%;margin-top:-8px;border:8px solid transparent;border-left:10px solid var(--inchiostro,#1D2B45);border-right:0}' +
-    '.lex-pannello{position:fixed;right:20px;bottom:168px;z-index:51;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 200px));' +
+    '.lex-pannello{position:fixed;right:max(20px,7vw);bottom:calc(max(24px,10vh) + 144px);z-index:51;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - max(24px,10vh) - 180px));' +
     'background:var(--carta,#FCFCFA);border:1px solid var(--inchiostro,#1D2B45);box-shadow:0 12px 40px rgba(29,43,69,.3);display:flex;flex-direction:column;font-family:var(--serif,Georgia,serif)}' +
     '.lex-testata{display:flex;align-items:center;gap:.7rem;padding:.8rem 1rem;background:var(--inchiostro,#1D2B45);color:#fff}' +
     '.lex-testata svg{width:30px;height:30px;flex:none}.lex-testata b{font-family:var(--display,Georgia,serif);font-weight:400;font-size:1.3rem;display:block;line-height:1.1}' +
@@ -36,9 +56,9 @@
     '.lex-scrivi button{background:var(--inchiostro,#1D2B45);color:#fff;border:0;padding:0 1rem;font:inherit;cursor:pointer}' +
     '.lex-scrivi button:disabled{opacity:.5}' +
     '[hidden]{display:none!important}' +
-    '@media (max-width:600px){.lex-bolla{width:96px;height:96px;right:16px;bottom:16px}.lex-bolla svg{width:64px;height:64px}' +
-    '.lex-invito{right:122px;bottom:30px;max-width:190px;font-size:.95rem;padding:.55rem .8rem}.lex-invito b{font-size:1.15rem}' +
-    '.lex-pannello{right:16px;bottom:124px;height:calc(100vh - 150px)}}';
+    '@media (max-width:600px){.lex-bolla{width:96px;height:96px;right:16px;bottom:20px}.lex-bolla svg{width:64px;height:64px}' +
+    '.lex-invito{right:122px;bottom:34px;max-width:190px;font-size:.95rem;padding:.55rem .8rem}.lex-invito b{font-size:1.15rem}' +
+    '.lex-pannello{right:16px;bottom:126px;height:calc(100vh - 150px)}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   // Bilancia della giustizia
@@ -51,24 +71,23 @@
 
   var bolla = el('button', 'lex-bolla', BILANCIA);
   bolla.type = 'button';
-  bolla.setAttribute('aria-label', 'Apri la chat con Lex, assistente virtuale');
+  bolla.setAttribute('aria-label', T.aria);
   var invito = el('div', 'lex-invito');
-  invito.innerHTML = '<b>Serve aiuto?</b>Sono Lex: scrivetemi, vi indico da dove partire.';
+  invito.innerHTML = T.invito;
   invito.setAttribute('role', 'button');
 
   var pannello = el('section', 'lex-pannello');
   pannello.hidden = true;
   pannello.setAttribute('aria-label', 'Chat con Lex');
   pannello.innerHTML =
-    '<div class="lex-testata">' + BILANCIA + '<div><b>Lex</b><small>assistente virtuale dello Studio Stante</small></div>' +
-    '<button type="button" class="lex-chiudi" aria-label="Chiudi la chat">×</button></div>' +
-    '<p class="lex-avviso">Assistente automatico basato su intelligenza artificiale: non è l\'avvocato e non dà pareri. ' +
-    'La conversazione non viene conservata. <a href="/privacy.html">Privacy</a></p>' +
+    '<div class="lex-testata">' + BILANCIA + '<div><b>Lex</b><small>' + T.ruolo + '</small></div>' +
+    '<button type="button" class="lex-chiudi" aria-label="' + T.chiudi + '">×</button></div>' +
+    '<p class="lex-avviso">' + T.avviso + ' <a href="/privacy.html">Privacy</a></p>' +
     '<div class="lex-messaggi" aria-live="polite"></div>' +
-    '<button type="button" class="lex-azione" hidden>Continua con la consulenza online →</button>' +
+    '<button type="button" class="lex-azione" hidden>' + T.azione + '</button>' +
     '<form class="lex-scrivi"><label hidden for="lex-campo">Il vostro messaggio</label>' +
-    '<textarea id="lex-campo" rows="1" maxlength="2000" placeholder="Scrivete qui…"></textarea>' +
-    '<button type="submit">Invia</button></form>';
+    '<textarea id="lex-campo" rows="1" maxlength="2000" placeholder="' + T.campo + '"></textarea>' +
+    '<button type="submit">' + T.invia + '</button></form>';
 
   document.body.appendChild(invito);
   document.body.appendChild(pannello);
@@ -85,7 +104,7 @@
   }
   function apri() {
     pannello.hidden = false; invito.hidden = true;
-    if (!elenco.children.length) aggiungi('assistant', 'Buongiorno, sono Lex, l\'assistente virtuale dello Studio Stante. Raccontatemi pure in breve che cosa vi è successo: vi aiuto a capire come lo studio può seguirvi.');
+    if (!elenco.children.length) aggiungi('assistant', T.saluto);
     campo.focus();
   }
   function chiudi() { pannello.hidden = true; bolla.focus(); }
@@ -111,12 +130,12 @@
         if (m) { try { scheda = JSON.parse(m[1]); } catch (er) { scheda = null; } }
         if (scheda || storia.length >= 4) azione.hidden = false;
       })
-      .catch(function () { attesa.textContent = 'In questo momento non riesco a rispondere. Potete chiamare lo studio al 340 1834145 o richiedere direttamente la consulenza online.'; azione.hidden = false; })
+      .catch(function () { attesa.textContent = T.errore; azione.hidden = false; })
       .then(function () { modulo.querySelector('button').disabled = false; campo.focus(); });
   });
 
   azione.addEventListener('click', function () {
-    try { if (scheda) sessionStorage.setItem('lex-scheda', JSON.stringify(scheda)); } catch (e) {}
+    try { if (scheda && IT) sessionStorage.setItem('lex-scheda', JSON.stringify(scheda)); } catch (e) {}
     window.location.href = CONSULENZA;
   });
 
