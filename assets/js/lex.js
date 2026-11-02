@@ -11,7 +11,7 @@
     avviso: 'Assistente automatico basato su intelligenza artificiale: non è l\'avvocato e non dà pareri. La conversazione non viene conservata.',
     azione: 'Continua con la consulenza online →', campo: 'Scrivete qui…', invia: 'Invia',
     saluto: 'Buongiorno, sono Lex, l\'assistente virtuale dello Studio Stante. Raccontatemi pure in breve che cosa vi è successo: vi aiuto a capire come lo studio può seguirvi.',
-    errore: 'In questo momento non riesco a rispondere. Potete chiamare lo studio al 340 1834145 o richiedere direttamente la consulenza online.'
+    errore: 'In questo momento non riesco a rispondere. Potete compilare direttamente la richiesta di consulenza online con il pulsante qui sotto.'
   } : {
     consulenza: '/en/online-consultation.html',
     aria: 'Open the chat with Lex, virtual assistant',
@@ -20,7 +20,7 @@
     avviso: 'Automated assistant based on artificial intelligence: it is not the lawyer and gives no legal advice. The conversation is not stored.',
     azione: 'Continue with the online consultation →', campo: 'Write here…', invia: 'Send',
     saluto: 'Hello, I\'m Lex, the virtual assistant of the Stante law office. Please tell me briefly what happened: I\'ll help you understand how the office can assist you. You can write in any language.',
-    errore: 'I cannot reply right now. You can call the office on +39 340 1834145 or request the online consultation directly.'
+    errore: 'I cannot reply right now. You can fill in the online consultation request directly with the button below.'
   };
   var CONSULENZA = T.consulenza;
   var storia = [], scheda = null;
