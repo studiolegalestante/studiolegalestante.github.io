@@ -152,6 +152,25 @@
     </ul>
   </div>
 </footer>
-<script src="/assets/js/lex.js?v=20261102e" defer></script>
+<script src="/assets/js/lex.js?v=20261102f" defer></script>
+<script>
+(function () {
+  // Details collected by Lex in the chat fill in the form.
+  var scheda = null;
+  try { scheda = JSON.parse(sessionStorage.getItem('lex-scheda') || 'null'); sessionStorage.removeItem('lex-scheda'); } catch (e) {}
+  if (!scheda) return;
+  var f = document.getElementById('modulo-en'); if (!f) return;
+  var aree = { 'Diritto penale': 'Criminal law', 'Famiglia e minori': 'Family and children', 'Civile e risarcimento danni': 'Civil law and compensation' };
+  f.elements.materia.value = aree[scheda.materia] || 'Other';
+  var liv = f.querySelector('input[name=livello][value="' + (scheda.livello === 'Urgente' ? 'Urgent' : 'Standard') + '"]'); if (liv) liv.checked = true;
+  var testo = scheda.descrizione || '';
+  if (scheda.scadenze) testo += (testo ? '\n' : '') + 'Deadlines: ' + scheda.scadenze;
+  if (testo) f.elements.descrizione.value = testo;
+  if (scheda.controparti) f.elements.controparti.value = scheda.controparti;
+  var nota = document.createElement('p'); nota.className = 'nota-passo';
+  nota.textContent = 'We have filled in the form with what you wrote to Lex' + (scheda.documenti ? '. Documents to prepare: ' + scheda.documenti : '') + '. Please check and complete it.';
+  f.insertBefore(nota, f.firstChild);
+})();
+</script>
 </body>
 </html>

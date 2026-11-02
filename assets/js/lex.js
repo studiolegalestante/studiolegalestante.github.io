@@ -13,7 +13,7 @@
     saluto: 'Buongiorno, sono Lex, l\'assistente virtuale dello Studio Stante. Raccontatemi pure in breve che cosa vi è successo: vi aiuto a capire come lo studio può seguirvi.',
     errore: 'In questo momento non riesco a rispondere. Potete compilare direttamente la richiesta di consulenza online con il pulsante qui sotto.'
   } : {
-    consulenza: '/en/online-consultation.html',
+    consulenza: '/en/online-consultation.html#modulo-en',
     aria: 'Open the chat with Lex, virtual assistant',
     invito: '<b>Need help?</b>I\'m Lex: write to me and I\'ll show you where to start.',
     ruolo: 'virtual assistant of the Stante law office', chiudi: 'Close the chat',
@@ -135,7 +135,7 @@
   });
 
   azione.addEventListener('click', function () {
-    try { if (scheda && IT) sessionStorage.setItem('lex-scheda', JSON.stringify(scheda)); } catch (e) {}
+    try { if (scheda) sessionStorage.setItem('lex-scheda', JSON.stringify(scheda)); } catch (e) {}
     window.location.href = CONSULENZA;
   });
 
