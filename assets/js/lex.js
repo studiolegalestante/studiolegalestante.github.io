@@ -97,7 +97,7 @@
       .then(function (j) {
         var t = String(j.testo || ''), m = t.match(/<scheda>([\s\S]*?)<\/scheda>/);
         storia.push({ role: 'assistant', content: t });
-        attesa.textContent = t.replace(/<scheda>[\s\S]*?<\/scheda>/, '').trim();
+        attesa.textContent = t.replace(/<scheda>[\s\S]*?<\/scheda>/, '').replace(/\*\*|__|^#+\s*/gm, '').trim();
         if (m) { try { scheda = JSON.parse(m[1]); } catch (er) { scheda = null; } }
         if (scheda || storia.length >= 4) azione.hidden = false;
       })
