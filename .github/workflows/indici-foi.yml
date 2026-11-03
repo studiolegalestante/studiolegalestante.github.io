@@ -13,16 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.2
-      - name: Esplora i dataflow ISTAT
+      - name: Esplora i dati FOI
         run: |
-          curl -sS -m 120 -H 'Accept: application/vnd.sdmx.structure+xml;version=2.1' "https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1" -o df.xml || true
-          ls -la df.xml || true
-          python3 - <<'PY'
-          import re
-          s=open('df.xml',encoding='utf-8',errors='ignore').read()
-          for m in re.finditer(r'<structure:Dataflow[^>]*id="([^"]+)"[^>]*>(.*?)</structure:Dataflow>', s, re.S):
-              names=re.findall(r'<common:Name xml:lang="it">([^<]*)</common:Name>', m.group(2))
-              n=' | '.join(names)
-              if re.search(r'(?i)FOI|famiglie di operai|prezzi al consumo', n):
-                  print(m.group(1), n)
+          for df in 169_745 169_748 169_15 169_748_DF_DCSP_FOI1B2025_2; do
+            curl -sS -m 180 -H 'Accept: application/vnd.sdmx.data+csv;version=1.0.0' "https://esploradati.istat.it/SDMXWS/rest/data/IT1,${df},1.0/all?startPeriod=2025-10" -o "$df.csv" || true
+            echo "=== $df $(wc -l < $df.csv) righe"
+            head -1 "$df.csv"
+            python3 - "$df.csv" <<'PY'
+          import csv,sys,collections
+          rows=list(csv.DictReader(open(sys.argv[1],encoding='utf-8-sig',errors='ignore')))
+          if not rows: print('vuoto'); sys.exit()
+          for k in rows[0]:
+              vals=collections.Counter(r[k] for r in rows)
+              if len(vals)<40: print(k, dict(vals.most_common(12)))
           PY
+          done
