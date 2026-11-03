@@ -1,0 +1,28 @@
+name: Indici FOI
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 9 20 * *'
+
+permissions:
+  contents: write
+
+jobs:
+  foi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - name: Esplora i dataflow ISTAT
+        run: |
+          curl -sS -m 120 -H 'Accept: application/vnd.sdmx.structure+xml;version=2.1' "https://esploradati.istat.it/SDMXWS/rest/dataflow/IT1" -o df.xml || true
+          ls -la df.xml || true
+          python3 - <<'PY'
+          import re
+          s=open('df.xml',encoding='utf-8',errors='ignore').read()
+          for m in re.finditer(r'<structure:Dataflow[^>]*id="([^"]+)"[^>]*>(.*?)</structure:Dataflow>', s, re.S):
+              names=re.findall(r'<common:Name xml:lang="it">([^<]*)</common:Name>', m.group(2))
+              n=' | '.join(names)
+              if re.search(r'(?i)FOI|famiglie di operai|prezzi al consumo', n):
+                  print(m.group(1), n)
+          PY
