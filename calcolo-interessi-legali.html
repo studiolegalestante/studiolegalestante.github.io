@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calcolo degli interessi legali | Avv. Vincenzo Stante</title>
+<meta name="description" content="Calcolo gratuito degli interessi legali (art. 1284 c.c.) su una somma tra due date, con i tassi annuali dal 1990 a oggi e il dettaglio per periodo.">
+<link rel="canonical" href="https://www.studiolegalestante.it/calcolo-interessi-legali.html">
+<meta name="theme-color" content="#1D2B45">
+<link rel="icon" href="favicon.svg?v=20261029" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=20261029">
+<link rel="preload" href="assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/libre-caslon-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/studio.css?v=20261031b">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Studio Legale Avv. Vincenzo Stante">
+<meta property="og:title" content="Calcolo degli interessi legali">
+<meta property="og:description" content="Calcolo gratuito degli interessi legali secondo l'art. 1284 c.c.">
+<meta property="og:url" content="https://www.studiolegalestante.it/calcolo-interessi-legali.html">
+<meta property="og:image" content="https://www.studiolegalestante.it/images/og-studio-stante.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+.esito{margin:1.5rem 0 0;padding:1.5rem 1.75rem;border:1px solid var(--inchiostro);background:var(--carta)}
+.esito .importo{font-family:var(--display);font-size:2.75rem;line-height:1;color:var(--inchiostro);margin:0 0 .5rem}
+.esito .dettaglio{font-size:.95rem;color:var(--grigio);margin:0}
+.tabella-cu{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:1rem}
+.tabella-cu th,.tabella-cu td{text-align:left;padding:.5rem .4rem;border-bottom:1px solid var(--filetto);vertical-align:top}
+.tabella-cu td:last-child,.tabella-cu th:last-child{text-align:right;white-space:nowrap}
+</style>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="contenitore testata">
+  <a class="marchio" href="./">Studio Legale Stante</a>
+  <nav aria-label="Principale">
+    <ul>
+      <li><a href="./#materie">Materie</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+      <li><a href="./#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenuto">
+  <div class="contenitore pagina-titolo">
+    <nav class="percorso" aria-label="Percorso"><ol><li><a href="./">Home</a></li><li><a href="guide.html">Guide</a></li><li aria-current="page">Interessi legali</li></ol></nav>
+    <h1>Calcolo degli interessi legali</h1>
+    <p>Strumento gratuito: calcola gli interessi al tasso legale (art. 1284 c.c.) su una somma tra due date, applicando per ogni periodo il tasso in vigore.</p>
+  </div>
+
+  <div class="contenitore sezione">
+    <form id="calcolo" class="modulo" novalidate>
+      <fieldset>
+        <legend>I dati</legend>
+        <div class="griglia-campi">
+          <label class="largo">Capitale (€)<input type="text" id="capitale" inputmode="decimal" placeholder="es. 10.000"></label>
+          <label>Dal giorno<input type="date" id="dal" min="1990-12-16"></label>
+          <label>Al giorno<input type="date" id="al" min="1990-12-16"></label>
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="esito" aria-live="polite">
+      <p class="importo" id="importo">—</p>
+      <p class="dettaglio" id="dettaglio">Inserite capitale e date.</p>
+    </div>
+    <table class="tabella-cu" id="periodi" hidden>
+      <thead><tr><th>Periodo</th><th>Giorni</th><th>Tasso</th><th>Interessi</th></tr></thead>
+      <tbody></tbody>
+    </table>
+
+    <p class="avvertenza">Interessi semplici, senza capitalizzazione, calcolati sui giorni effettivi dell'anno (365 o 366). Il calcolo non comprende la rivalutazione monetaria, gli interessi moratori delle transazioni commerciali né il tasso maggiorato che l'art. 1284, quarto comma, c.c. prevede dalla domanda giudiziale se le parti non l'hanno determinato. Ha finalità informativa.</p>
+
+    <h2 style="font-size:1.625rem;margin-top:3rem">Tassi legali applicati</h2>
+    <table class="tabella-cu" id="tabella-tassi">
+      <thead><tr><th>Periodo</th><th>Tasso annuo</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="contenitore">
+    <p>Avv. Vincenzo Stante, iscritto all'Ordine degli Avvocati di Bari. P.IVA 07973660728</p>
+    <ul>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+(function () {
+  // Saggio degli interessi legali (art. 1284 c.c.): decorrenza, tasso %
+  var TASSI = [
+    ['1990-12-16', 10], ['1997-01-01', 5], ['1999-01-01', 2.5], ['2001-01-01', 3.5], ['2002-01-01', 3],
+    ['2004-01-01', 2.5], ['2008-01-01', 3], ['2010-01-01', 1], ['2011-01-01', 1.5], ['2012-01-01', 2.5],
+    ['2014-01-01', 1], ['2015-01-01', 0.5], ['2016-01-01', 0.2], ['2017-01-01', 0.1], ['2018-01-01', 0.3],
+    ['2019-01-01', 0.8], ['2020-01-01', 0.05], ['2021-01-01', 0.01], ['2022-01-01', 1.25], ['2023-01-01', 5],
+    ['2024-01-01', 2.5], ['2025-01-01', 2], ['2026-01-01', 1.6]
+  ];
+  var $ = function (id) { return document.getElementById(id); };
+  var GIORNO = 86400000;
+  function d(s) { var p = s.split('-'); return Date.UTC(+p[0], +p[1] - 1, +p[2]); }
+  function it(t) { var x = new Date(t); return ('0' + x.getUTCDate()).slice(-2) + '/' + ('0' + (x.getUTCMonth() + 1)).slice(-2) + '/' + x.getUTCFullYear(); }
+  function euro(n) { var p = n.toFixed(2).split('.'); return p[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ',' + p[1] + ' €'; }
+  function perc(n) { return String(n).replace('.', ',') + '%'; }
+  function leggi(s) {
+    s = String(s || '').replace(/[€\s]/g, '');
+    if (/,\d{1,2}$/.test(s)) s = s.replace(/\./g, '').replace(',', '.'); else s = s.replace(/[.,](?=\d{3}(\D|$))/g, '');
+    var n = parseFloat(s); return isFinite(n) && n > 0 ? n : null;
+  }
+  function annoLungo(y) { return (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0 ? 366 : 365; }
+
+  // tabella dei tassi
+  var tb = $('tabella-tassi').querySelector('tbody');
+  for (var i = TASSI.length - 1; i >= 0; i--) {
+    var fine = i < TASSI.length - 1 ? it(d(TASSI[i + 1][0]) - GIORNO) : 'oggi';
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td>dal ' + it(d(TASSI[i][0])) + ' al ' + fine + '</td><td>' + perc(TASSI[i][1]) + '</td>';
+    tb.appendChild(tr);
+  }
+
+  function calcola() {
+    var c = leggi($('capitale').value), a = $('dal').value, b = $('al').value;
+    var corpo = $('periodi').querySelector('tbody'); corpo.textContent = '';
+    $('periodi').hidden = true;
+    if (!c || !a || !b) { $('importo').textContent = '—'; $('dettaglio').textContent = 'Inserite capitale e date.'; return; }
+    var t0 = d(a), t1 = d(b);
+    if (t0 < d(TASSI[0][0])) { $('importo').textContent = '—'; $('dettaglio').textContent = 'La data iniziale deve essere successiva al 15/12/1990.'; return; }
+    if (t1 <= t0) { $('importo').textContent = '—'; $('dettaglio').textContent = 'La data finale deve essere successiva a quella iniziale.'; return; }
+    // tagli: cambi di tasso e inizio di ogni anno solare
+    var tagli = [];
+    TASSI.forEach(function (r) { var t = d(r[0]); if (t > t0 && t < t1) tagli.push(t); });
+    for (var y = new Date(t0).getUTCFullYear() + 1; y <= new Date(t1).getUTCFullYear(); y++) { var ty = Date.UTC(y, 0, 1); if (ty > t0 && ty < t1 && tagli.indexOf(ty) < 0) tagli.push(ty); }
+    tagli.sort(function (x, z) { return x - z; });
+    var punti = [t0].concat(tagli, [t1]), totale = 0, giorniTot = 0;
+    for (var k = 0; k < punti.length - 1; k++) {
+      var da = punti[k], aa = punti[k + 1], gg = Math.round((aa - da) / GIORNO);
+      var tasso = 0; TASSI.forEach(function (r) { if (d(r[0]) <= da) tasso = r[1]; });
+      var anno = new Date(da).getUTCFullYear();
+      var int = c * tasso / 100 * gg / annoLungo(anno);
+      totale += int; giorniTot += gg;
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + it(da) + ' – ' + it(aa) + '</td><td>' + gg + '</td><td>' + perc(tasso) + '</td><td>' + euro(int) + '</td>';
+      corpo.appendChild(tr);
+    }
+    $('periodi').hidden = false;
+    $('importo').textContent = euro(totale);
+    $('dettaglio').textContent = 'Interessi su ' + euro(c) + ' per ' + giorniTot + ' giorni. Capitale più interessi: ' + euro(c + totale) + '.';
+  }
+  ['capitale', 'dal', 'al'].forEach(function (id) { $(id).addEventListener('input', calcola); $(id).addEventListener('change', calcola); });
+  $('calcolo').addEventListener('submit', function (e) { e.preventDefault(); });
+})();
+</script>
+<script src="/assets/js/lex.js?v=20261102f" defer></script>
+</body>
+</html>
