@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rivalutazione ISTAT dell'assegno di mantenimento | Avv. Vincenzo Stante</title>
+<meta name="description" content="Calcolo gratuito dell'adeguamento ISTAT dell'assegno di mantenimento con l'indice FOI e degli arretrati non versati, anno per anno.">
+<link rel="canonical" href="https://www.studiolegalestante.it/calcolo-rivalutazione-mantenimento.html">
+<meta name="theme-color" content="#1D2B45">
+<link rel="icon" href="favicon.svg?v=20261029" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=20261029">
+<link rel="preload" href="assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/libre-caslon-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/studio.css?v=20261031b">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Studio Legale Avv. Vincenzo Stante">
+<meta property="og:title" content="Rivalutazione ISTAT dell'assegno di mantenimento">
+<meta property="og:description" content="Adeguamento ISTAT dell'assegno di mantenimento e calcolo degli arretrati.">
+<meta property="og:url" content="https://www.studiolegalestante.it/calcolo-rivalutazione-mantenimento.html">
+<meta property="og:image" content="https://www.studiolegalestante.it/images/og-studio-stante.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+.esito{margin:1.5rem 0 0;padding:1.5rem 1.75rem;border:1px solid var(--inchiostro);background:var(--carta)}
+.esito .importo{font-family:var(--display);font-size:2.75rem;line-height:1;color:var(--inchiostro);margin:0 0 .5rem}
+.esito .dettaglio{font-size:.95rem;color:var(--grigio);margin:0}
+.tabella-cu{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:1rem}
+.tabella-cu th,.tabella-cu td{text-align:left;padding:.5rem .3rem;font-size:.9rem;border-bottom:1px solid var(--filetto);vertical-align:top}
+.tabella-cu td:last-child,.tabella-cu th:last-child{text-align:right;white-space:nowrap}
+</style>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="contenitore testata">
+  <a class="marchio" href="./">Studio Legale Stante</a>
+  <nav aria-label="Principale">
+    <ul>
+      <li><a href="./#materie">Materie</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+      <li><a href="./#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenuto">
+  <div class="contenitore pagina-titolo">
+    <nav class="percorso" aria-label="Percorso"><ol><li><a href="./">Home</a></li><li><a href="guide.html">Guide</a></li><li aria-current="page">Rivalutazione del mantenimento</li></ol></nav>
+    <h1>Rivalutazione ISTAT dell'assegno di mantenimento</h1>
+    <p>Calcola l'importo aggiornato dell'assegno con l'indice ISTAT dei prezzi al consumo (FOI senza tabacchi) e, se l'adeguamento non è stato versato, gli arretrati dovuti.</p>
+  </div>
+
+  <div class="contenitore sezione">
+    <form id="calcolo" class="modulo" novalidate>
+      <fieldset>
+        <legend>L'assegno</legend>
+        <div class="griglia-campi">
+          <label class="largo">Importo mensile stabilito (€)<input type="text" id="importo-base" inputmode="decimal" placeholder="es. 400"></label>
+          <label>Mese di decorrenza<select id="mese"></select></label>
+          <label>Anno di decorrenza<select id="anno"></select></label>
+          <label>Misura dell'adeguamento<select id="quota"><option value="1">100% della variazione ISTAT</option><option value="0.75">75% della variazione ISTAT</option></select></label>
+        </div>
+        <label class="spunta"><input type="checkbox" id="arretrati" checked> Calcola gli arretrati, supponendo che sia stato sempre versato l'importo iniziale senza adeguamenti</label>
+      </fieldset>
+    </form>
+
+    <div class="esito" aria-live="polite">
+      <p class="importo" id="importo">—</p>
+      <p class="dettaglio" id="dettaglio">Inserite importo e decorrenza.</p>
+    </div>
+    <table class="tabella-cu" id="anni" hidden>
+      <thead><tr><th>Dal mese</th><th>Variazione</th><th>Assegno</th><th>Arretrati</th></tr></thead>
+      <tbody></tbody>
+    </table>
+
+    <p class="avvertenza">Metodo ISTAT: ogni anno l'assegno si aggiorna con la variazione dell'indice FOI senza tabacchi tra il mese di decorrenza e lo stesso mese dell'anno precedente, arrotondata a un decimale e applicata nella misura indicata; tra basi diverse si usano i coefficienti di raccordo ISTAT. L'indice di un mese viene pubblicato verso la metà del mese successivo. Gli arretrati sono calcolati fino al mese in corso, senza interessi. Il provvedimento o l'accordo possono prevedere criteri diversi (mese di riferimento, cadenza, misura): in quel caso prevalgono. Il calcolo ha finalità informativa.</p>
+    <p class="avvertenza" id="fonte-dati"></p>
+  </div>
+</main>
+
+
+<footer class="pie">
+  <div class="contenitore">
+    <p>Avv. Vincenzo Stante, iscritto all'Ordine degli Avvocati di Bari. P.IVA 07973660728</p>
+    <ul>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var MESI = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+  var dati = null;
+  function euro(n) { var p = (Math.round(n * 100) / 100).toFixed(2).split('.'); return p[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ',' + p[1] + ' €'; }
+  function leggi(s) {
+    s = String(s || '').replace(/[€\s]/g, '');
+    if (/,\d{1,2}$/.test(s)) s = s.replace(/\./g, '').replace(',', '.'); else s = s.replace(/[.,](?=\d{3}(\D|$))/g, '');
+    var n = parseFloat(s); return isFinite(n) && n > 0 ? n : null;
+  }
+  function chiave(a, m) { return a + '-' + ('0' + m).slice(-2); }
+  function variazione(da, a) {
+    var x = dati.indici[da], y = dati.indici[a]; if (!x || !y) return null;
+    var c = 1; ['1995', '2010', '2015'].forEach(function (b) { if (x[1] <= +b && +b < y[1]) c *= dati.raccordo[b]; });
+    return Math.round((y[0] / x[0] * c * 100 - 100) * 10) / 10;
+  }
+  MESI.forEach(function (m, i) { var o = document.createElement('option'); o.value = i + 1; o.textContent = m; $('mese').appendChild(o); });
+  var oggi = new Date();
+  for (var y = oggi.getFullYear() - 1; y >= 1997; y--) { var o = document.createElement('option'); o.value = y; o.textContent = y; $('anno').appendChild(o); }
+
+  function calcola() {
+    var corpo = $('anni').querySelector('tbody'); corpo.textContent = ''; $('anni').hidden = true;
+    var imp = leggi($('importo-base').value), m = +$('mese').value, a0 = +$('anno').value, q = +$('quota').value;
+    if (!dati) { $('dettaglio').textContent = 'Caricamento degli indici ISTAT…'; return; }
+    if (!imp) { $('importo').textContent = '—'; $('dettaglio').textContent = 'Inserite importo e decorrenza.'; return; }
+    var ultimo = Object.keys(dati.indici).sort().pop();
+    var corrente = imp, arretrati = 0, righe = 0, conArretrati = $('arretrati').checked;
+    var meseOggi = oggi.getFullYear() * 12 + oggi.getMonth(); // mese in corso (0-based)
+    for (var a = a0 + 1; ; a++) {
+      var k = chiave(a, m);
+      if (k > ultimo) break;
+      var v = variazione(chiave(a - 1, m), k); if (v === null) break;
+      corrente = Math.round(corrente * (1 + v * q / 100) * 100) / 100;
+      // mesi in cui vale questo importo: dal mese m dell'anno a fino al mese prima dell'anniversario successivo (o al mese in corso)
+      var inizio = a * 12 + (m - 1), fine = Math.min((a + 1) * 12 + (m - 1) - 1, meseOggi);
+      var mesi = Math.max(0, fine - inizio + 1), arr = conArretrati ? (corrente - imp) * mesi : 0;
+      arretrati += arr; righe++;
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + MESI[m - 1] + ' ' + a + '</td><td>' + (v >= 0 ? '+' : '') + String(v).replace('.', ',') + '%' + (q < 1 ? ' (75%)' : '') + '</td><td>' + euro(corrente) + '</td><td>' + (conArretrati ? euro(arr) + '<br><small>' + mesi + ' mesi</small>' : '—') + '</td>';
+      corpo.appendChild(tr);
+    }
+    if (!righe) { $('importo').textContent = euro(imp); $('dettaglio').textContent = 'Non è ancora disponibile l\'indice di ' + MESI[m - 1] + ' ' + (a0 + 1) + ': nessun adeguamento da applicare.'; return; }
+    $('anni').hidden = false;
+    $('importo').textContent = euro(corrente);
+    $('dettaglio').textContent = 'Assegno mensile aggiornato (da ' + euro(imp) + ', ' + MESI[m - 1] + ' ' + a0 + ')' + (conArretrati ? '. Arretrati per gli adeguamenti non versati fino a ' + MESI[oggi.getMonth()] + ' ' + oggi.getFullYear() + ': ' + euro(arretrati) + '.' : '.');
+  }
+  ['importo-base', 'mese', 'anno', 'quota', 'arretrati'].forEach(function (id) { $(id).addEventListener('input', calcola); $(id).addEventListener('change', calcola); });
+  $('calcolo').addEventListener('submit', function (e) { e.preventDefault(); });
+  fetch('data/foi.json?t=' + Date.now()).then(function (r) { return r.json(); }).then(function (j) {
+    dati = j; var u = Object.keys(j.indici).sort().pop().split('-');
+    $('fonte-dati').textContent = 'Fonte: ISTAT, indice FOI senza tabacchi, aggiornato automaticamente ogni mese. Ultimo indice disponibile: ' + MESI[+u[1] - 1] + ' ' + u[0] + '.';
+    calcola();
+  }).catch(function () { $('dettaglio').textContent = 'Indici ISTAT non disponibili in questo momento.'; });
+})();
+</script>
+<script src="/assets/js/lex.js?v=20261102f" defer></script>
+</body>
+</html>
