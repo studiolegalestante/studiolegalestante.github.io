@@ -3,7 +3,7 @@ name: Indici FOI
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 9 20 * *'
+    - cron: '0 9 20 * *'   # il 20 di ogni mese, dopo la pubblicazione ISTAT
 
 permissions:
   contents: write
@@ -13,18 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.2.2
-      - name: Esplora i dati FOI
+      - uses: actions/setup-python@v5.6.0
+        with:
+          python-version: '3.11'
+      - name: Scarica gli indici
+        run: python scripts/indici_foi.py
+      - name: Salva se cambiati
         run: |
-          for df in 169_745 169_748 169_15 169_748_DF_DCSP_FOI1B2025_2; do
-            curl -sS -m 180 -H 'Accept: application/vnd.sdmx.data+csv;version=1.0.0' "https://esploradati.istat.it/SDMXWS/rest/data/IT1,${df},1.0/all?startPeriod=2025-10" -o "$df.csv" || true
-            echo "=== $df $(wc -l < $df.csv) righe"
-            head -1 "$df.csv"
-            python3 - "$df.csv" <<'PY'
-          import csv,sys,collections
-          rows=list(csv.DictReader(open(sys.argv[1],encoding='utf-8-sig',errors='ignore')))
-          if not rows: print('vuoto'); sys.exit()
-          for k in rows[0]:
-              vals=collections.Counter(r[k] for r in rows)
-              if len(vals)<40: print(k, dict(vals.most_common(12)))
-          PY
-          done
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/foi.json
+          git diff --cached --quiet && echo "Nessuna modifica" || (git commit -m "Aggiorna indici FOI [skip ci]" && git push)
