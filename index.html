@@ -65,6 +65,14 @@
   }
 }
 </script>
+<style>
+.slogan{font-size:1.15rem;margin:.6rem auto 0;max-width:34rem}
+.griglia-interventi{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.intervento-card{display:flex;flex-direction:column;gap:.35rem;padding:1.25rem;background:#1D2B45;color:#f3eee6;text-decoration:none;min-height:11rem}
+.intervento-card:hover{background:#25365a}.ic-play{width:2.6rem;height:2.6rem;border-radius:50%;border:1px solid rgba(243,238,230,.6);display:flex;align-items:center;justify-content:center;font-size:.9rem;margin-bottom:.4rem}
+.ic-canale{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;opacity:.75}.ic-titolo{font-family:var(--display);font-size:1.35rem}.ic-desc{font-size:.95rem;opacity:.9}
+.strumenti{padding-left:1.1rem}.strumenti li{margin:.35rem 0}
+</style>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -92,6 +100,7 @@
   <div class="doppio-filetto" aria-hidden="true"></div>
   <h1 id="titolo">Avv. Vincenzo Stante</h1>
   <p class="qualifica">Avvocato del Foro di Bari</p>
+  <p class="slogan">Penale, famiglia e risarcimenti. Consulenza anche online, in tutta Italia.</p>
   <p class="recapito">Via Giovanni Casalino 41, 70019 Triggiano&nbsp;(BA)<br>Tribunale di Bari e uffici giudiziari del distretto</p>
   <div class="doppio-filetto" aria-hidden="true"></div>
   <div class="azioni">
@@ -113,23 +122,7 @@
   </div>
 </section>
 
-<section class="fondo-grigio" aria-labelledby="lo-studio">
-  <div class="contenitore sezione studio">
-    <div class="testo">
-      <h2 id="lo-studio">Lo studio</h2>
-      <p>Assisto privati, famiglie e imprese nel processo penale, nelle controversie familiari e civili, davanti al Tribunale di Bari e agli altri uffici del distretto.</p>
-      <p>Ogni pratica parte dalla lettura completa degli atti. Prima di iniziare spiego al cliente quali strade sono percorribili, con quali tempi e con quali costi, e lo tengo informato a ogni passaggio.</p>
-      <p>Ricevo a Triggiano su appuntamento. I colloqui si svolgono in italiano e in inglese; per altre lingue, se necessario, con interprete. Per chi ne ha i requisiti, assisto in patrocinio a spese dello Stato.</p>
-    </div>
-    <figure>
-      <picture>
-        <source type="image/webp" srcset="images/ritratto-480.webp 480w, images/ritratto-960.webp 960w" sizes="(max-width: 760px) 90vw, 340px">
-        <img src="images/avv-Vincenzo-Stante-768x1024.jpg" width="768" height="1024" alt="L'avvocato Vincenzo Stante in toga, nel suo studio" loading="lazy">
-      </picture>
-      <figcaption>Nello studio di Triggiano</figcaption>
-    </figure>
-  </div>
-</section>
+
 
 <section id="materie" class="contenitore sezione" aria-labelledby="titolo-materie">
   <h2 id="titolo-materie">Materie</h2>
@@ -144,8 +137,8 @@
       <p>Separazione e divorzio, affidamento e mantenimento dei figli, modifica delle condizioni, procedimenti a tutela dei minori, amministrazione di sostegno.</p>
     </li>
     <li>
-      <h3><a href="diritto-civile.html">Civile e risarcimento danni</a></h3>
-      <p>Sinistri stradali e responsabilità della pubblica amministrazione, locazioni, condominio, recupero crediti, negoziazione assistita.</p>
+      <h3><a href="diritto-civile.html">Civile</a></h3>
+      <p>Locazioni e condominio, recupero crediti, contratti, negoziazione assistita e mediazione.</p>
     </li>
     <li>
       <h3><a href="patrocinio-spese-stato.html">Patrocinio a spese dello Stato</a></h3>
@@ -173,62 +166,104 @@
   </ul>
 </section>
 
-<section id="penale" class="notte" aria-labelledby="titolo-penale">
-  <div class="contenitore sezione">
-    <h2 id="titolo-penale">Il procedimento penale, fase per fase</h2>
-    <p class="sommario">Cosa accade in ciascuna fase e cosa fa il difensore. Approfondimenti nella pagina <a href="diritto-penale.html" style="color:var(--rosa)">Diritto penale</a> e nelle <a href="guide.html" style="color:var(--rosa)">guide</a>.</p>
-    <ol class="fasi">
-      <li>
-        <h3>Indagini preliminari</h3>
-        <p>Lettura degli atti dopo l'avviso di conclusione, memorie, richiesta di interrogatorio, indagini difensive.</p>
-      </li>
-      <li>
-        <h3>Udienza preliminare</h3>
-        <p>Valutazione del rito: abbreviato, patteggiamento, messa alla prova, oppure richiesta di non luogo a procedere.</p>
-      </li>
-      <li>
-        <h3>Dibattimento</h3>
-        <p>Liste testimoniali, controesame, consulenze tecniche, discussione finale.</p>
-      </li>
-      <li>
-        <h3>Impugnazioni</h3>
-        <p>Appello e ricorso per cassazione, con verifica rigorosa dei termini.</p>
-      </li>
-    </ol>
+<section class="fondo-grigio" aria-labelledby="lo-studio">
+  <div class="contenitore sezione studio">
+    <div class="testo">
+      <h2 id="lo-studio">Lo studio</h2>
+      <p>Assisto privati, famiglie e imprese nel processo penale, nelle controversie familiari e civili, davanti al Tribunale di Bari e agli altri uffici del distretto.</p>
+      <p>Ogni pratica parte dalla lettura completa degli atti. Prima di iniziare spiego al cliente quali strade sono percorribili, con quali tempi e con quali costi, e lo tengo informato a ogni passaggio.</p>
+      <p>Ricevo a Triggiano su appuntamento. I colloqui si svolgono in italiano e in inglese; per altre lingue, se necessario, con interprete. Per chi ne ha i requisiti, assisto in patrocinio a spese dello Stato.</p>
+    </div>
+    <figure>
+      <picture>
+        <source type="image/webp" srcset="images/ritratto-480.webp 480w, images/ritratto-960.webp 960w" sizes="(max-width: 760px) 90vw, 340px">
+        <img src="images/avv-Vincenzo-Stante-768x1024.jpg" width="768" height="1024" alt="L'avvocato Vincenzo Stante in toga, nel suo studio" loading="lazy">
+      </picture>
+      <figcaption>Nello studio di Triggiano</figcaption>
+    </figure>
   </div>
 </section>
 
+<section class="contenitore sezione" aria-labelledby="titolo-notizie">
+  <h2 id="titolo-notizie">Ultime notizie</h2>
+  <p class="sommario">Novità di legge e di giurisprudenza selezionate per i cittadini.</p>
+  <ul class="indice" id="home-notizie"><li><p>Caricamento…</p></li></ul>
+  <div class="azioni a-sinistra"><a class="bottone vuoto" href="news.html">Tutti gli approfondimenti</a></div>
+</section>
+<script>
+(function(){var ul=document.getElementById('home-notizie');
+function d(x){var p=(x||'').split('/');return p.length===3?new Date(p[2],p[1]-1,p[0]):new Date(0)}
+fetch('data/news.json?t='+Date.now()).then(function(r){return r.json()}).then(function(dati){
+ var tutte=[];Object.keys(dati).forEach(function(k){(dati[k]||[]).forEach(function(v){if(v&&v.title&&/^https:\/\//.test(v.link||''))tutte.push(v)})});
+ var visti={};tutte=tutte.filter(function(v){if(visti[v.link])return false;visti[v.link]=1;return true}).sort(function(a,b){return d(b.date)-d(a.date)}).slice(0,3);
+ ul.textContent='';tutte.forEach(function(v){var li=document.createElement('li'),h=document.createElement('h3'),a=document.createElement('a'),p=document.createElement('p');
+  a.href=v.link;a.target='_blank';a.rel='noopener';a.textContent=v.title;h.appendChild(a);p.textContent=(v.date?v.date+' · ':'')+(v.description||'');li.appendChild(h);li.appendChild(p);ul.appendChild(li)});
+}).catch(function(){ul.parentNode.hidden=true});})();
+</script>
+
+
+
 <section class="contenitore sezione interventi" aria-labelledby="titolo-interventi">
-  <h2 id="titolo-interventi">Interventi</h2>
+  <h2 id="titolo-interventi">In TV</h2>
   <div class="griglia-interventi">
-    <figure class="intervento">
-      <iframe class="yt-frame" src="https://www.youtube.com/embed/WVeUdiL8JIA?rel=0" title="In prima linea, Antenna Sud, puntata del 30 aprile 2025" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <figcaption><strong>In prima linea</strong>, Antenna Sud, 30 aprile 2025. Ospite in studio: il caso di Turi, la scomparsa di Francesco Di Viesti e il ritrovamento di Canosa.</figcaption>
-    </figure>
-    <figure class="intervento">
-      <iframe class="yt-frame" src="https://www.youtube.com/embed/ADpi73RSjq4?rel=0" title="Legalmente by Mediterranea TV, puntata del 20 maggio 2024" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <figcaption><strong>Legalmente</strong>, Mediterranea TV, 20 maggio 2024. Intelligenza artificiale e deepfake.</figcaption>
-    </figure>
-    <figure class="intervento">
-      <iframe class="yt-frame" src="https://www.youtube.com/embed/kThE5A_j3n0?start=2110&amp;rel=0" title="Pomeriggio Sud, Antenna Sud, 22 febbraio 2024" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <figcaption><strong>Pomeriggio Sud</strong>, Antenna Sud, 22 febbraio 2024. Criptovalute e le frodi più comuni, come difendersi.</figcaption>
-    </figure>
-    <figure class="intervento">
-      <img src="images/convegno-relatori.webp" width="1340" height="720" loading="lazy" alt="L'Avv. Vincenzo Stante con gli altri ospiti della puntata di Legalmente del 20 maggio 2024">
-      <figcaption>Legalmente, 20 maggio 2024: con l'Avv. Michele De Marzo, conduttore della trasmissione, l'Avv. Adriana Augenti e l'Avv. Antonio Console.</figcaption>
-    </figure>
+    <a class="intervento-card" href="https://www.youtube.com/watch?v=WVeUdiL8JIA" target="_blank" rel="noopener">
+      <span class="ic-play" aria-hidden="true">▶</span>
+      <span class="ic-canale">Antenna Sud · 30 aprile 2025</span>
+      <span class="ic-titolo">In prima linea</span>
+      <span class="ic-desc">Ospite in studio: il caso di Turi, la scomparsa di Francesco Di Viesti e il ritrovamento di Canosa.</span>
+    </a>
+    <a class="intervento-card" href="https://www.youtube.com/watch?v=ADpi73RSjq4" target="_blank" rel="noopener">
+      <span class="ic-play" aria-hidden="true">▶</span>
+      <span class="ic-canale">Mediterranea TV · 20 maggio 2024</span>
+      <span class="ic-titolo">Legalmente</span>
+      <span class="ic-desc">Intelligenza artificiale e deepfake.</span>
+    </a>
+    <a class="intervento-card" href="https://www.youtube.com/watch?v=kThE5A_j3n0&t=2110s" target="_blank" rel="noopener">
+      <span class="ic-play" aria-hidden="true">▶</span>
+      <span class="ic-canale">Antenna Sud · 22 febbraio 2024</span>
+      <span class="ic-titolo">Pomeriggio Sud</span>
+      <span class="ic-desc">Criptovalute e le frodi più comuni: come difendersi.</span>
+    </a>
   </div>
 </section>
 
 <section class="contenitore sezione" aria-labelledby="titolo-colleghi">
   <div class="prosa">
     <h2 id="titolo-colleghi">Per i colleghi avvocati</h2>
-    <p><strong>PecBird</strong> è un'estensione gratuita per Thunderbird, realizzata dallo studio, che legge le ricevute PEC e gli esiti dei depositi telematici e mostra a colpo d'occhio cosa è stato consegnato e cosa no. Funziona interamente sul computer di chi la usa.</p>
+    <p>Strumenti gratuiti realizzati dallo studio, aggiornati con i dati ufficiali.</p>
+    <ul class="strumenti">
+      <li><a href="calcolo-contributo-unificato.html">Calcolo del contributo unificato</a></li>
+      <li><a href="calcolo-interessi-legali.html">Calcolo degli interessi legali</a></li>
+      <li><a href="calcolo-rivalutazione-mantenimento.html">Rivalutazione ISTAT dell'assegno di mantenimento</a></li>
+      <li><a href="pecbird.html">PecBird</a>: estensione per Thunderbird che legge le ricevute PEC e gli esiti dei depositi telematici</li>
+    </ul>
     <div class="azioni a-sinistra">
-      <a class="bottone vuoto" href="pecbird.html">Scopri PecBird</a>
-    </div>
+      <a class="bottone vuoto" href="guide.html">Tutti gli strumenti</a></div>
   </div>
 </section>
+
+    <section class="newsletter contenitore sezione" aria-labelledby="titolo-newsletter">
+      <h2 id="titolo-newsletter">Ricevete gli aggiornamenti per email</h2>
+      <p>Una breve newsletter con le novità di legge e di giurisprudenza che riguardano i cittadini: famiglia, penale, risarcimenti, diritti dei consumatori. Niente pubblicità, e potete cancellarvi in qualsiasi momento.</p>
+      <form id="form-newsletter" action="https://03fcb6aa.sibforms.com/serve/MUIFAH_5xbJuiSohBzLzwxtKEu40ZWdT8BGZ1qIqPeB85VeMVJNayZuVtFN8KMdWAgcJb7sKxUq3MWsxDJ3XwYz6SpFLr7ZjY3KOzSYDVSCvlCLQTeI7w3Vb7NqncamwcI5oQNSx2e4168TqnNgJGuIRyaU6Py_ZmMgxJ96uH7MwHBmhpZGqJlcpIg1PpGtxiCgS6HWUbPK_GtH9-w==" method="post" novalidate>
+        <label for="nl-email">Il vostro indirizzo email</label>
+        <div class="nl-riga"><input type="email" id="nl-email" name="EMAIL" required autocomplete="email" placeholder="nome@esempio.it"><button type="submit" class="bottone pieno">Iscriviti</button></div>
+        <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" style="position:absolute;left:-5000px" aria-hidden="true">
+        <input type="hidden" name="locale" value="it"><input type="hidden" name="html_type" value="simple">
+        <label class="nl-consenso"><input type="checkbox" id="nl-ok" required> Ho letto l'<a href="privacy.html#newsletter">informativa privacy</a> e acconsento a ricevere la newsletter.</label>
+        <p class="nl-esito" id="nl-esito" aria-live="polite"></p>
+      </form>
+    </section>
+    <style>.newsletter{border-top:1px solid rgba(29,43,69,.18);margin-top:2.5rem;padding-top:1.5rem}.nl-riga{display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0 .6rem}.nl-riga input{flex:1 1 14rem;min-width:0;padding:.6rem;font:inherit;border:1px solid #b8bec8}.nl-consenso{display:block;font-size:.9rem}.nl-consenso input{margin-right:.4rem}.nl-esito{font-weight:600;min-height:1.2em}</style>
+    <script>
+    (function(){const f=document.getElementById('form-newsletter'),o=document.getElementById('nl-esito');
+    f.addEventListener('submit',async e=>{e.preventDefault();const em=document.getElementById('nl-email');
+      if(!em.value||!em.checkValidity()){o.textContent='Inserite un indirizzo email valido.';return}
+      if(!document.getElementById('nl-ok').checked){o.textContent='Per iscrivervi occorre accettare l\'informativa.';return}
+      o.textContent='Invio in corso…';
+      try{await fetch(f.action,{method:'POST',mode:'no-cors',body:new FormData(f)});o.textContent='Grazie! Vi abbiamo inviato un\'email: cliccate sul link per confermare l\'iscrizione.';f.reset()}
+      catch(err){o.textContent='Non è stato possibile completare l\'iscrizione. Riprovate più tardi.'}});})();
+    </script>
 
 <section id="contatti" class="contenitore sezione contatti" aria-labelledby="titolo-contatti">
   <div class="testo">
