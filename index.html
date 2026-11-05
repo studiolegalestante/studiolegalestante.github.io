@@ -65,6 +65,39 @@
   }
 }
 </script>
+<style>
+.h26 h2{font-family:var(--display);font-weight:400;color:var(--inchiostro);font-size:clamp(1.8rem,3.5vw,2.4rem);margin:0 0 1.5rem}
+.h-hero{display:grid;grid-template-columns:1.3fr .7fr;gap:3rem;align-items:center;padding-top:4rem;padding-bottom:4.5rem}
+.h-occhiello{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ceralacca);margin:0 0 .6rem}
+.h26 h1{font-family:var(--display);font-weight:400;color:var(--inchiostro);font-size:clamp(2.6rem,6vw,4.2rem);line-height:1.05;margin:0 0 1rem}
+.h-motto{font-family:var(--serif);font-style:italic;color:var(--ceralacca);letter-spacing:.06em;font-size:1.05rem;margin:-.4rem 0 1.4rem}
+.h-lead{font-size:clamp(1.15rem,2vw,1.35rem);line-height:1.5;color:var(--testo);max-width:32rem;margin:0 0 1.8rem}
+.h-sede{font-size:.9rem;color:var(--grigio);margin-top:1.4rem}
+.h-ritratto{margin:0;justify-self:end;width:100%;max-width:340px}.h-ritratto img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;box-shadow:16px 16px 0 #EDE6DA}
+.h-bisogni{background:#F4F1EC;padding:4.5rem 0}
+.h-griglia{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--filetto);border:1px solid var(--filetto)}
+.h-tile{position:relative;display:flex;flex-direction:column;gap:.3rem;height:100%;box-sizing:border-box;padding:1.5rem 1.4rem 1.7rem;background:var(--carta);text-decoration:none;color:var(--testo);transition:background .2s}
+.h-tile:hover{background:#fff}.h-tile:hover .h-fr{transform:translateX(4px);opacity:1}
+.h-ic{width:30px;height:30px;fill:none;stroke:var(--inchiostro);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;margin-bottom:.6rem}
+.h-t{font-family:var(--display);font-size:1.2rem;color:var(--inchiostro);line-height:1.25}.h-d{font-size:.92rem;color:var(--grigio);line-height:1.45}
+.h-fr{position:absolute;right:1.2rem;top:1.4rem;color:var(--ceralacca);opacity:.5;transition:all .2s}
+.h-come{background:var(--inchiostro);color:var(--notte-testo);padding:4.5rem 0}.h-come h2{color:#fff}
+.h-passi{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.h-passi li{display:flex;flex-direction:column;gap:.4rem;border-top:1px solid var(--notte-filetto);padding-top:1.2rem}
+.h-n{font-family:var(--display);font-size:2.4rem;line-height:1;color:var(--rosa)}.h-passi strong{color:#fff;font-weight:400;font-family:var(--display);font-size:1.25rem}.h-passi span:last-child{color:var(--notte-grigio);font-size:.98rem}
+.h-prezzo{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--notte-filetto)}
+.h-prezzo small{display:block;color:var(--notte-grigio);font-size:.85rem}.bottone.chiaro{background:var(--carta);color:var(--inchiostro);border-color:var(--carta)}
+.h-studio{display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;padding-top:5rem;padding-bottom:5rem}
+.h-fatti{margin:0;display:flex;flex-direction:column;gap:1.2rem}.h-fatti div{border-left:2px solid var(--ceralacca);padding-left:1rem}.h-fatti dt{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grigio)}.h-fatti dd{margin:.2rem 0 0;font-size:1rem}
+.h-strumenti{background:#F4F1EC;padding:4.5rem 0}.h-griglia-4{grid-template-columns:repeat(4,1fr)}
+.h-aggiornamenti{display:grid;grid-template-columns:1.5fr 1fr;gap:4rem;padding-top:5rem;padding-bottom:5rem}
+.h-lista{list-style:none;margin:0 0 1rem;padding:0}.h-lista li{border-top:1px solid var(--filetto);padding:1rem 0}.h-lista h3{font-family:var(--display);font-weight:400;font-size:1.15rem;margin:0 0 .3rem;line-height:1.35}.h-lista h3 a{color:var(--inchiostro);text-decoration:none}.h-lista p{margin:0;font-size:.92rem;color:var(--grigio);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.h-link{color:var(--ceralacca);text-decoration:none}
+.h-nl{background:#F4F1EC;padding:2rem;align-self:start}.h-nl p{font-size:.98rem}.h-nl .nl-riga{flex-direction:column}.h-nl .nl-riga input{flex:none;width:100%;box-sizing:border-box}
+@media (max-width:900px){.h-griglia,.h-griglia-4{grid-template-columns:repeat(2,1fr)}.h-passi{grid-template-columns:1fr;gap:1.5rem}.h-studio,.h-aggiornamenti{grid-template-columns:1fr;gap:2.5rem}}
+@media (max-width:760px){.h-hero{grid-template-columns:1fr;gap:2rem;padding-top:2rem;padding-bottom:3rem}.h-ritratto{justify-self:start;max-width:240px;order:-1}.h-tile{padding:1.1rem 1rem 1.3rem}.h-t{font-size:1.05rem}.h-d{font-size:.85rem}.h-fr{display:none}.h-bisogni,.h-come,.h-strumenti{padding:3rem 0}}
+.nl-riga{display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0 .6rem}.nl-riga input{padding:.6rem;font:inherit;border:1px solid #b8bec8;background:#fff}.nl-consenso{display:block;font-size:.85rem;line-height:1.4}.nl-consenso input{margin-right:.4rem}.nl-esito{font-weight:600;min-height:1.2em;font-size:.95rem}
+</style>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -74,6 +107,7 @@
   <nav aria-label="Principale">
     <ul>
       <li><a href="#materie">Materie</a></li>
+      <li><a href="#risarcimenti">Risarcimenti</a></li>
       <li><a href="consulenza-online.html">Consulenza online</a></li>
       <li><a href="guide.html">Guide</a></li>
       <li><a href="news.html">Approfondimenti</a></li>
@@ -84,130 +118,99 @@
   <ul class="lingue" aria-label="Lingua / Language"><li><a href="./" lang="it" hreflang="it" aria-current="true">Italiano</a></li><li><a href="en/" lang="en" hreflang="en">English</a></li><li><a href="sq/" lang="sq" hreflang="sq">Shqip</a></li><li><a href="ka/" lang="ka" hreflang="ka">ქართული</a></li></ul>
 </header>
 
-<main id="contenuto">
+<main id="contenuto" class="h26">
 
-<section class="contenitore intestazione" aria-labelledby="titolo">
-  <div class="sigillo" aria-hidden="true"><span>V<i>·</i>S</span></div>
-  <div class="doppio-filetto" aria-hidden="true"></div>
-  <h1 id="titolo">Avv. Vincenzo Stante</h1>
-  <p class="qualifica">Avvocato del Foro di Bari</p>
-  <p class="recapito">Via Giovanni Casalino 41, 70019 Triggiano&nbsp;(BA)<br>Tribunale di Bari e uffici giudiziari del distretto</p>
-  <div class="doppio-filetto" aria-hidden="true"></div>
-  <div class="azioni">
-    <a class="bottone pieno" href="consulenza-online.html">Richiedi una consulenza online</a>
-    <a class="bottone vuoto" href="tel:+393401834145">Chiama lo studio</a>
-  </div>
-</section>
-
-<section class="richiamo" aria-labelledby="titolo-consulenza">
-  <div class="contenitore">
-    <div>
-      <h2 id="titolo-consulenza">Consulenza online sui vostri documenti</h2>
-      <p>Inviate gli atti che avete ricevuto: li esamino e ricevete un parere scritto su come stanno le cose e cosa conviene fare. Da qualsiasi città, con prezzo comunicato prima di iniziare.</p>
-    </div>
-    <div>
-      <p class="prezzi">Da 150 € più spese generali, Cassa e bollo</p>
-      <a class="bottone pieno" href="consulenza-online.html">Come funziona</a>
-    </div>
-  </div>
-</section>
-
-<section class="fondo-grigio" aria-labelledby="lo-studio">
-  <div class="contenitore sezione studio">
-    <div class="testo">
-      <h2 id="lo-studio">Lo studio</h2>
-      <p>Assisto privati, famiglie e imprese nel processo penale, nelle controversie familiari e civili, davanti al Tribunale di Bari e agli altri uffici del distretto.</p>
-      <p>Ogni pratica parte dalla lettura completa degli atti. Prima di iniziare spiego al cliente quali strade sono percorribili, con quali tempi e con quali costi, e lo tengo informato a ogni passaggio.</p>
-      <p>Ricevo a Triggiano su appuntamento. I colloqui si svolgono in italiano e in inglese; per altre lingue, se necessario, con interprete. Per chi ne ha i requisiti, assisto in patrocinio a spese dello Stato.</p>
-    </div>
-    <figure>
-      <picture>
-        <source type="image/webp" srcset="images/ritratto-480.webp 480w, images/ritratto-960.webp 960w" sizes="(max-width: 760px) 90vw, 340px">
-        <img src="images/avv-Vincenzo-Stante-768x1024.jpg" width="768" height="1024" alt="L'avvocato Vincenzo Stante in toga, nel suo studio" loading="lazy">
-      </picture>
-      <figcaption>Nello studio di Triggiano</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section id="materie" class="contenitore sezione" aria-labelledby="titolo-materie">
-  <h2 id="titolo-materie">Materie</h2>
-  <p class="sommario">Le aree in cui presto assistenza, giudiziale e stragiudiziale.</p>
-  <ul class="indice">
-    <li>
-      <h3><a href="diritto-penale.html">Diritto penale</a></h3>
-      <p>Difesa di indagati, imputati e persone offese: indagini, misure cautelari, udienza preliminare, riti alternativi, dibattimento, appello e ricorso per cassazione.</p>
-    </li>
-    <li>
-      <h3><a href="diritto-famiglia.html">Famiglia e minori</a></h3>
-      <p>Separazione e divorzio, affidamento e mantenimento dei figli, modifica delle condizioni, procedimenti a tutela dei minori, amministrazione di sostegno.</p>
-    </li>
-    <li>
-      <h3><a href="diritto-civile.html">Civile e risarcimento danni</a></h3>
-      <p>Sinistri stradali e responsabilità della pubblica amministrazione, locazioni, condominio, recupero crediti, negoziazione assistita.</p>
-    </li>
-    <li>
-      <h3><a href="patrocinio-spese-stato.html">Patrocinio a spese dello Stato</a></h3>
-      <p>Verifica dei requisiti di reddito e predisposizione dell'istanza di ammissione, nel penale come nel civile.</p>
-    </li>
-  </ul>
-</section>
-
-<section id="penale" class="notte" aria-labelledby="titolo-penale">
-  <div class="contenitore sezione">
-    <h2 id="titolo-penale">Il procedimento penale, fase per fase</h2>
-    <p class="sommario">Cosa accade in ciascuna fase e cosa fa il difensore. Approfondimenti nella pagina <a href="diritto-penale.html" style="color:var(--rosa)">Diritto penale</a> e nelle <a href="guide.html" style="color:var(--rosa)">guide</a>.</p>
-    <ol class="fasi">
-      <li>
-        <h3>Indagini preliminari</h3>
-        <p>Lettura degli atti dopo l'avviso di conclusione, memorie, richiesta di interrogatorio, indagini difensive.</p>
-      </li>
-      <li>
-        <h3>Udienza preliminare</h3>
-        <p>Valutazione del rito: abbreviato, patteggiamento, messa alla prova, oppure richiesta di non luogo a procedere.</p>
-      </li>
-      <li>
-        <h3>Dibattimento</h3>
-        <p>Liste testimoniali, controesame, consulenze tecniche, discussione finale.</p>
-      </li>
-      <li>
-        <h3>Impugnazioni</h3>
-        <p>Appello e ricorso per cassazione, con verifica rigorosa dei termini.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="contenitore sezione interventi" aria-labelledby="titolo-interventi">
-  <h2 id="titolo-interventi">Interventi</h2>
-  <div class="griglia-interventi">
-    <figure class="intervento">
-      <iframe class="yt-frame" src="https://www.youtube.com/embed/WVeUdiL8JIA?rel=0" title="In prima linea, Antenna Sud, puntata del 30 aprile 2025" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <figcaption><strong>In prima linea</strong>, Antenna Sud, 30 aprile 2025. Ospite in studio: il caso di Turi, la scomparsa di Francesco Di Viesti e il ritrovamento di Canosa.</figcaption>
-    </figure>
-    <figure class="intervento">
-      <iframe class="yt-frame" src="https://www.youtube.com/embed/ADpi73RSjq4?rel=0" title="Legalmente by Mediterranea TV, puntata del 20 maggio 2024" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <figcaption><strong>Legalmente</strong>, Mediterranea TV, 20 maggio 2024. Intelligenza artificiale e deepfake.</figcaption>
-    </figure>
-    <figure class="intervento">
-      <iframe class="yt-frame" src="https://www.youtube.com/embed/kThE5A_j3n0?start=2110&amp;rel=0" title="Pomeriggio Sud, Antenna Sud, 22 febbraio 2024" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <figcaption><strong>Pomeriggio Sud</strong>, Antenna Sud, 22 febbraio 2024. Criptovalute e le frodi più comuni, come difendersi.</figcaption>
-    </figure>
-    <figure class="intervento">
-      <img src="images/convegno-relatori.webp" width="1340" height="720" loading="lazy" alt="L'Avv. Vincenzo Stante con gli altri ospiti della puntata di Legalmente del 20 maggio 2024">
-      <figcaption>Legalmente, 20 maggio 2024: con l'Avv. Michele De Marzo, conduttore della trasmissione, l'Avv. Adriana Augenti e l'Avv. Antonio Console.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="contenitore sezione" aria-labelledby="titolo-colleghi">
-  <div class="prosa">
-    <h2 id="titolo-colleghi">Per i colleghi avvocati</h2>
-    <p><strong>PecBird</strong> è un'estensione gratuita per Thunderbird, realizzata dallo studio, che legge le ricevute PEC e gli esiti dei depositi telematici e mostra a colpo d'occhio cosa è stato consegnato e cosa no. Funziona interamente sul computer di chi la usa.</p>
+<section class="h-hero contenitore">
+  <div class="h-hero-testo">
+    <p class="h-occhiello">Studio legale · Foro di Bari</p>
+    <h1 id="titolo">Avv. Vincenzo Stante</h1>
+    <p class="h-motto" lang="la">Audiatur et altera pars</p>
+    <p class="h-lead">Penale, famiglia e risarcimenti. Un parere scritto sui vostri documenti, a prezzo fisso, ovunque vi troviate.</p>
     <div class="azioni a-sinistra">
-      <a class="bottone vuoto" href="pecbird.html">Scopri PecBird</a>
+      <a class="bottone pieno" href="consulenza-online.html#richiesta">Richiedi una consulenza online</a>
+      <a class="bottone vuoto" href="tel:+393401834145">Chiama lo studio</a>
     </div>
+    <p class="h-sede">Via Giovanni Casalino 41, Triggiano (BA) · Tribunale di Bari e uffici del distretto</p>
   </div>
+  <figure class="h-ritratto">
+    <picture>
+      <source type="image/webp" srcset="images/ritratto-480.webp 480w, images/ritratto-960.webp 960w" sizes="(max-width: 760px) 80vw, 360px">
+      <img src="images/avv-Vincenzo-Stante-768x1024.jpg" width="768" height="1024" alt="L'avvocato Vincenzo Stante nel suo studio di Triggiano">
+    </picture>
+  </figure>
+</section>
+
+<section class="h-bisogni" id="materie" aria-labelledby="titolo-bisogni">
+  <div class="contenitore">
+    <h2 id="titolo-bisogni">Di cosa avete bisogno?</h2>
+    <ul class="h-griglia">
+      <li><a class="h-tile" href="diritto-penale.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 21h10M4 7h16M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/></svg><span class="h-t">Ho ricevuto un atto penale</span><span class="h-d">Avviso, querela, informazione di garanzia, arresto</span><span class="h-fr" aria-hidden="true">→</span></a></li>
+      <li><a class="h-tile" href="diritto-famiglia.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><circle cx="16" cy="6" r="2.5"/><circle cx="12" cy="12" r="2"/><path d="M4 21v-6a4 4 0 0 1 4-4M20 21v-6a4 4 0 0 0-4-4M9 21v-3a3 3 0 0 1 6 0v3"/></svg><span class="h-t">Separazione e figli</span><span class="h-d">Affidamento, mantenimento, divorzio</span><span class="h-fr" aria-hidden="true">→</span></a></li>
+      <li><a class="h-tile" href="risarcimento-danni.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14v-4l-2-5H7l-2 5zM5 13h14"/><circle cx="8" cy="17" r="1.8"/><circle cx="16" cy="17" r="1.8"/></svg><span class="h-t">Ho subìto un danno</span><span class="h-d">Incidenti, cadute, infortuni sul lavoro</span><span class="h-fr" aria-hidden="true">→</span></a></li>
+      <li><a class="h-tile" href="responsabilita-medica.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3M10 13v3a4 4 0 0 0 8 0v-2"/><circle cx="18" cy="12" r="2"/></svg><span class="h-t">Errore medico</span><span class="h-d">Diagnosi, interventi, infezioni in ospedale</span><span class="h-fr" aria-hidden="true">→</span></a></li>
+      <li><a class="h-tile" href="rimborso-voli.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16l20-6-3-2-6 2-6-6H5l3 7-4 1-2-2v6z"/></svg><span class="h-t">Volo in ritardo o cancellato</span><span class="h-d">Fino a 600 € di compensazione</span><span class="h-fr" aria-hidden="true">→</span></a></li>
+      <li><a class="h-tile" href="diritto-civile.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></svg><span class="h-t">Casa, condominio, crediti</span><span class="h-d">Locazioni, sfratti, somme non pagate</span><span class="h-fr" aria-hidden="true">→</span></a></li>
+      <li><a class="h-tile" href="patrocinio-spese-stato.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><span class="h-t">Avvocato gratuito?</span><span class="h-d">Patrocinio a spese dello Stato</span><span class="h-fr" aria-hidden="true">→</span></a></li>
+      <li><a class="h-tile" href="consulenza-online.html#richiesta"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.5V14M12 17h.01"/></svg><span class="h-t">Non so da dove partire</span><span class="h-d">Descrivetemi il problema</span><span class="h-fr" aria-hidden="true">→</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="h-come" aria-labelledby="titolo-come">
+  <div class="contenitore">
+    <h2 id="titolo-come">La consulenza online, in tre passi</h2>
+    <ol class="h-passi">
+      <li><span class="h-n">1</span><strong>Mi inviate i documenti</strong><span>Atti ricevuti, contratti, referti, fotografie: tutto quello che avete, dal modulo del sito.</span></li>
+      <li><span class="h-n">2</span><strong>Studio il caso</strong><span>Leggo gli atti per intero e verifico norme e giurisprudenza aggiornate.</span></li>
+      <li><span class="h-n">3</span><strong>Ricevete un parere scritto</strong><span>Cosa significa, cosa conviene fare e con quali costi. Entro 5 giorni lavorativi, o 2 se è urgente.</span></li>
+    </ol>
+    <div class="h-prezzo"><span><strong>150 €</strong> ordinaria · <strong>250 €</strong> urgente <small>più spese generali, Cassa e bollo</small></span><a class="bottone chiaro" href="consulenza-online.html">Come funziona</a></div>
+  </div>
+</section>
+
+<section class="h-studio contenitore" aria-labelledby="lo-studio">
+  <div>
+    <h2 id="lo-studio">Lo studio</h2>
+    <p>Ogni pratica parte dalla lettura completa degli atti. Prima di iniziare spiego quali strade sono percorribili, con quali tempi e con quali costi, e vi tengo informati a ogni passaggio.</p>
+    <p>Ricevo a Triggiano su appuntamento; per chi è lontano, tutto si può fare a distanza. Per chi ne ha i requisiti, assisto con il patrocinio a spese dello Stato.</p>
+  </div>
+  <dl class="h-fatti">
+    <div><dt>Foro</dt><dd>Iscritto all'Ordine degli Avvocati di Bari</dd></div>
+    <div><dt>Lingue</dt><dd>Italiano e inglese; altre con interprete</dd></div>
+    <div><dt>In TV</dt><dd><a href="https://www.youtube.com/watch?v=WVeUdiL8JIA" target="_blank" rel="noopener">Antenna Sud</a> e <a href="https://www.youtube.com/watch?v=ADpi73RSjq4" target="_blank" rel="noopener">Mediterranea TV</a>, su cronaca giudiziaria, deepfake e frodi online</dd></div>
+  </dl>
+</section>
+
+<section class="h-strumenti" aria-labelledby="titolo-strumenti">
+  <div class="contenitore">
+    <h2 id="titolo-strumenti">Strumenti gratuiti</h2>
+    <ul class="h-griglia h-griglia-4">
+      <li><a class="h-tile" href="calcolo-contributo-unificato.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h2M12 18h2M16 15v3"/></svg><span class="h-t">Contributo unificato</span><span class="h-d">Quanto si paga per iscrivere una causa</span></a></li>
+      <li><a class="h-tile" href="calcolo-interessi-legali.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h2M12 18h2M16 15v3"/></svg><span class="h-t">Interessi legali</span><span class="h-d">Calcolo per periodi, dal 1990 a oggi</span></a></li>
+      <li><a class="h-tile" href="calcolo-rivalutazione-mantenimento.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h2M12 18h2M16 15v3"/></svg><span class="h-t">Assegno di mantenimento</span><span class="h-d">Rivalutazione ISTAT aggiornata</span></a></li>
+      <li><a class="h-tile" href="pecbird.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg><span class="h-t">PecBird</span><span class="h-d">Le ricevute PEC in Thunderbird, a colpo d'occhio</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="h-aggiornamenti contenitore" aria-labelledby="titolo-notizie">
+  <div class="h-notizie">
+    <h2 id="titolo-notizie">Ultime notizie</h2>
+    <ul class="h-lista" id="home-notizie"><li><p>Caricamento…</p></li></ul>
+    <a class="h-link" href="news.html">Tutti gli approfondimenti →</a>
+  </div>
+  <aside class="h-nl newsletter" aria-labelledby="titolo-newsletter">
+    <h2 id="titolo-newsletter">Newsletter</h2>
+    <p>Le novità che contano per i cittadini, in breve. Niente pubblicità; vi cancellate quando volete.</p>
+    <form id="form-newsletter" action="https://03fcb6aa.sibforms.com/serve/MUIFAH_5xbJuiSohBzLzwxtKEu40ZWdT8BGZ1qIqPeB85VeMVJNayZuVtFN8KMdWAgcJb7sKxUq3MWsxDJ3XwYz6SpFLr7ZjY3KOzSYDVSCvlCLQTeI7w3Vb7NqncamwcI5oQNSx2e4168TqnNgJGuIRyaU6Py_ZmMgxJ96uH7MwHBmhpZGqJlcpIg1PpGtxiCgS6HWUbPK_GtH9-w==" method="post" novalidate>
+        <label for="nl-email">Il vostro indirizzo email</label>
+        <div class="nl-riga"><input type="email" id="nl-email" name="EMAIL" required autocomplete="email" placeholder="nome@esempio.it"><button type="submit" class="bottone pieno">Iscriviti</button></div>
+        <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" style="position:absolute;left:-5000px" aria-hidden="true">
+        <input type="hidden" name="locale" value="it"><input type="hidden" name="html_type" value="simple">
+        <label class="nl-consenso"><input type="checkbox" id="nl-ok" required> Ho letto l'<a href="privacy.html#newsletter">informativa privacy</a> e acconsento a ricevere la newsletter.</label>
+        <p class="nl-esito" id="nl-esito" aria-live="polite"></p>
+      </form>
+  </aside>
 </section>
 
 <section id="contatti" class="contenitore sezione contatti" aria-labelledby="titolo-contatti">
@@ -235,6 +238,25 @@
 </section>
 
 </main>
+<script>
+(function(){var ul=document.getElementById('home-notizie');
+function d(x){var p=(x||'').split('/');return p.length===3?new Date(p[2],p[1]-1,p[0]):new Date(0)}
+fetch('data/news.json?t='+Date.now()).then(function(r){return r.json()}).then(function(dati){
+ var tutte=[];Object.keys(dati).forEach(function(k){(dati[k]||[]).forEach(function(v){if(v&&v.title&&/^https:\/\//.test(v.link||''))tutte.push(v)})});
+ var visti={};tutte=tutte.filter(function(v){if(visti[v.link])return false;visti[v.link]=1;return true}).sort(function(a,b){return d(b.date)-d(a.date)}).slice(0,3);
+ ul.textContent='';tutte.forEach(function(v){var li=document.createElement('li'),h=document.createElement('h3'),a=document.createElement('a'),p=document.createElement('p');
+  a.href=v.link;a.target='_blank';a.rel='noopener';a.textContent=v.title;h.appendChild(a);p.textContent=(v.date?v.date+' · ':'')+(v.description||'');li.appendChild(h);li.appendChild(p);ul.appendChild(li)});
+}).catch(function(){ul.parentNode.hidden=true});})();
+</script>
+<script>
+    (function(){const f=document.getElementById('form-newsletter'),o=document.getElementById('nl-esito');
+    f.addEventListener('submit',async e=>{e.preventDefault();const em=document.getElementById('nl-email');
+      if(!em.value||!em.checkValidity()){o.textContent='Inserite un indirizzo email valido.';return}
+      if(!document.getElementById('nl-ok').checked){o.textContent='Per iscrivervi occorre accettare l\'informativa.';return}
+      o.textContent='Invio in corso…';
+      try{await fetch(f.action,{method:'POST',mode:'no-cors',body:new FormData(f)});o.textContent='Grazie! Vi abbiamo inviato un\'email: cliccate sul link per confermare l\'iscrizione.';f.reset()}
+      catch(err){o.textContent='Non è stato possibile completare l\'iscrizione. Riprovate più tardi.'}});})();
+    </script>
 
 <footer class="pie">
   <div class="contenitore">
