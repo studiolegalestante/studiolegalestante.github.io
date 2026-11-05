@@ -75,7 +75,7 @@
 .h-sede{font-size:.9rem;color:var(--grigio);margin-top:1.4rem}
 .h-ritratto{margin:0;justify-self:end;width:100%;max-width:340px}.h-ritratto img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;box-shadow:16px 16px 0 #EDE6DA}
 .h-bisogni{background:#F4F1EC;padding:4.5rem 0}
-.h-griglia{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--filetto);border:1px solid var(--filetto)}
+.h-griglia{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--filetto);border:1px solid var(--filetto)}
 .h-tile{position:relative;display:flex;flex-direction:column;gap:.3rem;height:100%;box-sizing:border-box;padding:1.5rem 1.4rem 1.7rem;background:var(--carta);text-decoration:none;color:var(--testo);transition:background .2s}
 .h-tile:hover{background:#fff}.h-tile:hover .h-fr{transform:translateX(4px);opacity:1}
 .h-ic{width:30px;height:30px;fill:none;stroke:var(--inchiostro);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;margin-bottom:.6rem}
@@ -95,7 +95,7 @@
 .h-link{color:var(--ceralacca);text-decoration:none}
 .h-nl{background:#F4F1EC;padding:2rem;align-self:start}.h-nl p{font-size:.98rem}.h-nl .nl-riga{flex-direction:column}.h-nl .nl-riga input{flex:none;width:100%;box-sizing:border-box}
 @media (max-width:900px){.h-griglia,.h-griglia-4{grid-template-columns:repeat(2,1fr)}.h-passi{grid-template-columns:1fr;gap:1.5rem}.h-studio,.h-aggiornamenti{grid-template-columns:1fr;gap:2.5rem}}
-@media (max-width:760px){.h-hero{grid-template-columns:1fr;gap:2rem;padding-top:2rem;padding-bottom:3rem}.h-ritratto{justify-self:start;max-width:240px;order:-1}.h-tile{padding:1.1rem 1rem 1.3rem}.h-t{font-size:1.05rem}.h-d{font-size:.85rem}.h-fr{display:none}.h-bisogni,.h-come,.h-strumenti{padding:3rem 0}}
+@media (max-width:760px){.h-bisogni .h-griglia li:last-child{grid-column:1/-1}.h-hero{grid-template-columns:1fr;gap:2rem;padding-top:2rem;padding-bottom:3rem}.h-ritratto{justify-self:start;max-width:240px;order:-1}.h-tile{padding:1.1rem 1rem 1.3rem}.h-t{font-size:1.05rem}.h-d{font-size:.85rem}.h-fr{display:none}.h-bisogni,.h-come,.h-strumenti{padding:3rem 0}}
 .nl-riga{display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0 .6rem}.nl-riga input{padding:.6rem;font:inherit;border:1px solid #b8bec8;background:#fff}.nl-consenso{display:block;font-size:.85rem;line-height:1.4}.nl-consenso input{margin-right:.4rem}.nl-esito{font-weight:600;min-height:1.2em;font-size:.95rem}
 </style>
 </head>
@@ -142,13 +142,14 @@
 
 <section class="h-bisogni" id="materie" aria-labelledby="titolo-bisogni">
   <div class="contenitore">
-    <h2 id="titolo-bisogni">Di cosa avete bisogno?</h2>
+    <h2 id="titolo-bisogni">Di cosa avete bisogno?</h2><span id="risarcimenti"></span>
     <ul class="h-griglia">
       <li><a class="h-tile" href="diritto-penale.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 21h10M4 7h16M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/></svg><span class="h-t">Ho ricevuto un atto penale</span><span class="h-d">Avviso, querela, informazione di garanzia, arresto</span><span class="h-fr" aria-hidden="true">→</span></a></li>
       <li><a class="h-tile" href="diritto-famiglia.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><circle cx="16" cy="6" r="2.5"/><circle cx="12" cy="12" r="2"/><path d="M4 21v-6a4 4 0 0 1 4-4M20 21v-6a4 4 0 0 0-4-4M9 21v-3a3 3 0 0 1 6 0v3"/></svg><span class="h-t">Separazione e figli</span><span class="h-d">Affidamento, mantenimento, divorzio</span><span class="h-fr" aria-hidden="true">→</span></a></li>
       <li><a class="h-tile" href="risarcimento-danni.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14v-4l-2-5H7l-2 5zM5 13h14"/><circle cx="8" cy="17" r="1.8"/><circle cx="16" cy="17" r="1.8"/></svg><span class="h-t">Ho subìto un danno</span><span class="h-d">Incidenti, cadute, infortuni sul lavoro</span><span class="h-fr" aria-hidden="true">→</span></a></li>
       <li><a class="h-tile" href="responsabilita-medica.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3M10 13v3a4 4 0 0 0 8 0v-2"/><circle cx="18" cy="12" r="2"/></svg><span class="h-t">Errore medico</span><span class="h-d">Diagnosi, interventi, infezioni in ospedale</span><span class="h-fr" aria-hidden="true">→</span></a></li>
       <li><a class="h-tile" href="rimborso-voli.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16l20-6-3-2-6 2-6-6H5l3 7-4 1-2-2v6z"/></svg><span class="h-t">Volo in ritardo o cancellato</span><span class="h-d">Fino a 600 € di compensazione</span><span class="h-fr" aria-hidden="true">→</span></a></li>
+      <li><a class="h-tile" href="diffamazione-online.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"/><path d="M9 9l6 3M15 9l-6 3"/></svg><span class="h-t">Offese sui social</span><span class="h-d">Commenti offensivi, profili falsi, diffamazione</span><span class="h-fr" aria-hidden="true">→</span></a></li>
       <li><a class="h-tile" href="diritto-civile.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></svg><span class="h-t">Casa, condominio, crediti</span><span class="h-d">Locazioni, sfratti, somme non pagate</span><span class="h-fr" aria-hidden="true">→</span></a></li>
       <li><a class="h-tile" href="patrocinio-spese-stato.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><span class="h-t">Avvocato gratuito?</span><span class="h-d">Patrocinio a spese dello Stato</span><span class="h-fr" aria-hidden="true">→</span></a></li>
       <li><a class="h-tile" href="consulenza-online.html#richiesta"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.5V14M12 17h.01"/></svg><span class="h-t">Non so da dove partire</span><span class="h-d">Descrivetemi il problema</span><span class="h-fr" aria-hidden="true">→</span></a></li>
