@@ -1,26 +1,34 @@
 {
   "penale": [
     {
-      "title": "Ebbrezza al volante e lavoro di pubblica utilità: la sospensione della patente resta obbligatoria",
-      "link": "https://news.avvocatoandreani.it/articoli/ebbrezza-volante-lavoro-pubblica-utilita-sospensione-patente-resta-obbligatoria-108914.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/circolazione/ubriachi-interno-auto_large.webp",
-      "description": "Guida in stato di ebbrezza: anche se la pena è sostituita con il lavoro di pubblica utilità, il giudice deve comunque disporre la sospensione della patente da uno a due anni, sospesa fino alla valutazione del lavoro.",
-      "date": "01/10/2026",
+      "title": "Vittime di Stalking: le condotte riparative non estinguono il reato",
+      "link": "https://news.avvocatoandreani.it/articoli/vittime-stalking-condotte-riparative-non-estinguono-reato-108940.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/donna-pedinata-citta-notturna_large.webp",
+      "description": "Lo stalking consiste in condotte persecutorie ripetute e intrusive. Secondo il testo, le condotte riparative non fanno estinguere il reato.",
+      "date": "14/10/2026",
       "ai": true
     },
     {
       "title": "Omesso mantenimento dei figli: regalie o acquisti di generi alimentari non sostituiscono l'assegno",
       "link": "https://news.avvocatoandreani.it/articoli/omesso-mantenimento-figli-regalie-acquisti-generi-alimentari-non-sostituiscono-assegno-108968.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/famiglia/padre-regalo-figlio-giudice-condanna_large.webp",
-      "description": "La Cassazione chiarisce che la disoccupazione non prova l'impossibilità di pagare il mantenimento dei figli e che regali o acquisti di cibo non sostituiscono l'assegno.",
+      "description": "Secondo la Cassazione (n. 36101/2026) la disoccupazione non giustifica il mancato assegno per i figli; regali o spesa alimentare non lo sostituiscono e l'inadempimento prolungato esclude la tenuità.",
       "date": "30/10/2026",
+      "ai": true
+    },
+    {
+      "title": "Ebbrezza al volante e lavoro di pubblica utilità: la sospensione della patente resta obbligatoria",
+      "link": "https://news.avvocatoandreani.it/articoli/ebbrezza-volante-lavoro-pubblica-utilita-sospensione-patente-resta-obbligatoria-108914.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/circolazione/ubriachi-interno-auto_large.webp",
+      "description": "Anche se la pena è sostituita con lavoro di pubblica utilità, per guida in ebbrezza la patente va sospesa da uno a due anni. Se il lavoro dà esito positivo, la sospensione può essere ridotta della metà.",
+      "date": "01/10/2026",
       "ai": true
     },
     {
       "title": "Ricorso in Cassazione depositato via PEC e non dal portale telematico: inammissibile",
       "link": "https://news.avvocatoandreani.it/articoli/ricorso-cassazione-depositato-via-pec-non-portale-telematico-inammissibile-108974.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/avvocato-preoccupato-schermata-pec_large.webp",
-      "description": "Il ricorso in Cassazione proposto dal 1° aprile 2026 va depositato solo con modalità telematiche: l'invio via PEC al tribunale è inammissibile, salvo malfunzionamento certificato o accertato.",
+      "description": "Dal 1° aprile 2026 il ricorso va depositato solo con modalità telematiche: la PEC al tribunale è inammissibile, salvo malfunzionamento certificato o accertato, anche se l'atto è arrivato al giudice.",
       "date": "03/11/2026",
       "ai": true
     },
@@ -28,7 +36,7 @@
       "title": "Errore di cancelleria sul deposito: il difensore che si affida non risponde della tardività",
       "link": "https://news.avvocatoandreani.it/articoli/errore-cancelleria-deposito-difensore-che-affida-non-risponde-tardivita-108905.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/avvocato-avviso-deposito-cancelleria_large.webp",
-      "description": "Se la cancelleria sbaglia nell'avviso di deposito e il difensore calcola in buona fede il termine d'appello su quell'avviso, l'impugnazione non può essere respinta come tardiva.",
+      "description": "Secondo la Cassazione (n. 34421/2026), se la cancelleria sbaglia l'avviso di deposito e il difensore calcola in buona fede il termine d'appello, l'impugnazione non può essere dichiarata tardiva.",
       "date": "28/09/2026",
       "ai": true
     },
@@ -36,33 +44,25 @@
       "title": "Social network e arresti domiciliari: quando i post violano il divieto di comunicare con la vittima",
       "link": "https://news.avvocatoandreani.it/articoli/social-network-arresti-domiciliari-quando-post-violano-divieto-comunicare-vittima-108907.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/internet-ai/uomo-braccialetto-elettronico-profilofb_large.webp",
-      "description": "Per la Cassazione, il divieto di comunicare con la vittima ai domiciliari può essere violato anche con post sui social, se la persona offesa vi accede ed è individuabile come destinataria.",
+      "description": "Con arresti domiciliari e divieto di comunicare, anche un post social rivolto a un pubblico indeterminato può violare il divieto, se la persona offesa vi accede ed è individuabile come destinataria.",
       "date": "29/09/2026",
-      "ai": true
-    },
-    {
-      "title": "Patrocinio infedele: quando la condotta dell'avvocato diventa reato ex art. 380 c.p.",
-      "link": "https://news.avvocatoandreani.it/articoli/patrocinio-infedele-quando-condotta-avvocato-diventa-reato-art-380-108943.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/vignetta-avvocato-assente-aula_large.webp",
-      "description": "Patrocinio infedele: il reato richiede la violazione consapevole dei doveri professionali e un danno per l'assistito, anche solo morale o di perdita di chance, collegato alla condotta.",
-      "date": "15/10/2026",
       "ai": true
     }
   ],
   "famiglia": [
     {
-      "title": "Omesso mantenimento dei figli: regalie o acquisti di generi alimentari non sostituiscono l'assegno",
-      "link": "https://news.avvocatoandreani.it/articoli/omesso-mantenimento-figli-regalie-acquisti-generi-alimentari-non-sostituiscono-assegno-108968.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/famiglia/padre-regalo-figlio-giudice-condanna_large.webp",
-      "description": "La disoccupazione non basta a provare l'impossibilità di pagare il mantenimento. Regali o spesa alimentare non sostituiscono l'assegno; l'inadempimento protratto esclude la tenuità del fatto.",
-      "date": "30/10/2026",
+      "title": "Affidamento condiviso: la parità dei tempi con i figli non è un diritto automatico",
+      "link": "https://news.avvocatoandreani.it/articoli/affidamento-condiviso-parita-tempi-figli-non-diritto-automatico-108844.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/bambino-conteso-genitori-calendario_large.webp",
+      "description": "Per la Cassazione (ord. 11946/2026) i tempi dei figli presso il genitore non convivente non vanno divisi per forza in parti uguali: decide il giudice, guardando al benessere del minore.",
+      "date": "26/08/2026",
       "ai": true
     },
     {
       "title": "Assegno divorzile: i criteri di quantificazione tra funzione assistenziale e perequativo-compensativa",
       "link": "https://news.avvocatoandreani.it/articoli/assegno-divorzile-criteri-quantificazione-funzione-assistenziale-perequativo-compensativa-108842.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/famiglia/assegno-divorzile-tribunale-sentenza-divorzio_large.webp",
-      "description": "Cassazione: l'assegno divorzile ha funzione assistenziale se l'ex non è autosufficiente, o perequativo-compensativa se lo squilibrio nasce da scelte condivise e sacrifici professionali.",
+      "description": "Cassazione (ord. 22874/2026): l'assegno divorzile può spettare per sostenere il coniuge non autosufficiente o per compensare squilibri nati da scelte di vita condivise e sacrifici professionali.",
       "date": "25/08/2026",
       "ai": true
     },
@@ -70,41 +70,49 @@
       "title": "Figlio maggiorenne con lavoro part-time: l'onere della prova del mantenimento grava sul figlio",
       "link": "https://news.avvocatoandreani.it/articoli/figlio-maggiorenne-lavoro-part-time-onere-prova-mantenimento-grava-figlio-108944.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/lavoro-donna-rifiuta-contratto-assunzione_large.webp",
-      "description": "Figlio maggiorenne con lavoro part-time di due ore e senza studi in corso: il Tribunale ha revocato il contributo paterno. Spetta a chi chiede l'assegno provare formazione e ricerca di lavoro.",
+      "description": "Tribunale di Santa Maria Capua Vetere (sent. 2966/2026): chi chiede il mantenimento per il figlio maggiorenne deve provare studi o ricerca di lavoro; un part-time di due ore al giorno non basta.",
       "date": "23/10/2026",
-      "ai": true
-    },
-    {
-      "title": "Mantenimento dei figli: la Cassazione conferma l'irripetibilità delle somme versate in eccesso",
-      "link": "https://news.avvocatoandreani.it/articoli/mantenimento-figli-cassazione-conferma-irripetibilita-somme-versate-eccesso-108810.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/sentenza-arrtrati-martelletto-tribunale_large.webp",
-      "description": "Le somme pagate in eccesso per il mantenimento dei figli, poi ridotte retroattivamente, non si possono chiedere indietro: il credito ha natura alimentare (Cass. n. 21139/2026).",
-      "date": "13/08/2026",
       "ai": true
     },
     {
       "title": "Spese straordinarie dei figli non concordate: il rimborso non è escluso automaticamente",
       "link": "https://news.avvocatoandreani.it/articoli/spese-straordinarie-figli-non-concordate-rimborso-non-escluso-automaticamente-108820.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/donna-precetto-spese-mediche-dentista-quaderni_large.webp",
-      "description": "Cassazione: la mancanza di accordo preventivo sulle spese straordinarie dei figli non esclude automaticamente il rimborso. Il giudice valuta se la spesa risponda al loro interesse.",
+      "description": "Cassazione (ord. 23946/2026): la mancanza di accordo preventivo sulle spese straordinarie dei figli non esclude da sola il rimborso; il giudice valuta se la spesa risponde al loro interesse.",
       "date": "14/08/2026",
       "ai": true
     },
     {
-      "title": "Affidamento condiviso: la parità dei tempi con i figli non è un diritto automatico",
-      "link": "https://news.avvocatoandreani.it/articoli/affidamento-condiviso-parita-tempi-figli-non-diritto-automatico-108844.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/bambino-conteso-genitori-calendario_large.webp",
-      "description": "Cassazione: i tempi dei figli presso il genitore non convivente non devono essere paritari per legge. Il giudice decide caso per caso, guardando al benessere del minore.",
-      "date": "26/08/2026",
+      "title": "Separazione senza figli e casa familiare: la difficoltà economica dell'ex non giustifica l'assegnazione",
+      "link": "https://news.avvocatoandreani.it/articoli/separazione-senza-figli-casa-familiare-difficolta-economica-non-giustifica-assegnazione-108850.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/uomo-blocca-donna-uscio-casa_large.webp",
+      "description": "Corte d'appello di Milano (13/07/2026): senza figli minori o non autosufficienti la casa familiare non va assegnata al coniuge economicamente più debole, perché la tutela riguarda solo la prole.",
+      "date": "31/08/2026",
+      "ai": true
+    },
+    {
+      "title": "Mantenimento dei figli: la Cassazione conferma l'irripetibilità delle somme versate in eccesso",
+      "link": "https://news.avvocatoandreani.it/articoli/mantenimento-figli-cassazione-conferma-irripetibilita-somme-versate-eccesso-108810.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/sentenza-arrtrati-martelletto-tribunale_large.webp",
+      "description": "Cassazione (ord. 21139/2026): le somme versate in eccesso per il mantenimento dei figli, poi ridotto con effetto retroattivo, non si restituiscono: il credito ha natura alimentare.",
+      "date": "13/08/2026",
       "ai": true
     }
   ],
   "patrocinio": [
     {
+      "title": "Patrocinio infedele: quando la condotta dell'avvocato diventa reato ex art. 380 c.p.",
+      "link": "https://news.avvocatoandreani.it/articoli/patrocinio-infedele-quando-condotta-avvocato-diventa-reato-art-380-108943.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/vignetta-avvocato-assente-aula_large.webp",
+      "description": "Per la Cassazione (sentenza n. 32866 del 04/09/2026) il patrocinio infedele richiede che l'avvocato violi consapevolmente i doveri professionali e che ne derivi un danno all'assistito, anche solo morale o di chance…",
+      "date": "15/10/2026",
+      "ai": true
+    },
+    {
       "title": "Patrocinio a spese dello Stato e riduzione compenso difensore irreperibile",
       "link": "https://www.studiocataldi.it/articoli/48265-patrocinio-a-spese-dello-stato-e-riduzione-compenso-difensore-irreperibile.asp",
       "image": "https://www.studiocataldi.it/images/imgnews/avvocato_giudice_bilancia_giustizia-id29150.jpg",
-      "description": "Il Tribunale di Spoleto (sent. 257 del 19 maggio 2026) chiarisce come si calcola il compenso del difensore d'ufficio di un imputato irreperibile nel patrocinio a spese dello Stato e quando può essere ridotto.",
+      "description": "Il Tribunale di Spoleto (sentenza n. 257 del 19/05/2026) indica i criteri per liquidare il compenso del difensore d'ufficio di un imputato irreperibile nel patrocinio a spese dello Stato e i casi di riduzione.",
       "date": "16/06/2026",
       "ai": true
     },
@@ -114,14 +122,6 @@
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/patrocinio-toga.soldi-aula-martelletto_large.webp",
       "description": "Secondo la Cassazione penale (sent. 28508 del 27/07/2026), essere ammessi al gratuito patrocinio non prova che una persona non possa pagare il mantenimento. L'incapacità economica deve essere assoluta, persistente e non…",
       "date": "18/09/2026",
-      "ai": true
-    },
-    {
-      "title": "Patrocinio infedele: quando la condotta dell'avvocato diventa reato ex art. 380 c.p.",
-      "link": "https://news.avvocatoandreani.it/articoli/patrocinio-infedele-quando-condotta-avvocato-diventa-reato-art-380-108943.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/vignetta-avvocato-assente-aula_large.webp",
-      "description": "Cassazione (sent. 32866 del 04/09/2026): il patrocinio infedele richiede la violazione consapevole dei doveri e un danno per l'assistito, anche morale o di chance, legato alla condotta da un nesso causale, senza essere…",
-      "date": "15/10/2026",
       "ai": true
     },
     {
@@ -151,48 +151,48 @@
       "title": "Omesso mantenimento dei figli: regalie o acquisti di generi alimentari non sostituiscono l'assegno",
       "link": "https://news.avvocatoandreani.it/articoli/omesso-mantenimento-figli-regalie-acquisti-generi-alimentari-non-sostituiscono-assegno-108968.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/famiglia/padre-regalo-figlio-giudice-condanna_large.webp",
-      "description": "La sola disoccupazione non prova l'impossibilità di pagare il mantenimento dei figli. Regali o spesa alimentare non sostituiscono l'assegno, e l'inadempimento prolungato esclude la tenuità del fatto.",
+      "description": "La Cassazione chiarisce che la disoccupazione non dimostra l'impossibilità assoluta di pagare il mantenimento dei figli. Regali o acquisti di cibo non sostituiscono l'assegno, e l'inadempimento prolungato esclude la…",
       "date": "30/10/2026",
       "ai": true
     },
     {
-      "title": "Testamento e demenza accertata subito dopo: l'onere della prova del beneficiario",
-      "link": "https://news.avvocatoandreani.it/articoli/testamento-demenza-accertata-subito-dopo-onere-prova-beneficiario-108951.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/anziano-redige.testamento_large.webp",
-      "description": "Se si prova una demenza stabile accertata subito dopo il testamento, l'incapacità si presume: spetta al beneficiario dimostrare un lucido intervallo. La valutazione delle prove resta al giudice di merito.",
-      "date": "22/10/2026",
+      "title": "Assegno di mantenimento onnicomprensivo del canone: la quota per l'affitto è imponibile ai fini Irpef",
+      "link": "https://news.avvocatoandreani.it/articoli/assegno-mantenimento-onnicomprensivo-canone-quota-affitto-imponibile-fini-irpef-108967.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/fisco/dichiarazione-redditi-assegno-contratto_large.webp",
+      "description": "Se il giudice fissa un assegno unico per moglie e figli che comprende il canone d'affitto, la quota dell'affitto è reddito imponibile per il coniuge beneficiario. Si riduce alla metà se la casa è usata dai figli.",
+      "date": "30/10/2026",
       "ai": true
     },
     {
       "title": "Condominio, danno da cosa comune e vendita dell'immobile: risponde il proprietario all'epoca del fatto",
       "link": "https://news.avvocatoandreani.it/articoli/condominio-danno-cosa-comune-vendita-immobile-risponde-proprietario-epoca-fatto-108946.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/condominio-casa/martello-bilancia-riunione-condominio_large.webp",
-      "description": "Per i danni da cosa comune risponde chi era proprietario al momento del fatto, anche se nel frattempo ha venduto. L'obbligo non passa automaticamente all'acquirente, salvo diversa pattuizione.",
+      "description": "Per i danni causati da una cosa comune in condominio risponde chi era proprietario al momento del fatto, anche se ha poi venduto. L'obbligo non passa automaticamente all'acquirente, salvo diversa pattuizione.",
       "date": "19/10/2026",
       "ai": true
     },
     {
-      "title": "Fondo patrimoniale: quando per la vendita non è necessario il consenso dell'altro coniuge",
-      "link": "https://news.avvocatoandreani.it/articoli/fondo-patrimoniale-quando-vendita-non-necessario-consenso-altro-coniuge-108954.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/casa/casa-chiavi-foglio-pixabay_large.jpg",
-      "description": "La Cassazione si è pronunciata su quando, per vendere un bene in fondo patrimoniale intestato a un solo coniuge, non serve il consenso dell'altro, guardando alle clausole dell'atto costitutivo.",
-      "date": "20/10/2026",
+      "title": "Testamento e demenza accertata subito dopo: l'onere della prova del beneficiario",
+      "link": "https://news.avvocatoandreani.it/articoli/testamento-demenza-accertata-subito-dopo-onere-prova-beneficiario-108951.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/anziano-redige.testamento_large.webp",
+      "description": "Se una demenza stabile viene accertata subito dopo la redazione del testamento, l'incapacità si presume. Spetta al beneficiario dimostrare che il testatore era lucido al momento dell'atto. La valutazione delle prove…",
+      "date": "22/10/2026",
       "ai": true
     },
     {
       "title": "Il danno patrimoniale da lesione della capacità di lavoro domestico",
       "link": "https://news.avvocatoandreani.it/articoli/danno-patrimoniale-lesione-capacita-lavoro-domestico-108969.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/lavoro/casalinga-incidente-auto_large.webp",
-      "description": "La lesione della capacità di lavoro domestico è un danno patrimoniale distinto dal danno biologico. È risarcibile se si accerta che l'attività domestica si svolgeva e che è stata compromessa, anche solo in parte.",
+      "description": "La lesione della capacità di lavoro domestico è un danno patrimoniale distinto dal danno biologico. È risarcibile se si prova lo svolgimento dell'attività domestica e una sua compromissione, anche parziale.",
       "date": "02/11/2026",
       "ai": true
     },
     {
-      "title": "Frontalino del balcone e terrazzo di copertura: riparto delle spese tra proprietario e condominio",
-      "link": "https://news.avvocatoandreani.it/articoli/frontalino-balcone-terrazzo-copertura-riparto-spese-proprietario-condominio-108936.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/condominio-casa/riunione-condominio-protesta-balconi_large.webp",
-      "description": "Il frontalino del balcone con funzione strutturale di scolo delle acque non è parte comune. Se il terrazzo esclusivo fa da copertura, le spese si ripartiscono secondo l'art. 1126 c.c.",
-      "date": "20/10/2026",
+      "title": "Patrocinio infedele: quando la condotta dell'avvocato diventa reato ex art. 380 c.p.",
+      "link": "https://news.avvocatoandreani.it/articoli/patrocinio-infedele-quando-condotta-avvocato-diventa-reato-art-380-108943.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/vignetta-avvocato-assente-aula_large.webp",
+      "description": "Il patrocinio infedele richiede che l'avvocato violi consapevolmente i doveri professionali e che ne derivi un danno all'assistito, anche morale o come perdita di chance, legato alla condotta da un nesso causale.",
+      "date": "15/10/2026",
       "ai": true
     }
   ]
