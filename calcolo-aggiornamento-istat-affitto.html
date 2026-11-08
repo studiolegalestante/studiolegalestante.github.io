@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aggiornamento ISTAT del canone di affitto 2026: calcolo | Avv. Stante</title>
+<meta name="description" content="Calcolo gratuito dell'aggiornamento ISTAT del canone di locazione abitativa e commerciale, al 75% o al 100% dell'indice FOI, anno per anno.">
+<link rel="canonical" href="https://www.studiolegalestante.it/calcolo-aggiornamento-istat-affitto.html">
+<meta name="theme-color" content="#1D2B45">
+<link rel="icon" href="favicon.svg?v=20261029" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=20261029">
+<link rel="preload" href="assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/libre-caslon-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/studio.css?v=20261031b">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Studio Legale Avv. Vincenzo Stante">
+<meta property="og:title" content="Aggiornamento ISTAT del canone di affitto 2026">
+<meta property="og:description" content="Canone aggiornato con l'indice ISTAT FOI, per locazioni abitative e commerciali.">
+<meta property="og:url" content="https://www.studiolegalestante.it/calcolo-aggiornamento-istat-affitto.html">
+<meta property="og:image" content="https://www.studiolegalestante.it/images/og-studio-stante.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+.esito{margin:1.5rem 0 0;padding:1.5rem 1.75rem;border:1px solid var(--inchiostro);background:var(--carta)}
+.esito .importo{font-family:var(--display);font-size:2.75rem;line-height:1;color:var(--inchiostro);margin:0 0 .5rem}
+.esito .dettaglio{font-size:.95rem;color:var(--grigio);margin:0}
+.tabella-cu{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:1rem}
+.tabella-cu th,.tabella-cu td{text-align:left;padding:.5rem .3rem;font-size:.9rem;border-bottom:1px solid var(--filetto);vertical-align:top}
+.tabella-cu td:last-child,.tabella-cu th:last-child{text-align:right;white-space:nowrap}
+</style>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="contenitore testata">
+  <a class="marchio" href="./">Studio Legale Stante</a>
+  <nav aria-label="Principale">
+    <ul>
+      <li><a href="./#materie">Materie</a></li>
+      <li><a href="./#risarcimenti">Risarcimenti</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+      <li><a href="./#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenuto">
+  <div class="contenitore pagina-titolo">
+    <nav class="percorso" aria-label="Percorso"><ol><li><a href="./">Home</a></li><li><a href="guide.html">Guide</a></li><li aria-current="page">Aggiornamento ISTAT dell'affitto</li></ol></nav>
+    <h1>Aggiornamento ISTAT del canone di affitto</h1>
+    <p>Calcola il canone aggiornato con l'indice ISTAT dei prezzi al consumo (FOI senza tabacchi), per le locazioni abitative e per quelle commerciali.</p>
+  </div>
+
+  <div class="contenitore sezione">
+    <form id="calcolo" class="modulo" novalidate>
+      <fieldset>
+        <legend>Il contratto</legend>
+        <div class="griglia-campi">
+          <label class="largo">Tipo di contratto<select id="tipo">
+            <option value="comm">Uso diverso dall'abitazione (negozio, ufficio, capannone)</option>
+            <option value="abit">Abitativo, canone libero o concordato</option>
+            <option value="cedolare">Abitativo con cedolare secca</option>
+          </select></label>
+          <label class="largo">Canone mensile iniziale (€)<input type="text" id="importo-base" inputmode="decimal" placeholder="es. 800"></label>
+          <label>Mese di inizio del contratto<select id="mese"></select></label>
+          <label>Anno di inizio<select id="anno"></select></label>
+          <label>Misura dell'aggiornamento<select id="quota"><option value="0.75">75% della variazione ISTAT</option><option value="1">100% della variazione ISTAT</option></select></label>
+          <label>Indice di riferimento<select id="rif"><option value="1">Mese precedente l'inizio di ogni annualità</option><option value="0">Stesso mese di inizio</option></select></label>
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="esito" aria-live="polite">
+      <p class="importo" id="importo">—</p>
+      <p class="dettaglio" id="dettaglio">Inserite il canone e l'inizio del contratto.</p>
+    </div>
+    <table class="tabella-cu" id="anni" hidden>
+      <thead><tr><th>Annualità dal</th><th>Variazione ISTAT</th><th>Aumento applicato</th><th>Canone mensile</th></tr></thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Le regole in breve</h2>
+    <ul>
+      <li><strong>Locazioni commerciali</strong>: il contratto può prevedere l'aggiornamento annuale del canone, al massimo nella misura del 75% della variazione ISTAT. Una clausola che preveda di più, per questa parte, non è valida.</li>
+      <li><strong>Locazioni abitative</strong>: la misura dipende dal contratto. Nei contratti a canone libero è spesso il 75% o il 100%; nei contratti concordati valgono gli accordi territoriali.</li>
+      <li><strong>Cedolare secca</strong>: finché dura l'opzione, il proprietario rinuncia per legge a qualsiasi aggiornamento del canone, anche quello ISTAT.</li>
+      <li>Se il contratto non dice nulla sull'aggiornamento, il canone resta quello pattuito.</li>
+      <li>Di norma l'aggiornamento va <strong>richiesto per iscritto</strong> dal proprietario e decorre dalla richiesta, salvo che il contratto lo preveda automatico: chiedere gli aumenti di anni passati non è sempre possibile.</li>
+    </ul>
+
+    <aside class="invito" aria-label="Consulenza online">
+      <p class="invito-titolo">Canone, aumenti o arretrati contestati?</p>
+      <p>Inviatemi il contratto e le comunicazioni ricevute: vi dico per iscritto cosa è dovuto e come muovervi.</p>
+      <p class="invito-prezzo">Consulenza online: 150 €, urgente 250 €, più spese generali, Cassa e bollo.</p>
+      <a class="bottone pieno" href="consulenza-online.html#richiesta">Richiedi la consulenza</a>
+    </aside>
+
+    <p class="avvertenza">Metodo: per ogni annualità il canone si aggiorna con la variazione dell'indice FOI senza tabacchi rispetto allo stesso mese dell'anno precedente, arrotondata a un decimale e applicata nella misura indicata, sul canone già aggiornato; tra basi diverse si usano i coefficienti di raccordo ISTAT. Se la variazione è negativa il canone resta invariato. L'indice di un mese viene pubblicato verso la metà del mese successivo. Il contratto può prevedere criteri diversi (mese di riferimento, cadenza, misura): in quel caso prevalgono. Il calcolo ha finalità informativa e non sostituisce un parere sul caso concreto.</p>
+    <p class="avvertenza" id="fonte-dati"></p>
+  </div>
+</main>
+
+
+<footer class="pie">
+  <div class="contenitore">
+    <p>Avv. Vincenzo Stante, iscritto all'Ordine degli Avvocati di Bari. P.IVA 07973660728</p>
+    <ul>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var MESI = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+  var dati = null;
+  function euro(n) { var p = (Math.round(n * 100) / 100).toFixed(2).split('.'); return p[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ',' + p[1] + ' €'; }
+  function leggi(s) {
+    s = String(s || '').replace(/[€\s]/g, '');
+    if (/,\d{1,2}$/.test(s)) s = s.replace(/\./g, '').replace(',', '.'); else s = s.replace(/[.,](?=\d{3}(\D|$))/g, '');
+    var n = parseFloat(s); return isFinite(n) && n > 0 ? n : null;
+  }
+  function chiave(a, m) { while (m < 1) { m += 12; a--; } return a + '-' + ('0' + m).slice(-2); }
+  function variazione(da, a) {
+    var x = dati.indici[da], y = dati.indici[a]; if (!x || !y) return null;
+    var c = 1; ['1995', '2010', '2015'].forEach(function (b) { if (x[1] <= +b && +b < y[1]) c *= dati.raccordo[b]; });
+    return Math.round((y[0] / x[0] * c * 100 - 100) * 10) / 10;
+  }
+  MESI.forEach(function (m, i) { var o = document.createElement('option'); o.value = i + 1; o.textContent = m; $('mese').appendChild(o); });
+  var oggi = new Date();
+  for (var y = oggi.getFullYear() - 1; y >= 1997; y--) { var o = document.createElement('option'); o.value = y; o.textContent = y; $('anno').appendChild(o); }
+  function aggiornaTipo() {
+    var t = $('tipo').value;
+    if (t === 'comm') { $('quota').value = '0.75'; $('quota').options[1].disabled = true; }
+    else { $('quota').options[1].disabled = false; }
+    $('quota').disabled = $('rif').disabled = (t === 'cedolare');
+  }
+  function calcola() {
+    var corpo = $('anni').querySelector('tbody'); corpo.textContent = ''; $('anni').hidden = true;
+    var imp = leggi($('importo-base').value), m = +$('mese').value, a0 = +$('anno').value, q = +$('quota').value, sh = +$('rif').value;
+    if ($('tipo').value === 'cedolare') { $('importo').textContent = imp ? euro(imp) : '—'; $('dettaglio').textContent = 'Con la cedolare secca il canone non si aggiorna: il proprietario rinuncia per legge all\'aggiornamento ISTAT finché dura l\'opzione.'; return; }
+    if (!dati) { $('dettaglio').textContent = 'Caricamento degli indici ISTAT…'; return; }
+    if (!imp) { $('importo').textContent = '—'; $('dettaglio').textContent = 'Inserite il canone e l\'inizio del contratto.'; return; }
+    var ultimo = Object.keys(dati.indici).sort().pop();
+    var corrente = imp, righe = 0;
+    for (var a = a0 + 1; a <= oggi.getFullYear(); a++) {
+      if (a * 12 + (m - 1) > oggi.getFullYear() * 12 + oggi.getMonth()) break;
+      var k = chiave(a, m - sh), k0 = chiave(a - 1, m - sh);
+      if (k > ultimo) break;
+      var v = variazione(k0, k); if (v === null) break;
+      var aum = v > 0 ? Math.round(v * q * 100) / 100 : 0;
+      corrente = Math.round(corrente * (1 + aum / 100) * 100) / 100;
+      righe++;
+      var p = k.split('-');
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + MESI[m - 1] + ' ' + a + '<br><small>indice di ' + MESI[+p[1] - 1] + ' ' + p[0] + '</small></td><td>' + (v >= 0 ? '+' : '') + String(v).replace('.', ',') + '%</td><td>' + (aum ? '+' + String(aum).replace('.', ',') + '%' : 'nessuno') + '</td><td>' + euro(corrente) + '</td>';
+      corpo.appendChild(tr);
+    }
+    if (!righe) { $('importo').textContent = euro(imp); $('dettaglio').textContent = 'Non è ancora maturato un aggiornamento con indice disponibile.'; return; }
+    $('anni').hidden = false;
+    $('importo').textContent = euro(corrente);
+    $('dettaglio').textContent = 'Canone mensile aggiornato (da ' + euro(imp) + ', ' + MESI[m - 1] + ' ' + a0 + '), pari a ' + euro(corrente * 12) + ' l\'anno. Aumento complessivo: ' + String(Math.round((corrente / imp - 1) * 1000) / 10).replace('.', ',') + '%.';
+  }
+  ['tipo', 'importo-base', 'mese', 'anno', 'quota', 'rif'].forEach(function (id) { $(id).addEventListener('input', function () { if (id === 'tipo') aggiornaTipo(); calcola(); }); $(id).addEventListener('change', function () { if (id === 'tipo') aggiornaTipo(); calcola(); }); });
+  $('calcolo').addEventListener('submit', function (e) { e.preventDefault(); });
+  aggiornaTipo();
+  fetch('data/foi.json?t=' + Date.now()).then(function (r) { return r.json(); }).then(function (j) {
+    dati = j; var u = Object.keys(j.indici).sort().pop().split('-');
+    $('fonte-dati').textContent = 'Fonte: ISTAT, indice FOI senza tabacchi, aggiornato automaticamente ogni mese. Ultimo indice disponibile: ' + MESI[+u[1] - 1] + ' ' + u[0] + '.';
+    calcola();
+  }).catch(function () { $('dettaglio').textContent = 'Indici ISTAT non disponibili in questo momento.'; });
+})();
+</script>
+<script src="/assets/js/lex.js?v=20261108a" defer></script>
+</body>
+</html>

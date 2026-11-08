@@ -80,6 +80,7 @@
 .h-tile:hover{background:#fff}.h-tile:hover .h-fr{transform:translateX(4px);opacity:1}
 .h-ic{width:30px;height:30px;fill:none;stroke:var(--inchiostro);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;margin-bottom:.6rem}
 .h-t{font-family:var(--display);font-size:1.2rem;color:var(--inchiostro);line-height:1.25}.h-d{font-size:.92rem;color:var(--grigio);line-height:1.45}
+.h-bisogni .h-griglia{gap:1rem;background:none;border:0}.h-bisogni .h-tile{border:2px solid var(--ceralacca)}
 .h-fr{position:absolute;right:1.2rem;top:1.4rem;color:var(--ceralacca);opacity:.5;transition:all .2s}
 .h-come{background:var(--inchiostro);color:var(--notte-testo);padding:4.5rem 0}.h-come h2{color:#fff}
 .h-passi{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
@@ -89,13 +90,13 @@
 .h-prezzo small{display:block;color:var(--notte-grigio);font-size:.85rem}.bottone.chiaro{background:var(--carta);color:var(--inchiostro);border-color:var(--carta)}
 .h-studio{display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;padding-top:5rem;padding-bottom:5rem}
 .h-fatti{margin:0;display:flex;flex-direction:column;gap:1.2rem}.h-fatti div{border-left:2px solid var(--ceralacca);padding-left:1rem}.h-fatti dt{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grigio)}.h-fatti dd{margin:.2rem 0 0;font-size:1rem}
-.h-strumenti{background:#F4F1EC;padding:4.5rem 0}.h-griglia-4{grid-template-columns:repeat(4,1fr)}
+.h-strumenti{background:#F4F1EC;padding:4.5rem 0}.h-griglia-4{grid-template-columns:repeat(5,1fr)}
 .h-aggiornamenti{display:grid;grid-template-columns:1.5fr 1fr;gap:4rem;padding-top:5rem;padding-bottom:5rem}
 .h-lista{list-style:none;margin:0 0 1rem;padding:0}.h-lista li{border-top:1px solid var(--filetto);padding:1rem 0}.h-lista h3{font-family:var(--display);font-weight:400;font-size:1.15rem;margin:0 0 .3rem;line-height:1.35}.h-lista h3 a{color:var(--inchiostro);text-decoration:none}.h-lista p{margin:0;font-size:.92rem;color:var(--grigio);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .h-link{color:var(--ceralacca);text-decoration:none}
 .h-nl{background:#F4F1EC;padding:2rem;align-self:start}.h-nl p{font-size:.98rem}.h-nl .nl-riga{flex-direction:column}.h-nl .nl-riga input{flex:none;width:100%;box-sizing:border-box}
 @media (max-width:900px){.h-griglia,.h-griglia-4{grid-template-columns:repeat(2,1fr)}.h-passi{grid-template-columns:1fr;gap:1.5rem}.h-studio,.h-aggiornamenti{grid-template-columns:1fr;gap:2.5rem}}
-@media (max-width:760px){.h-bisogni .h-griglia li:last-child{grid-column:1/-1}.h-hero{grid-template-columns:1fr;gap:2rem;padding-top:2rem;padding-bottom:3rem}.h-ritratto{justify-self:start;max-width:240px;order:-1}.h-tile{padding:1.1rem 1rem 1.3rem}.h-t{font-size:1.05rem}.h-d{font-size:.85rem}.h-fr{display:none}.h-bisogni,.h-come,.h-strumenti{padding:3rem 0}}
+@media (max-width:760px){.h-bisogni .h-griglia li:last-child,.h-strumenti .h-griglia li:last-child{grid-column:1/-1}.h-hero{grid-template-columns:1fr;gap:2rem;padding-top:2rem;padding-bottom:3rem}.h-ritratto{justify-self:start;max-width:240px;order:-1}.h-tile{padding:1.1rem 1rem 1.3rem}.h-t{font-size:1.05rem}.h-d{font-size:.85rem}.h-fr{display:none}.h-bisogni,.h-come,.h-strumenti{padding:3rem 0}}
 .nl-riga{display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0 .6rem}.nl-riga input{padding:.6rem;font:inherit;border:1px solid #b8bec8;background:#fff}.nl-consenso{display:block;font-size:.85rem;line-height:1.4}.nl-consenso input{margin-right:.4rem}.nl-esito{font-weight:600;min-height:1.2em;font-size:.95rem}
 </style>
 </head>
@@ -189,6 +190,7 @@
       <li><a class="h-tile" href="calcolo-contributo-unificato.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h2M12 18h2M16 15v3"/></svg><span class="h-t">Contributo unificato</span><span class="h-d">Quanto si paga per iscrivere una causa</span></a></li>
       <li><a class="h-tile" href="calcolo-interessi-legali.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h2M12 18h2M16 15v3"/></svg><span class="h-t">Interessi legali</span><span class="h-d">Calcolo per periodi, dal 1990 a oggi</span></a></li>
       <li><a class="h-tile" href="calcolo-rivalutazione-mantenimento.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h2M12 18h2M16 15v3"/></svg><span class="h-t">Assegno di mantenimento</span><span class="h-d">Rivalutazione ISTAT aggiornata</span></a></li>
+      <li><a class="h-tile" href="calcolo-aggiornamento-istat-affitto.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h2M12 18h2M16 15v3"/></svg><span class="h-t">Aggiornamento ISTAT dell'affitto</span><span class="h-d">Canone aggiornato al 75% o al 100%, anno per anno</span></a></li>
       <li><a class="h-tile" href="pecbird.html"><svg class="h-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg><span class="h-t">PecBird</span><span class="h-d">Le ricevute PEC in Thunderbird, a colpo d'occhio</span></a></li>
     </ul>
   </div>
