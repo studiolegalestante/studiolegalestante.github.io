@@ -11,7 +11,11 @@
     avviso: 'Assistente automatico basato su intelligenza artificiale: non è l\'avvocato e non dà pareri. La conversazione non viene conservata.',
     azione: 'Continua con la consulenza online →', campo: 'Scrivete qui…', invia: 'Invia',
     saluto: 'Buongiorno, sono Lex, l\'assistente virtuale dello Studio Stante. Raccontatemi pure in breve che cosa vi è successo: vi aiuto a capire come lo studio può seguirvi.',
-    errore: 'In questo momento non riesco a rispondere. Potete compilare direttamente la richiesta di consulenza online con il pulsante qui sotto.'
+    errore: 'In questo momento non riesco a rispondere. Potete compilare direttamente la richiesta di consulenza online con il pulsante qui sotto.',
+    richiama: 'Preferite essere ricontattati dallo studio?', nome: 'Nome e cognome', recapito: 'Telefono o email',
+    consenso: 'Chiedo di essere ricontattato e ho letto l\'<a href="/privacy.html#lex" target="_blank">informativa privacy</a>.',
+    manda: 'Inviate la richiesta', grazie: 'Grazie: la richiesta è arrivata allo studio. Sarete ricontattati, di norma entro due giorni lavorativi.',
+    mancano: 'Indicate nome, un recapito valido e spuntate la casella.', fallito: 'Invio non riuscito. Riprovate oppure usate la consulenza online.'
   } : {
     consulenza: '/en/online-consultation.html#modulo-en',
     aria: 'Open the chat with Lex, virtual assistant',
@@ -20,10 +24,15 @@
     avviso: 'Automated assistant based on artificial intelligence: it is not the lawyer and gives no legal advice. The conversation is not stored.',
     azione: 'Continue with the online consultation →', campo: 'Write here…', invia: 'Send',
     saluto: 'Hello, I\'m Lex, the virtual assistant of the Stante law office. Please tell me briefly what happened: I\'ll help you understand how the office can assist you. You can write in any language.',
-    errore: 'I cannot reply right now. You can fill in the online consultation request directly with the button below.'
+    errore: 'I cannot reply right now. You can fill in the online consultation request directly with the button below.',
+    richiama: 'Would you rather be contacted by the office?', nome: 'Full name', recapito: 'Phone or email',
+    consenso: 'I ask to be contacted and I have read the <a href="/privacy.html#lex" target="_blank">privacy notice</a>.',
+    manda: 'Send request', grazie: 'Thank you: your request has reached the office. You will normally be contacted within two working days.',
+    mancano: 'Please enter your name, a valid contact and tick the box.', fallito: 'Sending failed. Please try again or use the online consultation.'
   };
   var CONSULENZA = T.consulenza;
-  var storia = [], scheda = null;
+  var storia = [], scheda = null, inviato = false, urgente = false;
+  var RICONTATTO = 'https://formspree.io/f/xljgvwvq';
 
   var css = '' +
     '.lex-bolla{position:fixed;right:max(24px,7vw);bottom:max(24px,10vh);z-index:50;width:128px;height:128px;border-radius:50%;border:4px solid #fff;cursor:pointer;' +
@@ -55,6 +64,11 @@
     '.lex-scrivi textarea{flex:1;resize:none;font:inherit;font-size:.95rem;padding:.5rem .6rem;border:1px solid #9AA1AD;min-height:44px;max-height:120px}' +
     '.lex-scrivi button{background:var(--inchiostro,#1D2B45);color:#fff;border:0;padding:0 1rem;font:inherit;cursor:pointer}' +
     '.lex-scrivi button:disabled{opacity:.5}' +
+    '.lex-richiama{margin:-.2rem 1rem .6rem;background:none;border:0;padding:0;font:inherit;font-size:.88rem;color:var(--inchiostro,#1D2B45);text-decoration:underline;cursor:pointer;text-align:left}' +
+    '.lex-contatto{margin:0 1rem .7rem;padding:.7rem;border:1px solid var(--filetto,#C9CDD4);background:#fff;font-size:.88rem;display:flex;flex-direction:column;gap:.45rem}' +
+    '.lex-contatto input[type=text]{font:inherit;padding:.45rem .55rem;border:1px solid #9AA1AD}' +
+    '.lex-contatto label.lex-ok{display:flex;gap:.45rem;align-items:flex-start;line-height:1.35}.lex-contatto .lex-err{color:var(--ceralacca,#8E2B22);margin:0}' +
+    '.lex-contatto a{color:inherit}.lex-contatto button{background:var(--inchiostro,#1D2B45);color:#fff;border:0;padding:.55rem;font:inherit;cursor:pointer}' +
     '[hidden]{display:none!important}' +
     '@media (max-width:600px){.lex-bolla{width:96px;height:96px;right:16px;bottom:20px}.lex-bolla svg{width:64px;height:64px}' +
     '.lex-invito{right:122px;bottom:34px;max-width:190px;font-size:.95rem;padding:.55rem .8rem}.lex-invito b{font-size:1.15rem}' +
@@ -85,6 +99,12 @@
     '<p class="lex-avviso">' + T.avviso + ' <a href="/privacy.html">Privacy</a></p>' +
     '<div class="lex-messaggi" aria-live="polite"></div>' +
     '<button type="button" class="lex-azione" hidden>' + T.azione + '</button>' +
+    '<button type="button" class="lex-richiama" hidden>' + T.richiama + '</button>' +
+    '<form class="lex-contatto" hidden novalidate>' +
+    '<input type="text" name="nome" autocomplete="name" maxlength="80" placeholder="' + T.nome + '" aria-label="' + T.nome + '">' +
+    '<input type="text" name="recapito" autocomplete="tel" maxlength="80" placeholder="' + T.recapito + '" aria-label="' + T.recapito + '">' +
+    '<label class="lex-ok"><input type="checkbox" name="consenso"> <span>' + T.consenso + '</span></label>' +
+    '<p class="lex-err" hidden></p><button type="submit">' + T.manda + '</button></form>' +
     '<form class="lex-scrivi"><label hidden for="lex-campo">Il vostro messaggio</label>' +
     '<textarea id="lex-campo" rows="1" maxlength="2000" placeholder="' + T.campo + '"></textarea>' +
     '<button type="submit">' + T.invia + '</button></form>';
@@ -97,6 +117,8 @@
   var modulo = pannello.querySelector('.lex-scrivi');
   var campo = pannello.querySelector('textarea');
   var azione = pannello.querySelector('.lex-azione');
+  var richiama = pannello.querySelector('.lex-richiama');
+  var contatto = pannello.querySelector('.lex-contatto');
 
   function aggiungi(chi, testo) {
     var p = el('p', chi === 'user' ? 'lex-u' : 'lex-a');
@@ -126,12 +148,37 @@
       .then(function (j) {
         var t = String(j.testo || ''), m = t.match(/<scheda>([\s\S]*?)<\/scheda>/);
         storia.push({ role: 'assistant', content: t });
-        attesa.textContent = t.replace(/<scheda>[\s\S]*?<\/scheda>/, '').replace(/\*\*|__|^#+\s*/gm, '').trim();
+        if (/<ricontatto\s*\/?>/.test(t)) urgente = true;
+        attesa.textContent = t.replace(/<scheda>[\s\S]*?<\/scheda>/, '').replace(/<ricontatto\s*\/?>/g, '').replace(/\*\*|__|^#+\s*/gm, '').trim();
         if (m) { try { scheda = JSON.parse(m[1]); } catch (er) { scheda = null; } }
         if (scheda || storia.length >= 4) azione.hidden = false;
+        richiama.hidden = !urgente || inviato;
       })
       .catch(function () { attesa.textContent = T.errore; azione.hidden = false; })
       .then(function () { modulo.querySelector('button').disabled = false; campo.focus(); });
+  });
+
+  richiama.addEventListener('click', function () {
+    richiama.hidden = true; contatto.hidden = false; contatto.elements.nome.focus();
+  });
+  contatto.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = contatto.elements, err = contatto.querySelector('.lex-err');
+    var nome = f.nome.value.trim(), rec = f.recapito.value.trim();
+    var valido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(rec) || rec.replace(/[^0-9]/g, '').length >= 8;
+    if (!nome || !valido || !f.consenso.checked) { err.textContent = T.mancano; err.hidden = false; return; }
+    err.hidden = true; contatto.querySelector('button').disabled = true;
+    var utente = storia.filter(function (m) { return m.role === 'user'; }).map(function (m) { return m.content; }).join('\n- ');
+    var dati = {
+      _subject: 'Lex: richiesta di ricontatto da ' + nome,
+      origine: 'Assistente Lex (' + location.pathname + ')', nome: nome, recapito: rec,
+      materia: scheda ? scheda.materia : '', descrizione: scheda ? scheda.descrizione : '',
+      controparti: scheda ? scheda.controparti : '', scadenze: scheda ? scheda.scadenze : '',
+      messaggi_utente: ('- ' + utente).slice(0, 3000), richiesta_ricontatto: 'sì, informativa letta'
+    };
+    fetch(RICONTATTO, { method: 'POST', headers: { 'content-type': 'application/json', 'accept': 'application/json' }, body: JSON.stringify(dati) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); inviato = true; contatto.hidden = true; aggiungi('assistant', T.grazie); })
+      .catch(function () { err.textContent = T.fallito; err.hidden = false; contatto.querySelector('button').disabled = false; });
   });
 
   azione.addEventListener('click', function () {
