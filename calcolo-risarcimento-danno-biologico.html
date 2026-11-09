@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calcolo risarcimento danno biologico 2026: colpo di frusta e micropermanenti | Avv. Stante</title>
+<meta name="description" content="Calcolo gratuito del risarcimento per lesioni lievi da incidente stradale (1-9 punti, colpo di frusta) con i valori in vigore da aprile 2026: invalidità permanente e giorni di inabilità.">
+<link rel="canonical" href="https://www.studiolegalestante.it/calcolo-risarcimento-danno-biologico.html">
+<meta name="theme-color" content="#1D2B45">
+<link rel="icon" href="favicon.svg?v=20261029" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=20261029">
+<link rel="preload" href="assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/libre-caslon-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/studio.css?v=20261031b">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Studio Legale Avv. Vincenzo Stante">
+<meta property="og:title" content="Calcolo risarcimento danno biologico 2026">
+<meta property="og:description" content="Risarcimento delle lesioni lievi da incidente stradale con i valori in vigore.">
+<meta property="og:url" content="https://www.studiolegalestante.it/calcolo-risarcimento-danno-biologico.html">
+<meta property="og:image" content="https://www.studiolegalestante.it/images/og-studio-stante.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+.esito{margin:1.5rem 0 0;padding:1.5rem 1.75rem;border:1px solid var(--inchiostro);background:var(--carta)}
+.esito .importo{font-family:var(--display);font-size:2.75rem;line-height:1;color:var(--inchiostro);margin:0 0 .5rem}
+.esito .dettaglio{font-size:.95rem;color:var(--grigio);margin:0}
+.tabella-cu{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:1rem}
+.tabella-cu th,.tabella-cu td{text-align:left;padding:.5rem .3rem;font-size:.9rem;border-bottom:1px solid var(--filetto);vertical-align:top}
+.tabella-cu td:last-child,.tabella-cu th:last-child{text-align:right;white-space:nowrap}
+</style>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="contenitore testata">
+  <a class="marchio" href="./">Studio Legale Stante</a>
+  <nav aria-label="Principale">
+    <ul>
+      <li><a href="./#materie">Materie</a></li>
+      <li><a href="./#risarcimenti">Risarcimenti</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+      <li><a href="./#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenuto">
+  <div class="contenitore pagina-titolo">
+    <nav class="percorso" aria-label="Percorso"><ol><li><a href="./">Home</a></li><li><a href="guide.html">Guide</a></li><li aria-current="page">Calcolo del danno biologico</li></ol></nav>
+    <h1>Calcolo del risarcimento del danno biologico per lesioni lievi</h1>
+    <p>Per le lesioni di lieve entità causate da un incidente stradale, come il classico colpo di frusta, l'importo si calcola con valori fissati dalla legge e aggiornati ogni anno. Inserite i punti di invalidità e i giorni di inabilità indicati dal medico legale.</p>
+  </div>
+
+  <div class="contenitore sezione">
+    <form id="calcolo" class="modulo" novalidate>
+      <fieldset>
+        <legend>I dati della perizia medico-legale</legend>
+        <div class="griglia-campi">
+          <label>Punti di invalidità permanente (0-9)<input type="number" id="punti" min="0" max="9" step="1" value="2" inputmode="numeric"></label>
+          <label>Età alla data dell'incidente<input type="number" id="eta" min="0" max="110" step="1" value="40" inputmode="numeric"></label>
+          <label>Giorni di inabilità totale (100%)<input type="number" id="g100" min="0" step="1" value="0" inputmode="numeric"></label>
+          <label>Giorni di inabilità parziale al 75%<input type="number" id="g75" min="0" step="1" value="0" inputmode="numeric"></label>
+          <label>Giorni di inabilità parziale al 50%<input type="number" id="g50" min="0" step="1" value="15" inputmode="numeric"></label>
+          <label>Giorni di inabilità parziale al 25%<input type="number" id="g25" min="0" step="1" value="20" inputmode="numeric"></label>
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="esito" aria-live="polite">
+      <p class="importo" id="importo">—</p>
+      <p class="dettaglio" id="dettaglio"></p>
+    </div>
+    <table class="tabella-cu" id="voci">
+      <thead><tr><th>Voce</th><th>Calcolo</th><th>Importo</th></tr></thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Cosa resta fuori dal calcolo</h2>
+    <ul>
+      <li><strong>Personalizzazione</strong>: se le lesioni incidono in modo rilevante su aspetti specifici della vita del danneggiato, documentati, il giudice può aumentare l'importo fino al 20%.</li>
+      <li><strong>Danni patrimoniali</strong>: spese mediche, fisioterapia, farmaci, trasporti, danni al veicolo e guadagni persi si aggiungono e vanno documentati.</li>
+      <li><strong>Lesioni oltre i 9 punti</strong>: per gli incidenti stradali e la responsabilità sanitaria si applica la tabella unica nazionale delle macrolesioni; per gli altri casi, come le cadute su strade e marciapiedi, i tribunali usano di regola le tabelle di Milano. In questi casi serve una valutazione sul caso concreto.</li>
+      <li>Per le lesioni lievi il risarcimento richiede un <strong>accertamento clinico strumentale</strong> o un riscontro visivo obiettivo: senza referti adeguati l'assicurazione può rifiutare il pagamento della permanente.</li>
+    </ul>
+
+    <aside class="invito" aria-label="Consulenza online">
+      <p class="invito-titolo">L'assicurazione vi ha fatto un'offerta?</p>
+      <p>Inviatemi la perizia, i referti e l'offerta ricevuta: vi dico per iscritto se è congrua e come ottenere il giusto risarcimento, con il supporto del medico legale.</p>
+      <p class="invito-prezzo">Consulenza online: 150 €, urgente 250 €, più spese generali, Cassa e bollo.</p>
+      <a class="bottone pieno" href="consulenza-online.html#richiesta">Richiedi la consulenza</a>
+    </aside>
+    <p><a href="risarcimento-danni.html">Risarcimento danni: incidenti, cadute e infortuni →</a></p>
+
+    <p class="avvertenza">Metodo: art. 139 del Codice delle assicurazioni private, con gli importi aggiornati dal decreto del Ministero delle imprese del 20 luglio 2026, in vigore da aprile 2026 (988,45 € per il primo punto di invalidità, 57,64 € per ogni giorno di inabilità totale). Il valore del punto cresce con i coefficienti di legge (da 1 a 2,3) e si riduce dello 0,5% per ogni anno di età a partire dall'undicesimo. Gli importi si applicano ai danni da circolazione stradale e, per richiamo di legge, alla responsabilità sanitaria. Il calcolo è indicativo e non sostituisce la valutazione del medico legale e dell'avvocato.</p>
+  </div>
+</main>
+
+
+<footer class="pie">
+  <div class="contenitore">
+    <p>Avv. Vincenzo Stante, iscritto all'Ordine degli Avvocati di Bari. P.IVA 07973660728</p>
+    <ul>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var PUNTO = 988.45, GIORNO = 57.64, COEF = [0, 1, 1.1, 1.2, 1.3, 1.5, 1.7, 1.9, 2.1, 2.3];
+  function euro(n) { var p = (Math.round(n * 100) / 100).toFixed(2).split('.'); return p[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ',' + p[1] + ' €'; }
+  function num(id, max) { var v = parseInt($(id).value, 10); if (!isFinite(v) || v < 0) v = 0; return max != null ? Math.min(v, max) : v; }
+  function calcola() {
+    var p = num('punti', 9), eta = num('eta', 110), corpo = $('voci').querySelector('tbody'); corpo.textContent = '';
+    var rid = eta >= 11 ? Math.max(0, 1 - 0.005 * (eta - 10)) : 1;
+    var perm = p ? Math.round(PUNTO * COEF[p] * p * rid * 100) / 100 : 0;
+    var giorni = [[100, num('g100')], [75, num('g75')], [50, num('g50')], [25, num('g25')]], temp = 0;
+    function riga(a, b, c) { var tr = document.createElement('tr'); tr.innerHTML = '<td>' + a + '</td><td>' + b + '</td><td>' + c + '</td>'; corpo.appendChild(tr); }
+    riga('Invalidità permanente', p ? p + (p === 1 ? ' punto × ' : ' punti × ') + euro(PUNTO) + ' × ' + String(COEF[p]).replace('.', ',') + (rid < 1 ? ' − ' + String(Math.round((1 - rid) * 1000) / 10).replace('.', ',') + '% per l\'età' : '') : '—', euro(perm));
+    giorni.forEach(function (g) { if (!g[1]) return; var v = Math.round(g[1] * GIORNO * g[0] / 100 * 100) / 100; temp += v; riga('Inabilità temporanea al ' + g[0] + '%', g[1] + ' giorni × ' + euro(GIORNO * g[0] / 100), euro(v)); });
+    var tot = perm + temp;
+    $('importo').textContent = euro(tot);
+    $('dettaglio').textContent = 'Danno biologico secondo i valori di legge. Con la personalizzazione massima del 20%: fino a ' + euro(tot * 1.2) + '. Le spese documentate si aggiungono.';
+  }
+  ['punti', 'eta', 'g100', 'g75', 'g50', 'g25'].forEach(function (id) { $(id).addEventListener('input', calcola); });
+  $('calcolo').addEventListener('submit', function (e) { e.preventDefault(); });
+  calcola();
+})();
+</script>
+<script src="/assets/js/lex.js?v=20261108a" defer></script>
+</body>
+</html>
