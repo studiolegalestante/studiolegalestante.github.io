@@ -261,7 +261,7 @@ fetch('data/news.json?t='+Date.now()).then(function(r){return r.json()}).then(fu
       if(!document.getElementById('nl-ok').checked){o.textContent='Per iscrivervi occorre accettare l\'informativa.';return}
       const tk=f.querySelector('[name="cf-turnstile-response"]');if(!tk||!tk.value){o.textContent='Attendete qualche secondo la verifica anti-spam e riprovate.';return}
       o.textContent='Invio in corso…';
-      try{await fetch(f.action,{method:'POST',mode:'no-cors',body:new FormData(f)});o.textContent='Grazie! Vi abbiamo inviato un\'email: cliccate sul link per confermare l\'iscrizione.';f.reset();if(window.turnstile)turnstile.reset()}
+      try{const fd=new FormData(f);fd.append('g-recaptcha-response',tk.value);await fetch(f.action,{method:'POST',mode:'no-cors',body:fd});o.textContent='Grazie! Vi abbiamo inviato un\'email: cliccate sul link per confermare l\'iscrizione.';f.reset();if(window.turnstile)turnstile.reset()}
       catch(err){o.textContent='Non è stato possibile completare l\'iscrizione. Riprovate più tardi.'}});})();
     </script>
 
