@@ -11,6 +11,7 @@
 <link rel="icon" href="favicon.svg?v=20261029" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=20261029">
 <link rel="stylesheet" href="assets/css/studio.css?v=20261109">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -65,6 +66,7 @@
         <div class="nl-riga"><input type="email" id="nl-email" name="EMAIL" required autocomplete="email" placeholder="nome@esempio.it"><button type="submit" class="bottone pieno">Iscriviti</button></div>
         <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" style="position:absolute;left:-5000px" aria-hidden="true">
         <input type="hidden" name="locale" value="it"><input type="hidden" name="html_type" value="simple">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAF6TrvS1jpHVCsGP" data-language="it" data-size="flexible" data-appearance="interaction-only"></div>
         <label class="nl-consenso"><input type="checkbox" id="nl-ok" required> Ho letto l'<a href="privacy.html#newsletter">informativa privacy</a> e acconsento a ricevere la newsletter.</label>
         <p class="nl-esito" id="nl-esito" aria-live="polite"></p>
       </form>
@@ -75,8 +77,9 @@
     f.addEventListener('submit',async e=>{e.preventDefault();const em=document.getElementById('nl-email');
       if(!em.value||!em.checkValidity()){o.textContent='Inserite un indirizzo email valido.';return}
       if(!document.getElementById('nl-ok').checked){o.textContent='Per iscrivervi occorre accettare l\'informativa.';return}
+      const tk=f.querySelector('[name="cf-turnstile-response"]');if(!tk||!tk.value){o.textContent='Attendete qualche secondo la verifica anti-spam e riprovate.';return}
       o.textContent='Invio in corso…';
-      try{await fetch(f.action,{method:'POST',mode:'no-cors',body:new FormData(f)});o.textContent='Grazie! Vi abbiamo inviato un\'email: cliccate sul link per confermare l\'iscrizione.';f.reset()}
+      try{await fetch(f.action,{method:'POST',mode:'no-cors',body:new FormData(f)});o.textContent='Grazie! Vi abbiamo inviato un\'email: cliccate sul link per confermare l\'iscrizione.';f.reset();if(window.turnstile)turnstile.reset()}
       catch(err){o.textContent='Non è stato possibile completare l\'iscrizione. Riprovate più tardi.'}});})();
     </script>
   </div>
