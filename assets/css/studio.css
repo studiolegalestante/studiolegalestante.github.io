@@ -241,3 +241,15 @@ p:last-child{margin-bottom:0}
 .invito .bottone.pieno{background:var(--carta);color:var(--inchiostro);border-color:var(--carta);margin-top:.25rem}
 .invito .bottone.pieno:hover{background:#fff;color:var(--ceralacca)}
 .prezzo-chiusura{font-size:.95rem;color:var(--grigio)}
+
+/* Menu lingue a tendina (pagine tradotte) */
+.lingua-menu{position:relative;font-size:.8rem;letter-spacing:.06em}
+.lingua-menu summary{list-style:none;cursor:pointer;color:var(--grigio);padding:.2rem 0}
+.lingua-menu summary::-webkit-details-marker{display:none}
+.lingua-menu summary::after{content:" \25BE";font-size:.75em}
+.lingua-menu summary:hover,.lingua-menu[open] summary{color:var(--inchiostro)}
+.lingua-menu ul{position:absolute;right:0;top:100%;z-index:30;list-style:none;margin:.4rem 0 0;padding:.35rem 0;min-width:8.5rem;background:var(--carta);border:1px solid var(--filetto);box-shadow:0 6px 18px rgba(29,43,69,.12)}
+.lingua-menu li a{display:block;padding:.35rem .9rem;text-decoration:none;color:var(--inchiostro);letter-spacing:.02em}
+.lingua-menu li a:hover{background:var(--carta-2)}
+.lingua-menu a[aria-current]{text-decoration:underline;text-decoration-color:var(--ceralacca);text-underline-offset:.35em}
+@media (max-width:760px){.testata{position:relative}.lingua-menu{position:absolute;top:2.1rem;right:1.25rem}}
