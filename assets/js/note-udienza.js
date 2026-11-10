@@ -167,7 +167,7 @@
       if (r._status !== 200 && r._status !== 201) { st.textContent = 'Errore: ' + (r.errore || 'riprovate') + '.'; return; }
       ricorda(stato.codice, stato.token, r.scade, [d.difensore, d.rg].filter(Boolean).join(' – '));
       history.replaceState(null, '', location.pathname + '#m=' + stato.codice + '.' + stato.token);
-      modalita(true); st.textContent = (r._status === 201 ? 'Nota creata. ' : 'Modifiche salvate. ') + 'Si cancellerà il ' + dataOra(r.scade) + ' se non la modificate.';
+      modalita(true); st.textContent = (r._status === 201 ? 'Nota creata. ' : 'Modifiche salvate. ') + 'Si cancellerà il ' + dataOra(r.scade) + ' se non la modificate. Conservatene sempre una copia scritta.';
     }).catch(function () { btn.disabled = false; st.textContent = 'Servizio momentaneamente non raggiungibile. Riprovate tra poco.'; });
   }
   function apriModifica(codice, token) {
