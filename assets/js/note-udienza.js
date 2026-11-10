@@ -82,11 +82,11 @@
   /* --- lettura --- */
   var letto = [];
   function apri() {
-    var codici = $('nu-codici').value.split(/[,;\s]+/).map(normalizza).filter(Boolean);
+    var codici = [].map.call(document.querySelectorAll('.nu-cod'), function (i) { return i.value; }).join(',').split(/[,;\s]+/).map(normalizza).filter(Boolean);
     var st = $('nu-stato-leggi'); $('nu-risultato').hidden = true;
-    if (!codici.length) { st.textContent = 'Inserite il codice della nota.'; return; }
+    if (!codici.length) { st.textContent = 'Inserite almeno un codice.'; return; }
     var errati = codici.filter(function (c) { return !valido(c); });
-    if (errati.length) { st.textContent = 'Codice non valido: ' + errati.join(', ') + '. I codici hanno otto caratteri.'; return; }
+    if (errati.length) { st.textContent = 'Codice non valido: ' + errati.map(mostra).join(', ') + '. I codici hanno otto caratteri, per esempio K7M4-P9QX.'; return; }
     st.textContent = 'Apertura in corso…';
     Promise.all(codici.map(function (c) {
       return deriva(c).then(function (k) {
@@ -117,6 +117,11 @@
   }
   $('nu-apri').addEventListener('click', apri);
   $('nu-codici').addEventListener('keydown', function (e) { if (e.key === 'Enter') apri(); });
+  $('nu-aggiungi').addEventListener('click', function () {
+    var n = document.querySelectorAll('.nu-cod').length + 1, l = document.createElement('label'), i = document.createElement('input');
+    l.textContent = 'Codice della nota di un\'altra parte (' + n + ')'; i.className = 'nu-cod'; i.autocomplete = 'off'; i.setAttribute('autocapitalize', 'characters'); i.spellcheck = false;
+    l.appendChild(i); $('nu-codici').appendChild(l); i.focus();
+  });
   $('nu-copia').addEventListener('click', function () {
     var testo = letto.map(function (n) { return intestazione(n) + ':\n' + n.testo; }).join('\n\n');
     var fatto = function () { $('nu-stato-leggi').textContent = 'Testo copiato: incollatelo nel verbale.'; };
@@ -203,5 +208,9 @@
   var m = location.hash.match(/^#m=([0-9A-Z]{8})\.([A-Za-z0-9_-]{22})$/);
   var c = location.hash.match(/^#c=([0-9A-Za-z,-]+)$/);
   if (m) apriModifica(m[1], m[2]);
-  else if (c) { $('nu-codici').value = c[1]; apri(); }
+  else if (c) {
+    var lista = c[1].split(','), campi = document.querySelectorAll('.nu-cod');
+    while (campi.length < lista.length) { $('nu-aggiungi').click(); campi = document.querySelectorAll('.nu-cod'); }
+    lista.forEach(function (v, k) { campi[k].value = v; }); apri();
+  }
 })();
