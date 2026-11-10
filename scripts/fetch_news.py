@@ -6,31 +6,60 @@ import requests
 from datetime import datetime
 import sys
 
+# Fonti per categoria: (indirizzo del feed, filtro). Il filtro None vale per i feed già tematici;
+# per i feed generalisti si usa l'elenco di parole chiave indicato, così entrano solo articoli in tema.
+ANDREANI = "https://news.avvocatoandreani.it/feed/news_giuridiche.php"
+ALTALEX = "https://www.altalex.com/rss"
+FILODIRITTO = "https://www.filodiritto.com/rss-articoli"
+NUOVA_PC = "https://www.lanuovaproceduracivile.com/feed/"
+DIRITTO_IT = "https://www.diritto.it/feed/"
+GAZZETTA = "https://www.gazzettaufficiale.it/rss/P2"
+
 FEEDS = {
     "penale": [
-        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=penale",
-        "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
-        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
-        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
+        (ANDREANI + "?tags=penale", None),
+        (ALTALEX, "penale"),
+        (FILODIRITTO, "penale"),
+        (DIRITTO_IT, "penale"),
+        (GAZZETTA, "gu_penale"),
     ],
     "famiglia": [
-        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=famiglia",
-        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
-        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
+        (ANDREANI + "?tags=famiglia", None),
+        (ALTALEX, "famiglia"),
+        (FILODIRITTO, "famiglia"),
+        (DIRITTO_IT, "famiglia"),
+        (NUOVA_PC, "famiglia"),
+        (GAZZETTA, "gu_famiglia"),
     ],
     "patrocinio": [
-        "https://news.avvocatoandreani.it/feed/news_giuridiche.php",
-        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=penale",
-        "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche",
-        "https://feeds.feedburner.com/StudioCataldi-DirittoPenale",
-        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
+        (ANDREANI, "patrocinio"),
+        (ANDREANI + "?tags=penale", "patrocinio"),
+        (ALTALEX, "patrocinio"),
+        (FILODIRITTO, "patrocinio"),
+        (DIRITTO_IT, "patrocinio"),
+        (NUOVA_PC, "patrocinio"),
     ],
     "giurisprudenza": [
-        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=cassazione",
-        "https://news.avvocatoandreani.it/feed/news_giuridiche.php?tags=giurisprudenza-di-merito",
-        "https://feeds.feedburner.com/studiocataldi/PrimaPagina",
-        "https://feeds.feedburner.com/StudioCataldi-NewsPiuLette",
+        (ANDREANI + "?tags=cassazione", None),
+        (ANDREANI + "?tags=giurisprudenza-di-merito", None),
+        (ALTALEX, "giurisprudenza"),
+        (NUOVA_PC, "giurisprudenza"),
+        (FILODIRITTO, "giurisprudenza"),
+        (DIRITTO_IT, "giurisprudenza"),
     ],
+}
+
+FILTRI = {
+    "penale": ["penale", "reato", "reati", "imputat", "indagat", "querela", "condann", "pena ",
+               "misura cautelare", "misure cautelari", "arresto", "riesame", "stalking", "truffa",
+               "diffamazione", "maltrattamenti", "violenza", "carcere", "detenut"],
+    "famiglia": ["separazione", "divorzio", "affidamento", "mantenimento", "assegno di", "assegno divorzile",
+                 "figli", "genitori", "genitorial", "coniug", "famiglia", "unione civile", "convivent",
+                 "adozione", "minori", "successione", "eredità", "testamento"],
+    "giurisprudenza": ["cassazione", "sezioni unite", "sentenza", "ordinanza", "corte costituzionale",
+                       "consulta", "tribunale", "corte d'appello", "corte di giustizia", "cedu"],
+    "gu_penale": ["codice penale", "procedura penale", "ordinamento penitenziario", "reati"],
+    "gu_famiglia": ["famiglia", "minori", "filiazione", "separazione", "divorzio", "adozione"],
 }
 
 PATROCINIO_KEYWORDS = [
@@ -86,6 +115,8 @@ PATROCINIO_FALLBACK = [
 OUTPUT_FILE = "data/news.json"
 MAX_ITEMS = 6
 MAX_CANDIDATI = 20  # articoli raccolti per categoria prima della selezione automatica
+PER_FONTE_AI = 6     # massimo di articoli presi da ciascun feed (con selezione automatica)
+PER_FONTE = 2        # massimo per feed senza selezione automatica
 
 # Configurazione del servizio di sintesi: tutti i valori arrivano dalle variabili del repository.
 AI = {k: os.environ.get("AI_" + k, "").strip() for k in
@@ -149,7 +180,8 @@ def parse_date(entry):
 
 def fetch_feed(url):
     try:
-        feed = feedparser.parse(url)
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (compatible; notizie-studiolegalestante/1.0)"}, timeout=30)
+        feed = feedparser.parse(r.content)
         if feed.bozo and not feed.entries:
             print(f"  ⚠️  Feed vuoto o non valido: {url}", file=sys.stderr)
             return []
@@ -250,11 +282,13 @@ for category, urls in FEEDS.items():
     seen_links = set()
     limite = MAX_CANDIDATI if AI_ATTIVA else MAX_ITEMS
 
-    for url in urls:
+    per_fonte = PER_FONTE_AI if AI_ATTIVA else PER_FONTE
+    for url, filtro in urls:
         if len(items) >= limite:
             break
+        presi = 0
         for entry in fetch_feed(url):
-            if len(items) >= limite:
+            if len(items) >= limite or presi >= per_fonte:
                 break
 
             title = clean(getattr(entry, "title", ""))
@@ -265,10 +299,12 @@ for category, urls in FEEDS.items():
             if not title or not link or link in seen_links:
                 continue
 
-            if category == "patrocinio" and not matches_keywords(title, raw, PATROCINIO_KEYWORDS):
+            parole = PATROCINIO_KEYWORDS if filtro == "patrocinio" else FILTRI.get(filtro)
+            if parole and not matches_keywords(title, raw, parole):
                 continue
 
             seen_links.add(link)
+            presi += 1
             items.append({
                 "title": title,
                 "link": link,
