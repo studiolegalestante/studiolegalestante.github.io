@@ -104,6 +104,12 @@
 </script>
 
 <style>/*CASOCSS*/.caso{border-left:3px solid var(--rosa);background:rgba(29,43,69,.05);padding:1rem 1.25rem;margin:1.5rem 0}.caso .caso-titolo{font-family:var(--display);font-size:1.15rem;margin:0 0 .4rem}.caso p:last-child{margin-bottom:0}</style>
+<style>.valuta{border:1px solid rgba(29,43,69,.18);border-top:3px solid var(--ceralacca);padding:1.25rem 1.25rem 1rem;margin:2rem 0;background:rgba(29,43,69,.03)}
+.valuta fieldset{border:0;padding:0;margin:0 0 1rem}.valuta legend{font-weight:700;margin-bottom:.35rem}
+.valuta label{display:block;margin:.3rem 0;line-height:1.4}.valuta input{margin-right:.45rem}
+.valuta .esito-valuta{margin-top:1rem;padding:1rem;background:var(--carta);border-left:4px solid var(--inchiostro)}
+.valuta .esito-valuta h3{margin-top:0}.valuta .fascia{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--grigio);margin:0}
+.valuta .esito-valuta[data-f="F3"]{border-left-color:var(--ceralacca)}.valuta .esito-valuta[data-f="F4"]{border-left-color:var(--ceralacca);background:#fbf3f2}</style>
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -127,7 +133,7 @@
   <div class="contenitore pagina-titolo">
     <nav class="percorso" aria-label="Percorso"><ol><li><a href="./">Home</a></li><li><a href="./#risarcimenti">Risarcimenti</a></li><li aria-current="page">Diffamazione sui social</li></ol></nav>
     <h1>Risarcimento per offese e diffamazione sui social</h1>
-    <p>Tutela per influencer e creator. Commenti offensivi, insulti e accuse false sotto i vostri contenuti non sono il prezzo da pagare per la visibilità. Raccolgo le prove, identifico gli autori, ottengo la rimozione e il risarcimento.</p>
+    <p>Tutela per influencer e creator. Commenti offensivi, insulti e accuse false sotto i vostri contenuti non sono il prezzo da pagare per la visibilità. Raccolgo le prove, identifico gli autori e chiedo la rimozione e il risarcimento.</p>
   </div>
 
   <div class="contenitore sezione">
@@ -149,6 +155,67 @@
       <p>Chi pubblica accetta di essere criticato, anche duramente. Ma la critica deve riguardare i contenuti e restare nei limiti della correttezza. Quando il commento diventa un insulto alla persona, un augurio di morte, un'accusa inventata o una volgarità gratuita, si tratta di diffamazione, che sui social la legge considera più grave perché raggiunge un numero indeterminato di persone.</p>
       <p>Non tutti i commenti sgradevoli conviene contestarli. Seleziono quelli che hanno davvero fondamento: rivolti chiaramente a voi, offensivi in sé, riconducibili a un autore identificabile.</p>
 
+
+      <h2 id="valutatore">Il commento può essere diffamatorio? Una prima valutazione</h2>
+      <p>Rispondete a quattro domande per capire in quale fascia rientra il commento. Il risultato è orientativo: la valutazione vera dipende dal testo esatto, dal contesto e dalle prove.</p>
+      <form class="valuta" id="valuta" novalidate>
+        <fieldset><legend>1. Il commento si riferisce a voi in modo riconoscibile?</legend>
+          <label><input type="radio" name="v1" value="si"> Sì: c'è il mio nome, un tag, una mia foto o riferimenti chiari a me</label>
+          <label><input type="radio" name="v1" value="no"> No, oppure non è chiaro a chi si riferisca</label>
+        </fieldset>
+        <fieldset><legend>2. Che cosa dice?</legend>
+          <label><input type="radio" name="v2" value="critica"> Critica i miei contenuti o le mie opinioni, anche in modo duro</label>
+          <label><input type="radio" name="v2" value="insulto"> Insulta la mia persona o usa volgarità contro di me</label>
+          <label><input type="radio" name="v2" value="fatto"> Mi attribuisce un fatto preciso che mi screditerebbe (per esempio «ha truffato i clienti»)</label>
+          <label><input type="radio" name="v2" value="grave"> Contiene minacce, auguri di morte o offese per origine, religione, orientamento sessuale o disabilità</label>
+        </fieldset>
+        <fieldset><legend>3. Dove è stato scritto?</legend>
+          <label><input type="radio" name="v3" value="pubblico"> In pubblico: commento, post, storia, recensione o gruppo</label>
+          <label><input type="radio" name="v3" value="privato"> In un messaggio privato rivolto solo a me</label>
+          <label><input type="radio" name="v3" value="chat"> In una chat di gruppo di cui faccio parte anch'io</label>
+        </fieldset>
+        <fieldset><legend>4. Quando lo avete visto?</legend>
+          <label><input type="radio" name="v4" value="recente"> Meno di tre mesi fa</label>
+          <label><input type="radio" name="v4" value="vecchio"> Più di tre mesi fa</label>
+        </fieldset>
+        <button type="submit" class="bottone pieno">Vedi la valutazione</button>
+        <div class="esito-valuta" id="esito-valuta" aria-live="polite" hidden></div>
+      </form>
+<script>
+(function(){
+  var f=document.getElementById('valuta'),out=document.getElementById('esito-valuta');
+  function v(n){var e=f.querySelector('input[name="'+n+'"]:checked');return e?e.value:''}
+  var TESTI={
+    F1:['Fascia F1','Probabilmente non contestabile','Se il commento non vi rende riconoscibili, o critica i vostri contenuti senza trascendere nell\'offesa personale, di regola rientra nella libertà di critica, che per chi si espone pubblicamente è più ampia. Potete comunque segnalarlo alla piattaforma se viola le sue regole.'],
+    F2:['Fascia F2','Offesa con tutela limitata','L\'insulto rivolto direttamente a voi, in privato o in una conversazione di cui fate parte, è un\'ingiuria: non è più reato, ma un illecito civile che dà diritto al risarcimento del danno davanti al giudice civile. Conviene conservare le prove e valutare se la gravità e la ripetizione giustificano una diffida.'],
+    F3:['Fascia F3','Possibile diffamazione aggravata','Un\'offesa alla vostra reputazione pubblicata dove la leggono altre persone può integrare la diffamazione (art. 595 del codice penale), aggravata perché commessa con un mezzo di pubblicità come i social e, ancora di più, se vi attribuisce un fatto determinato. Si possono chiedere la rimozione, le scuse e il risarcimento.'],
+    F4:['Fascia F4','Caso grave: da far valutare subito','Minacce, auguri di morte e offese discriminatorie possono integrare reati distinti e più gravi della semplice offesa, come la minaccia, oppure aggravare la diffamazione. Conservate subito le prove, senza rispondere all\'autore, e fate valutare il caso senza attendere.']
+  };
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var a=v('v1'),b=v('v2'),c=v('v3'),d=v('v4');
+    if(!a||!b||!c||!d){out.hidden=false;out.removeAttribute('data-f');out.innerHTML='<p>Rispondete a tutte e quattro le domande.</p>';return}
+    var fa;
+    if(b==='grave')fa='F4';
+    else if(a==='no'||b==='critica')fa='F1';
+    else if(c==='pubblico')fa='F3';
+    else fa='F2';
+    var T=TESTI[fa],note=[];
+    if(fa==='F3'&&b==='fatto')note.push('L\'attribuzione di un fatto preciso è la forma più seria: se il fatto è falso, la vostra posizione è più solida.');
+    if(fa==='F3'||fa==='F4'){
+      if(d==='recente')note.push('Siete ancora nel termine di tre mesi per la querela (art. 124 del codice penale): è il momento in cui una diffida ha più forza.');
+      else note.push('Il termine di tre mesi per la querela potrebbe essere scaduto. Restano possibili la richiesta di rimozione e l\'azione civile per il risarcimento, preceduta dalla mediazione.');
+    }
+    if(fa!=='F1')note.push('Fate subito screenshot completi, con data, autore e indirizzo della pagina: i commenti vengono spesso cancellati.');
+    out.hidden=false;out.setAttribute('data-f',fa);
+    out.innerHTML='<p class="fascia">'+T[0]+'</p><h3>'+T[1]+'</h3><p>'+T[2]+'</p>'+note.map(function(n){return '<p>'+n+'</p>'}).join('')+
+      (fa==='F1'?'':'<p><a class="bottone vuoto" href="consulenza-online.html#richiesta">Richiedi una valutazione scritta</a></p>')+
+      '<p class="avvertenza">Valutazione orientativa, non è un parere legale.</p>';
+    out.scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+})();
+</script>
+
       <h2>Come lavoro</h2>
       <h3>1. Analisi dei commenti</h3>
       <p>Mi inviate i link ai contenuti e alle sezioni commenti. Individuo quelli rilevanti e vi dico, per ciascuno, se e come conviene procedere.</p>
@@ -159,7 +226,7 @@
       <h3>4. Diffida</h3>
       <p>All'autore viene inviata una diffida con la richiesta di rimuovere il commento, presentare le scuse e risarcire il danno in misura proporzionata alla gravità dell'offesa e alla sua diffusione.</p>
       <h3>5. Accordo, querela o causa</h3>
-      <p>La maggior parte delle vicende si chiude con un accordo scritto: rimozione, risarcimento e spese legali a carico di chi ha offeso. Se l'autore non risponde, si procede con la querela oppure con la mediazione e la causa civile per il risarcimento.</p>
+      <p>Molte vicende si chiudono con un accordo scritto: rimozione, risarcimento e spese legali a carico di chi ha offeso. Se l'autore non risponde, si procede con la querela oppure con la mediazione e la causa civile per il risarcimento.</p>
 
       <h2>Perché muoversi subito</h2>
       <p>La querela va presentata entro tre mesi dal giorno in cui avete visto il commento. Agire in questo termine conta: chi ha offeso sa di rischiare un procedimento penale ed è molto più disposto a chiudere con un accordo. Dopo i tre mesi resta possibile soltanto la richiesta di risarcimento in sede civile, preceduta dalla mediazione obbligatoria. Inoltre i commenti vengono cancellati in fretta: prima si acquisiscono le prove, meglio è.</p>
