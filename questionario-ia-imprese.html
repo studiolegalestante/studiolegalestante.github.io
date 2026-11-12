@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questionario per l'adeguamento all'intelligenza artificiale – Imprese | Avv. Stante</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1D2B45">
+<link rel="icon" href="favicon.svg?v=20261029" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/studio.css?v=20261109">
+<style>
+.assistente{margin:1.5rem 0 2rem;padding:1.5rem 1.75rem;border:1px solid var(--inchiostro);background:var(--carta)}
+.assistente-titolo{font-family:var(--display);font-size:1.6rem;color:var(--inchiostro);margin-bottom:.75rem;display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .6rem}
+.assistente-sigla{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--inchiostro);color:var(--carta);font-size:1.25rem}
+.assistente-ruolo{font-family:var(--serif);font-size:.95rem;font-style:italic;color:var(--grigio)}
+.assistente-avviso{font-size:.875rem;color:var(--grigio);margin:1.25rem 0 1rem}
+.assistente-messaggi{max-height:420px;overflow-y:auto;display:flex;flex-direction:column;gap:.75rem;margin-bottom:1rem}
+.assistente-messaggi p{margin:0;padding:.7rem .9rem;font-size:1rem;line-height:1.55;white-space:pre-wrap;max-width:90%}
+.assistente-messaggi .da-utente{align-self:flex-end;background:var(--inchiostro);color:var(--carta)}
+.assistente-messaggi .da-assistente{align-self:flex-start;background:var(--carta-2);border:1px solid var(--filetto)}
+.assistente-scrivi{display:flex;gap:.75rem;align-items:flex-end}
+.assistente-scrivi textarea{flex:1;font:inherit;font-size:1rem;padding:.65rem .75rem;border:1px solid #9AA1AD;border-radius:0;min-height:48px;resize:vertical}
+.assistente-scheda{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--filetto)}
+.assistente button{font-family:inherit;cursor:pointer}
+.assistente [hidden]{display:none!important}
+.visivamente-nascosto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+<style>.modulo select[multiple]{min-height:9rem}.domanda{border:0;padding:0;margin:0 0 1rem}.domanda legend{font-weight:600;margin-bottom:.35rem}</style>
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+
+<header class="contenitore testata">
+  <a class="marchio" href="./">Studio Legale Stante</a>
+  <nav aria-label="Principale">
+    <ul>
+      <li><a href="./#materie">Materie</a></li>
+      <li><a href="./#risarcimenti">Risarcimenti</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="adeguamento-ia.html">Adeguamento IA</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+      <li><a href="./#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+  </header>
+
+<main id="contenuto">
+  <div class="contenitore pagina-titolo">
+    <nav class="percorso" aria-label="Percorso"><ol><li><a href="./">Home</a></li><li><a href="adeguamento-ia-imprese.html">Adeguamento IA imprese</a></li><li aria-current="page">Questionario</li></ol></nav>
+    <h1>Questionario per l'adeguamento all'intelligenza artificiale – Imprese</h1>
+    <p>Il questionario è riservato alle imprese che hanno ricevuto la conferma dello Studio. Le risposte sono utilizzate esclusivamente per la predisposizione della documentazione. Tempo di compilazione: circa 20 minuti.</p>
+  </div>
+  <div class="contenitore sezione">
+    <div class="prosa">
+      <form id="questionario-ia-imprese" class="modulo" novalidate>
+        <fieldset data-sez="A. L'impresa"><legend>A. L'impresa</legend><div class="griglia-campi">
+          <label class="largo">Riferimento della conferma (facoltativo)<input type="text" name="riferimento" data-q="Riferimento della conferma (facoltativo)" placeholder="Indicato nell&#x27;email di conferma"></label>
+          <label class="largo">Ragione sociale<input type="text" name="ragione" data-q="Ragione sociale" required></label>
+          <label>Settore di attività<input type="text" name="settore" data-q="Settore di attività" required></label>
+          <label>Referente<input type="text" name="referente" data-q="Referente" required></label>
+          <label>Ruolo del referente<input type="text" name="ruolo" data-q="Ruolo del referente" required placeholder="Per esempio: titolare, amministratore"></label>
+          <label>Numero complessivo di addetti<input type="number" name="addetti" data-q="Numero complessivo di addetti" required min="1"></label>
+          <label>Numero di sedi o unità locali<input type="number" name="sedi" data-q="Numero di sedi o unità locali" min="1" value="1"></label>
+        </div>
+          <fieldset class="domanda" data-q="È stato designato un responsabile della protezione dei dati (DPO)?" data-radio="dpo"><legend>È stato designato un responsabile della protezione dei dati (DPO)?</legend><div class="scelte"><label><input type="radio" name="dpo" value="Sì"> Sì</label><label><input type="radio" name="dpo" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="Sono presenti rappresentanze sindacali aziendali (RSA o RSU)?" data-radio="rsa"><legend>Sono presenti rappresentanze sindacali aziendali (RSA o RSU)?</legend><div class="scelte"><label><input type="radio" name="rsa" value="Sì"> Sì</label><label><input type="radio" name="rsa" value="No" checked> No</label></div></fieldset>
+        </fieldset>
+
+        <fieldset data-sez="B. Sistemi di intelligenza artificiale in uso"><legend>B. Sistemi di intelligenza artificiale in uso</legend>
+          <p class="nota-passo">Compilare una scheda per ciascuno strumento, compresi gli assistenti di IA generativa, i chatbot, i traduttori automatici e le funzioni di IA dei software gestionali.</p>
+          <fieldset class="strumento" data-tool="1"><legend>Strumento 1</legend><div class="griglia-campi">
+<label class="largo">Nome dello strumento<input type="text" name="t1_nome" data-q="Nome dello strumento" placeholder="Per esempio: assistente di IA generativa, chatbot del sito, software gestionale con funzioni di IA"></label>
+<label>Tipo di abbonamento<select name="t1_piano" data-q="Tipo di abbonamento"><option value="">Selezionare…</option><option>Gratuito</option><option>A pagamento, personale</option><option>Aziendale con contratto (business o enterprise)</option><option>Incluso in un software gestionale</option><option>Non noto</option></select></label>
+<label>Utilizzatori<input type="text" name="t1_chi" data-q="Utilizzatori" placeholder="Per esempio: titolare, ufficio amministrativo, tutto il personale"></label>
+</div><label>Finalità (selezione multipla)<select name="t1_fine" multiple size="6" data-q="Finalità"><option>Assistenza ai clienti o assistente automatico</option><option>Prenotazioni e appuntamenti</option><option>Marketing, testi e immagini per siti e social</option><option>Corrispondenza e posta elettronica</option><option>Contabilità e amministrazione</option><option>Selezione o gestione del personale</option><option>Produzione, logistica o controllo qualità</option><option>Traduzioni</option><option>Altro</option></select></label>
+<label>Dati inseriti<select name="t1_dati" data-q="Dati inseriti"><option value="">Selezionare…</option><option>Nessun dato personale</option><option>Dati dei clienti</option><option>Dati dei dipendenti</option><option>Dati dei clienti e dei dipendenti</option><option>Anche dati relativi alla salute</option></select></label>
+<label>Utilizzo dei contenuti per l'addestramento dei modelli<select name="t1_addestramento" data-q="Utilizzo dei contenuti per l&#x27;addestramento dei modelli"><option value="">Selezionare…</option><option>Disattivato</option><option>Attivo</option><option>Non noto</option></select></label></fieldset><fieldset class="strumento" data-tool="2" hidden><legend>Strumento 2</legend><div class="griglia-campi">
+<label class="largo">Nome dello strumento<input type="text" name="t2_nome" data-q="Nome dello strumento" placeholder="Per esempio: assistente di IA generativa, chatbot del sito, software gestionale con funzioni di IA"></label>
+<label>Tipo di abbonamento<select name="t2_piano" data-q="Tipo di abbonamento"><option value="">Selezionare…</option><option>Gratuito</option><option>A pagamento, personale</option><option>Aziendale con contratto (business o enterprise)</option><option>Incluso in un software gestionale</option><option>Non noto</option></select></label>
+<label>Utilizzatori<input type="text" name="t2_chi" data-q="Utilizzatori" placeholder="Per esempio: titolare, ufficio amministrativo, tutto il personale"></label>
+</div><label>Finalità (selezione multipla)<select name="t2_fine" multiple size="6" data-q="Finalità"><option>Assistenza ai clienti o assistente automatico</option><option>Prenotazioni e appuntamenti</option><option>Marketing, testi e immagini per siti e social</option><option>Corrispondenza e posta elettronica</option><option>Contabilità e amministrazione</option><option>Selezione o gestione del personale</option><option>Produzione, logistica o controllo qualità</option><option>Traduzioni</option><option>Altro</option></select></label>
+<label>Dati inseriti<select name="t2_dati" data-q="Dati inseriti"><option value="">Selezionare…</option><option>Nessun dato personale</option><option>Dati dei clienti</option><option>Dati dei dipendenti</option><option>Dati dei clienti e dei dipendenti</option><option>Anche dati relativi alla salute</option></select></label>
+<label>Utilizzo dei contenuti per l'addestramento dei modelli<select name="t2_addestramento" data-q="Utilizzo dei contenuti per l&#x27;addestramento dei modelli"><option value="">Selezionare…</option><option>Disattivato</option><option>Attivo</option><option>Non noto</option></select></label></fieldset><fieldset class="strumento" data-tool="3" hidden><legend>Strumento 3</legend><div class="griglia-campi">
+<label class="largo">Nome dello strumento<input type="text" name="t3_nome" data-q="Nome dello strumento" placeholder="Per esempio: assistente di IA generativa, chatbot del sito, software gestionale con funzioni di IA"></label>
+<label>Tipo di abbonamento<select name="t3_piano" data-q="Tipo di abbonamento"><option value="">Selezionare…</option><option>Gratuito</option><option>A pagamento, personale</option><option>Aziendale con contratto (business o enterprise)</option><option>Incluso in un software gestionale</option><option>Non noto</option></select></label>
+<label>Utilizzatori<input type="text" name="t3_chi" data-q="Utilizzatori" placeholder="Per esempio: titolare, ufficio amministrativo, tutto il personale"></label>
+</div><label>Finalità (selezione multipla)<select name="t3_fine" multiple size="6" data-q="Finalità"><option>Assistenza ai clienti o assistente automatico</option><option>Prenotazioni e appuntamenti</option><option>Marketing, testi e immagini per siti e social</option><option>Corrispondenza e posta elettronica</option><option>Contabilità e amministrazione</option><option>Selezione o gestione del personale</option><option>Produzione, logistica o controllo qualità</option><option>Traduzioni</option><option>Altro</option></select></label>
+<label>Dati inseriti<select name="t3_dati" data-q="Dati inseriti"><option value="">Selezionare…</option><option>Nessun dato personale</option><option>Dati dei clienti</option><option>Dati dei dipendenti</option><option>Dati dei clienti e dei dipendenti</option><option>Anche dati relativi alla salute</option></select></label>
+<label>Utilizzo dei contenuti per l'addestramento dei modelli<select name="t3_addestramento" data-q="Utilizzo dei contenuti per l&#x27;addestramento dei modelli"><option value="">Selezionare…</option><option>Disattivato</option><option>Attivo</option><option>Non noto</option></select></label></fieldset><fieldset class="strumento" data-tool="4" hidden><legend>Strumento 4</legend><div class="griglia-campi">
+<label class="largo">Nome dello strumento<input type="text" name="t4_nome" data-q="Nome dello strumento" placeholder="Per esempio: assistente di IA generativa, chatbot del sito, software gestionale con funzioni di IA"></label>
+<label>Tipo di abbonamento<select name="t4_piano" data-q="Tipo di abbonamento"><option value="">Selezionare…</option><option>Gratuito</option><option>A pagamento, personale</option><option>Aziendale con contratto (business o enterprise)</option><option>Incluso in un software gestionale</option><option>Non noto</option></select></label>
+<label>Utilizzatori<input type="text" name="t4_chi" data-q="Utilizzatori" placeholder="Per esempio: titolare, ufficio amministrativo, tutto il personale"></label>
+</div><label>Finalità (selezione multipla)<select name="t4_fine" multiple size="6" data-q="Finalità"><option>Assistenza ai clienti o assistente automatico</option><option>Prenotazioni e appuntamenti</option><option>Marketing, testi e immagini per siti e social</option><option>Corrispondenza e posta elettronica</option><option>Contabilità e amministrazione</option><option>Selezione o gestione del personale</option><option>Produzione, logistica o controllo qualità</option><option>Traduzioni</option><option>Altro</option></select></label>
+<label>Dati inseriti<select name="t4_dati" data-q="Dati inseriti"><option value="">Selezionare…</option><option>Nessun dato personale</option><option>Dati dei clienti</option><option>Dati dei dipendenti</option><option>Dati dei clienti e dei dipendenti</option><option>Anche dati relativi alla salute</option></select></label>
+<label>Utilizzo dei contenuti per l'addestramento dei modelli<select name="t4_addestramento" data-q="Utilizzo dei contenuti per l&#x27;addestramento dei modelli"><option value="">Selezionare…</option><option>Disattivato</option><option>Attivo</option><option>Non noto</option></select></label></fieldset><fieldset class="strumento" data-tool="5" hidden><legend>Strumento 5</legend><div class="griglia-campi">
+<label class="largo">Nome dello strumento<input type="text" name="t5_nome" data-q="Nome dello strumento" placeholder="Per esempio: assistente di IA generativa, chatbot del sito, software gestionale con funzioni di IA"></label>
+<label>Tipo di abbonamento<select name="t5_piano" data-q="Tipo di abbonamento"><option value="">Selezionare…</option><option>Gratuito</option><option>A pagamento, personale</option><option>Aziendale con contratto (business o enterprise)</option><option>Incluso in un software gestionale</option><option>Non noto</option></select></label>
+<label>Utilizzatori<input type="text" name="t5_chi" data-q="Utilizzatori" placeholder="Per esempio: titolare, ufficio amministrativo, tutto il personale"></label>
+</div><label>Finalità (selezione multipla)<select name="t5_fine" multiple size="6" data-q="Finalità"><option>Assistenza ai clienti o assistente automatico</option><option>Prenotazioni e appuntamenti</option><option>Marketing, testi e immagini per siti e social</option><option>Corrispondenza e posta elettronica</option><option>Contabilità e amministrazione</option><option>Selezione o gestione del personale</option><option>Produzione, logistica o controllo qualità</option><option>Traduzioni</option><option>Altro</option></select></label>
+<label>Dati inseriti<select name="t5_dati" data-q="Dati inseriti"><option value="">Selezionare…</option><option>Nessun dato personale</option><option>Dati dei clienti</option><option>Dati dei dipendenti</option><option>Dati dei clienti e dei dipendenti</option><option>Anche dati relativi alla salute</option></select></label>
+<label>Utilizzo dei contenuti per l'addestramento dei modelli<select name="t5_addestramento" data-q="Utilizzo dei contenuti per l&#x27;addestramento dei modelli"><option value="">Selezionare…</option><option>Disattivato</option><option>Attivo</option><option>Non noto</option></select></label></fieldset><fieldset class="strumento" data-tool="6" hidden><legend>Strumento 6</legend><div class="griglia-campi">
+<label class="largo">Nome dello strumento<input type="text" name="t6_nome" data-q="Nome dello strumento" placeholder="Per esempio: assistente di IA generativa, chatbot del sito, software gestionale con funzioni di IA"></label>
+<label>Tipo di abbonamento<select name="t6_piano" data-q="Tipo di abbonamento"><option value="">Selezionare…</option><option>Gratuito</option><option>A pagamento, personale</option><option>Aziendale con contratto (business o enterprise)</option><option>Incluso in un software gestionale</option><option>Non noto</option></select></label>
+<label>Utilizzatori<input type="text" name="t6_chi" data-q="Utilizzatori" placeholder="Per esempio: titolare, ufficio amministrativo, tutto il personale"></label>
+</div><label>Finalità (selezione multipla)<select name="t6_fine" multiple size="6" data-q="Finalità"><option>Assistenza ai clienti o assistente automatico</option><option>Prenotazioni e appuntamenti</option><option>Marketing, testi e immagini per siti e social</option><option>Corrispondenza e posta elettronica</option><option>Contabilità e amministrazione</option><option>Selezione o gestione del personale</option><option>Produzione, logistica o controllo qualità</option><option>Traduzioni</option><option>Altro</option></select></label>
+<label>Dati inseriti<select name="t6_dati" data-q="Dati inseriti"><option value="">Selezionare…</option><option>Nessun dato personale</option><option>Dati dei clienti</option><option>Dati dei dipendenti</option><option>Dati dei clienti e dei dipendenti</option><option>Anche dati relativi alla salute</option></select></label>
+<label>Utilizzo dei contenuti per l'addestramento dei modelli<select name="t6_addestramento" data-q="Utilizzo dei contenuti per l&#x27;addestramento dei modelli"><option value="">Selezionare…</option><option>Disattivato</option><option>Attivo</option><option>Non noto</option></select></label></fieldset>
+          <div class="azioni a-sinistra"><button type="button" class="bottone vuoto" id="aggiungi-strumento">Aggiungi uno strumento</button></div>
+          <label>Altre funzioni di IA integrate in software già in uso<textarea name="integrati" rows="2" data-q="Altre funzioni di IA integrate in software già in uso" placeholder="Indicare «nessuna» se non presenti"></textarea></label>
+        </fieldset>
+
+        <fieldset data-sez="C. Personale e organizzazione del lavoro"><legend>C. Personale e organizzazione del lavoro</legend>
+          <fieldset class="domanda" data-q="Sono utilizzati sistemi di IA per la selezione del personale (per esempio, per l&#x27;esame di curricula)?" data-radio="selezione"><legend>Sono utilizzati sistemi di IA per la selezione del personale (per esempio, per l'esame di curricula)?</legend><div class="scelte"><label><input type="radio" name="selezione" value="Sì"> Sì</label><label><input type="radio" name="selezione" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="Sono utilizzati sistemi di IA per valutare le prestazioni, assegnare compiti o organizzare i turni?" data-radio="valutazione"><legend>Sono utilizzati sistemi di IA per valutare le prestazioni, assegnare compiti o organizzare i turni?</legend><div class="scelte"><label><input type="radio" name="valutazione" value="Sì"> Sì</label><label><input type="radio" name="valutazione" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="Sono utilizzati strumenti che consentono il controllo dell&#x27;attività dei lavoratori (per esempio, geolocalizzazione, rilevazione dell&#x27;uso dei dispositivi)?" data-radio="monitoraggio"><legend>Sono utilizzati strumenti che consentono il controllo dell'attività dei lavoratori (per esempio, geolocalizzazione, rilevazione dell'uso dei dispositivi)?</legend><div class="scelte"><label><input type="radio" name="monitoraggio" value="Sì"> Sì</label><label><input type="radio" name="monitoraggio" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="Sono utilizzati sistemi di riconoscimento biometrico o di rilevazione delle emozioni?" data-radio="biometria"><legend>Sono utilizzati sistemi di riconoscimento biometrico o di rilevazione delle emozioni?</legend><div class="scelte"><label><input type="radio" name="biometria" value="Sì"> Sì</label><label><input type="radio" name="biometria" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="Esiste un accordo sindacale o un&#x27;autorizzazione dell&#x27;Ispettorato del lavoro per strumenti di controllo?" data-radio="accordo"><legend>Esiste un accordo sindacale o un'autorizzazione dell'Ispettorato del lavoro per strumenti di controllo?</legend><div class="scelte"><label><input type="radio" name="accordo" value="Sì"> Sì</label><label><input type="radio" name="accordo" value="No" checked> No</label><label><input type="radio" name="accordo" value="Non pertinente"> Non pertinente</label></div></fieldset>
+        </fieldset>
+
+        <fieldset data-sez="D. Clienti e pubblico"><legend>D. Clienti e pubblico</legend>
+          <fieldset class="domanda" data-q="I clienti interagiscono con un assistente automatico (sito, WhatsApp, telefono)?" data-radio="chatbot"><legend>I clienti interagiscono con un assistente automatico (sito, WhatsApp, telefono)?</legend><div class="scelte"><label><input type="radio" name="chatbot" value="Sì"> Sì</label><label><input type="radio" name="chatbot" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="Sono pubblicati testi, immagini o video generati con sistemi di IA?" data-radio="contenuti"><legend>Sono pubblicati testi, immagini o video generati con sistemi di IA?</legend><div class="scelte"><label><input type="radio" name="contenuti" value="Sì"> Sì</label><label><input type="radio" name="contenuti" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="Tra questi vi sono immagini o video realistici di persone, luoghi o prodotti?" data-radio="realistici"><legend>Tra questi vi sono immagini o video realistici di persone, luoghi o prodotti?</legend><div class="scelte"><label><input type="radio" name="realistici" value="Sì"> Sì</label><label><input type="radio" name="realistici" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="Sono utilizzati sistemi di IA per la profilazione dei clienti o per il marketing automatizzato?" data-radio="profilazione"><legend>Sono utilizzati sistemi di IA per la profilazione dei clienti o per il marketing automatizzato?</legend><div class="scelte"><label><input type="radio" name="profilazione" value="Sì"> Sì</label><label><input type="radio" name="profilazione" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="Sono utilizzati sistemi di IA per valutare l&#x27;affidabilità o la solvibilità di persone fisiche?" data-radio="affidabilita"><legend>Sono utilizzati sistemi di IA per valutare l'affidabilità o la solvibilità di persone fisiche?</legend><div class="scelte"><label><input type="radio" name="affidabilita" value="Sì"> Sì</label><label><input type="radio" name="affidabilita" value="No" checked> No</label></div></fieldset>
+        </fieldset>
+
+        <fieldset data-sez="E. Documentazione esistente"><legend>E. Documentazione esistente</legend>
+          <fieldset class="domanda" data-q="L&#x27;impresa dispone di un&#x27;informativa privacy per i clienti?" data-radio="inf_clienti"><legend>L'impresa dispone di un'informativa privacy per i clienti?</legend><div class="scelte"><label><input type="radio" name="inf_clienti" value="Sì"> Sì</label><label><input type="radio" name="inf_clienti" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="L&#x27;impresa dispone di un&#x27;informativa privacy per i dipendenti?" data-radio="inf_dip"><legend>L'impresa dispone di un'informativa privacy per i dipendenti?</legend><div class="scelte"><label><input type="radio" name="inf_dip" value="Sì"> Sì</label><label><input type="radio" name="inf_dip" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="L&#x27;impresa dispone di un regolamento sull&#x27;uso degli strumenti informatici?" data-radio="reg_info"><legend>L'impresa dispone di un regolamento sull'uso degli strumenti informatici?</legend><div class="scelte"><label><input type="radio" name="reg_info" value="Sì"> Sì</label><label><input type="radio" name="reg_info" value="No" checked> No</label></div></fieldset>
+          <fieldset class="domanda" data-q="Sono disponibili i contratti o le condizioni d&#x27;uso dei fornitori dei sistemi di IA?" data-radio="contratti"><legend>Sono disponibili i contratti o le condizioni d'uso dei fornitori dei sistemi di IA?</legend><div class="scelte"><label><input type="radio" name="contratti" value="Sì"> Sì</label><label><input type="radio" name="contratti" value="No" checked> No</label></div></fieldset>
+          <label class="spunta"><input type="checkbox" name="allegati" required data-q="Allegati"> <span>Trasmetto all'indirizzo indicato nella conferma i documenti esistenti indicati in questa sezione.</span></label>
+        </fieldset>
+
+        <fieldset data-sez="F. Formazione"><legend>F. Formazione</legend>
+          <label>Formazione sull'IA già svolta (corsi, date, durata, partecipanti)<textarea name="formazione" rows="2" data-q="Formazione sull&#x27;IA già svolta (corsi, date, durata, partecipanti)" placeholder="Indicare «nessuna» se non svolta"></textarea></label>
+          <label>Numero di persone da formare<input type="number" name="partecipanti" data-q="Numero di persone da formare" min="1"></label>
+          <label>Disponibilità per la sessione formativa (giorni e fasce orarie)<textarea name="disponibilita" rows="2" data-q="Disponibilità per la sessione formativa (giorni e fasce orarie)" placeholder="Non necessario per le microattività"></textarea></label>
+        </fieldset>
+
+        <fieldset data-sez="G. Dati per la fatturazione"><legend>G. Dati per la fatturazione</legend><div class="griglia-campi">
+          <label class="largo">Intestatario<input type="text" name="intestatario" data-q="Intestatario" required></label>
+          <label>Partita IVA<input type="text" name="piva" data-q="Partita IVA" required inputmode="numeric" maxlength="11"></label>
+          <label>Codice fiscale<input type="text" name="cf" data-q="Codice fiscale" maxlength="16" autocapitalize="characters"></label>
+          <label class="largo">Indirizzo (via e numero civico)<input type="text" name="indirizzo" data-q="Indirizzo (via e numero civico)" required></label>
+          <label>CAP<input type="text" name="cap" data-q="CAP" required inputmode="numeric" maxlength="5"></label>
+          <label>Comune<input type="text" name="comune" data-q="Comune" required></label>
+          <label>Provincia<input type="text" name="provincia" data-q="Provincia" required maxlength="2" autocapitalize="characters"></label>
+          <label>Codice destinatario SDI oppure PEC<input type="text" name="sdi" data-q="Codice destinatario SDI oppure PEC" required></label>
+          <label>Email<input type="email" name="email" data-q="Email" required autocomplete="email"></label>
+        </div></fieldset>
+
+        <fieldset><legend>Dichiarazioni</legend>
+          <label class="spunta"><input type="checkbox" name="veridicita" required> <span>Dichiaro che le informazioni fornite sono complete e corrispondenti al vero e prendo atto che la documentazione è predisposta sulla base di esse.</span></label>
+          <label class="spunta"><input type="checkbox" name="privacy" required> <span>Ho letto l'<a href="privacy.html">informativa privacy</a>.</span></label>
+        </fieldset>
+        <p class="antispam" aria-hidden="true"><label>Lasciare vuoto<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+        <p class="errore" id="errore-modulo" role="alert" hidden></p>
+        <div class="azioni a-sinistra">
+          <button type="submit" class="bottone pieno" data-modo="servizio">Invia il questionario</button>
+          <button type="submit" class="bottone vuoto" data-modo="email">Prepara un'email</button>
+        </div>
+        <p class="esito" id="esito-modulo" role="status" hidden></p>
+        <div id="copia-richiesta" hidden>
+          <p>Se il programma di posta non si è aperto, il testo sottostante può essere copiato e inviato a <a href="mailto:avv.vincenzostante@gmail.com">avv.vincenzostante@gmail.com</a>.</p>
+          <textarea readonly rows="12" aria-label="Testo del questionario"></textarea>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  var form = document.getElementById('questionario-ia-imprese');
+  var err = document.getElementById('errore-modulo');
+  var esito = document.getElementById('esito-modulo');
+  var box = document.getElementById('copia-richiesta');
+  var ENDPOINT = 'https://formspree.io/f/xljgvwvq';
+  document.getElementById('aggiungi-strumento').addEventListener('click', function () {
+    var h = form.querySelector('fieldset.strumento[hidden]');
+    if (h) { h.hidden = false; h.querySelector('input').focus(); }
+    if (!form.querySelector('fieldset.strumento[hidden]')) this.hidden = true;
+  });
+  function v(n) { var el = form.elements[n]; return el ? String(el.value || '').trim() : ''; }
+  function valore(el) {
+    if (el.tagName === 'FIELDSET') { var c = el.querySelector('input:checked'); return c ? c.value : '-'; }
+    if (el.tagName === 'SELECT' && el.multiple) { var s = Array.prototype.filter.call(el.options, function (o) { return o.selected; }).map(function (o) { return o.value; }); return s.length ? s.join('; ') : '-'; }
+    if (el.type === 'checkbox') return el.checked ? 'sì' : 'no';
+    return String(el.value || '').trim() || '-';
+  }
+  function testo() {
+    var righe = ['Questionario adeguamento IA - impresa'];
+    form.querySelectorAll('fieldset[data-sez]').forEach(function (sez) {
+      righe.push('', sez.getAttribute('data-sez').toUpperCase());
+      sez.querySelectorAll('[data-q]').forEach(function (el) {
+        var t = el.closest('fieldset.strumento');
+        if (t && (t.hidden || !String(t.querySelector('input').value).trim())) return;
+        if (el.closest('fieldset.domanda') && el.tagName !== 'FIELDSET') return;
+        var pre = t && el === t.querySelector('input') ? '' : (t ? '  ' : '');
+        righe.push(pre + el.getAttribute('data-q') + ': ' + valore(el));
+      });
+    });
+    righe.push('', "Il dichiarante attesta la completezza e la veridicità delle informazioni e di aver letto l'informativa privacy.");
+    return righe.join('\n');
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var modo = (e.submitter && e.submitter.getAttribute('data-modo')) || 'servizio';
+    var problemi = [];
+    form.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
+    form.querySelectorAll('[required]').forEach(function (el) {
+      var ok = el.type === 'checkbox' ? el.checked : String(el.value).trim() !== '';
+      if (!ok) problemi.push(el);
+    });
+    if (!/^[0-9]{11}$/.test(v('piva'))) problemi.push(form.elements.piva);
+    if (form.elements.email.value && !form.elements.email.checkValidity()) problemi.push(form.elements.email);
+    if (!v('t1_nome')) problemi.push(form.elements.t1_nome);
+    if (problemi.length) {
+      problemi.forEach(function (el) { el.setAttribute('aria-invalid', 'true'); });
+      err.textContent = 'Verificare i campi evidenziati: sono obbligatori o non sono nel formato corretto.';
+      err.hidden = false; problemi[0].focus(); return;
+    }
+    err.hidden = true;
+    var corpo = testo();
+    var oggetto = 'Questionario adeguamento IA impresa - ' + v('ragione');
+    if (modo === 'servizio' && ENDPOINT) {
+      var dati = new FormData();
+      dati.append('_subject', oggetto); dati.append('email', v('email')); dati.append('questionario', corpo); dati.append('_gotcha', v('_gotcha'));
+      esito.hidden = false; esito.textContent = 'Invio in corso…';
+      fetch(ENDPOINT, { method: 'POST', body: dati, headers: { 'Accept': 'application/json' } })
+        .then(function (res) { if (!res.ok) throw new Error(); esito.textContent = 'Questionario inviato. La documentazione sarà consegnata nei termini indicati nella conferma.'; form.querySelectorAll('button').forEach(function (b) { b.disabled = true; }); })
+        .catch(function () { esito.textContent = "Invio non riuscito. È possibile utilizzare il pulsante \"Prepara un'email\" o scrivere ad avv.vincenzostante@gmail.com."; });
+      return;
+    }
+    box.querySelector('textarea').value = 'Oggetto: ' + oggetto + '\n\n' + corpo;
+    box.hidden = false;
+    window.location.href = 'mailto:avv.vincenzostante@gmail.com?subject=' + encodeURIComponent(oggetto) + '&body=' + encodeURIComponent(corpo);
+  });
+})();
+
+</script>
+
+<footer class="pie">
+  <div class="contenitore">
+    <p>Avv. Vincenzo Stante, iscritto all'Ordine degli Avvocati di Bari. P.IVA 07973660728</p>
+    <ul>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="consulenza-online.html">Consulenza online</a></li>
+      <li><a href="adeguamento-ia.html">Adeguamento IA</a></li>
+      <li><a href="guide.html">Guide</a></li>
+      <li><a href="news.html">Approfondimenti</a></li>
+      <li><a href="pecbird.html">PecBird</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
