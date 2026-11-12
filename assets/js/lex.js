@@ -30,6 +30,20 @@
     manda: 'Send request', grazie: 'Thank you: your request has reached the office. You will normally be contacted within two working days.',
     mancano: 'Please enter your name, a valid contact and tick the box.', fallito: 'Sending failed. Please try again or use the online consultation.'
   };
+  // Pagine del servizio di adeguamento all'intelligenza artificiale: Lex risponde sul servizio e aiuta nel questionario
+  var PERCORSO = location.pathname.replace(/^.*\//, '');
+  var PAGINA = { 'adeguamento-ia.html': 'ia-professionisti', 'adeguamento-ia-imprese.html': 'ia-imprese',
+    'questionario-ia.html': 'questionario-ia', 'questionario-ia-imprese.html': 'questionario-ia-imprese' }[PERCORSO] || 'home';
+  var IA = PAGINA !== 'home', QUESTIONARIO = /^questionario/.test(PAGINA);
+  if (IA) {
+    T.invito = QUESTIONARIO ? '<b>Dubbi su una domanda?</b>Sono Lex: posso aiutarLa nella compilazione.' : '<b>Domande sull\'adeguamento?</b>Sono Lex: posso darLe informazioni sul servizio.';
+    T.saluto = QUESTIONARIO
+      ? 'Buongiorno, sono Lex, l\'assistente virtuale dello Studio Stante. Se una domanda del questionario non è chiara, me la indichi: Le spiego che cosa si intende e come rispondere.'
+      : 'Buongiorno, sono Lex, l\'assistente virtuale dello Studio Stante. Posso fornirLe informazioni generali sugli obblighi in materia di intelligenza artificiale e sul servizio di adeguamento dello Studio. Come posso esserLe utile?';
+    T.avviso = 'Assistente automatico basato su intelligenza artificiale: non è l\'avvocato, fornisce informazioni generali e non valuta il caso concreto. La conversazione non viene conservata.';
+    T.azione = 'Vai al modulo di richiesta →';
+    T.consulenza = '#richiesta';
+  }
   var CONSULENZA = T.consulenza;
   var storia = [], scheda = null, inviato = false, urgente = false;
   var RICONTATTO = 'https://formspree.io/f/xljgvwvq';
@@ -143,7 +157,7 @@
     campo.value = ''; aggiungi('user', testo); storia.push({ role: 'user', content: testo });
     var attesa = aggiungi('assistant', '…'); modulo.querySelector('button').disabled = true;
     fetch(SERVIZIO, { method: 'POST', headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ messaggi: storia.slice(-24), pagina: 'home' }) })
+      body: JSON.stringify({ messaggi: storia.slice(-24), pagina: PAGINA }) })
       .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.errore || r.status); return j; }); })
       .then(function (j) {
         var t = String(j.testo || ''), m = t.match(/<scheda>([\s\S]*?)<\/scheda>/);
@@ -151,10 +165,10 @@
         if (/<ricontatto\s*\/?>/.test(t)) urgente = true;
         attesa.textContent = t.replace(/<scheda>[\s\S]*?<\/scheda>/, '').replace(/<ricontatto\s*\/?>/g, '').replace(/\*\*|__|^#+\s*/gm, '').trim();
         if (m) { try { scheda = JSON.parse(m[1]); } catch (er) { scheda = null; } }
-        if (scheda || storia.length >= 4) azione.hidden = false;
+        if (!QUESTIONARIO && (scheda || storia.length >= 4)) azione.hidden = false;
         richiama.hidden = !urgente || inviato;
       })
-      .catch(function () { attesa.textContent = T.errore; azione.hidden = false; })
+      .catch(function () { attesa.textContent = IA ? 'In questo momento non riesco a rispondere. Per qualsiasi chiarimento può scrivere ad avv.vincenzostante@gmail.com.' : T.errore; if (!QUESTIONARIO) azione.hidden = false; })
       .then(function () { modulo.querySelector('button').disabled = false; campo.focus(); });
   });
 
@@ -183,6 +197,7 @@
 
   azione.addEventListener('click', function () {
     try { if (scheda) sessionStorage.setItem('lex-scheda', JSON.stringify(scheda)); } catch (e) {}
+    if (IA) { chiudi(); location.hash = ''; location.hash = 'richiesta'; return; }
     window.location.href = CONSULENZA;
   });
 
