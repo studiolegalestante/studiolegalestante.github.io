@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#1D2B45">
 <link rel="icon" href="favicon.svg?v=20261029" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=20261029">
-<link rel="stylesheet" href="assets/css/studio.css?v=20261109">
+<link rel="stylesheet" href="assets/css/studio.css?v=20261114">
 </head>
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
@@ -20,8 +20,7 @@
     <ul>
       <li><a href="./#materie">Materie</a></li>
       <li><a href="./#risarcimenti">Risarcimenti</a></li>
-      <li><a href="consulenza-online.html">Consulenza online</a></li>
-      <li><a href="adeguamento-ia.html">Adeguamento IA</a></li>
+      <li><details class="servizi-menu"><summary>Servizi</summary><ul><li><a href="consulenza-online.html">Consulenza online</a></li><li><a href="adeguamento-ia.html">Adeguamento IA</a></li><li><a href="registrazione-marchi.html">Registrazione marchi</a></li></ul></details></li>
       <li><a href="guide.html">Guide</a></li>
       <li><a href="news.html">Approfondimenti</a></li>
       <li><a href="pecbird.html">PecBird</a></li>
@@ -105,5 +104,6 @@
   </div>
 </footer>
 <script src="/assets/js/lex.js?v=20261108a" defer></script>
+<script id="servizi-menu-chiudi">document.addEventListener("click",function(e){document.querySelectorAll("details.servizi-menu[open],details.lingua-menu[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
 </body>
 </html>

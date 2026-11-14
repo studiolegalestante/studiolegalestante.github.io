@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=20261029">
 <link rel="preload" href="assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/libre-caslon-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/studio.css?v=20261109">
+<link rel="stylesheet" href="assets/css/studio.css?v=20261114">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Studio Legale Avv. Vincenzo Stante">
@@ -38,8 +38,7 @@
     <ul>
       <li><a href="./#materie">Materie</a></li>
       <li><a href="./#risarcimenti">Risarcimenti</a></li>
-      <li><a href="consulenza-online.html">Consulenza online</a></li>
-      <li><a href="adeguamento-ia.html">Adeguamento IA</a></li>
+      <li><details class="servizi-menu"><summary>Servizi</summary><ul><li><a href="consulenza-online.html">Consulenza online</a></li><li><a href="adeguamento-ia.html">Adeguamento IA</a></li><li><a href="registrazione-marchi.html">Registrazione marchi</a></li></ul></details></li>
       <li><a href="guide.html">Guide</a></li>
       <li><a href="news.html">Approfondimenti</a></li>
       <li><a href="pecbird.html">PecBird</a></li>
@@ -138,5 +137,6 @@
 })();
 </script>
 <script src="/assets/js/lex.js?v=20261108a" defer></script>
+<script id="servizi-menu-chiudi">document.addEventListener("click",function(e){document.querySelectorAll("details.servizi-menu[open],details.lingua-menu[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
 </body>
 </html>

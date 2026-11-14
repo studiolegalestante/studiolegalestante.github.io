@@ -253,3 +253,13 @@ p:last-child{margin-bottom:0}
 .lingua-menu li a:hover{background:var(--carta-2)}
 .lingua-menu a[aria-current]{text-decoration:underline;text-decoration-color:var(--ceralacca);text-underline-offset:.35em}
 @media (max-width:760px){.testata{position:relative}.lingua-menu{position:absolute;top:2.1rem;right:1.25rem}}
+/* Menu a tendina "Servizi" nella testata */
+.servizi-menu{position:relative}
+.servizi-menu summary{list-style:none;cursor:pointer}
+.servizi-menu summary::-webkit-details-marker{display:none}
+.servizi-menu summary::after{content:" \25BE";font-size:.75em}
+.servizi-menu.attivo summary{text-decoration:underline;text-underline-offset:.3em}
+.testata nav .servizi-menu ul{display:block;position:absolute;left:-.9rem;top:100%;z-index:30;margin:.45rem 0 0;padding:.35rem 0;min-width:13.5rem;background:var(--carta);border:1px solid var(--filetto);box-shadow:0 6px 18px rgba(29,43,69,.12);text-transform:none;letter-spacing:.01em}
+.testata nav .servizi-menu li a{display:block;padding:.45rem .9rem;color:var(--inchiostro)}
+.testata nav .servizi-menu li a:hover{background:var(--carta-2)}
+@media (max-width:760px){.servizi-menu summary{color:var(--grigio)}.servizi-menu[open] summary,.servizi-menu.attivo summary{color:var(--inchiostro)}.testata nav .servizi-menu ul{font-size:.95rem}}
