@@ -263,3 +263,4 @@ p:last-child{margin-bottom:0}
 .testata nav .servizi-menu li a{display:block;padding:.45rem .9rem;color:var(--inchiostro)}
 .testata nav .servizi-menu li a:hover{background:var(--carta-2)}
 @media (max-width:760px){.servizi-menu summary{color:var(--grigio)}.servizi-menu[open] summary,.servizi-menu.attivo summary{color:var(--inchiostro)}.testata nav .servizi-menu ul{font-size:.95rem}}
+@media (max-width:760px){.testata nav{position:relative}.servizi-menu{position:static}.testata nav .servizi-menu ul{left:0;right:0;min-width:0;margin-top:.5rem}}
