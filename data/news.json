@@ -1,51 +1,51 @@
 {
   "penale": [
     {
-      "title": "Intercettazioni telefoniche: non utilizzabili in caso di errore congenito dell’imputazione",
-      "link": "https://www.altalex.com/documents/news/2026/11/13/intercettazioni-telefoniche-non-utilizzabili-caso-errore-congenito-imputazione",
-      "image": "",
-      "description": "Se fin dall'inizio il reato contestato era diverso da quello effettivo, i risultati delle intercettazioni non possono essere utilizzati. Lo afferma la Cassazione con la sentenza n. 22905/2026.",
-      "date": "13/11/2026",
-      "ai": true
-    },
-    {
       "title": "Omesso mantenimento dei figli: regalie o acquisti di generi alimentari non sostituiscono l'assegno",
       "link": "https://news.avvocatoandreani.it/articoli/omesso-mantenimento-figli-regalie-acquisti-generi-alimentari-non-sostituiscono-assegno-108968.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/famiglia/padre-regalo-figlio-giudice-condanna_large.webp",
-      "description": "Per la Cassazione (n. 36101/2026) la disoccupazione non giustifica il mancato mantenimento dei figli. Regali o spesa alimentare non sostituiscono l'assegno; l'inadempimento prolungato esclude la tenuità.",
+      "description": "Per la Cassazione (n. 36101/2026) la disoccupazione non dimostra da sola l'impossibilità di versare il mantenimento. Regali o spesa non sostituiscono l'assegno, e l'inadempimento prolungato esclude la tenuità.",
       "date": "30/10/2026",
-      "ai": true
-    },
-    {
-      "title": "Diffamazione militare: illegittima la previsione della sola pena detentiva",
-      "link": "https://www.altalex.com/documents/2026/11/09/diffamazione-militare-illegittima-previsione-sola-pena-detentiva",
-      "image": "",
-      "description": "La Corte costituzionale (sent. n. 181/2026) ha dichiarato illegittima la sola pena detentiva per la diffamazione militare. Questi fatti rientrano ora nella disciplina comune dell'art. 595 c.p.",
-      "date": "09/11/2026",
       "ai": true
     },
     {
       "title": "Ricorso in Cassazione depositato via PEC e non dal portale telematico: inammissibile",
       "link": "https://news.avvocatoandreani.it/articoli/ricorso-cassazione-depositato-via-pec-non-portale-telematico-inammissibile-108974.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/avvocato-preoccupato-schermata-pec_large.webp",
-      "description": "Dal 1° aprile 2026 il ricorso in Cassazione va depositato solo in modalità telematica: l'invio via PEC è inammissibile, salvo malfunzionamento certificato. Sentenza n. 38004/2026.",
+      "description": "Dal 1 aprile 2026 il ricorso in Cassazione ex art. 311 c.p.p. va depositato solo telematicamente. La PEC al tribunale è inammissibile, salvo malfunzionamento certificato, anche se l'atto arriva.",
       "date": "03/11/2026",
       "ai": true
     },
     {
-      "title": "Riforma Cartabia: l'improcedibilità prevale sull'esito positivo della messa alla prova",
-      "link": "https://news.avvocatoandreani.it/articoli/riforma-cartabia-improcedibilita-prevale-esito-positivo-messa-prova-108970.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/riforma-cartabia-codice-procedura-penale_large.webp",
-      "description": "Secondo la Cassazione (n. 5589/2024), la causa di improcedibilità per mancanza di querela prevale sull'estinzione del reato che seguirebbe al positivo esito della messa alla prova.",
-      "date": "02/11/2026",
+      "title": "Intercettazioni telefoniche: non utilizzabili in caso di errore congenito dell’imputazione",
+      "link": "https://www.altalex.com/documents/news/2026/11/13/intercettazioni-telefoniche-non-utilizzabili-caso-errore-congenito-imputazione",
+      "image": "",
+      "description": "Le intercettazioni non sono utilizzabili se il reato da contestare era già diverso fin dall'inizio, anche se le captazioni sono state fatte correttamente (Cass. n. 22905/2026).",
+      "date": "13/11/2026",
       "ai": true
     },
     {
-      "title": "L'esecuzione transfrontaliera delle misure cautelari non detentive",
-      "link": "https://news.avvocatoandreani.it/articoli/esecuzione-transfrontaliera-misure-cautelari-non-detentive-108993.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/uomo-firma-registro-della-polizia-giudiziaria.1_large.webp",
-      "description": "Il d.lgs. 36/2016 regola l'esecuzione all'estero di misure cautelari non detentive. Il giudice deve motivare le istanze di chi vuole eseguire gli obblighi nello Stato UE di residenza e lavoro.",
-      "date": "12/11/2026",
+      "title": "Diffamazione militare: illegittima la previsione della sola pena detentiva",
+      "link": "https://www.altalex.com/documents/2026/11/09/diffamazione-militare-illegittima-previsione-sola-pena-detentiva",
+      "image": "",
+      "description": "La Corte costituzionale (sent. 181/2026) ha eliminato la sola pena detentiva prevista per la diffamazione militare. Ora questi fatti rientrano nella disciplina comune dell'art. 595 c.p.",
+      "date": "09/11/2026",
+      "ai": true
+    },
+    {
+      "title": "È autoriciclaggio l'acquisto di criptovalute con il profitto di un reato tributario",
+      "link": "https://www.altalex.com/documents/news/2026/11/10/autoriciclaggio-acquisto-criptovalute-con-profitto-reato-tributario",
+      "image": "",
+      "description": "Comprare criptovalute con il profitto di un reato tributario può essere autoriciclaggio. Usare un mixer come Wasabi Wallet, che ostacola la tracciabilità, integra la condotta (Cass. 26731/2026).",
+      "date": "10/11/2026",
+      "ai": true
+    },
+    {
+      "title": "L'istigazione a commettere un reato: il nuovo Decreto Sicurezza",
+      "link": "https://news.avvocatoandreani.it/articoli/istigazione-commettere-reato-nuovo-decreto-sicurezza-108982.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/giustizia/aula-parlamento-decreto-sicurezza_large.webp",
+      "description": "Chi pubblicamente istiga a commettere uno o più reati è punito per il solo fatto dell'istigazione, anche se i reati non vengono poi commessi (art. 414 c.p.).",
+      "date": "06/11/2026",
       "ai": true
     }
   ],
@@ -54,7 +54,7 @@
       "title": "Omesso mantenimento dei figli: regalie o acquisti di generi alimentari non sostituiscono l'assegno",
       "link": "https://news.avvocatoandreani.it/articoli/omesso-mantenimento-figli-regalie-acquisti-generi-alimentari-non-sostituiscono-assegno-108968.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/famiglia/padre-regalo-figlio-giudice-condanna_large.webp",
-      "description": "Per la Cassazione (sent. 36101/2026) la sola disoccupazione non giustifica il mancato mantenimento dei figli. Regali o spesa non sostituiscono l'assegno; l'inadempienza prolungata esclude la tenuità.",
+      "description": "Per la Cassazione (n. 36101/2026) la disoccupazione non prova l'impossibilità di pagare il mantenimento dei figli. Regali o spesa non sostituiscono l'assegno; l'inadempimento prolungato esclude la tenuità.",
       "date": "30/10/2026",
       "ai": true
     },
@@ -62,7 +62,7 @@
       "title": "Figlio maggiorenne con lavoro part-time: l'onere della prova del mantenimento grava sul figlio",
       "link": "https://news.avvocatoandreani.it/articoli/figlio-maggiorenne-lavoro-part-time-onere-prova-mantenimento-grava-figlio-108944.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/lavoro-donna-rifiuta-contratto-assunzione_large.webp",
-      "description": "Per il Tribunale di S. Maria Capua Vetere (sent. 2966/2026) chi chiede l'assegno deve provare studi o ricerca di lavoro. Un part-time di due ore, senza studi, non basta: contributo revocato.",
+      "description": "Tribunale di S. Maria Capua Vetere (n. 2966/2026): il figlio maggiorenne deve provare studi o ricerca di lavoro. Due ore di part-time al giorno non bastano e l'assegno paterno è stato revocato.",
       "date": "23/10/2026",
       "ai": true
     },
@@ -70,7 +70,7 @@
       "title": "Assegno di mantenimento onnicomprensivo del canone: la quota per l'affitto è imponibile ai fini Irpef",
       "link": "https://news.avvocatoandreani.it/articoli/assegno-mantenimento-onnicomprensivo-canone-quota-affitto-imponibile-fini-irpef-108967.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/fisco/dichiarazione-redditi-assegno-contratto_large.webp",
-      "description": "Secondo la Cassazione (ord. 26608/2026), se l'assegno comprende anche l'affitto, quella quota è reddito Irpef del coniuge beneficiario, dimezzata se la casa è usata dai figli.",
+      "description": "Cassazione (ord. n. 26608/2026): se l'assegno è onnicomprensivo e include l'affitto, la quota per la casa è reddito imponibile del coniuge beneficiario, dimezzata se l'immobile è abitato dai figli.",
       "date": "30/10/2026",
       "ai": true
     },
@@ -78,7 +78,7 @@
       "title": "Fondo patrimoniale: quando per la vendita non è necessario il consenso dell'altro coniuge",
       "link": "https://news.avvocatoandreani.it/articoli/fondo-patrimoniale-quando-vendita-non-necessario-consenso-altro-coniuge-108954.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/casa/casa-chiavi-foglio-pixabay_large.jpg",
-      "description": "Cassazione (ord. 26531/2026): analizza la vendita di un bene del fondo patrimoniale da parte di un solo coniuge, quando l'atto costitutivo prevede riserva di proprietà e deroga al regime legale.",
+      "description": "Cassazione (ord. n. 26531/2026): un bene in fondo patrimoniale può essere venduto da un coniuge senza l'altro se l'atto costitutivo prevede clausole di riserva di proprietà e deroga al regime legale.",
       "date": "20/10/2026",
       "ai": true
     },
@@ -86,7 +86,7 @@
       "title": "Mutuo tra coniugi: la sola alimentazione del conto cointestato non prova il prestito",
       "link": "https://news.avvocatoandreani.it/articoli/mutuo-coniugi-sola-alimentazione-conto-cointestato-non-prova-prestito-108934.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/famiglia/uomo-foglio-mutuo-giudice-dice-no-cartone_large.jpg",
-      "description": "Tribunale di Firenze (sent. 4251/2026): versamenti su conto cointestato e acquisto di casa intestata all'altro coniuge non bastano a provare un mutuo. Serve prova di accordo e obbligo di restituzione.",
+      "description": "Tribunale di Firenze (n. 4251/2026): versamenti su conto cointestato e acquisto di casa intestata all'altro coniuge non provano un mutuo. Serve la prova di un accordo di restituzione.",
       "date": "26/10/2026",
       "ai": true
     },
@@ -94,17 +94,25 @@
       "title": "Testamento e demenza accertata subito dopo: l'onere della prova del beneficiario",
       "link": "https://news.avvocatoandreani.it/articoli/testamento-demenza-accertata-subito-dopo-onere-prova-beneficiario-108951.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/anziano-redige.testamento_large.webp",
-      "description": "Cassazione (ord. 25855/2026): se si prova una demenza stabile accertata subito dopo la redazione del testamento, l'incapacità si presume e spetta al beneficiario dimostrare un lucido intervallo.",
+      "description": "Cassazione (ord. n. 25855/2026): se si prova una demenza stabile accertata subito dopo la redazione del testamento, l'incapacità si presume e spetta al beneficiario dimostrare un lucido intervallo.",
       "date": "22/10/2026",
       "ai": true
     }
   ],
   "patrocinio": [
     {
+      "title": "Termini, interessi e contributo unificato: quattro calcolatori gratuiti che mostrano la norma di ogni passaggio",
+      "link": "https://www.filodiritto.com/termini-interessi-e-contributo-unificato-quattro-calcolatori-gratuiti-che-mostrano-la-norma-di-ogni-passaggio",
+      "image": "https://www.filodiritto.com/sites/default/files/styles/large/public/2026-10/chiostro_-_copertina_filodiritto.jpg?itok=TzFlduHm",
+      "description": "Quattro calcolatori online gratuiti aiutano a calcolare termini processuali, interessi legali e moratori e contributo unificato, indicando la norma di riferimento per ogni passaggio.",
+      "date": "26/10/2026",
+      "ai": true
+    },
+    {
       "title": "Patrocinio infedele: quando la condotta dell'avvocato diventa reato ex art. 380 c.p.",
       "link": "https://news.avvocatoandreani.it/articoli/patrocinio-infedele-quando-condotta-avvocato-diventa-reato-art-380-108943.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/vignetta-avvocato-assente-aula_large.webp",
-      "description": "Cassazione n. 32866/2026: il patrocinio infedele (art. 380 c.p.) richiede che l'avvocato violi consapevolmente i doveri professionali e che ne derivi un danno anche morale o una perdita di chance per l'assistito…",
+      "description": "Per la Cassazione (sent. n. 32866/2026) il patrocinio infedele richiede una violazione consapevole dei doveri e un danno all'assistito, anche morale o di chance, collegato alla condotta del legale.",
       "date": "15/10/2026",
       "ai": true
     },
@@ -112,16 +120,8 @@
       "title": "Procedimento di adottabilità: errori formali non prorogano il termine per il ricorso in Cassazione",
       "link": "https://www.altalex.com/documents/2026/11/13/procedimento-adottabilita-errori-formali-non-prorogano-termine-ricorso-cassazione",
       "image": "",
-      "description": "Cassazione n. 28168/2026: errori formali o correzioni di errori materiali non modificano il procedimento di adottabilità e non prorogano i 30 giorni per il ricorso in Cassazione.",
+      "description": "Secondo l'ordinanza n. 28168/2026 della Cassazione, errori formali o correzioni materiali non cambiano il procedimento di adottabilità né allungano i trenta giorni per il ricorso.",
       "date": "13/11/2026",
-      "ai": true
-    },
-    {
-      "title": "Termini, interessi e contributo unificato: quattro calcolatori gratuiti che mostrano la norma di ogni passaggio",
-      "link": "https://www.filodiritto.com/termini-interessi-e-contributo-unificato-quattro-calcolatori-gratuiti-che-mostrano-la-norma-di-ogni-passaggio",
-      "image": "https://www.filodiritto.com/sites/default/files/styles/large/public/2026-10/chiostro_-_copertina_filodiritto.jpg?itok=TzFlduHm",
-      "description": "Quattro calcolatori gratuiti per termini processuali, interessi legali e moratori e contributo unificato. Ogni passaggio del calcolo è accompagnato dalla norma di riferimento.",
-      "date": "26/10/2026",
       "ai": true
     },
     {
@@ -153,7 +153,7 @@
       "title": "Responsabilità sanitaria: medico e struttura rispondono in solido verso il paziente",
       "link": "https://news.avvocatoandreani.it/articoli/responsabilita-sanitaria-medico-struttura-rispondono-solido-verso-paziente-108991.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/salute/tre-medici-scrivania-documenti_large.webp",
-      "description": "Per la Corte d'appello di Catania il paziente può agire contro struttura e medico, che rispondono in solido anche se con titoli diversi. I limiti della legge 24/2017 valgono solo per la rivalsa interna.",
+      "description": "Secondo la Corte d'appello di Catania il paziente può agire contro struttura e medico, obbligati in solido. I limiti della legge 24/2017 valgono solo per la rivalsa della struttura sul medico.",
       "date": "11/11/2026",
       "ai": true
     },
@@ -161,39 +161,39 @@
       "title": "Locazioni commerciali e sfratto per morosità: il pagamento dopo l'intimazione non sana l'inadempimento",
       "link": "https://news.avvocatoandreani.it/articoli/locazioni-commerciali-sfratto-morosita-pagamento-dopo-intimazione-non-sana-inadempimento-108980.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/civile/cartoleria-colorata-con-libri-e-avviso-sfratto_large.webp",
-      "description": "Il Tribunale di Roma stabilisce che pagare i canoni dopo l'intimazione non cancella l'inadempimento. Il giudice deve comunque valutarne la gravità, che è implicita quando manca il pagamento del canone.",
+      "description": "Il Tribunale di Roma stabilisce che pagare i canoni dopo l'intimazione non cancella il ritardo nello sfratto per morosità. Il giudice deve comunque valutare la gravità, che è implicita nel mancato pagamento.",
       "date": "05/11/2026",
-      "ai": true
-    },
-    {
-      "title": "Mediazione: cessata materia del contendere anche se l'accordo non viene rispettato",
-      "link": "https://news.avvocatoandreani.it/articoli/mediazione-cessata-materia-contendere-anche-accordo-non-viene-rispettato-108983.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/riunioni-mediazione/mediazione-incontro-attore-convenuti-assicurazioni_large.jpg",
-      "description": "Il Tribunale di Santa Maria Capua Vetere stabilisce che l'accordo raggiunto in mediazione chiude la causa anche se una parte non lo rispetta. L'inadempimento si fa valere con il verbale, che è titolo esecutivo.",
-      "date": "06/11/2026",
       "ai": true
     },
     {
       "title": "Risarcimento del danno provocato da animali e onere della prova",
       "link": "https://news.avvocatoandreani.it/articoli/risarcimento-danno-provocato-animali-onere-prova-108975.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/animali/cane-aggressivo-donna-addestratore_large.webp",
-      "description": "Il Tribunale di Roma (n. 14276/2026) esamina fino a che punto il proprietario di un cane risponde dei danni quando la vittima soffriva già di gravi patologie, richiamando l'art. 2052 c.c.",
+      "description": "Il Tribunale di Roma (n. 14276/2026) esamina il caso di un cane che ha causato danni a una persona già affetta da gravi patologie, e chi debba provare cosa in questi casi.",
       "date": "04/11/2026",
+      "ai": true
+    },
+    {
+      "title": "Mediazione: cessata materia del contendere anche se l'accordo non viene rispettato",
+      "link": "https://news.avvocatoandreani.it/articoli/mediazione-cessata-materia-contendere-anche-accordo-non-viene-rispettato-108983.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/riunioni-mediazione/mediazione-incontro-attore-convenuti-assicurazioni_large.jpg",
+      "description": "Il Tribunale di Santa Maria Capua Vetere stabilisce che l'accordo in mediazione chiude la causa anche se una parte non lo rispetta. L'inadempimento si fa valere con il verbale, che è titolo esecutivo.",
+      "date": "06/11/2026",
       "ai": true
     },
     {
       "title": "Intercettazioni telefoniche: non utilizzabili in caso di errore congenito dell’imputazione",
       "link": "https://www.altalex.com/documents/news/2026/11/13/intercettazioni-telefoniche-non-utilizzabili-caso-errore-congenito-imputazione",
       "image": "",
-      "description": "La Cassazione penale (n. 22905/2026) stabilisce che le intercettazioni non sono utilizzabili se il reato da contestare era diverso fin dall'inizio: l'errore nell'imputazione non si sana.",
+      "description": "La Cassazione penale (sent. 22905/2026) stabilisce che le intercettazioni non possono essere usate se il reato da contestare era diverso fin dall'inizio. I risultati delle captazioni non si salvano.",
       "date": "13/11/2026",
       "ai": true
     },
     {
-      "title": "Due edifici frontistanti separati da una strada pubblica: operano le distanze legali?",
-      "link": "https://www.altalex.com/documents/news/2026/11/13/due-edifici-frontistanti-separati-da-strada-pubblica-operano-distanze-legali",
+      "title": "Procedimento di adottabilità: errori formali non prorogano il termine per il ricorso in Cassazione",
+      "link": "https://www.altalex.com/documents/2026/11/13/procedimento-adottabilita-errori-formali-non-prorogano-termine-ricorso-cassazione",
       "image": "",
-      "description": "La Cassazione (n. 10876/2026) chiarisce che le distanze legali tra edifici non si applicano se sono separati da una strada pubblica, quindi non scatta l'obbligo di riduzione in pristino.",
+      "description": "La Cassazione (ord. 28168/2026) chiarisce che errori formali o correzioni di errori materiali non cambiano il procedimento di adottabilità e non prolungano il termine di trenta giorni per il ricorso.",
       "date": "13/11/2026",
       "ai": true
     }
