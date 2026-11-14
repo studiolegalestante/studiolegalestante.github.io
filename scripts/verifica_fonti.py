@@ -37,6 +37,7 @@ FONTI = [
     ("Altalex", "testata", "https://www.altalex.com/"),
     ("Diritto.it", "testata", "https://www.diritto.it/"),
     ("Filodiritto", "testata", "https://www.filodiritto.com/"),
+    ("Il Dubbio", "testata", "https://www.ildubbio.news/rss.jsp"),
     ("Studio Cataldi", "testata", "https://feeds2.feedburner.com/studiocataldi/NotizieGiuridiche"),
     ("Avvocato Andreani", "testata", "https://news.avvocatoandreani.it/feed/news_giuridiche.php"),
     ("La Nuova Procedura Civile", "testata", "https://www.lanuovaproceduracivile.com/"),

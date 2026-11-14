@@ -14,6 +14,7 @@ FILODIRITTO = "https://www.filodiritto.com/rss-articoli"
 NUOVA_PC = "https://www.lanuovaproceduracivile.com/feed/"
 DIRITTO_IT = "https://www.diritto.it/feed/"
 GAZZETTA = "https://www.gazzettaufficiale.it/rss/P2"
+DUBBIO = "https://www.ildubbio.news/rss.jsp"
 
 FEEDS = {
     "penale": [
@@ -21,6 +22,7 @@ FEEDS = {
         (ALTALEX, "penale"),
         (FILODIRITTO, "penale"),
         (DIRITTO_IT, "penale"),
+        (DUBBIO, "penale"),
         (GAZZETTA, "gu_penale"),
     ],
     "famiglia": [
@@ -28,6 +30,7 @@ FEEDS = {
         (ALTALEX, "famiglia"),
         (FILODIRITTO, "famiglia"),
         (DIRITTO_IT, "famiglia"),
+        (DUBBIO, "famiglia"),
         (NUOVA_PC, "famiglia"),
         (GAZZETTA, "gu_famiglia"),
     ],
@@ -46,6 +49,7 @@ FEEDS = {
         (NUOVA_PC, "giurisprudenza"),
         (FILODIRITTO, "giurisprudenza"),
         (DIRITTO_IT, "giurisprudenza"),
+        (DUBBIO, "giurisprudenza"),
     ],
 }
 
