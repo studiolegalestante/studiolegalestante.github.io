@@ -114,8 +114,13 @@ def scegli_temi(radar, gia):
         "\"cassazione\": {\"materia\": \"civile|penale\", \"numero\": \"<numero>\", \"anno\": \"<anno>\"} oppure null, "
         "\"interesse\": <1-5: visite e richieste di contatto che il tema può portare a uno studio legale>}]")
     utente = elenco + "\n\nGià trattati:\n" + ("\n".join(gia) or "nessuno")
-    testo, usage = chiama(MODELLO_SCELTA, system, [{"role": "user", "content": utente}], 2000)
-    return estrai_json(testo, "["), usage
+    for tentativo in range(2):
+        testo, usage = chiama(MODELLO_SCELTA, system, [{"role": "user", "content": utente}], 8000)
+        try:
+            return estrai_json(testo, "["), usage
+        except ValueError as e:
+            print(f"  ⚠️  scelta temi, tentativo {tentativo + 1}: {e}", file=sys.stderr)
+    raise RuntimeError("scelta dei temi non riuscita")
 
 
 SISTEMA_SCRITTURA = """Scrivi un articolo originale per il sito dello Studio Legale Avv. Vincenzo Stante (Bari).

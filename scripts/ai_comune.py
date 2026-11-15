@@ -55,5 +55,8 @@ def chiama(model, system, messages, max_tokens=8000, tools=None, timeout=300):
             msgs = msgs + [{"role": "assistant", "content": d["content"]}]
             continue
         testo = "".join(b.get("text", "") for b in d.get("content", []) if b.get("type") == "text")
+        if not testo:
+            print(f"  ⚠️  risposta senza testo (stop: {d.get('stop_reason')}, "
+                  f"blocchi: {[b.get('type') for b in d.get('content', [])]})")
         return testo, usage
     raise RuntimeError("troppe pause del server tool")
