@@ -31,6 +31,21 @@ FONTI_UFFICIALI = [
 
 ITALGIURE = "https://www.italgiure.giustizia.it"
 SOLR = ITALGIURE + "/sncass/isapi/hc.dll/sn.solr/sn-collection/select?app.query"
+# Il server di ItalGiure non invia il certificato intermedio: lo aggiungiamo ai certificati di sistema.
+_BUNDLE = None
+
+
+def bundle_certificati():
+    global _BUNDLE
+    if _BUNDLE is None:
+        import certifi
+        import tempfile
+        inter = Path(__file__).with_name("certs") / "italgiure-intermedio.pem"
+        f = tempfile.NamedTemporaryFile("w", suffix=".pem", delete=False)
+        f.write(Path(certifi.where()).read_text() + "\n" + inter.read_text())
+        f.close()
+        _BUNDLE = f.name
+    return _BUNDLE
 
 
 def testo_cassazione(rif):
@@ -45,7 +60,7 @@ def testo_cassazione(rif):
     dati = [("wt", "json"), ("q", "*:*"), ("rows", "1"),
             ("fl", "id,kind,numdec,anno,datdep,szdec,tipoprov,filename,ocr")] + [("fq", f) for f in fq]
     try:
-        r = requests.post(SOLR, data=dati, timeout=30, headers={
+        r = requests.post(SOLR, data=dati, timeout=30, verify=bundle_certificati(), headers={
             "User-Agent": "Mozilla/5.0 (compatible; studiolegalestante-bozze/1.0)",
             "Referer": ITALGIURE + "/sncass/", "X-Requested-With": "XMLHttpRequest"})
         docs = r.json().get("response", {}).get("docs", [])
@@ -63,6 +78,9 @@ def testo_cassazione(rif):
                f"{str(d.get('tipoprov', '')).lower()} n. {str(d['numdec']).lstrip('0')}"
                + (f" del {dep[6:8]}/{dep[4:6]}/{dep[:4]}" if len(dep) == 8 else ""))
     testo = " ".join(str(prima(d.get("ocr")) or "").split())
+    if len(testo) < 1500 or "fase di oscuramento" in testo:
+        print(f"  ℹ️  {estremi}: testo non ancora pubblicato su SentenzeWeb")
+        return None
     return {"estremi": estremi, "testo": testo[:40000],
             "url": f"{ITALGIURE}/xway/application/nif/clean/hc.dll?verbo=attach&db={d['kind']}&id={fid}"}
 
