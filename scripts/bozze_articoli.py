@@ -7,6 +7,8 @@ import json
 import os
 import re
 import sys
+
+import requests
 from datetime import date
 from pathlib import Path
 
@@ -25,6 +27,44 @@ FONTI_UFFICIALI = [
     "senato.it", "camera.it", "governo.it", "eur-lex.europa.eu", "curia.europa.eu",
     "hudoc.echr.coe.int", "inps.it", "agenziaentrate.gov.it", "lavoro.gov.it", "garanteprivacy.it",
 ]
+
+
+ITALGIURE = "https://www.italgiure.giustizia.it"
+SOLR = ITALGIURE + "/sncass/isapi/hc.dll/sn.solr/sn-collection/select?app.query"
+
+
+def testo_cassazione(rif):
+    """Testo ufficiale di una pronuncia della Cassazione dall'indice pubblico SentenzeWeb."""
+    if not rif or not rif.get("numero"):
+        return None
+    n = str(rif["numero"]).lstrip("0")
+    kind = "snpen" if str(rif.get("materia", "")).startswith("pen") else "snciv"
+    fq = [f'kind:"{kind}"', f'(numdec:"{n}" OR numdec:"{n.zfill(5)}")']
+    if rif.get("anno"):
+        fq.append(f'anno:"{rif["anno"]}"')
+    dati = [("wt", "json"), ("q", "*:*"), ("rows", "1"),
+            ("fl", "id,kind,numdec,anno,datdep,szdec,tipoprov,filename,ocr")] + [("fq", f) for f in fq]
+    try:
+        r = requests.post(SOLR, data=dati, timeout=30, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; studiolegalestante-bozze/1.0)",
+            "Referer": ITALGIURE + "/sncass/", "X-Requested-With": "XMLHttpRequest"})
+        docs = r.json().get("response", {}).get("docs", [])
+    except Exception as e:
+        print(f"  ⚠️  ItalGiure non raggiungibile: {e}", file=sys.stderr)
+        return None
+    if not docs:
+        return None
+    d = docs[0]
+    prima = lambda v: v[0] if isinstance(v, list) else v
+    f = prima(d.get("filename")) or ""
+    fid = f if ".clean." in f else f.replace(".pdf", ".clean.pdf")
+    dep = prima(d.get("datdep")) or ""
+    estremi = (f"Cass. {'pen.' if d['kind'] == 'snpen' else 'civ.'}, sez. {d.get('szdec', '')}, "
+               f"{str(d.get('tipoprov', '')).lower()} n. {str(d['numdec']).lstrip('0')}"
+               + (f" del {dep[6:8]}/{dep[4:6]}/{dep[:4]}" if len(dep) == 8 else ""))
+    testo = " ".join(str(prima(d.get("ocr")) or "").split())
+    return {"estremi": estremi, "testo": testo[:40000],
+            "url": f"{ITALGIURE}/xway/application/nif/clean/hc.dll?verbo=attach&db={d['kind']}&id={fid}"}
 
 
 def slugify(t):
@@ -65,11 +105,13 @@ def scegli_temi(radar, gia):
         "patrocinio a spese dello Stato). Dalla rassegna scegli i temi per "
         f"{N_MAX} articoli originali, in ordine di interesse: privilegia quelli che interessano di più "
         "il pubblico (cittadini con un problema concreto, ricerche frequenti su Google), "
-        "con una fonte ufficiale verificabile (sentenza con numero, legge, decreto). "
+        "trattabili con fonti ufficiali: pronunce della Cassazione con numero, Corte costituzionale, "
+        "leggi e decreti; le sentenze dei tribunali vanno bene solo come spunto per un tema generale. "
         "Evita temi già trattati, tecnicismi per soli avvocati e temi uguali tra loro. "
         "Rispondi solo con JSON: [{\"n\": <numero>, \"categoria\": \"penale|famiglia|civile|patrocinio\", "
         "\"angolo\": \"<domanda del cittadino a cui l'articolo risponde>\", "
         "\"ricerca\": \"<estremi da cercare nelle fonti ufficiali>\", "
+        "\"cassazione\": {\"materia\": \"civile|penale\", \"numero\": \"<numero>\", \"anno\": \"<anno>\"} oppure null, "
         "\"interesse\": <1-5: visite e richieste di contatto che il tema può portare a uno studio legale>}]")
     utente = elenco + "\n\nGià trattati:\n" + ("\n".join(gia) or "nessuno")
     testo, usage = chiama(MODELLO_SCELTA, system, [{"role": "user", "content": utente}], 2000)
@@ -79,7 +121,9 @@ def scegli_temi(radar, gia):
 SISTEMA_SCRITTURA = """Scrivi un articolo originale per il sito dello Studio Legale Avv. Vincenzo Stante (Bari).
 Regole:
 - Fonti: usa lo strumento di ricerca, che consulta solo siti istituzionali. Ogni fatto (numero della sentenza, data, contenuto, norma) deve risultare da una fonte ufficiale trovata. L'articolo di giornale indicato è solo lo spunto: non usarlo come fonte e non riprenderne frasi o struttura.
-- Se non trovi nelle fonti ufficiali il provvedimento o la norma su cui si basa il tema, non scrivere l'articolo: rispondi {"scarta": true, "motivo": "..."}.
+- Se ti viene fornito il testo ufficiale di una pronuncia della Cassazione, è la fonte principale: riassumila con parole tue (fatti essenziali, principio affermato, conseguenze pratiche).
+- Se la pronuncia citata nello spunto non è disponibile né si trova nelle fonti ufficiali, non nominarla: rispondi comunque alla domanda del cittadino con le norme e le pronunce ufficiali che trovi.
+- Solo se non trovi alcuna base ufficiale per rispondere, rispondi {"scarta": true, "motivo": "..."}.
 - Pubblico: cittadini, non avvocati. Italiano chiaro, frasi brevi, si dà del voi. Tono professionale e rassicurante, senza enfasi.
 - Lunghezza 600-900 parole. Struttura: apertura di 2-3 frasi con la risposta in sintesi; 3-5 sezioni <h2> con titoli in forma di domanda o di azione; una sezione finale "Cosa fare in pratica" con un elenco.
 - Quando citi un articolo di legge spiega in poche parole cosa prevede.
@@ -93,11 +137,16 @@ Rispondi SOLO con JSON:
 
 
 def scrivi(tema, spunto):
-    strumenti = [{"type": "web_search_20250305", "name": "web_search", "max_uses": 4,
+    sentenza = testo_cassazione(tema.get("cassazione"))
+    strumenti = [{"type": "web_search_20250305", "name": "web_search", "max_uses": 2 if sentenza else 3,
                   "allowed_domains": FONTI_UFFICIALI}]
     utente = (f"Categoria: {tema['categoria']}\nDomanda del cittadino: {tema['angolo']}\n"
               f"Da cercare nelle fonti ufficiali: {tema['ricerca']}\n"
               f"Spunto (solo radar, non fonte): {spunto['title']} — {spunto['link']}")
+    if sentenza:
+        utente += (f"\n\nTesto ufficiale (SentenzeWeb, OCR) di {sentenza['estremi']} — url {sentenza['url']}:\n"
+                   + sentenza["testo"])
+        print(f"  📄 {sentenza['estremi']} ({len(sentenza['testo'])} caratteri)")
     testo, usage = chiama(MODELLO_SCRITTURA, SISTEMA_SCRITTURA,
                           [{"role": "user", "content": utente}], 8000, strumenti)
     return estrai_json(testo), usage
