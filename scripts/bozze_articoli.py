@@ -152,7 +152,7 @@ Regole:
 - Niente commenti sul lavoro di ricerca ("la sintesi consultata", "secondo un documento"): scrivi i fatti e indica la fonte per nome (es. "la Cassazione, con la sentenza n. ...").
 - Quando citi un articolo di legge spiega in poche parole cosa prevede.
 - Non inventare nulla, non dare consigli sul caso concreto, non promettere risultati, niente inviti a contattare lo studio (li aggiunge il sito).
-- HTML ammesso nel corpo: h2, h3, p, ul, ol, li, strong, em. Nessun link nel corpo.
+- HTML ammesso nel corpo: h2, h3, p, ul, ol, li, strong, em. Nessun link e nessun marcatore di citazione (cite) nel corpo o nelle FAQ.
 - Titolo SEO di massimo 65 caratteri con la parola chiave che un cittadino cercherebbe; descrizione di massimo 155 caratteri.
 Rispondi SOLO con JSON:
 {"titolo": "...", "sottotitolo": "<una frase>", "descrizione": "...", "parola_chiave": "...",
@@ -174,6 +174,12 @@ def scrivi(tema, spunto):
     testo, usage = chiama(MODELLO_SCRITTURA, SISTEMA_SCRITTURA,
                           [{"role": "user", "content": utente}], 8000, strumenti)
     return estrai_json(testo), usage
+
+
+def togli_citazioni(t):
+    """Elimina i marcatori di citazione che la ricerca web lascia nel testo."""
+    t = re.sub(r'\(?<cite\b[^>]*>|\(cite index="[^"]*">', "", t or "")
+    return re.sub(r"</cite>", "", t)
 
 
 def costo(u, modello):
@@ -211,6 +217,9 @@ def main():
         if not art.get("fonti"):
             print(f"  ⏭️  senza fonti, scartato: {art.get('titolo')}")
             continue
+        art["corpo_html"] = togli_citazioni(art["corpo_html"])
+        for f in art.get("faq", []):
+            f["domanda"], f["risposta"] = togli_citazioni(f["domanda"]), togli_citazioni(f["risposta"])
         art.update(slug=slugify(art["titolo"]), categoria=tema["categoria"], data=oggi,
                    interesse=tema.get("interesse"),
                    radar={"titolo": spunto["title"], "link": spunto["link"]},

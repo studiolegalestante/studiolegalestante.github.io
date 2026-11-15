@@ -182,6 +182,8 @@ def main():
     for k in ("titolo", "slug", "descrizione", "corpo_html", "fonti", "data", "categoria"):
         if not a.get(k):
             sys.exit(f"campo mancante: {k}")
+    if re.search(r"cite\b|index=", a["corpo_html"] + json.dumps(a.get("faq", []))):
+        sys.exit("la bozza contiene ancora marcatori di citazione")
     testata, pie = parti_modello()
     Path("articoli").mkdir(exist_ok=True)
     Path(f"articoli/{a['slug']}.html").write_text(pagina_articolo(a, testata, pie), encoding="utf-8")
