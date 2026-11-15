@@ -1,0 +1,56 @@
+name: Bozze articoli dello studio
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 6 * * *'   # ogni giorno alle 06:30 UTC, dopo la rassegna
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  bozze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repository
+        uses: actions/checkout@v4.2.2
+        with:
+
+      - name: Configura Python
+        uses: actions/setup-python@v5.6.0
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze
+        run: pip install requests
+
+      - name: Checkout del repo privato delle bozze
+        uses: actions/checkout@v4.2.2
+        with:
+          repository: studiolegalestante/bozze-articoli
+          ssh-key: ${{ secrets.BOZZE_DEPLOY_KEY }}
+          path: bozze-wt
+
+      - name: Genera le bozze
+        env:
+          AI_BASE: ${{ vars.AI_BASE }}
+          AI_VERSION: ${{ vars.AI_VERSION }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
+          AI_MODEL_SCRITTURA: ${{ vars.AI_MODEL_SCRITTURA }}
+          AI_ORG: ${{ vars.AI_ORG }}
+          AI_RULE: ${{ vars.AI_RULE }}
+          AI_ACCOUNT: ${{ vars.AI_ACCOUNT }}
+          AI_WORKSPACE: ${{ vars.AI_WORKSPACE }}
+        run: python scripts/bozze_articoli.py bozze-wt/bozze
+
+      - name: Salva le bozze nel repo privato
+        working-directory: bozze-wt
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add bozze/
+          git diff --cached --quiet && echo "Nessuna bozza" || (git commit -m "Bozze $(date +%F)" && git push)

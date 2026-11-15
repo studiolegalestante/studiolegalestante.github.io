@@ -5,6 +5,7 @@ import re
 import requests
 from datetime import datetime
 import sys
+from urllib.parse import urlparse
 
 # Fonti per categoria: (indirizzo del feed, filtro). Il filtro None vale per i feed già tematici;
 # per i feed generalisti si usa l'elenco di parole chiave indicato, così entrano solo articoli in tema.
@@ -19,10 +20,10 @@ DUBBIO = "https://www.ildubbio.news/rss.jsp"
 FEEDS = {
     "penale": [
         (ANDREANI + "?tags=penale", None),
+        (DUBBIO, "penale"),
         (ALTALEX, "penale"),
         (FILODIRITTO, "penale"),
         (DIRITTO_IT, "penale"),
-        (DUBBIO, "penale"),
         (GAZZETTA, "gu_penale"),
     ],
     "famiglia": [
@@ -279,6 +280,7 @@ def seleziona_con_ai(category, candidati):
 
 
 result = {}
+usati_globali = set()  # evita lo stesso articolo in più categorie
 
 for category, urls in FEEDS.items():
     print(f"\n📂 Categoria: {category}")
@@ -300,7 +302,7 @@ for category, urls in FEEDS.items():
             raw   = clean(getattr(entry, "summary", ""))
             date  = parse_date(entry)
 
-            if not title or not link or link in seen_links:
+            if not title or not link or link in seen_links or link in usati_globali:
                 continue
 
             parole = PATROCINIO_KEYWORDS if filtro == "patrocinio" else FILTRI.get(filtro)
@@ -315,6 +317,7 @@ for category, urls in FEEDS.items():
                 "image": extract_image(raw),
                 "description": extract_text(raw)[:400],
                 "date": date,
+                "source": urlparse(link).netloc.replace("www.", ""),
             })
 
     # Selezione e sintesi automatica (solo se il servizio è configurato)
@@ -332,7 +335,7 @@ for category, urls in FEEDS.items():
         for old in load_existing(category):
             if len(items) >= MAX_ITEMS:
                 break
-            if old["link"] not in seen_links:
+            if old["link"] not in seen_links and old["link"] not in usati_globali:
                 seen_links.add(old["link"])
                 items.append(old)
 
@@ -347,6 +350,7 @@ for category, urls in FEEDS.items():
                 items.append(fb)
 
     result[category] = items
+    usati_globali.update(it["link"] for it in items)
     print(f"  → {len(items)} articoli salvati")
 
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
