@@ -131,6 +131,7 @@ Regole:
 - Solo se non trovi alcuna base ufficiale per rispondere, rispondi {"scarta": true, "motivo": "..."}.
 - Pubblico: cittadini, non avvocati. Italiano chiaro, frasi brevi, si dà del voi. Tono professionale e rassicurante, senza enfasi.
 - Lunghezza 600-900 parole. Struttura: apertura di 2-3 frasi con la risposta in sintesi; 3-5 sezioni <h2> con titoli in forma di domanda o di azione; una sezione finale "Cosa fare in pratica" con un elenco.
+- Niente commenti sul lavoro di ricerca ("la sintesi consultata", "secondo un documento"): scrivi i fatti e indica la fonte per nome (es. "la Cassazione, con la sentenza n. ...").
 - Quando citi un articolo di legge spiega in poche parole cosa prevede.
 - Non inventare nulla, non dare consigli sul caso concreto, non promettere risultati, niente inviti a contattare lo studio (li aggiunge il sito).
 - HTML ammesso nel corpo: h2, h3, p, ul, ol, li, strong, em. Nessun link nel corpo.
