@@ -4,25 +4,16 @@
       "title": "Querela: la guida completa",
       "link": "https://www.altalex.com/documents/altalexpedia/2012/12/12/querela",
       "image": "",
-      "description": "Guida sulla querela: come funziona, i termini, chi può presentarla e i suoi effetti, con le differenze rispetto a denuncia ed esposto. Tratta anche la remissione, anche tacita, dopo la riforma Cartabia.",
+      "description": "Guida sulla querela: come funziona, chi può presentarla, quali termini rispettare e cosa cambia con la riforma Cartabia, anche per la remissione tacita. La distingue da denuncia ed esposto.",
       "date": "19/11/2026",
       "source": "altalex.com",
-      "ai": true
-    },
-    {
-      "title": "Riforma Cartabia: l'improcedibilità prevale sull'esito positivo della messa alla prova",
-      "link": "https://news.avvocatoandreani.it/articoli/riforma-cartabia-improcedibilita-prevale-esito-positivo-messa-prova-108970.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/riforma-cartabia-codice-procedura-penale_large.webp",
-      "description": "Secondo la Cassazione (sent. 5589/2024), la mancanza di querela, che causa improcedibilità, prevale sull'estinzione del reato dopo il buon esito della messa alla prova.",
-      "date": "02/11/2026",
-      "source": "news.avvocatoandreani.it",
       "ai": true
     },
     {
       "title": "Omesso mantenimento dei figli: regalie o acquisti di generi alimentari non sostituiscono l'assegno",
       "link": "https://news.avvocatoandreani.it/articoli/omesso-mantenimento-figli-regalie-acquisti-generi-alimentari-non-sostituiscono-assegno-108968.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/famiglia/padre-regalo-figlio-giudice-condanna_large.webp",
-      "description": "Cassazione n. 36101/2026: la sola disoccupazione non prova l'impossibilità di pagare il mantenimento dei figli. Regali o spesa non sostituiscono l'assegno, e l'inadempimento protratto esclude la tenuità.",
+      "description": "La Cassazione chiarisce che la sola disoccupazione non dimostra l'impossibilità di pagare il mantenimento dei figli. Regali o spesa di generi alimentari non sostituiscono l'assegno, e il mancato pagamento protratto…",
       "date": "30/10/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
@@ -31,17 +22,17 @@
       "title": "Particolare tenuità del fatto: il giudice d’appello deve rivalutare d’ufficio danno e risarcimento",
       "link": "https://www.altalex.com/documents/2026/11/19/particolare-tenuita-fatto-giudice-appello-rivalutare-ufficio-danno-risarcimento",
       "image": "",
-      "description": "Secondo la Cassazione, il giudice d'appello che proscioglie per particolare tenuità del fatto deve riesaminare d'ufficio danno e risarcimento, anche senza uno specifico motivo di appello.",
+      "description": "Se il giudice d'appello proscioglie per particolare tenuità del fatto, deve comunque riesaminare danno e risarcimento, anche senza un motivo d'appello su questo punto, e valutare se il risarcimento è adeguato.",
       "date": "19/11/2026",
       "source": "altalex.com",
       "ai": true
     },
     {
-      "title": "Ricorso in Cassazione depositato via PEC e non dal portale telematico: inammissibile",
-      "link": "https://news.avvocatoandreani.it/articoli/ricorso-cassazione-depositato-via-pec-non-portale-telematico-inammissibile-108974.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/avvocato-preoccupato-schermata-pec_large.webp",
-      "description": "Per la Cassazione (sent. 38004/2026) il ricorso ex art. 311 c.p.p. va depositato solo telematicamente dal 1 aprile 2026: la PEC è inammissibile, salvo malfunzionamento certificato.",
-      "date": "03/11/2026",
+      "title": "Riforma Cartabia: l'improcedibilità prevale sull'esito positivo della messa alla prova",
+      "link": "https://news.avvocatoandreani.it/articoli/riforma-cartabia-improcedibilita-prevale-esito-positivo-messa-prova-108970.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/riforma-cartabia-codice-procedura-penale_large.webp",
+      "description": "La Cassazione stabilisce che, per il difetto di querela, l'improcedibilità prevale sull'estinzione del reato dovuta all'esito positivo della messa alla prova. Commento alla sentenza n. 5589/2024.",
+      "date": "02/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
     },
@@ -49,37 +40,55 @@
       "title": "L'istigazione a commettere un reato: il nuovo Decreto Sicurezza",
       "link": "https://news.avvocatoandreani.it/articoli/istigazione-commettere-reato-nuovo-decreto-sicurezza-108982.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/giustizia/aula-parlamento-decreto-sicurezza_large.webp",
-      "description": "Spiega il reato di istigazione a delinquere (art. 414 c.p.), punito per il solo fatto di istigare pubblicamente a commettere reati, e lo collega al nuovo Decreto Sicurezza.",
+      "description": "Il Codice penale punisce chi pubblicamente istiga a commettere reati, anche se il reato non viene poi commesso. L'articolo esamina la norma e le novità introdotte dal nuovo Decreto Sicurezza.",
       "date": "06/11/2026",
+      "source": "news.avvocatoandreani.it",
+      "ai": true
+    },
+    {
+      "title": "Ricorso in Cassazione depositato via PEC e non dal portale telematico: inammissibile",
+      "link": "https://news.avvocatoandreani.it/articoli/ricorso-cassazione-depositato-via-pec-non-portale-telematico-inammissibile-108974.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/avvocato-preoccupato-schermata-pec_large.webp",
+      "description": "Secondo la Cassazione, il ricorso contro le misure cautelari inviato solo via PEC al tribunale è inammissibile: va depositato con modalità telematiche, salvo malfunzionamento accertato. Vale anche se l'atto arriva al…",
+      "date": "03/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
     }
   ],
   "famiglia": [
     {
-      "title": "Divorzio congiunto: la revoca del consenso di un coniuge non rende improcedibile la domanda",
-      "link": "https://news.avvocatoandreani.it/articoli/divorzio-congiunto-revoca-consenso-coniuge-non-rende-improcedibile-domanda-109015.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/divorzio-revoca-consenso-domamda-congiunta_large.webp",
-      "description": "Revocare unilateralmente il consenso al divorzio congiunto, dopo la separazione passata in giudicato e il decorso del termine di legge, non rende improcedibile la domanda. Il giudice verifica i presupposti.",
-      "date": "20/11/2026",
-      "source": "news.avvocatoandreani.it",
-      "ai": true
-    },
-    {
       "title": "Non basta un lavoro precario per considerare indipendente il figlio maggiorenne studente universitario",
       "link": "https://www.altalex.com/documents/2026/11/20/non-lavoro-precario-considerare-indipendente-figlio-maggiorenne-studente-universitario",
       "image": "",
-      "description": "Un lavoro precario o part-time del figlio maggiorenne, soprattutto se legato agli studi universitari, non fa cessare automaticamente l'obbligo di mantenimento a carico dei genitori.",
+      "description": "La Cassazione (ord. 28162/2026) chiarisce che lavori precari o part-time del figlio maggiorenne universitario, spesso legati agli studi, non fanno venir meno automaticamente l'obbligo di mantenimento.",
       "date": "20/11/2026",
       "source": "altalex.com",
+      "ai": true
+    },
+    {
+      "title": "Divorzio congiunto: la revoca del consenso di un coniuge non rende improcedibile la domanda",
+      "link": "https://news.avvocatoandreani.it/articoli/divorzio-congiunto-revoca-consenso-coniuge-non-rende-improcedibile-domanda-109015.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/divorzio-revoca-consenso-domamda-congiunta_large.webp",
+      "description": "Corte d'Appello di Bologna: la revoca unilaterale del consenso di un coniuge al divorzio congiunto, dopo la separazione definitiva, non rende improcedibile la domanda; il giudice verifica i requisiti.",
+      "date": "20/11/2026",
+      "source": "news.avvocatoandreani.it",
       "ai": true
     },
     {
       "title": "Assegno unico: con affido condiviso spetta per intero al genitore collocatario",
       "link": "https://news.avvocatoandreani.it/articoli/assegno-unico-affido-condiviso-spetta-intero-genitore-collocatario-109005.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/assegno-unico-in-tribunale_large.webp",
-      "description": "Se il figlio è prevalentemente collocato presso un genitore, l'assegno unico può essere assegnato per intero a quel genitore, anche insieme al mantenimento, senza dividerlo a metà.",
+      "description": "Cassazione (ord. 29000/2026): se il figlio è prevalentemente collocato presso un genitore, l'assegno unico può spettare per intero a lui, anche oltre al mantenimento, senza ripartizione con l'altro.",
       "date": "17/11/2026",
+      "source": "news.avvocatoandreani.it",
+      "ai": true
+    },
+    {
+      "title": "Assegno di mantenimento onnicomprensivo del canone: la quota per l'affitto è imponibile ai fini Irpef",
+      "link": "https://news.avvocatoandreani.it/articoli/assegno-mantenimento-onnicomprensivo-canone-quota-affitto-imponibile-fini-irpef-108967.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/fisco/dichiarazione-redditi-assegno-contratto_large.webp",
+      "description": "Cassazione (ord. 26608/2026): se l'assegno onnicomprensivo include il canone di affitto, quella quota è reddito imponibile IRPEF del coniuge beneficiario, dimezzata se l'immobile è goduto dai figli.",
+      "date": "30/10/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
     },
@@ -87,25 +96,16 @@
       "title": "Ambito di applicabilità del regime di esenzione agli atti relativi al procedimento di separazione o divorzio",
       "link": "https://www.altalex.com/documents/2026/11/16/ambito-applicabilita-regime-esenzione-atti-relativi-procedimento-separazione-divorzio",
       "image": "",
-      "description": "L'Agenzia delle Entrate chiarisce l'ambito di applicazione dell'esenzione da bollo, registro e altre tasse per gli atti di separazione e divorzio previsti dall'art. 19 della legge 74/1987.",
+      "description": "Risposta dell'Agenzia delle Entrate n. 208/2026: chiarisce l'ambito di applicazione dell'esenzione da bollo, registro e altre tasse prevista dall'art. 19 della legge 74/1987 per atti di separazione e divorzio.",
       "date": "16/11/2026",
       "source": "altalex.com",
-      "ai": true
-    },
-    {
-      "title": "Assegno di mantenimento onnicomprensivo del canone: la quota per l'affitto è imponibile ai fini Irpef",
-      "link": "https://news.avvocatoandreani.it/articoli/assegno-mantenimento-onnicomprensivo-canone-quota-affitto-imponibile-fini-irpef-108967.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/fisco/dichiarazione-redditi-assegno-contratto_large.webp",
-      "description": "Se l'assegno onnicomprensivo include il canone di affitto, quella quota è reddito imponibile Irpef del coniuge beneficiario: dimezzata se la casa è usata dai figli, e va dichiarata.",
-      "date": "30/10/2026",
-      "source": "news.avvocatoandreani.it",
       "ai": true
     },
     {
       "title": "Testamento e demenza accertata subito dopo: l'onere della prova del beneficiario",
       "link": "https://news.avvocatoandreani.it/articoli/testamento-demenza-accertata-subito-dopo-onere-prova-beneficiario-108951.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/anziano-redige.testamento_large.webp",
-      "description": "Se si prova una demenza stabile accertata subito dopo la redazione del testamento, l'incapacità si presume: spetta al beneficiario provare che l'atto fu fatto in un lucido intervallo.",
+      "description": "Cassazione (ord. 25855/2026): se la demenza è stabile e accertata subito dopo il testamento, si presume l'incapacità naturale e spetta al beneficiario provare un lucido intervallo al momento dell'atto.",
       "date": "22/10/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
@@ -113,28 +113,28 @@
   ],
   "patrocinio": [
     {
-      "title": "Trattamento Sanitario Obbligatorio e difesa d’ufficio dopo la sentenza 157/2026: l’OCF chiede regole uniformi, formazione dedicata e applicazione del patrocinio a spese dello Stato",
-      "link": "https://www.lanuovaproceduracivile.com/trattamento-sanitario-obbligatorio-e-difesa-dufficio-dopo-la-sentenza-157-2026-locf-chiede-regole-uniformi-formazione-dedicata-e-applicazione-del-patrocinio-a-spese-dello-stato/",
-      "image": "",
-      "description": "La sentenza n. 157/2026 della Corte Costituzionale dichiara illegittimo in parte l'art. 35 della legge 833/1978 sul TSO. L'OCF chiede regole uniformi, formazione dedicata e l'applicazione del patrocinio a spese dello…",
-      "date": "19/11/2026",
-      "source": "lanuovaproceduracivile.com",
-      "ai": true
-    },
-    {
       "title": "Manovra 2027, OCF contro la stretta sul gratuito patrocinio: stralciare l'articolo 135",
       "link": "https://www.altalex.com/documents/news/2026/11/16/manovra-2027-ocf-contro-stretta-gratuito-patrocinio-stralciare-art-135",
       "image": "",
-      "description": "L'OCF chiede di stralciare l'art. 135 della manovra 2027. Secondo l'OCF, la norma renderebbe più complessa la domanda di ammissione al patrocinio a spese dello Stato e costringerebbe a sostenere da subito i costi della…",
+      "description": "L'OCF chiede di stralciare l'articolo 135 della prossima manovra: la norma appesantirebbe la domanda di gratuito patrocinio, richiedendo di anticipare le spese della difesa.",
       "date": "16/11/2026",
       "source": "altalex.com",
+      "ai": true
+    },
+    {
+      "title": "Trattamento Sanitario Obbligatorio e difesa d’ufficio dopo la sentenza 157/2026: l’OCF chiede regole uniformi, formazione dedicata e applicazione del patrocinio a spese dello Stato",
+      "link": "https://www.lanuovaproceduracivile.com/trattamento-sanitario-obbligatorio-e-difesa-dufficio-dopo-la-sentenza-157-2026-locf-chiede-regole-uniformi-formazione-dedicata-e-applicazione-del-patrocinio-a-spese-dello-stato/",
+      "image": "",
+      "description": "Con la sentenza 157/2026 la Corte costituzionale ha dichiarato in parte illegittimo l'art. 35 della legge 833/1978 sul TSO. L'OCF chiede regole uniformi e formazione dedicata per i difensori.",
+      "date": "19/11/2026",
+      "source": "lanuovaproceduracivile.com",
       "ai": true
     },
     {
       "title": "Difensore d'ufficio e assistito insolvibile: spese di recupero del credito a carico dello Stato",
       "link": "https://news.avvocatoandreani.it/articoli/difensore-ufficio-assistito-insolvibile-spese-recupero-credito-carico-stato-109012.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/avvocato-parcella-spese-esecuzione_large.webp",
-      "description": "La Corte d'appello di Firenze (sent. n. 3046/2026) stabilisce che, se l'assistito è irreperibile o insolvibile e il recupero è stato infruttuoso, il difensore può ottenere a carico dello Stato anche compensi e spese…",
+      "description": "Per la Corte d'appello di Firenze, se l'assistito è insolvibile o irreperibile e il recupero dei crediti non riesce, lo Stato paga al difensore d'ufficio anche le fasi monitoria ed esecutiva.",
       "date": "19/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
@@ -143,7 +143,7 @@
       "title": "Patrocinio a spese dello Stato e procedimenti di Trattamento Sanitario Obbligatorio: nuova questione di costituzionalità",
       "link": "https://www.lanuovaproceduracivile.com/patrocinio-a-spese-dello-stato-e-procedimenti-di-trattamento-sanitario-obbligatorio-nuova-questione-di-costituzionalita/",
       "image": "",
-      "description": "Un nuovo articolo segnala la necessità di sollevare questioni di legittimità costituzionale su alcune norme sul patrocinio a spese dello Stato nei procedimenti di convalida e proroga del TSO.",
+      "description": "Si annuncia la necessità di sollevare questioni di legittimità costituzionale su alcune norme del patrocinio a spese dello Stato nei procedimenti di convalida e proroga del TSO.",
       "date": "19/11/2026",
       "source": "lanuovaproceduracivile.com",
       "ai": true
@@ -152,7 +152,7 @@
       "title": "Patrocinio infedele: quando la condotta dell'avvocato diventa reato ex art. 380 c.p.",
       "link": "https://news.avvocatoandreani.it/articoli/patrocinio-infedele-quando-condotta-avvocato-diventa-reato-art-380-108943.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/vignetta-avvocato-assente-aula_large.webp",
-      "description": "La Cassazione (sent. n. 32866/2026) chiarisce che il patrocinio infedele (art. 380 c.p.) richiede una violazione consapevole dei doveri e un nocumento per l'assistito, anche morale o come perdita di chance, collegato…",
+      "description": "Per la Cassazione (sent. 32866/2026) il patrocinio infedele richiede una violazione consapevole dei doveri e un danno per l'assistito, anche morale o di chance, causalmente collegato alla condotta.",
       "date": "15/10/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
@@ -161,7 +161,7 @@
       "title": "Speciale Trattamento Sanitario Obbligatorio dopo Corte Costituzionale: Normativa + Giurisprudenza + Prassi",
       "link": "https://www.lanuovaproceduracivile.com/speciale-trattamento-sanitario-obbligatorio-dopo-corte-costituzionale-normativa-giurisprudenza-prassi/",
       "image": "",
-      "description": "Pagina di riepilogo sul TSO dopo le pronunce di incostituzionalità: raccoglie la normativa sull'art. 35 della legge 833/1978, la circolare su difesa d'ufficio e patrocinio a spese dello Stato e la giurisprudenza.",
+      "description": "Raccolta di riferimenti su normativa, giurisprudenza e prassi del Trattamento Sanitario Obbligatorio dopo le pronunce di incostituzionalità, con focus su difesa d'ufficio e patrocinio.",
       "date": "19/11/2026",
       "source": "lanuovaproceduracivile.com",
       "ai": true
@@ -169,19 +169,10 @@
   ],
   "giurisprudenza": [
     {
-      "title": "Locazioni commerciali e sfratto per morosità: il pagamento dopo l'intimazione non sana l'inadempimento",
-      "link": "https://news.avvocatoandreani.it/articoli/locazioni-commerciali-sfratto-morosita-pagamento-dopo-intimazione-non-sana-inadempimento-108980.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/civile/cartoleria-colorata-con-libri-e-avviso-sfratto_large.webp",
-      "description": "Il pagamento dei canoni dopo l'intimazione di sfratto per morosità non sana l'inadempimento. Il giudice deve comunque valutarne la gravità, che è implicita quando non si paga il canone.",
-      "date": "05/11/2026",
-      "source": "news.avvocatoandreani.it",
-      "ai": true
-    },
-    {
       "title": "Notifica per irreperibili: senza l'attestazione delle ricerche nella relata la notifica è nulla",
       "link": "https://news.avvocatoandreani.it/articoli/notifica-irreperibili-senza-attestazione-ricerche-relata-notifica-nulla-109011.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/condominio-casa/postino-modulo-irreperibilita-citofono_large.webp",
-      "description": "Per la notifica a irreperibili, la relata deve riportare le ricerche svolte e i motivi della mancata consegna. Se manca questa attestazione la notifica è nulla, anche se le ricerche ci furono.",
+      "description": "Nella notifica per irreperibili, se la relata non indica le ricerche svolte, le notizie raccolte e i motivi della mancata consegna, la notifica è nulla, anche se le ricerche ci sono state.",
       "date": "19/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
@@ -190,8 +181,17 @@
       "title": "Prescrizione: raccomandata contestata, la prova della ricezione spetta al mittente",
       "link": "https://news.avvocatoandreani.it/articoli/prescrizione-raccomandata-contestata-prova-ricezione-spetta-mittente-109001.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/tempo/busta-raccomandata-giustizia-orologio_large.webp",
-      "description": "Se il destinatario nega di aver ricevuto una diffida senza avviso di ricevimento, la prova spetta al mittente: senza di essa la lettera non interrompe la prescrizione decennale.",
+      "description": "Se il destinatario contesta di aver ricevuto una diffida spedita senza avviso di ricevimento, spetta al mittente provarne la ricezione. Altrimenti la lettera non interrompe la prescrizione decennale.",
       "date": "16/11/2026",
+      "source": "news.avvocatoandreani.it",
+      "ai": true
+    },
+    {
+      "title": "Locazioni commerciali e sfratto per morosità: il pagamento dopo l'intimazione non sana l'inadempimento",
+      "link": "https://news.avvocatoandreani.it/articoli/locazioni-commerciali-sfratto-morosita-pagamento-dopo-intimazione-non-sana-inadempimento-108980.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/civile/cartoleria-colorata-con-libri-e-avviso-sfratto_large.webp",
+      "description": "Il pagamento dei canoni arrivato dopo l'intimazione non cancella l'inadempimento. Il giudice deve comunque valutarne la gravità, che è implicita quando non si paga il canone.",
+      "date": "05/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
     },
@@ -199,7 +199,7 @@
       "title": "Responsabilità sanitaria: medico e struttura rispondono in solido verso il paziente",
       "link": "https://news.avvocatoandreani.it/articoli/responsabilita-sanitaria-medico-struttura-rispondono-solido-verso-paziente-108991.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/salute/tre-medici-scrivania-documenti_large.webp",
-      "description": "Il paziente può agire contro struttura e medico, che rispondono in solido del danno pur con titoli diversi. I limiti della legge 24/2017 valgono solo per la rivalsa della struttura sul medico.",
+      "description": "Il paziente può agire contro struttura sanitaria e medico, che rispondono in solido. I limiti della legge 24/2017 valgono solo per la rivalsa della struttura nei confronti del medico.",
       "date": "11/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
@@ -208,7 +208,7 @@
       "title": "Mediazione: cessata materia del contendere anche se l'accordo non viene rispettato",
       "link": "https://news.avvocatoandreani.it/articoli/mediazione-cessata-materia-contendere-anche-accordo-non-viene-rispettato-108983.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/riunioni-mediazione/mediazione-incontro-attore-convenuti-assicurazioni_large.jpg",
-      "description": "Se le parti raggiungono un accordo in mediazione, la causa si chiude anche se una di esse non lo rispetta. Chi non adempie va perseguito con il verbale di mediazione, che è titolo esecutivo.",
+      "description": "Se in mediazione le parti raggiungono un accordo, la causa si chiude anche se una parte non lo rispetta. L'inadempimento si fa valere con il verbale, che è titolo esecutivo.",
       "date": "06/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
@@ -217,7 +217,7 @@
       "title": "Condominio parziale e polizza del fabbricato: la spesa assicurativa grava su tutti i condomini",
       "link": "https://news.avvocatoandreani.it/articoli/condominio-parziale-polizza-fabbricato-spesa-assicurativa-grava-tutti-condomini-109002.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/condominio-casa/martello-bilancia-riunione-condominio_large.webp",
-      "description": "L'assemblea può deliberare la polizza assicurativa del fabbricato e la spesa va divisa tra tutti i condomini. Il condominio parziale conta solo per i beni destinati a una sola parte dell'edificio.",
+      "description": "La polizza assicurativa del fabbricato è una spesa di gestione comune: l'assemblea può deliberarla e tutti i condomini la pagano, anche se il condominio è parziale.",
       "date": "16/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
