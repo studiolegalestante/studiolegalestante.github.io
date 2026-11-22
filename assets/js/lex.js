@@ -8,27 +8,35 @@
     aria: 'Apri la chat con Lex, assistente virtuale',
     invito: '<b>Serve aiuto?</b>Sono Lex: scrivetemi, vi indico da dove partire.',
     ruolo: 'assistente virtuale dello Studio Stante', chiudi: 'Chiudi la chat',
-    avviso: 'Assistente automatico basato su intelligenza artificiale: non è l\'avvocato e non dà pareri. La conversazione non viene conservata.',
+    avviso: 'Assistente automatico basato su intelligenza artificiale: non è l\'avvocato e non dà pareri. Lo studio non conserva la conversazione.',
     azione: 'Continua con la consulenza online →', campo: 'Scrivete qui…', invia: 'Invia',
     saluto: 'Buongiorno, sono Lex, l\'assistente virtuale dello Studio Stante. Raccontatemi pure in breve che cosa vi è successo: vi aiuto a capire come lo studio può seguirvi.',
     errore: 'In questo momento non riesco a rispondere. Potete compilare direttamente la richiesta di consulenza online con il pulsante qui sotto.',
     richiama: 'Preferite essere ricontattati dallo studio?', nome: 'Nome e cognome', recapito: 'Telefono o email',
     consenso: 'Chiedo di essere ricontattato e ho letto l\'<a href="/privacy.html#lex" target="_blank">informativa privacy</a>.',
     manda: 'Inviate la richiesta', grazie: 'Grazie: la richiesta è arrivata allo studio. Sarete ricontattati, di norma entro due giorni lavorativi.',
-    mancano: 'Indicate nome, un recapito valido e spuntate la casella.', fallito: 'Invio non riuscito. Riprovate oppure usate la consulenza online.'
+    mancano: 'Indicate nome, un recapito valido e spuntate la casella.', fallito: 'Invio non riuscito. Riprovate oppure usate la consulenza online.',
+    voto: 'Com\'è andata la conversazione con Lex?', voti: ['Terribile', 'Scarsa', 'OK', 'Ottima', 'Fantastica'],
+    nota: 'Vuole aggiungere un commento? (facoltativo)', notaNeg: 'Ci dica che cosa non è andato, così possiamo migliorare',
+    votoInvia: 'Invia la valutazione', votoGrazie: 'Grazie per la valutazione.',
+    votoPriv: 'Si inviano solo il giudizio, il commento e la pagina. Non inserite dati personali. <a href="/privacy.html#lex" target="_blank">Privacy</a>'
   } : {
     consulenza: '/en/online-consultation.html#modulo-en',
     aria: 'Open the chat with Lex, virtual assistant',
     invito: '<b>Need help?</b>I\'m Lex: write to me and I\'ll show you where to start.',
     ruolo: 'virtual assistant of the Stante law office', chiudi: 'Close the chat',
-    avviso: 'Automated assistant based on artificial intelligence: it is not the lawyer and gives no legal advice. The conversation is not stored.',
+    avviso: 'Automated assistant based on artificial intelligence: it is not the lawyer and gives no legal advice. The office does not store the conversation.',
     azione: 'Continue with the online consultation →', campo: 'Write here…', invia: 'Send',
     saluto: 'Hello, I\'m Lex, the virtual assistant of the Stante law office. Please tell me briefly what happened: I\'ll help you understand how the office can assist you. You can write in any language.',
     errore: 'I cannot reply right now. You can fill in the online consultation request directly with the button below.',
     richiama: 'Would you rather be contacted by the office?', nome: 'Full name', recapito: 'Phone or email',
     consenso: 'I ask to be contacted and I have read the <a href="/privacy.html#lex" target="_blank">privacy notice</a>.',
     manda: 'Send request', grazie: 'Thank you: your request has reached the office. You will normally be contacted within two working days.',
-    mancano: 'Please enter your name, a valid contact and tick the box.', fallito: 'Sending failed. Please try again or use the online consultation.'
+    mancano: 'Please enter your name, a valid contact and tick the box.', fallito: 'Sending failed. Please try again or use the online consultation.',
+    voto: 'How was your conversation with Lex?', voti: ['Terrible', 'Poor', 'OK', 'Great', 'Excellent'],
+    nota: 'Would you like to add a comment? (optional)', notaNeg: 'Please tell us what went wrong, so we can improve',
+    votoInvia: 'Send rating', votoGrazie: 'Thank you for your rating.',
+    votoPriv: 'Only the rating, the comment and the page are sent. Please do not enter personal data. <a href="/privacy.html#lex" target="_blank">Privacy</a>'
   };
   // Pagine del servizio di adeguamento all'intelligenza artificiale: Lex risponde sul servizio e aiuta nel questionario
   var PERCORSO = location.pathname.replace(/^.*\//, '');
@@ -40,7 +48,7 @@
     T.saluto = QUESTIONARIO
       ? 'Buongiorno, sono Lex, l\'assistente virtuale dello Studio Stante. Se una domanda del questionario non è chiara, me la indichi: Le spiego che cosa si intende e come rispondere.'
       : 'Buongiorno, sono Lex, l\'assistente virtuale dello Studio Stante. Posso fornirLe informazioni generali sugli obblighi in materia di intelligenza artificiale e sul servizio di adeguamento dello Studio. Come posso esserLe utile?';
-    T.avviso = 'Assistente automatico basato su intelligenza artificiale: non è l\'avvocato, fornisce informazioni generali e non valuta il caso concreto. La conversazione non viene conservata.';
+    T.avviso = 'Assistente automatico basato su intelligenza artificiale: non è l\'avvocato, fornisce informazioni generali e non valuta il caso concreto. Lo studio non conserva la conversazione.';
     T.azione = 'Vai al modulo di richiesta →';
     T.consulenza = '#richiesta';
   }
@@ -83,6 +91,13 @@
     '.lex-contatto input[type=text]{font:inherit;padding:.45rem .55rem;border:1px solid #9AA1AD}' +
     '.lex-contatto label.lex-ok{display:flex;gap:.45rem;align-items:flex-start;line-height:1.35}.lex-contatto .lex-err{color:var(--ceralacca,#8E2B22);margin:0}' +
     '.lex-contatto a{color:inherit}.lex-contatto button{background:var(--inchiostro,#1D2B45);color:#fff;border:0;padding:.55rem;font:inherit;cursor:pointer}' +
+    '.lex-voto{margin:0 1rem .7rem;padding:.6rem .7rem;border:1px solid var(--filetto,#C9CDD4);background:#fff;font-size:.85rem;display:flex;flex-direction:column;gap:.45rem}' +
+    '.lex-voto p{margin:0}.lex-voto .lex-stelle{display:flex;flex-wrap:wrap;gap:.3rem}' +
+    '.lex-voto .lex-stelle button{flex:1 1 auto;background:#fff;border:1px solid #9AA1AD;padding:.3rem .4rem;font:inherit;font-size:.8rem;cursor:pointer;color:var(--inchiostro,#1D2B45)}' +
+    '.lex-voto .lex-stelle button[aria-pressed=true]{background:var(--inchiostro,#1D2B45);color:#fff;border-color:var(--inchiostro,#1D2B45)}' +
+    '.lex-voto textarea{font:inherit;font-size:.85rem;padding:.4rem .5rem;border:1px solid #9AA1AD;resize:vertical;min-height:52px}' +
+    '.lex-voto small{color:var(--grigio,#5B6270);font-size:.72rem}.lex-voto small a{color:inherit}' +
+    '.lex-voto .lex-voto-invia{background:var(--inchiostro,#1D2B45);color:#fff;border:0;padding:.45rem;font:inherit;cursor:pointer}.lex-voto .lex-voto-invia:disabled{opacity:.45;cursor:default}' +
     '[hidden]{display:none!important}' +
     '@media (max-width:600px){.lex-bolla{width:96px;height:96px;right:16px;bottom:20px}.lex-bolla svg{width:64px;height:64px}' +
     '.lex-invito{right:122px;bottom:34px;max-width:190px;font-size:.95rem;padding:.55rem .8rem}.lex-invito b{font-size:1.15rem}' +
@@ -119,6 +134,10 @@
     '<input type="text" name="recapito" autocomplete="tel" maxlength="80" placeholder="' + T.recapito + '" aria-label="' + T.recapito + '">' +
     '<label class="lex-ok"><input type="checkbox" name="consenso"> <span>' + T.consenso + '</span></label>' +
     '<p class="lex-err" hidden></p><button type="submit">' + T.manda + '</button></form>' +
+    '<div class="lex-voto" hidden><p>' + T.voto + '</p><div class="lex-stelle">' +
+    T.voti.map(function (v, i) { return '<button type="button" data-v="' + (i + 1) + '" aria-pressed="false">' + v + '</button>'; }).join('') + '</div>' +
+    '<textarea maxlength="1000" rows="2" hidden></textarea><small hidden>' + T.votoPriv + '</small>' +
+    '<button type="button" class="lex-voto-invia" hidden disabled>' + T.votoInvia + '</button><p class="lex-err" hidden></p></div>' +
     '<form class="lex-scrivi"><label hidden for="lex-campo">Il vostro messaggio</label>' +
     '<textarea id="lex-campo" rows="1" maxlength="2000" placeholder="' + T.campo + '"></textarea>' +
     '<button type="submit">' + T.invia + '</button></form>';
@@ -129,10 +148,11 @@
 
   var elenco = pannello.querySelector('.lex-messaggi');
   var modulo = pannello.querySelector('.lex-scrivi');
-  var campo = pannello.querySelector('textarea');
+  var campo = pannello.querySelector('#lex-campo');
   var azione = pannello.querySelector('.lex-azione');
   var richiama = pannello.querySelector('.lex-richiama');
   var contatto = pannello.querySelector('.lex-contatto');
+  var votoBox = pannello.querySelector('.lex-voto'), votato = false, giudizio = 0;
 
   function aggiungi(chi, testo) {
     var p = el('p', chi === 'user' ? 'lex-u' : 'lex-a');
@@ -167,6 +187,7 @@
         if (m) { try { scheda = JSON.parse(m[1]); } catch (er) { scheda = null; } }
         if (!QUESTIONARIO && (scheda || storia.length >= 4)) azione.hidden = false;
         richiama.hidden = !urgente || inviato;
+        if (!votato && storia.length >= 4) votoBox.hidden = false;
       })
       .catch(function () { attesa.textContent = IA ? 'In questo momento non riesco a rispondere. Per qualsiasi chiarimento può scrivere ad avv.vincenzostante@gmail.com.' : T.errore; if (!QUESTIONARIO) azione.hidden = false; })
       .then(function () { modulo.querySelector('button').disabled = false; campo.focus(); });
@@ -193,6 +214,29 @@
     fetch(RICONTATTO, { method: 'POST', headers: { 'content-type': 'application/json', 'accept': 'application/json' }, body: JSON.stringify(dati) })
       .then(function (r) { if (!r.ok) throw new Error(r.status); inviato = true; contatto.hidden = true; aggiungi('assistant', T.grazie); })
       .catch(function () { err.textContent = T.fallito; err.hidden = false; contatto.querySelector('button').disabled = false; });
+  });
+
+  // Valutazione della conversazione: commento obbligatorio per i giudizi negativi (Terribile, Scarsa)
+  var nota = votoBox.querySelector('textarea'), votoInvia = votoBox.querySelector('.lex-voto-invia'), votoErr = votoBox.querySelector('.lex-err');
+  function aggiornaVoto() { votoInvia.disabled = !giudizio || (giudizio <= 2 && !nota.value.trim()); }
+  votoBox.querySelectorAll('.lex-stelle button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      giudizio = +b.getAttribute('data-v');
+      votoBox.querySelectorAll('.lex-stelle button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      nota.placeholder = giudizio <= 2 ? T.notaNeg : T.nota; nota.required = giudizio <= 2;
+      nota.hidden = false; votoBox.querySelector('small').hidden = false; votoInvia.hidden = false;
+      aggiornaVoto(); if (giudizio <= 2) nota.focus();
+    });
+  });
+  nota.addEventListener('input', aggiornaVoto);
+  votoInvia.addEventListener('click', function () {
+    if (votoInvia.disabled) return;
+    votoInvia.disabled = true; votoErr.hidden = true;
+    var dati = { _subject: 'Lex: valutazione ' + giudizio + '/5 (' + T.voti[giudizio - 1] + ')',
+      origine: 'Valutazione Lex', pagina: location.pathname, giudizio: giudizio + '/5 - ' + T.voti[giudizio - 1], commento: nota.value.trim() };
+    fetch(RICONTATTO, { method: 'POST', headers: { 'content-type': 'application/json', 'accept': 'application/json' }, body: JSON.stringify(dati) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); votato = true; votoBox.innerHTML = '<p>' + T.votoGrazie + '</p>'; })
+      .catch(function () { votoErr.textContent = T.fallito; votoErr.hidden = false; aggiornaVoto(); });
   });
 
   azione.addEventListener('click', function () {
