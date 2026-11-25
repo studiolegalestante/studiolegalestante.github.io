@@ -1,38 +1,20 @@
 {
   "penale": [
     {
-      "title": "Querela: la guida completa",
-      "link": "https://www.altalex.com/documents/altalexpedia/2012/12/12/querela",
-      "image": "",
-      "description": "Guida alla querela: chi può presentarla, quali sono i termini, in cosa differisce da denuncia ed esposto e come può essere rimessa, anche tacitamente, dopo la riforma Cartabia.",
-      "date": "19/11/2026",
-      "source": "altalex.com",
+      "title": "Ottavo Decreto Sicurezza: intimidazione alla libertà",
+      "link": "https://www.filodiritto.com/ottavo-decreto-sicurezza-intimidazione-alla-liberta",
+      "image": "https://www.filodiritto.com/sites/default/files/styles/large/public/2024-10/castle-4580148_1280.jpg?itok=YzOOhFxJ",
+      "description": "Analisi sistematica dell'ottavo Decreto Sicurezza: struttura della norma, nuovi reati e nuove aggravanti introdotti nel Codice penale, per capire come cambia la disciplina.",
+      "date": "09/11/2026",
+      "source": "filodiritto.com",
       "ai": true
     },
     {
       "title": "Omesso mantenimento dei figli: regalie o acquisti di generi alimentari non sostituiscono l'assegno",
       "link": "https://news.avvocatoandreani.it/articoli/omesso-mantenimento-figli-regalie-acquisti-generi-alimentari-non-sostituiscono-assegno-108968.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/famiglia/padre-regalo-figlio-giudice-condanna_large.webp",
-      "description": "Secondo la Cassazione (n. 36101/2026), la perdita del lavoro non dimostra di non poter pagare il mantenimento dei figli, e doni o spesa alimentare non sostituiscono l'assegno. Un inadempimento prolungato esclude la…",
+      "description": "Per la Cassazione (n. 36101/2026) la sola disoccupazione non dimostra l'impossibilità di pagare il mantenimento dei figli. Regali o spesa non bastano e l'inadempimento prolungato esclude la tenuità.",
       "date": "30/10/2026",
-      "source": "news.avvocatoandreani.it",
-      "ai": true
-    },
-    {
-      "title": "Riforma Cartabia: l'improcedibilità prevale sull'esito positivo della messa alla prova",
-      "link": "https://news.avvocatoandreani.it/articoli/riforma-cartabia-improcedibilita-prevale-esito-positivo-messa-prova-108970.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/riforma-cartabia-codice-procedura-penale_large.webp",
-      "description": "Secondo la Cassazione (n. 5589/2024), dopo la riforma Cartabia la mancanza di querela che rende il reato improcedibile prevale sull'estinzione del reato conseguente all'esito positivo della messa alla prova.",
-      "date": "02/11/2026",
-      "source": "news.avvocatoandreani.it",
-      "ai": true
-    },
-    {
-      "title": "L'istigazione a commettere un reato: il nuovo Decreto Sicurezza",
-      "link": "https://news.avvocatoandreani.it/articoli/istigazione-commettere-reato-nuovo-decreto-sicurezza-108982.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/giustizia/aula-parlamento-decreto-sicurezza_large.webp",
-      "description": "L'istigazione pubblica a commettere reati è punita dall'art. 414 c.p. anche se i reati istigati non vengono poi commessi. L'articolo collega questa norma alle novità introdotte dal nuovo Decreto Sicurezza.",
-      "date": "06/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
     },
@@ -40,54 +22,72 @@
       "title": "Ricorso in Cassazione depositato via PEC e non dal portale telematico: inammissibile",
       "link": "https://news.avvocatoandreani.it/articoli/ricorso-cassazione-depositato-via-pec-non-portale-telematico-inammissibile-108974.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/avvocato-preoccupato-schermata-pec_large.webp",
-      "description": "Il ricorso in Cassazione va depositato solo con modalità telematiche. Se è inviato via PEC è inammissibile, salvo malfunzionamento certificato, anche se l'atto arriva comunque al giudice.",
+      "description": "Il ricorso in Cassazione ex art. 311 c.p.p. dal 1° aprile 2026 va depositato solo telematicamente. La PEC è inammissibile anche se l'atto arriva, salvo malfunzionamento certificato.",
       "date": "03/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
     },
     {
-      "title": "L’archiviazione per particolare tenuità del fatto e l’opposizione dell’indagato",
-      "link": "https://www.altalex.com/documents/news/2026/11/21/archiviazione-particolare-tenuita-fatto-opposizione-indagato",
+      "title": "Riforma Cartabia: l'improcedibilità prevale sull'esito positivo della messa alla prova",
+      "link": "https://news.avvocatoandreani.it/articoli/riforma-cartabia-improcedibilita-prevale-esito-positivo-messa-prova-108970.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/penale/riforma-cartabia-codice-procedura-penale_large.webp",
+      "description": "Per la Cassazione (sent. n. 5589/2024) l'improcedibilità per difetto di querela prevale sull'estinzione del reato anche dopo l'esito positivo della messa alla prova.",
+      "date": "02/11/2026",
+      "source": "news.avvocatoandreani.it",
+      "ai": true
+    },
+    {
+      "title": "Superbonus 110%: quando si configura il concorso tra frode fiscale e truffa aggravata",
+      "link": "https://www.altalex.com/documents/news/2026/11/24/superbonus-110-quando-concorso-frode-fiscale-truffa-aggravata",
       "image": "",
-      "description": "L'articolo esamina l'archiviazione per particolare tenuità del fatto quando l'indagato si oppone e ne evidenzia possibili profili di illegittimità costituzionale dell'art. 411, comma 1-bis, c.p.p.",
-      "date": "21/11/2026",
+      "description": "La Cassazione (n. 33224/2026) ammette il concorso tra frode fiscale e truffa aggravata nel Superbonus 110% quando l'uso dei documenti produce un profitto ulteriore, diverso dalla sola evasione.",
+      "date": "24/11/2026",
+      "source": "altalex.com",
+      "ai": true
+    },
+    {
+      "title": "Non incostituzionale la disciplina delle visite del detenuto al genitore disabile grave",
+      "link": "https://www.altalex.com/documents/2026/11/25/non-incostituzionale-disciplina-visite-detenuto-genitore-disabile-grave",
+      "image": "",
+      "description": "La Corte costituzionale (sent. n. 198/2026) respinge le questioni sulla disciplina che limita le visite del detenuto al genitore con disabilità grave: la norma non è incostituzionale.",
+      "date": "25/11/2026",
       "source": "altalex.com",
       "ai": true
     }
   ],
   "famiglia": [
     {
-      "title": "Non basta un lavoro precario per considerare indipendente il figlio maggiorenne studente universitario",
-      "link": "https://www.altalex.com/documents/2026/11/20/non-lavoro-precario-considerare-indipendente-figlio-maggiorenne-studente-universitario",
-      "image": "",
-      "description": "Secondo la Cassazione (ord. 28162/2026), svolgere lavori precari o part-time mentre si studia non basta da solo a far cessare l'obbligo di mantenimento del figlio maggiorenne.",
+      "title": "Divorzio congiunto: la revoca del consenso di un coniuge non rende improcedibile la domanda",
+      "link": "https://news.avvocatoandreani.it/articoli/divorzio-congiunto-revoca-consenso-coniuge-non-rende-improcedibile-domanda-109015.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/divorzio-revoca-consenso-domamda-congiunta_large.webp",
+      "description": "Corte d'Appello di Bologna (sent. 2135/2026): la revoca unilaterale del consenso al divorzio congiunto non rende improcedibile la domanda; il giudice verifica i presupposti e può confermare gli accordi sui figli.",
       "date": "20/11/2026",
-      "source": "altalex.com",
+      "source": "news.avvocatoandreani.it",
       "ai": true
     },
     {
       "title": "Assegno unico: con affido condiviso spetta per intero al genitore collocatario",
       "link": "https://news.avvocatoandreani.it/articoli/assegno-unico-affido-condiviso-spetta-intero-genitore-collocatario-109005.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/assegno-unico-in-tribunale_large.webp",
-      "description": "Secondo la Cassazione (ord. 29000/2026), se il figlio è collocato prevalentemente presso un genitore, l'assegno unico può spettare per intero a quel genitore, anche insieme al mantenimento.",
+      "description": "Secondo la Cassazione (ord. 29000/2026), se il figlio è collocato prevalentemente presso un genitore, l'assegno unico può spettare per intero a quel genitore, anche oltre al mantenimento.",
       "date": "17/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
     },
     {
-      "title": "Divorzio congiunto: la revoca del consenso di un coniuge non rende improcedibile la domanda",
-      "link": "https://news.avvocatoandreani.it/articoli/divorzio-congiunto-revoca-consenso-coniuge-non-rende-improcedibile-domanda-109015.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/divorzio-revoca-consenso-domamda-congiunta_large.webp",
-      "description": "La Corte d'Appello di Bologna (sent. 2135/2026) stabilisce che la revoca del consenso da parte di un coniuge, dopo la separazione definitiva, non rende improcedibile il divorzio congiunto; il giudice verifica i…",
+      "title": "Non basta un lavoro precario per considerare indipendente il figlio maggiorenne studente universitario",
+      "link": "https://www.altalex.com/documents/2026/11/20/non-lavoro-precario-considerare-indipendente-figlio-maggiorenne-studente-universitario",
+      "image": "",
+      "description": "La Cassazione (ord. 28162/2026): lavori precari o part-time di un figlio maggiorenne universitario non eliminano automaticamente l'obbligo di mantenimento, specie se legati agli studi.",
       "date": "20/11/2026",
-      "source": "news.avvocatoandreani.it",
+      "source": "altalex.com",
       "ai": true
     },
     {
       "title": "Assegno di mantenimento onnicomprensivo del canone: la quota per l'affitto è imponibile ai fini Irpef",
       "link": "https://news.avvocatoandreani.it/articoli/assegno-mantenimento-onnicomprensivo-canone-quota-affitto-imponibile-fini-irpef-108967.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/fisco/dichiarazione-redditi-assegno-contratto_large.webp",
-      "description": "Per la Cassazione (ord. 26608/2026), se l'assegno onnicomprensivo include il canone d'affitto, la quota per la casa è reddito imponibile del coniuge beneficiario, dimezzata se l'immobile è usato dai figli.",
+      "description": "La Cassazione (ord. 26608/2026): se l'assegno onnicomprensivo include il canone d'affitto, quella quota è reddito imponibile del coniuge beneficiario, dimezzata se la casa è usata dai figli.",
       "date": "30/10/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
@@ -96,7 +96,7 @@
       "title": "Testamento e demenza accertata subito dopo: l'onere della prova del beneficiario",
       "link": "https://news.avvocatoandreani.it/articoli/testamento-demenza-accertata-subito-dopo-onere-prova-beneficiario-108951.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/famiglia/anziano-redige.testamento_large.webp",
-      "description": "La Cassazione (ord. 25855/2026) stabilisce che, se una demenza stabile risulta accertata subito dopo la redazione del testamento, l'incapacità si presume e spetta al beneficiario provare un lucido intervallo.",
+      "description": "Cassazione (ord. 25855/2026): se il testatore risulta affetto da demenza stabile subito dopo la redazione del testamento, l'incapacità si presume e spetta al beneficiario provare un lucido intervallo.",
       "date": "22/10/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
@@ -105,7 +105,7 @@
       "title": "Il prelievo dal conto del de cuius fa perdere il beneficio d'inventario",
       "link": "https://www.altalex.com/documents/2026/11/24/prelievo-conto-de-cuius-perdere-beneficio-inventario",
       "image": "",
-      "description": "Secondo la Cassazione (sent. 28198/2026), trasferire somme del defunto sul proprio conto non equivale automaticamente ad accettare tacitamente l'eredità; va valutato se vi siano atti di sottrazione o occultamento.",
+      "description": "Cassazione (sent. 28198/2026): versare sul proprio conto i fondi del defunto non implica sempre accettazione tacita, ma può far perdere il beneficio d'inventario se configura sottrazione di beni.",
       "date": "24/11/2026",
       "source": "altalex.com",
       "ai": true
@@ -116,7 +116,7 @@
       "title": "Difensore d'ufficio e assistito insolvibile: spese di recupero del credito a carico dello Stato",
       "link": "https://news.avvocatoandreani.it/articoli/difensore-ufficio-assistito-insolvibile-spese-recupero-credito-carico-stato-109012.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/avvocato-parcella-spese-esecuzione_large.webp",
-      "description": "Corte d'appello di Firenze (sent. n. 3046/2026): se l'assistito è irreperibile o insolvibile e il recupero è fallito, lo Stato liquida al difensore anche i compensi delle fasi monitoria ed esecutiva.",
+      "description": "Se l'assistito è irreperibile o insolvibile e il recupero non riesce, il difensore ha diritto al pagamento a carico dello Stato anche di compensi e spese delle fasi monitoria ed esecutiva.",
       "date": "19/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
@@ -125,7 +125,7 @@
       "title": "Patrocinio infedele: quando la condotta dell'avvocato diventa reato ex art. 380 c.p.",
       "link": "https://news.avvocatoandreani.it/articoli/patrocinio-infedele-quando-condotta-avvocato-diventa-reato-art-380-108943.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/avvocati/vignetta-avvocato-assente-aula_large.webp",
-      "description": "Cassazione (n. 32866/2026): il patrocinio infedele richiede una violazione consapevole dei doveri dell'avvocato e un danno all'assistito, anche morale o da chance perse, collegato alla condotta.",
+      "description": "Per la Cassazione, il patrocinio infedele richiede una violazione consapevole dei doveri e un danno all'assistito, anche morale o di perdita di chances, collegato alla condotta da un nesso causale.",
       "date": "15/10/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
@@ -169,20 +169,20 @@
   ],
   "giurisprudenza": [
     {
-      "title": "Prescrizione: raccomandata contestata, la prova della ricezione spetta al mittente",
-      "link": "https://news.avvocatoandreani.it/articoli/prescrizione-raccomandata-contestata-prova-ricezione-spetta-mittente-109001.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/tempo/busta-raccomandata-giustizia-orologio_large.webp",
-      "description": "Se il destinatario contesta di aver ricevuto una diffida inviata senza avviso di ricevimento, spetta al mittente provarne la ricezione. Senza prova, la prescrizione decennale non si interrompe.",
-      "date": "16/11/2026",
+      "title": "Notifica per irreperibili: senza l'attestazione delle ricerche nella relata la notifica è nulla",
+      "link": "https://news.avvocatoandreani.it/articoli/notifica-irreperibili-senza-attestazione-ricerche-relata-notifica-nulla-109011.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/condominio-casa/postino-modulo-irreperibilita-citofono_large.webp",
+      "description": "Notifica a irreperibile: la Cassazione (sent. 29283/2026) la dichiara nulla in modo insanabile se la relata non indica le ricerche fatte e i motivi della mancata consegna, anche se le ricerche ci furono.",
+      "date": "19/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
     },
     {
-      "title": "Notifica per irreperibili: senza l'attestazione delle ricerche nella relata la notifica è nulla",
-      "link": "https://news.avvocatoandreani.it/articoli/notifica-irreperibili-senza-attestazione-ricerche-relata-notifica-nulla-109011.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/condominio-casa/postino-modulo-irreperibilita-citofono_large.webp",
-      "description": "Nella notifica a irreperibili l'ufficiale giudiziario deve indicare nella relata le ricerche fatte e i motivi della mancata consegna. Se non lo fa, la notifica è nulla in modo non sanabile.",
-      "date": "19/11/2026",
+      "title": "Prescrizione: raccomandata contestata, la prova della ricezione spetta al mittente",
+      "link": "https://news.avvocatoandreani.it/articoli/prescrizione-raccomandata-contestata-prova-ricezione-spetta-mittente-109001.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/tempo/busta-raccomandata-giustizia-orologio_large.webp",
+      "description": "Tribunale di Palermo (sent. 5479/2026): se il destinatario nega di aver ricevuto una diffida spedita senza avviso di ricevimento, la prova della consegna spetta al mittente. Altrimenti il credito può estinguersi.",
+      "date": "16/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
     },
@@ -190,34 +190,34 @@
       "title": "Assegno sociale e assegno divorzile non percepito: illegittimo il recupero dell'indebito INPS",
       "link": "https://news.avvocatoandreani.it/articoli/assegno-sociale-assegno-divorzile-non-percepito-illegittimo-recupero-indebito-inps-109021.html",
       "image": "https://news.avvocatoandreani.it/public/images/blog/scene/soldi/inps-assegno-sociale-assegno-divorzile_large.webp",
-      "description": "Per l'assegno sociale conta solo il reddito effettivamente percepito, non quello potenziale. Un assegno divorzile mai riscosso non va computato, e l'INPS non può contestare al beneficiario la mancata azione contro l'ex…",
+      "description": "Tribunale di Enna (sent. 1475/2026): per l'assegno sociale conta solo il reddito realmente percepito. Un assegno divorzile mai riscosso non va computato, e l'INPS non può recuperare somme per questo.",
       "date": "24/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
     },
     {
-      "title": "Annullamento del testamento per incapacità naturale del de cuius e distribuzione degli oneri probatori",
-      "link": "https://www.altalex.com/documents/2026/11/23/annullamento-testamento-incapacita-naturale-de-cuius-distribuzione-oneri-probatori",
-      "image": "",
-      "description": "La Cassazione chiarisce su chi ricade la prova che un testamento olografo sia stato scritto in un momento di lucidità, nel caso di un'anziana con demenza senile. Il tema è quello dell'incapacità naturale.",
-      "date": "23/11/2026",
-      "source": "altalex.com",
-      "ai": true
-    },
-    {
-      "title": "Cane conteso tra due ex conviventi: quale tutela per l'animale?",
-      "link": "https://news.avvocatoandreani.it/articoli/cane-conteso-due-conviventi-quale-tutela-animale-109007.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/animali/giudice-tribunale-cagnolino-uomo-donna_large.webp",
-      "description": "Nell'ordinanza n. 28294/2026 la Cassazione esamina come tutelare un cane conteso tra ex conviventi, ragionando su titolo di proprietà, compossesso, spoglio e termini per agire.",
-      "date": "18/11/2026",
+      "title": "Cartella esattoriale, notifica PEC da indirizzo non censito in INI-PEC: conseguenze",
+      "link": "https://news.avvocatoandreani.it/articoli/cartella-esattoriale-notifica-pec-indirizzo-non-censito-ini-pec-conseguenze-109014.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/pct/cartella-pagamento-registro-pec-inipec_large.webp",
+      "description": "Cassazione (ord. 28644/2026): esamina se una cartella notificata via PEC da un indirizzo non presente in INI-PEC sia inesistente o invalida, questione su cui la giurisprudenza tributaria era divisa.",
+      "date": "20/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
     },
     {
-      "title": "Ascensore condominiale: la pulsantiera a chiave è legittima e può essere approvata a maggioranza",
-      "link": "https://news.avvocatoandreani.it/articoli/ascensore-condominiale-pulsantiera-chiave-legittima-puo-essere-approvata-maggioranza-109019.html",
-      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/condominio-casa/condominio-ascensore-chiave-pulsantiera_large.webp",
-      "description": "La Corte d'Appello di Brescia considera legittima la pulsantiera a chiave per l'ascensore, con una chiave per ogni condomino. Non è innovazione né barriera architettonica: può essere approvata a maggioranza.",
+      "title": "Infiltrazioni in Condominio, anche il condomino danneggiato ma troppo “inerte” è corresponsabile",
+      "link": "https://www.altalex.com/documents/2026/11/25/infiltrazioni-condominio-condomino-danneggiato-inerte-corresponsabile",
+      "image": "",
+      "description": "Tribunale di Catania (sent. 4931/2026): il condominio risponde delle infiltrazioni ex art. 2051 c.c., ma se il condomino danneggiato è stato troppo inerte, la negligenza incide sul risarcimento.",
+      "date": "25/11/2026",
+      "source": "altalex.com",
+      "ai": true
+    },
+    {
+      "title": "Condominio: l'installazione di impianti di videosorveglianza sulle parti comuni",
+      "link": "https://news.avvocatoandreani.it/articoli/condominio-installazione-impianti-videosorveglianza-parti-comuni-109017.html",
+      "image": "https://news.avvocatoandreani.it/public/images/blog/scene/condominio-casa/condominio-donna-telecamera-sopra-la-porta_large.webp",
+      "description": "Tribunale di Napoli Nord (sett. 2026): esamina la liceità delle videocamere sulle parti comuni, richiamando l'art. 1122-ter c.c., che richiede una delibera assembleare approvata con una specifica maggioranza.",
       "date": "23/11/2026",
       "source": "news.avvocatoandreani.it",
       "ai": true
